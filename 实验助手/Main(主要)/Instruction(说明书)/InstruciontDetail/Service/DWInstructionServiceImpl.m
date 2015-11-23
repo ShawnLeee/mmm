@@ -1,0 +1,73 @@
+//
+//  DWInstructionServiceImpl.m
+//  实验助手
+//
+//  Created by sxq on 15/11/17.
+//  Copyright © 2015年 SXQ. All rights reserved.
+//
+#import "DWEditStepController.h"
+#import "DWInstructionStepViewModel.h"
+#import "DWInstructionContentController.h"
+#import "DWReviewTableController.h"
+#import "DWInstructionNavViewModel.h"
+#import "DWInstructionDetailViewModel.h"
+#import "DWInstructionServiceImpl.h"
+#import "DWStepTableController.h"
+@interface DWInstructionServiceImpl ()
+@property (nonatomic,weak) UINavigationController *nav;
+@end
+@implementation DWInstructionServiceImpl
+- (instancetype)initWithNavigationController:(UINavigationController *)nav
+{
+    if (self = [super init]) {
+        _nav = nav;
+    }
+    return self;
+}
+- (void)pushViewModel:(id)viewModel
+{
+    if ([viewModel isKindOfClass:[DWInstructionNavViewModel class]]) {
+        [self p_pushNavViewModel:(DWInstructionNavViewModel *)viewModel];
+    }else if([viewModel isKindOfClass:[DWInstructionDetailViewModel class]])
+    {
+        [self p_pushDetailViewModel:(DWInstructionDetailViewModel *)viewModel];
+    }else if([viewModel isKindOfClass:[DWInstructionStepViewModel class]])
+    {
+        [self p_pushStepViewModel:viewModel];
+    }
+    
+}
+- (void)p_pushStepViewModel:(DWInstructionStepViewModel *)stepViewModel
+{
+    DWEditStepController *editVC = [[DWEditStepController alloc] initWithViewModel:stepViewModel service:self];
+    [self.nav pushViewController:editVC animated:YES];
+}
+- (void)p_pushNavViewModel:(DWInstructionNavViewModel *)viewModel
+{
+    switch (viewModel.vcType) {
+        case InstructionDetaiVcTypeText:
+        {
+            DWInstructionContentController *contentVC = [[DWInstructionContentController alloc] initWithViewModel:viewModel];
+            [self.nav pushViewController:contentVC animated:YES];
+            break;
+        }
+        case InstructionDetaiVcTypeComment:
+        {
+            DWReviewTableController *reviewVC = [[DWReviewTableController alloc] initWithReviews:viewModel.items];
+            [self.nav pushViewController:reviewVC animated:YES];
+            break;
+        }
+        case InstructionDetaiVcTypeSteps:
+        {
+            DWStepTableController *stepVC = [[DWStepTableController alloc] initWithSteps:viewModel.items service:self];
+            [self.nav pushViewController:stepVC animated:YES];
+            break;
+        }
+            
+    }
+}
+- (void)p_pushDetailViewModel:(DWInstructionDetailViewModel *)viewModel
+{
+    
+}
+@end
