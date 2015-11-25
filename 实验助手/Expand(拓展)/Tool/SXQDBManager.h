@@ -77,6 +77,8 @@ typedef NS_ENUM(NSUInteger,ExperimentState) {
  *  完成实验
  */
 - (BOOL)fulfillExperimentWithMyExpId:(NSString *)myExpId;
+
+- (NSArray *)meAllInstructions;
 @end
 
 

@@ -322,7 +322,28 @@ static SXQDBManager *_dbManager = nil;
     
     return resultArr;
 }
-
+- (NSArray *)meAllInstructions
+{
+    __block NSArray *resultArr = nil;
+    [_queue inDatabase:^(FMDatabase *db) {
+        NSMutableArray *tmpArr = [NSMutableArray array];
+        FMResultSet *rs = [db executeQuery:@"select * from t_expinstructionsMain"];
+        while (rs.next) {
+            NSString *expinstructionid = [rs stringForColumn:@"expinstructionid"];
+            NSString *experimentname = [rs stringForColumn:@"experimentname"];
+            NSString *uploadTime = [rs stringForColumn:@"uploadTime"];
+            NSString *editTime = [rs stringForColumn:@"editTime"];
+            NSString *supplierName = [rs stringForColumn:@"supplierName"];
+            NSString *productnum = [rs stringForColumn:@"productnum"];
+            NSDictionary *instruction =  @{@"expInstructionID" : expinstructionid ,@"experimentName" : experimentname ,@"uploadTime" : uploadTime? :@"",@"editTime":editTime ? :@"",@"supplierName" : supplierName ,@"productNum" : productnum};
+            [tmpArr addObject:instruction];
+        }
+        resultArr = [tmpArr copy];
+    }];
+    [_queue close];
+    
+    return resultArr;
+}
 - (NSArray *)querySupplierWithReagetID:(NSString *)reagentID
 {
     __block NSMutableArray *tempArr = [NSMutableArray array];

@@ -36,16 +36,16 @@
 }
 - (RACSignal *)downloadReportSignalWithReportItem:(SXQReportItem *)reportItem
 {
-    
     return [RACSignal createSignal:^RACDisposable *(id<RACSubscriber> subscriber) {
         NSDictionary *params = @{@"myExpID" : reportItem.myExpID};
         [SXQHttpTool getWithURL:ExperimentReportDownloadURL params:params success:^(id json) {
             if ([json[@"code"] isEqualToString:@"1"]) {
-                NSString *pdfStr = json[@"data"][@"pdfStream"];
-                NSData *pdfData = [[NSData alloc] initWithBase64EncodedString:pdfStr options:NSDataBase64DecodingIgnoreUnknownCharacters];
-                [self savePdf:pdfData name:reportItem.pdfName];
-               [subscriber sendNext:@(YES)];
-               [subscriber sendCompleted];
+                NSString *pdfPath = json[@"data"][@"pdfPath"];
+                [self downloadPdfDataWithPath:pdfPath completion:^(NSData *pdfData) {
+                    [self savePdf:pdfData name:reportItem.pdfName];
+                    [subscriber sendNext:@(YES)];
+                    [subscriber sendCompleted];
+                }];
             }else
             {
                [subscriber sendNext:@(NO)];
@@ -56,6 +56,14 @@
         return nil;
     }];
     return nil;
+}
+- (void)downloadPdfDataWithPath:(NSString *)path completion:(void (^)(NSData *pdfData))completion
+{
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        NSURL *pdfURL = [NSURL URLWithString:path];
+        NSData *pdfData = [NSData dataWithContentsOfURL:pdfURL];
+        completion(pdfData);
+    });
 }
 - (void)savePdf:(NSData *)pdfData name:(NSString *)name
 {

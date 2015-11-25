@@ -25,6 +25,19 @@
 		B003A28A1BDF54DA00E2B282 /* SXQExpProcessAttch.m in Sources */ = {isa = PBXBuildFile; fileRef = B003A2891BDF54DA00E2B282 /* SXQExpProcessAttch.m */; };
 		B003A28E1BDF58D700E2B282 /* DWMyExperimentImpl.m in Sources */ = {isa = PBXBuildFile; fileRef = B003A28D1BDF58D700E2B282 /* DWMyExperimentImpl.m */; };
 		B003A2921BDF5D9900E2B282 /* DWMyExperimentServicesImpl.m in Sources */ = {isa = PBXBuildFile; fileRef = B003A2911BDF5D9900E2B282 /* DWMyExperimentServicesImpl.m */; };
+		B006ABC21C0552D7008C6C76 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B06D817D1C05515400C0C20D /* Foundation.framework */; };
+		B006ABC51C055B29008C6C76 /* DWMeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B006ABC41C055B29008C6C76 /* DWMeViewController.m */; settings = {ASSET_TAGS = (); }; };
+		B006ABC81C055BC7008C6C76 /* DWMeHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = B006ABC71C055BC7008C6C76 /* DWMeHeader.m */; settings = {ASSET_TAGS = (); }; };
+		B006ABCA1C055BD2008C6C76 /* DWMeHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = B006ABC91C055BD2008C6C76 /* DWMeHeader.xib */; settings = {ASSET_TAGS = (); }; };
+		B006ABCC1C0575F3008C6C76 /* me.plist in Resources */ = {isa = PBXBuildFile; fileRef = B006ABCB1C0575F3008C6C76 /* me.plist */; settings = {ASSET_TAGS = (); }; };
+		B006ABCF1C057704008C6C76 /* DWMeItem.m in Sources */ = {isa = PBXBuildFile; fileRef = B006ABCE1C057704008C6C76 /* DWMeItem.m */; settings = {ASSET_TAGS = (); }; };
+		B006ABD31C057796008C6C76 /* DWMeServiceImpl.m in Sources */ = {isa = PBXBuildFile; fileRef = B006ABD21C057796008C6C76 /* DWMeServiceImpl.m */; settings = {ASSET_TAGS = (); }; };
+		B006ABD81C057A30008C6C76 /* DWMeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B006ABD61C057A30008C6C76 /* DWMeCell.m */; settings = {ASSET_TAGS = (); }; };
+		B006ABD91C057A30008C6C76 /* DWMeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B006ABD71C057A30008C6C76 /* DWMeCell.xib */; settings = {ASSET_TAGS = (); }; };
+		B006ABDC1C058933008C6C76 /* DWMeInstructionsController.m in Sources */ = {isa = PBXBuildFile; fileRef = B006ABDB1C058933008C6C76 /* DWMeInstructionsController.m */; settings = {ASSET_TAGS = (); }; };
+		B006ABE01C05945E008C6C76 /* DWMeInstructionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B006ABDE1C05945E008C6C76 /* DWMeInstructionCell.m */; settings = {ASSET_TAGS = (); }; };
+		B006ABE11C05945E008C6C76 /* DWMeInstructionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B006ABDF1C05945E008C6C76 /* DWMeInstructionCell.xib */; settings = {ASSET_TAGS = (); }; };
+		B006ABE41C05A071008C6C76 /* DWMeEditController.m in Sources */ = {isa = PBXBuildFile; fileRef = B006ABE31C05A071008C6C76 /* DWMeEditController.m */; settings = {ASSET_TAGS = (); }; };
 		B00734841BF038EC0020DC79 /* SXQReviewDetailController.m in Sources */ = {isa = PBXBuildFile; fileRef = B00734831BF038EC0020DC79 /* SXQReviewDetailController.m */; };
 		B007348E1BF062530020DC79 /* SXQReviewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B007348C1BF062530020DC79 /* SXQReviewCell.m */; };
 		B007348F1BF062530020DC79 /* SXQReviewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B007348D1BF062530020DC79 /* SXQReviewCell.xib */; };
@@ -124,9 +137,6 @@
 		B08E7C641BB25BCA0023893B /* SXQInstrutionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B08E7C621BB25BCA0023893B /* SXQInstrutionCell.xib */; };
 		B08E7C681BB25C070023893B /* SXQSingleContentCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B08E7C661BB25C070023893B /* SXQSingleContentCell.m */; };
 		B08E7C691BB25C070023893B /* SXQSingleContentCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B08E7C671BB25C070023893B /* SXQSingleContentCell.xib */; };
-		B08E7C711BB27A0B0023893B /* DWInstructionActionView.m in Sources */ = {isa = PBXBuildFile; fileRef = B08E7C701BB27A0B0023893B /* DWInstructionActionView.m */; };
-		B08E7C731BB27A2A0023893B /* DWInstructionActionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B08E7C721BB27A2A0023893B /* DWInstructionActionView.xib */; };
-		B08E7C761BB27A9A0023893B /* DWActionButton.m in Sources */ = {isa = PBXBuildFile; fileRef = B08E7C751BB27A9A0023893B /* DWActionButton.m */; };
 		B094C25D1BFAC1AB00CDC289 /* DWInstructionNavViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B094C25C1BFAC1AB00CDC289 /* DWInstructionNavViewModel.m */; };
 		B094C2601BFAC71400CDC289 /* DWInstructionServiceImpl.m in Sources */ = {isa = PBXBuildFile; fileRef = B094C25F1BFAC71400CDC289 /* DWInstructionServiceImpl.m */; };
 		B094C2641BFACA8900CDC289 /* DWReviewTableController.m in Sources */ = {isa = PBXBuildFile; fileRef = B094C2631BFACA8900CDC289 /* DWReviewTableController.m */; };
@@ -221,9 +231,6 @@
 		B0E46F411BDCF89300B1F2D8 /* DGExperimentBaseController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B0E46F3F1BDCF89300B1F2D8 /* DGExperimentBaseController.xib */; };
 		B0E752541B94AA38009781E1 /* SXQSegmentedControl.m in Sources */ = {isa = PBXBuildFile; fileRef = B0E752531B94AA38009781E1 /* SXQSegmentedControl.m */; };
 		B0EBC4911BA16DB3000ECCA0 /* SXQMeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B0EBC4901BA16DB3000ECCA0 /* SXQMeViewController.m */; };
-		B0F115F01BB395D500BA9633 /* DWActionSheet.m in Sources */ = {isa = PBXBuildFile; fileRef = B0F115EF1BB395D500BA9633 /* DWActionSheet.m */; };
-		B0F18C1A1BD5D2220025DE73 /* SXQSignUpView.m in Sources */ = {isa = PBXBuildFile; fileRef = B0F18C191BD5D2220025DE73 /* SXQSignUpView.m */; };
-		B0F18C1C1BD5D2470025DE73 /* SXQSignUpView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B0F18C1B1BD5D2470025DE73 /* SXQSignUpView.xib */; };
 		B0F18C241BD5FF7F0025DE73 /* DWSignUpController.m in Sources */ = {isa = PBXBuildFile; fileRef = B0F18C231BD5FF7F0025DE73 /* DWSignUpController.m */; };
 		B0F295C21BB4ED9400E20865 /* SXQDBManager.m in Sources */ = {isa = PBXBuildFile; fileRef = B0F295C11BB4ED9400E20865 /* SXQDBManager.m */; };
 		B0F295C51BB4F3A800E20865 /* SXQInstructionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = B0F295C41BB4F3A800E20865 /* SXQInstructionManager.m */; };
@@ -268,8 +275,6 @@
 		B0F64C251BAFB407001CF997 /* SXQExperimentResult.m in Sources */ = {isa = PBXBuildFile; fileRef = B0F64C221BAFB407001CF997 /* SXQExperimentResult.m */; };
 		B0F64C261BAFB407001CF997 /* SXQExperimentStepResult.m in Sources */ = {isa = PBXBuildFile; fileRef = B0F64C241BAFB407001CF997 /* SXQExperimentStepResult.m */; };
 		B0F64C321BAFBD77001CF997 /* MZTimerLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = B0F64C2E1BAFBD77001CF997 /* MZTimerLabel.m */; };
-		B0F64C331BAFBD77001CF997 /* TimeRecorder.m in Sources */ = {isa = PBXBuildFile; fileRef = B0F64C301BAFBD77001CF997 /* TimeRecorder.m */; };
-		B0F64C341BAFBD77001CF997 /* TimeRecorder.xib in Resources */ = {isa = PBXBuildFile; fileRef = B0F64C311BAFBD77001CF997 /* TimeRecorder.xib */; };
 		B0F6B17F1BC7746B0090E398 /* SXQSupplier.m in Sources */ = {isa = PBXBuildFile; fileRef = B0F6B17E1BC7746B0090E398 /* SXQSupplier.m */; };
 		B0F6B1831BC7AB860090E398 /* SXQAddExpController.m in Sources */ = {isa = PBXBuildFile; fileRef = B0F6B1811BC7AB860090E398 /* SXQAddExpController.m */; };
 		B0F6B1841BC7AB860090E398 /* SXQAddExpController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B0F6B1821BC7AB860090E398 /* SXQAddExpController.xib */; };
@@ -277,11 +282,7 @@
 		B0F6B18A1BC7BCB70090E398 /* SXQExpEquipment.m in Sources */ = {isa = PBXBuildFile; fileRef = B0F6B1891BC7BCB70090E398 /* SXQExpEquipment.m */; };
 		B0F6B18D1BC7BE800090E398 /* SXQExpStep.m in Sources */ = {isa = PBXBuildFile; fileRef = B0F6B18C1BC7BE800090E398 /* SXQExpStep.m */; };
 		B0F738B11BA9011600EA7E9E /* UIView+MJ.m in Sources */ = {isa = PBXBuildFile; fileRef = B0F738B01BA9011600EA7E9E /* UIView+MJ.m */; };
-		B0F738B41BA9018400EA7E9E /* SXQMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B0F738B31BA9018400EA7E9E /* SXQMenuViewController.m */; };
 		B0F738B71BA9025200EA7E9E /* DWInstructionController.m in Sources */ = {isa = PBXBuildFile; fileRef = B0F738B61BA9025200EA7E9E /* DWInstructionController.m */; };
-		B0F738BB1BA90F6500EA7E9E /* SXQMenuCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B0F738B91BA90F6500EA7E9E /* SXQMenuCell.m */; };
-		B0F738BC1BA90F6500EA7E9E /* SXQMenuCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B0F738BA1BA90F6500EA7E9E /* SXQMenuCell.xib */; };
-		B0F738C01BA9293200EA7E9E /* DWInstructionChildController.m in Sources */ = {isa = PBXBuildFile; fileRef = B0F738BE1BA9293200EA7E9E /* DWInstructionChildController.m */; };
 		B0F738C51BA92C6D00EA7E9E /* SXQInstructionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B0F738C31BA92C6D00EA7E9E /* SXQInstructionCell.m */; };
 		B0F738C61BA92C6D00EA7E9E /* SXQInstructionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B0F738C41BA92C6D00EA7E9E /* SXQInstructionCell.xib */; };
 		B0F738C91BA9346F00EA7E9E /* ExperimentTool.m in Sources */ = {isa = PBXBuildFile; fileRef = B0F738C81BA9346F00EA7E9E /* ExperimentTool.m */; };
@@ -406,6 +407,27 @@
 		B003A28F1BDF5D3900E2B282 /* DWMyExperimentServices.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DWMyExperimentServices.h; sourceTree = "<group>"; };
 		B003A2901BDF5D9900E2B282 /* DWMyExperimentServicesImpl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DWMyExperimentServicesImpl.h; sourceTree = "<group>"; };
 		B003A2911BDF5D9900E2B282 /* DWMyExperimentServicesImpl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DWMyExperimentServicesImpl.m; sourceTree = "<group>"; };
+		B006ABC31C055B29008C6C76 /* DWMeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DWMeViewController.h; sourceTree = "<group>"; };
+		B006ABC41C055B29008C6C76 /* DWMeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DWMeViewController.m; sourceTree = "<group>"; };
+		B006ABC61C055BC7008C6C76 /* DWMeHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DWMeHeader.h; sourceTree = "<group>"; };
+		B006ABC71C055BC7008C6C76 /* DWMeHeader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DWMeHeader.m; sourceTree = "<group>"; };
+		B006ABC91C055BD2008C6C76 /* DWMeHeader.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DWMeHeader.xib; sourceTree = "<group>"; };
+		B006ABCB1C0575F3008C6C76 /* me.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = me.plist; sourceTree = "<group>"; };
+		B006ABCD1C057704008C6C76 /* DWMeItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DWMeItem.h; sourceTree = "<group>"; };
+		B006ABCE1C057704008C6C76 /* DWMeItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DWMeItem.m; sourceTree = "<group>"; };
+		B006ABD11C057796008C6C76 /* DWMeServiceImpl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DWMeServiceImpl.h; sourceTree = "<group>"; };
+		B006ABD21C057796008C6C76 /* DWMeServiceImpl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DWMeServiceImpl.m; sourceTree = "<group>"; };
+		B006ABD41C0577B2008C6C76 /* DWMeService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DWMeService.h; sourceTree = "<group>"; };
+		B006ABD51C057A30008C6C76 /* DWMeCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DWMeCell.h; sourceTree = "<group>"; };
+		B006ABD61C057A30008C6C76 /* DWMeCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DWMeCell.m; sourceTree = "<group>"; };
+		B006ABD71C057A30008C6C76 /* DWMeCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DWMeCell.xib; sourceTree = "<group>"; };
+		B006ABDA1C058933008C6C76 /* DWMeInstructionsController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DWMeInstructionsController.h; sourceTree = "<group>"; };
+		B006ABDB1C058933008C6C76 /* DWMeInstructionsController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DWMeInstructionsController.m; sourceTree = "<group>"; };
+		B006ABDD1C05945E008C6C76 /* DWMeInstructionCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DWMeInstructionCell.h; sourceTree = "<group>"; };
+		B006ABDE1C05945E008C6C76 /* DWMeInstructionCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DWMeInstructionCell.m; sourceTree = "<group>"; };
+		B006ABDF1C05945E008C6C76 /* DWMeInstructionCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DWMeInstructionCell.xib; sourceTree = "<group>"; };
+		B006ABE21C05A071008C6C76 /* DWMeEditController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DWMeEditController.h; sourceTree = "<group>"; };
+		B006ABE31C05A071008C6C76 /* DWMeEditController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DWMeEditController.m; sourceTree = "<group>"; };
 		B00734821BF038EC0020DC79 /* SXQReviewDetailController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SXQReviewDetailController.h; sourceTree = "<group>"; };
 		B00734831BF038EC0020DC79 /* SXQReviewDetailController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SXQReviewDetailController.m; sourceTree = "<group>"; };
 		B007348B1BF062530020DC79 /* SXQReviewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SXQReviewCell.h; sourceTree = "<group>"; };
@@ -557,6 +579,7 @@
 		B06CE1651BAAB803008BB98E /* DWBBSViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DWBBSViewController.m; sourceTree = "<group>"; };
 		B06CE1661BAAB803008BB98E /* DWExchangeController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DWExchangeController.h; sourceTree = "<group>"; };
 		B06CE1671BAAB803008BB98E /* DWExchangeController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DWExchangeController.m; sourceTree = "<group>"; };
+		B06D817D1C05515400C0C20D /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		B0711B671BAFD23F00EA7E14 /* InstructionTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InstructionTool.h; sourceTree = "<group>"; };
 		B0711B681BAFD23F00EA7E14 /* InstructionTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InstructionTool.m; sourceTree = "<group>"; };
 		B079CE5B1BE9D49C00CD54A9 /* SXQSettingCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SXQSettingCell.h; sourceTree = "<group>"; };
@@ -588,11 +611,6 @@
 		B08E7C651BB25C070023893B /* SXQSingleContentCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SXQSingleContentCell.h; sourceTree = "<group>"; };
 		B08E7C661BB25C070023893B /* SXQSingleContentCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SXQSingleContentCell.m; sourceTree = "<group>"; };
 		B08E7C671BB25C070023893B /* SXQSingleContentCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SXQSingleContentCell.xib; sourceTree = "<group>"; };
-		B08E7C6F1BB27A0B0023893B /* DWInstructionActionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DWInstructionActionView.h; sourceTree = "<group>"; };
-		B08E7C701BB27A0B0023893B /* DWInstructionActionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DWInstructionActionView.m; sourceTree = "<group>"; };
-		B08E7C721BB27A2A0023893B /* DWInstructionActionView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DWInstructionActionView.xib; sourceTree = "<group>"; };
-		B08E7C741BB27A9A0023893B /* DWActionButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DWActionButton.h; sourceTree = "<group>"; };
-		B08E7C751BB27A9A0023893B /* DWActionButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DWActionButton.m; sourceTree = "<group>"; };
 		B094C25B1BFAC1AB00CDC289 /* DWInstructionNavViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DWInstructionNavViewModel.h; sourceTree = "<group>"; };
 		B094C25C1BFAC1AB00CDC289 /* DWInstructionNavViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DWInstructionNavViewModel.m; sourceTree = "<group>"; };
 		B094C25E1BFAC71400CDC289 /* DWInstructionServiceImpl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DWInstructionServiceImpl.h; sourceTree = "<group>"; };
@@ -773,11 +791,6 @@
 		B0E752531B94AA38009781E1 /* SXQSegmentedControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SXQSegmentedControl.m; sourceTree = "<group>"; };
 		B0EBC48F1BA16DB3000ECCA0 /* SXQMeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SXQMeViewController.h; sourceTree = "<group>"; };
 		B0EBC4901BA16DB3000ECCA0 /* SXQMeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SXQMeViewController.m; sourceTree = "<group>"; };
-		B0F115EE1BB395D500BA9633 /* DWActionSheet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DWActionSheet.h; sourceTree = "<group>"; };
-		B0F115EF1BB395D500BA9633 /* DWActionSheet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DWActionSheet.m; sourceTree = "<group>"; };
-		B0F18C181BD5D2220025DE73 /* SXQSignUpView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SXQSignUpView.h; sourceTree = "<group>"; };
-		B0F18C191BD5D2220025DE73 /* SXQSignUpView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SXQSignUpView.m; sourceTree = "<group>"; };
-		B0F18C1B1BD5D2470025DE73 /* SXQSignUpView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SXQSignUpView.xib; sourceTree = "<group>"; };
 		B0F18C221BD5FF7F0025DE73 /* DWSignUpController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DWSignUpController.h; sourceTree = "<group>"; };
 		B0F18C231BD5FF7F0025DE73 /* DWSignUpController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DWSignUpController.m; sourceTree = "<group>"; };
 		B0F295C01BB4ED9400E20865 /* SXQDBManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SXQDBManager.h; sourceTree = "<group>"; };
@@ -862,9 +875,6 @@
 		B0F64C241BAFB407001CF997 /* SXQExperimentStepResult.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SXQExperimentStepResult.m; sourceTree = "<group>"; };
 		B0F64C2D1BAFBD77001CF997 /* MZTimerLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MZTimerLabel.h; sourceTree = "<group>"; };
 		B0F64C2E1BAFBD77001CF997 /* MZTimerLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MZTimerLabel.m; sourceTree = "<group>"; };
-		B0F64C2F1BAFBD77001CF997 /* TimeRecorder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TimeRecorder.h; sourceTree = "<group>"; };
-		B0F64C301BAFBD77001CF997 /* TimeRecorder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TimeRecorder.m; sourceTree = "<group>"; };
-		B0F64C311BAFBD77001CF997 /* TimeRecorder.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TimeRecorder.xib; sourceTree = "<group>"; };
 		B0F6B17D1BC7746B0090E398 /* SXQSupplier.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SXQSupplier.h; sourceTree = "<group>"; };
 		B0F6B17E1BC7746B0090E398 /* SXQSupplier.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SXQSupplier.m; sourceTree = "<group>"; };
 		B0F6B1801BC7AB860090E398 /* SXQAddExpController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SXQAddExpController.h; sourceTree = "<group>"; };
@@ -878,15 +888,8 @@
 		B0F6B18C1BC7BE800090E398 /* SXQExpStep.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SXQExpStep.m; sourceTree = "<group>"; };
 		B0F738AF1BA9011600EA7E9E /* UIView+MJ.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+MJ.h"; sourceTree = "<group>"; };
 		B0F738B01BA9011600EA7E9E /* UIView+MJ.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+MJ.m"; sourceTree = "<group>"; };
-		B0F738B21BA9018400EA7E9E /* SXQMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SXQMenuViewController.h; sourceTree = "<group>"; };
-		B0F738B31BA9018400EA7E9E /* SXQMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SXQMenuViewController.m; sourceTree = "<group>"; };
 		B0F738B51BA9025200EA7E9E /* DWInstructionController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DWInstructionController.h; sourceTree = "<group>"; };
 		B0F738B61BA9025200EA7E9E /* DWInstructionController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DWInstructionController.m; sourceTree = "<group>"; };
-		B0F738B81BA90F6500EA7E9E /* SXQMenuCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SXQMenuCell.h; sourceTree = "<group>"; };
-		B0F738B91BA90F6500EA7E9E /* SXQMenuCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SXQMenuCell.m; sourceTree = "<group>"; };
-		B0F738BA1BA90F6500EA7E9E /* SXQMenuCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SXQMenuCell.xib; sourceTree = "<group>"; };
-		B0F738BD1BA9293200EA7E9E /* DWInstructionChildController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DWInstructionChildController.h; sourceTree = "<group>"; };
-		B0F738BE1BA9293200EA7E9E /* DWInstructionChildController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DWInstructionChildController.m; sourceTree = "<group>"; };
 		B0F738C21BA92C6D00EA7E9E /* SXQInstructionCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SXQInstructionCell.h; sourceTree = "<group>"; };
 		B0F738C31BA92C6D00EA7E9E /* SXQInstructionCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SXQInstructionCell.m; sourceTree = "<group>"; };
 		B0F738C41BA92C6D00EA7E9E /* SXQInstructionCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SXQInstructionCell.xib; sourceTree = "<group>"; };
@@ -1013,6 +1016,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B006ABC21C0552D7008C6C76 /* Foundation.framework in Frameworks */,
+				B0F939DE1BA1678900D093F9 /* CFNetwork.framework in Frameworks */,
 				B05855DB1BEAFC73006C29AC /* XCTest.framework in Frameworks */,
 				B0F939F41BA1681900D093F9 /* QuartzCore.framework in Frameworks */,
 				B0F939F21BA1680C00D093F9 /* libz.1.2.5.dylib in Frameworks */,
@@ -1025,7 +1030,6 @@
 				B0F939E41BA167A700D093F9 /* CoreLocation.framework in Frameworks */,
 				B0F939E21BA1679E00D093F9 /* StoreKit.framework in Frameworks */,
 				B0F939E01BA1679300D093F9 /* CoreGraphics.framework in Frameworks */,
-				B0F939DE1BA1678900D093F9 /* CFNetwork.framework in Frameworks */,
 				B0F939DC1BA1678000D093F9 /* Accounts.framework in Frameworks */,
 				B0F939DA1BA1677800D093F9 /* AudioToolbox.framework in Frameworks */,
 				B0F939D81BA1676600D093F9 /* Social.framework in Frameworks */,
@@ -1074,6 +1078,7 @@
 		AA59C8EF080EA844EB02887B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				B06D817D1C05515400C0C20D /* Foundation.framework */,
 				B05855DA1BEAFC6F006C29AC /* XCTest.framework */,
 				B0F939F31BA1681900D093F9 /* QuartzCore.framework */,
 				B0F939F11BA1680C00D093F9 /* libz.1.2.5.dylib */,
@@ -1140,6 +1145,16 @@
 				B0026BF31BCF8AB900FB70A9 /* SXQReagentMap.m */,
 			);
 			name = Supplier;
+			sourceTree = "<group>";
+		};
+		B006ABD01C05777C008C6C76 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				B006ABD41C0577B2008C6C76 /* DWMeService.h */,
+				B006ABD11C057796008C6C76 /* DWMeServiceImpl.h */,
+				B006ABD21C057796008C6C76 /* DWMeServiceImpl.m */,
+			);
+			path = Service;
 			sourceTree = "<group>";
 		};
 		B01383171C02B4E400F37F76 /* 已完成 */ = {
@@ -1906,12 +1921,8 @@
 		B0C73C8F1B92F39E00F4B6D2 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				B0F738B21BA9018400EA7E9E /* SXQMenuViewController.h */,
-				B0F738B31BA9018400EA7E9E /* SXQMenuViewController.m */,
 				B0F738B51BA9025200EA7E9E /* DWInstructionController.h */,
 				B0F738B61BA9025200EA7E9E /* DWInstructionController.m */,
-				B0F738BD1BA9293200EA7E9E /* DWInstructionChildController.h */,
-				B0F738BE1BA9293200EA7E9E /* DWInstructionChildController.m */,
 				B06239461B9587C100F0CAFB /* SXQInstructionListController.h */,
 				B06239471B9587C100F0CAFB /* SXQInstructionListController.m */,
 				B08E7C511BB23F320023893B /* SXQInstructionDetailController.h */,
@@ -1955,9 +1966,6 @@
 				B0A1E5181B95897200440141 /* SXQListCell.h */,
 				B0A1E5191B95897200440141 /* SXQListCell.m */,
 				B0A1E51A1B95897200440141 /* SXQListCell.xib */,
-				B0F738B81BA90F6500EA7E9E /* SXQMenuCell.h */,
-				B0F738B91BA90F6500EA7E9E /* SXQMenuCell.m */,
-				B0F738BA1BA90F6500EA7E9E /* SXQMenuCell.xib */,
 				B0F738C21BA92C6D00EA7E9E /* SXQInstructionCell.h */,
 				B0F738C31BA92C6D00EA7E9E /* SXQInstructionCell.m */,
 				B0F738C41BA92C6D00EA7E9E /* SXQInstructionCell.xib */,
@@ -1967,7 +1975,6 @@
 				B08E7C651BB25C070023893B /* SXQSingleContentCell.h */,
 				B08E7C661BB25C070023893B /* SXQSingleContentCell.m */,
 				B08E7C671BB25C070023893B /* SXQSingleContentCell.xib */,
-				B0F115F11BB39B2300BA9633 /* ActionView */,
 				B0C168221BEC913300E85361 /* SXQCommentView.h */,
 				B0C168231BEC913300E85361 /* SXQCommentView.m */,
 				B0C168241BEC913300E85361 /* SXQCommentView.xib */,
@@ -1984,6 +1991,7 @@
 		B0C73C951B92F39E00F4B6D2 /* Me(我) */ = {
 			isa = PBXGroup;
 			children = (
+				B006ABD01C05777C008C6C76 /* Service */,
 				B0C73C961B92F39E00F4B6D2 /* Controller */,
 				B0C73C971B92F39E00F4B6D2 /* Model */,
 				B0C73C981B92F39E00F4B6D2 /* Other */,
@@ -2002,6 +2010,12 @@
 				B03F97B51BA299F8009FD1B4 /* SXQLoginViewController.xib */,
 				B079CE601BE9D77500CD54A9 /* SXQSettingController.h */,
 				B079CE611BE9D77500CD54A9 /* SXQSettingController.m */,
+				B006ABC31C055B29008C6C76 /* DWMeViewController.h */,
+				B006ABC41C055B29008C6C76 /* DWMeViewController.m */,
+				B006ABDA1C058933008C6C76 /* DWMeInstructionsController.h */,
+				B006ABDB1C058933008C6C76 /* DWMeInstructionsController.m */,
+				B006ABE21C05A071008C6C76 /* DWMeEditController.h */,
+				B006ABE31C05A071008C6C76 /* DWMeEditController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -2013,6 +2027,8 @@
 				B079CE661BE9DF1D00CD54A9 /* SXQSettingItem.m */,
 				B079CE681BE9DF6F00CD54A9 /* SXQSettingArrowItem.h */,
 				B079CE691BE9DF6F00CD54A9 /* SXQSettingArrowItem.m */,
+				B006ABCD1C057704008C6C76 /* DWMeItem.h */,
+				B006ABCE1C057704008C6C76 /* DWMeItem.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -2035,6 +2051,15 @@
 				B079CE5B1BE9D49C00CD54A9 /* SXQSettingCell.h */,
 				B079CE5C1BE9D49C00CD54A9 /* SXQSettingCell.m */,
 				B079CE5D1BE9D49C00CD54A9 /* SXQSettingCell.xib */,
+				B006ABC61C055BC7008C6C76 /* DWMeHeader.h */,
+				B006ABC71C055BC7008C6C76 /* DWMeHeader.m */,
+				B006ABC91C055BD2008C6C76 /* DWMeHeader.xib */,
+				B006ABD51C057A30008C6C76 /* DWMeCell.h */,
+				B006ABD61C057A30008C6C76 /* DWMeCell.m */,
+				B006ABD71C057A30008C6C76 /* DWMeCell.xib */,
+				B006ABDD1C05945E008C6C76 /* DWMeInstructionCell.h */,
+				B006ABDE1C05945E008C6C76 /* DWMeInstructionCell.m */,
+				B006ABDF1C05945E008C6C76 /* DWMeInstructionCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -2104,6 +2129,7 @@
 				B0C73CAB1B92F39E00F4B6D2 /* Plist */,
 				B079CE631BE9D7F400CD54A9 /* setting.plist */,
 				B054C17C1BFC565A009662D6 /* signup.plist */,
+				B006ABCB1C0575F3008C6C76 /* me.plist */,
 			);
 			path = "Resources(资源)";
 			sourceTree = "<group>";
@@ -2219,20 +2245,6 @@
 			path = View;
 			sourceTree = "<group>";
 		};
-		B0F115F11BB39B2300BA9633 /* ActionView */ = {
-			isa = PBXGroup;
-			children = (
-				B08E7C6F1BB27A0B0023893B /* DWInstructionActionView.h */,
-				B08E7C701BB27A0B0023893B /* DWInstructionActionView.m */,
-				B08E7C721BB27A2A0023893B /* DWInstructionActionView.xib */,
-				B08E7C741BB27A9A0023893B /* DWActionButton.h */,
-				B08E7C751BB27A9A0023893B /* DWActionButton.m */,
-				B0F115EE1BB395D500BA9633 /* DWActionSheet.h */,
-				B0F115EF1BB395D500BA9633 /* DWActionSheet.m */,
-			);
-			name = ActionView;
-			sourceTree = "<group>";
-		};
 		B0F308611BC6016E00AD9EAF /* MJPhotoBrowser */ = {
 			isa = PBXGroup;
 			children = (
@@ -2315,9 +2327,6 @@
 				B0221C6C1BFB2A4300DB4083 /* SXQVenderLogin.h */,
 				B0221C6D1BFB2A4300DB4083 /* SXQVenderLogin.m */,
 				B0221C6E1BFB2A4300DB4083 /* SXQVenderLogin.xib */,
-				B0F18C181BD5D2220025DE73 /* SXQSignUpView.h */,
-				B0F18C191BD5D2220025DE73 /* SXQSignUpView.m */,
-				B0F18C1B1BD5D2470025DE73 /* SXQSignUpView.xib */,
 				B0F5B8A61BD87842005D6AE4 /* SXQLoginContainer.h */,
 				B0F5B8A71BD87842005D6AE4 /* SXQLoginContainer.m */,
 				B0F5B8A91BD87DC8005D6AE4 /* SXQLoginContainer.xib */,
@@ -2393,9 +2402,6 @@
 			children = (
 				B0F64C2D1BAFBD77001CF997 /* MZTimerLabel.h */,
 				B0F64C2E1BAFBD77001CF997 /* MZTimerLabel.m */,
-				B0F64C2F1BAFBD77001CF997 /* TimeRecorder.h */,
-				B0F64C301BAFBD77001CF997 /* TimeRecorder.m */,
-				B0F64C311BAFBD77001CF997 /* TimeRecorder.xib */,
 			);
 			path = Time;
 			sourceTree = "<group>";
@@ -2630,6 +2636,7 @@
 				TargetAttributes = {
 					B0A05F1A1B92871300EAEBF2 = {
 						CreatedOnToolsVersion = 6.4;
+						DevelopmentTeam = YRU347Q8E5;
 					};
 					B0A05F331B92871300EAEBF2 = {
 						CreatedOnToolsVersion = 6.4;
@@ -2676,21 +2683,21 @@
 				B0F738C61BA92C6D00EA7E9E /* SXQInstructionCell.xib in Resources */,
 				B0276F8F1BFDE53C00651C23 /* DWSignUpCell.xib in Resources */,
 				B0C73CD61B93369A00F4B6D2 /* Main.storyboard in Resources */,
-				B0F64C341BAFBD77001CF997 /* TimeRecorder.xib in Resources */,
 				B013832A1C02D8AF00F37F76 /* DWStarView.xib in Resources */,
 				B0A270FF1BD73B5C00BA0C1B /* Info.plist in Resources */,
 				B0A1E51C1B95897200440141 /* SXQListCell.xib in Resources */,
 				B0221C6B1BFB1EC000DB4083 /* DWLoginViewController.xib in Resources */,
 				B0F73BA11BBBA97800B3D0A0 /* SXQReagentCell.xib in Resources */,
 				B013832F1C02DCC300F37F76 /* DWCommentCell.xib in Resources */,
+				B006ABCA1C055BD2008C6C76 /* DWMeHeader.xib in Resources */,
 				B08E7C691BB25C070023893B /* SXQSingleContentCell.xib in Resources */,
 				B0221C771BFB2B3E00DB4083 /* SXQVenderView.xib in Resources */,
+				B006ABE11C05945E008C6C76 /* DWMeInstructionCell.xib in Resources */,
 				B0DDFF2E1BA6A07000E4AB3C /* SXQReagentContoller.xib in Resources */,
 				B0F939CB1BA166F900D093F9 /* WeiboSDK.bundle in Resources */,
 				B062E2911BF9BAEE00A7C0FB /* DWInstructionDetailCell.xib in Resources */,
 				B0DDFF191BA67FFE00E4AB3C /* SXQEquipMentCell.xib in Resources */,
 				B0C167F91BEC724B00E85361 /* SXQCommentCell.xib in Resources */,
-				B0F738BC1BA90F6500EA7E9E /* SXQMenuCell.xib in Resources */,
 				B079CE641BE9D7F400CD54A9 /* setting.plist in Resources */,
 				B05CB4CB1BB3C58A0041845B /* mysql.sql in Resources */,
 				B079CE5F1BE9D49C00CD54A9 /* SXQSettingCell.xib in Resources */,
@@ -2702,9 +2709,9 @@
 				B0F6B1841BC7AB860090E398 /* SXQAddExpController.xib in Resources */,
 				B08E7C641BB25BCA0023893B /* SXQInstrutionCell.xib in Resources */,
 				B0A2711A1BD768C900BA0C1B /* SXQCountTimeView.xib in Resources */,
-				B08E7C731BB27A2A0023893B /* DWInstructionActionView.xib in Resources */,
 				B0DDFF291BA69E7C00E4AB3C /* SXQSegmentedControll.xib in Resources */,
 				B0C168261BEC913300E85361 /* SXQCommentView.xib in Resources */,
+				B006ABCC1C0575F3008C6C76 /* me.plist in Resources */,
 				B0F939C61BA166F800D093F9 /* Resource.bundle in Resources */,
 				B01383151C02AD2300F37F76 /* DWEditStepController.xib in Resources */,
 				B0F5B8AA1BD87DC8005D6AE4 /* SXQLoginContainer.xib in Resources */,
@@ -2718,9 +2725,9 @@
 				B0DDFF361BA6AF8F00E4AB3C /* SXQAnnotationView.xib in Resources */,
 				B0DEFB371BF592BF00CF44AB /* DWDoingCell.xib in Resources */,
 				B0F5662B1BA7E2D400BA1F7B /* SXQMyInstructionCell.xib in Resources */,
+				B006ABD91C057A30008C6C76 /* DWMeCell.xib in Resources */,
 				B0665B911BF586040021E752 /* DWDoingActionBar.xib in Resources */,
 				B0E46F3A1BDCE32C00B1F2D8 /* DWExperimentToolBar.xib in Resources */,
-				B0F18C1C1BD5D2470025DE73 /* SXQSignUpView.xib in Resources */,
 				B0F845411BE07CAE00BC539A /* DWConsultDetailController.xib in Resources */,
 				B0026BE41BCF754900FB70A9 /* SXQSupplierCell.xib in Resources */,
 				B01383341C03056500F37F76 /* DWReportViewController.xib in Resources */,
@@ -2806,7 +2813,6 @@
 				B0026BE31BCF754900FB70A9 /* SXQSupplierCell.m in Sources */,
 				B0A3D9561BFEF43A00D7BB4E /* DWReagentAmountCell.m in Sources */,
 				B0F308941BC6016E00AD9EAF /* MJPhotoToolbar.m in Sources */,
-				B0F115F01BB395D500BA9633 /* DWActionSheet.m in Sources */,
 				B0F73BBA1BBBC1BE00B3D0A0 /* SXQSupplierListData.m in Sources */,
 				B0026BF71BCF8D4600FB70A9 /* SXQConsumable.m in Sources */,
 				B0DDFF0C1BA6679500E4AB3C /* DWGroup.m in Sources */,
@@ -2814,15 +2820,18 @@
 				B054C16C1BFC212F009662D6 /* DWInstructionMainHeader.m in Sources */,
 				B013831F1C02B57800F37F76 /* DWDoneServiceImpl.m in Sources */,
 				B0C73CAF1B92F39E00F4B6D2 /* AppDelegate.m in Sources */,
+				B006ABDC1C058933008C6C76 /* DWMeInstructionsController.m in Sources */,
 				B0221C571BFB182200DB4083 /* SXQReview.m in Sources */,
 				B0C73CCC1B93271200F4B6D2 /* SXQGroup.m in Sources */,
 				B062E2831BF99DAA00A7C0FB /* DWInstructionDetailController.m in Sources */,
 				B0F64BD61BAF94B7001CF997 /* SXQBaseResult.m in Sources */,
+				B006ABE01C05945E008C6C76 /* DWMeInstructionCell.m in Sources */,
 				B02943401BD48A2B00736364 /* SXQReagentCountView.m in Sources */,
 				B054C18A1BFC60A4009662D6 /* DWSignUpGroup.m in Sources */,
 				B0B544C91BE6FA37003CB14F /* SXQExpPlan.m in Sources */,
 				B0C73CC41B93093B00F4B6D2 /* SXQHttpTool.m in Sources */,
 				B094C2601BFAC71400CDC289 /* DWInstructionServiceImpl.m in Sources */,
+				B006ABC51C055B29008C6C76 /* DWMeViewController.m in Sources */,
 				B079CE6A1BE9DF6F00CD54A9 /* SXQSettingArrowItem.m in Sources */,
 				B0F738C51BA92C6D00EA7E9E /* SXQInstructionCell.m in Sources */,
 				B03F97B61BA299F8009FD1B4 /* SXQLoginViewController.m in Sources */,
@@ -2857,6 +2866,7 @@
 				B0F64C321BAFBD77001CF997 /* MZTimerLabel.m in Sources */,
 				B0F6B18D1BC7BE800090E398 /* SXQExpStep.m in Sources */,
 				B007348E1BF062530020DC79 /* SXQReviewCell.m in Sources */,
+				B006ABD81C057A30008C6C76 /* DWMeCell.m in Sources */,
 				B0F4C7051BBA5714009B7B05 /* SXQSaveReagentController.m in Sources */,
 				B0F295C51BB4F3A800E20865 /* SXQInstructionManager.m in Sources */,
 				B0F73B8B1BBB762000B3D0A0 /* DWMyInstructionData.m in Sources */,
@@ -2871,10 +2881,10 @@
 				B0F762721BE1BAE300DB7CD4 /* SXQInstructionResultsController.m in Sources */,
 				B06CE1681BAAB803008BB98E /* DWContainerViewController.m in Sources */,
 				B0221C401BFB175100DB4083 /* SXQInstructionSearchImpl.m in Sources */,
-				B0F738C01BA9293200EA7E9E /* DWInstructionChildController.m in Sources */,
 				B0A271001BD73B5C00BA0C1B /* NSDate+FSExtension.m in Sources */,
 				B0A270F81BD73B5C00BA0C1B /* FSCalendar.m in Sources */,
 				B0F64C251BAFB407001CF997 /* SXQExperimentResult.m in Sources */,
+				B006ABE41C05A071008C6C76 /* DWMeEditController.m in Sources */,
 				B08404651BCBA91B00019039 /* SXQCurrentExperimentData.m in Sources */,
 				B0F308A41BC6016E00AD9EAF /* SDWebImageManager+MJ.m in Sources */,
 				B0A3D94C1BFECE2100D7BB4E /* DWProfessionsDelegate.m in Sources */,
@@ -2914,11 +2924,11 @@
 				B0F6B1831BC7AB860090E398 /* SXQAddExpController.m in Sources */,
 				B0B544CC1BE70024003CB14F /* SXQAddScheduleParam.m in Sources */,
 				B0C167E91BEC406000E85361 /* SXQTitle.m in Sources */,
+				B006ABD31C057796008C6C76 /* DWMeServiceImpl.m in Sources */,
 				B00221481BDA1E59007A41F9 /* CellContainerView.m in Sources */,
 				B0A3D9521BFEF24900D7BB4E /* DWReagentAmountViewModel.m in Sources */,
 				B0A1E51B1B95897200440141 /* SXQListCell.m in Sources */,
 				B062E2941BF9C34600A7C0FB /* DWInstructionDetailViewModel.m in Sources */,
-				B0F64C331BAFBD77001CF997 /* TimeRecorder.m in Sources */,
 				B0F8453C1BE0736E00BC539A /* DWNews.m in Sources */,
 				B0F6B17F1BC7746B0090E398 /* SXQSupplier.m in Sources */,
 				B08E7C631BB25BCA0023893B /* SXQInstrutionCell.m in Sources */,
@@ -2932,9 +2942,9 @@
 				B0A270FD1BD73B5C00BA0C1B /* FSCalendarHeaderTouchDeliver.m in Sources */,
 				B0DEFB421BF5AABB00CF44AB /* DWDoingViewModelToolImpl.m in Sources */,
 				B0A3D9491BFEBB1C00D7BB4E /* DWSchoolPickerDelegate.m in Sources */,
-				B0F738B41BA9018400EA7E9E /* SXQMenuViewController.m in Sources */,
 				B0FE89711BD9C71E00999DE2 /* DWExperimentCell.m in Sources */,
 				B0F6B1871BC7BBA50090E398 /* SXQExpConsumable.m in Sources */,
+				B006ABCF1C057704008C6C76 /* DWMeItem.m in Sources */,
 				B0F845451BE0B79F00BC539A /* NSString+Base64.m in Sources */,
 				B0B544CF1BE708A1003CB14F /* SXQAddScheduleController.m in Sources */,
 				B0F308C61BC65C0300AD9EAF /* MBProgressHUD+MJ.m in Sources */,
@@ -2977,7 +2987,6 @@
 				B0F308601BC6012200AD9EAF /* PhotoContainer.m in Sources */,
 				B0E054B71B9470AD00C7F9D0 /* SXQNavgationController.m in Sources */,
 				B0221C471BFB177D00DB4083 /* SXQExpSubCategory.m in Sources */,
-				B0F738BB1BA90F6500EA7E9E /* SXQMenuCell.m in Sources */,
 				B0221C591BFB182200DB4083 /* SXQReviewItem.m in Sources */,
 				B003A2921BDF5D9900E2B282 /* DWMyExperimentServicesImpl.m in Sources */,
 				B0026BF41BCF8AB900FB70A9 /* SXQReagentMap.m in Sources */,
@@ -2986,7 +2995,6 @@
 				B0A270FC1BD73B5C00BA0C1B /* FSCalendarHeader.m in Sources */,
 				B0DEFB3A1BF5A9F800CF44AB /* DWDoingViewModelServiceImpl.m in Sources */,
 				B0A270DD1BD7386200BA0C1B /* SXQScheduleController.m in Sources */,
-				B08E7C711BB27A0B0023893B /* DWInstructionActionView.m in Sources */,
 				B01B429E1BFC728E006A1F80 /* DWSignUpHeader.m in Sources */,
 				B0F308BA1BC61E7000AD9EAF /* NSString+Date.m in Sources */,
 				B054C1781BFC469F009662D6 /* DWSubInstructionController.m in Sources */,
@@ -2994,16 +3002,15 @@
 				B0F845401BE07CAE00BC539A /* DWConsultDetailController.m in Sources */,
 				B0F308951BC6016E00AD9EAF /* MJPhotoView.m in Sources */,
 				B0A270FB1BD73B5C00BA0C1B /* FSCalendarConstance.m in Sources */,
-				B08E7C761BB27A9A0023893B /* DWActionButton.m in Sources */,
 				B0F73B991BBB8D5C00B3D0A0 /* SXQReagentListController.m in Sources */,
 				B062E29B1BF9D1FE00A7C0FB /* DWInstructionDisclosure.m in Sources */,
 				B0F505401BABB0A900B88A3D /* SXQExperimentStep.m in Sources */,
 				B0C167EC1BEC40EF00E85361 /* SXQProfession.m in Sources */,
-				B0F18C1A1BD5D2220025DE73 /* SXQSignUpView.m in Sources */,
 				B0F566311BA7EF4000BA1F7B /* SXQAdjacentUser.m in Sources */,
 				B0F18C241BD5FF7F0025DE73 /* DWSignUpController.m in Sources */,
 				B0F295C21BB4ED9400E20865 /* SXQDBManager.m in Sources */,
 				B0E46F351BDC72E300B1F2D8 /* CellContainerViewModel.m in Sources */,
+				B006ABC81C055BC7008C6C76 /* DWMeHeader.m in Sources */,
 				B0DDFF091BA6664F00E4AB3C /* SXQExperimentDetailController.m in Sources */,
 				B0981F731BF1B92200925D5B /* SXQReportCell.m in Sources */,
 				B0A271151BD74E7D00BA0C1B /* SXQScheduleParam.m in Sources */,
@@ -3160,7 +3167,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Wei Feng Hou (W5X736XVC4)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(PROJECT_DIR)/实验助手/Vender(第三方)",
@@ -3207,7 +3214,7 @@
 					"-framework",
 					"\"UIKit\"",
 				);
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "实验助手";
 				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
@@ -3218,7 +3225,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Wei Feng Hou (W5X736XVC4)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(PROJECT_DIR)/实验助手/Vender(第三方)",
@@ -3265,7 +3272,7 @@
 					"-framework",
 					"\"UIKit\"",
 				);
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "实验助手";
 				PROVISIONING_PROFILE = "";
 			};
 			name = Release;

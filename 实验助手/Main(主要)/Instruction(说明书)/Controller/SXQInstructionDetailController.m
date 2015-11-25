@@ -15,7 +15,6 @@
 #import "SXQExpEquipment.h"
 
 #import "UIBarButtonItem+MJ.h"
-#import "DWActionSheet.h"
 #import <ReactiveCocoa/ReactiveCocoa.h>
 #import "SXQInstructionDetail.h"
 #import "InstructionTool.h"
@@ -26,7 +25,6 @@
 #import "SXQInstructionStep.h"
 #import "SXQInstructionStepCell.h"
 #import "SXQSingleContentCell.h"
-#import "DWInstructionActionView.h"
 #import "SXQInstructionServiceImpl.h"
 #define SupplierIdentifier @"Supplier Cell"
 #define StepCellIdentifier @"Instruction Step Cell"

@@ -33,6 +33,6 @@
     }];
     
     self.downLoadBtn.rac_command = self.viewModel.downloadCommand;
-    RAC(self.downLoadBtn,hidden) = [[self.viewModel.downloadCommand.executing takeUntil:self.rac_prepareForReuseSignal] delay:3];
+//    RAC(self.downLoadBtn,hidden) = [[self.viewModel.downloadCommand.executing takeUntil:self.rac_prepareForReuseSignal] delay:3];
 }
 @end

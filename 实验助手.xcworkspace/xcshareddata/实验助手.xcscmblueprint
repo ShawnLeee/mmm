@@ -4,12 +4,12 @@
 
   },
   "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
-    "80DDD3EB9AC942323AA12455BC0A183C64CCE5C2" : 0,
+    "895F425CB98C1E83CDD2050FFB1D4997B02E669E" : 0,
     "85AAC71C71F276111FDC68FCDDD9E6ECF9F2452A" : 0
   },
   "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "8D9F0B13-D33D-4D8A-A8E2-EE652262018D",
   "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
-    "80DDD3EB9AC942323AA12455BC0A183C64CCE5C2" : "%E5%AE%9E%E9%AA%8C%E5%8A%A9%E6%89%8B",
+    "895F425CB98C1E83CDD2050FFB1D4997B02E669E" : "%E5%AE%9E%E9%AA%8C%E5%8A%A9%E6%89%8B",
     "85AAC71C71F276111FDC68FCDDD9E6ECF9F2452A" : "LAB\/"
   },
   "DVTSourceControlWorkspaceBlueprintNameKey" : "实验助手",
@@ -17,14 +17,14 @@
   "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "实验助手.xcworkspace",
   "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
     {
-      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "github.com:ShawnLeee\/LabAssistant.git",
-      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
-      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "80DDD3EB9AC942323AA12455BC0A183C64CCE5C2"
-    },
-    {
       "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/ShawnLeee\/LAB.git",
       "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
       "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "85AAC71C71F276111FDC68FCDDD9E6ECF9F2452A"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "github.com:ShawnLeee\/LabAssistant.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "895F425CB98C1E83CDD2050FFB1D4997B02E669E"
     }
   ]
 }

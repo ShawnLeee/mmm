@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="8191" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="DWMeInstructionCell" rowHeight="90" id="KGk-i7-Jjw" customClass="DWMeInstructionCell">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="90"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="89"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hfX-CQ-Lbh">
+                        <rect key="frame" x="10" y="10" width="42" height="21"/>
+                        <animations/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="厂商:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M3S-mT-8Qt">
+                        <rect key="frame" x="10" y="37" width="35" height="18"/>
+                        <animations/>
+                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                        <color key="textColor" red="0.80000001190000003" green="0.80000001190000003" blue="0.80000001190000003" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalCompressionResistancePriority="749" verticalCompressionResistancePriority="749" text="货号:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cG9-4d-5Q1">
+                        <rect key="frame" x="10" y="63" width="35" height="16"/>
+                        <animations/>
+                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                        <color key="textColor" red="0.80000001190000003" green="0.80000001190000003" blue="0.80000001190000003" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="厂商:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SYL-y5-UQQ">
+                        <rect key="frame" x="55" y="37" width="35" height="18"/>
+                        <animations/>
+                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                        <color key="textColor" red="0.80000001190000003" green="0.80000001190000003" blue="0.80000001190000003" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="厂商:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l4C-rU-dxJ">
+                        <rect key="frame" x="55" y="62" width="35" height="18"/>
+                        <animations/>
+                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                        <color key="textColor" red="0.80000001190000003" green="0.80000001190000003" blue="0.80000001190000003" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="settings_statistic_form_background_line" translatesAutoresizingMaskIntoConstraints="NO" id="u8m-Xk-i6S">
+                        <rect key="frame" x="0.0" y="87" width="320" height="2"/>
+                        <animations/>
+                    </imageView>
+                </subviews>
+                <animations/>
+                <constraints>
+                    <constraint firstAttribute="bottom" secondItem="cG9-4d-5Q1" secondAttribute="bottom" constant="10" id="5DJ-D1-IGM"/>
+                    <constraint firstItem="l4C-rU-dxJ" firstAttribute="centerY" secondItem="cG9-4d-5Q1" secondAttribute="centerY" id="A2F-sh-8gw"/>
+                    <constraint firstAttribute="bottom" secondItem="u8m-Xk-i6S" secondAttribute="bottom" id="F5J-T7-pBq"/>
+                    <constraint firstItem="M3S-mT-8Qt" firstAttribute="leading" secondItem="hfX-CQ-Lbh" secondAttribute="leading" id="F8B-WC-RDI"/>
+                    <constraint firstAttribute="trailing" secondItem="u8m-Xk-i6S" secondAttribute="trailing" id="M32-KO-Fk8"/>
+                    <constraint firstItem="cG9-4d-5Q1" firstAttribute="top" secondItem="M3S-mT-8Qt" secondAttribute="bottom" constant="8" id="MqP-eb-V7g"/>
+                    <constraint firstItem="SYL-y5-UQQ" firstAttribute="leading" secondItem="M3S-mT-8Qt" secondAttribute="trailing" constant="10" id="Qga-0P-U8T"/>
+                    <constraint firstItem="u8m-Xk-i6S" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="bEG-oE-ize"/>
+                    <constraint firstItem="l4C-rU-dxJ" firstAttribute="leading" secondItem="cG9-4d-5Q1" secondAttribute="trailing" constant="10" id="dNp-a9-TVR"/>
+                    <constraint firstItem="hfX-CQ-Lbh" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="eee-sr-DKk"/>
+                    <constraint firstItem="cG9-4d-5Q1" firstAttribute="leading" secondItem="M3S-mT-8Qt" secondAttribute="leading" id="mVN-Ky-tHU"/>
+                    <constraint firstItem="SYL-y5-UQQ" firstAttribute="centerY" secondItem="M3S-mT-8Qt" secondAttribute="centerY" id="qfB-d6-FS1"/>
+                    <constraint firstItem="hfX-CQ-Lbh" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="qsi-bC-bsd"/>
+                    <constraint firstItem="M3S-mT-8Qt" firstAttribute="top" secondItem="hfX-CQ-Lbh" secondAttribute="bottom" constant="6" id="u3u-2v-9gA"/>
+                </constraints>
+            </tableViewCellContentView>
+            <animations/>
+            <connections>
+                <outlet property="instructionNameLabel" destination="hfX-CQ-Lbh" id="N7Q-yM-ThS"/>
+                <outlet property="productNumLabel" destination="l4C-rU-dxJ" id="WkH-EY-vtq"/>
+                <outlet property="supplierNameLabel" destination="SYL-y5-UQQ" id="Epm-SE-6mK"/>
+            </connections>
+            <point key="canvasLocation" x="510" y="387"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="settings_statistic_form_background_line" width="6" height="2"/>
+    </resources>
+</document>

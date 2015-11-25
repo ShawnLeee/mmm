@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="8191" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="8191" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -16,6 +16,7 @@
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="l" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g6L-0a-NiP">
                         <rect key="frame" x="8" y="8" width="4" height="21"/>
+                        <animations/>
                         <constraints>
                             <constraint firstAttribute="height" constant="21" id="lE0-aS-k3D"/>
                         </constraints>
@@ -25,6 +26,7 @@
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Rf-I7-sF4">
                         <rect key="frame" x="8" y="55" width="38" height="18"/>
+                        <animations/>
                         <constraints>
                             <constraint firstAttribute="height" constant="18" id="FI7-a9-OMH"/>
                         </constraints>
@@ -34,6 +36,7 @@
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SkN-ar-kOg">
                         <rect key="frame" x="8" y="33" width="38" height="18"/>
+                        <animations/>
                         <constraints>
                             <constraint firstAttribute="height" constant="18" id="RHR-OS-hMN"/>
                         </constraints>
@@ -43,6 +46,7 @@
                     </label>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xiA-ri-RLo">
                         <rect key="frame" x="336" y="28" width="30" height="30"/>
+                        <animations/>
                         <state key="normal" title="下载">
                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                         </state>
@@ -51,6 +55,7 @@
                         </connections>
                     </button>
                 </subviews>
+                <animations/>
                 <constraints>
                     <constraint firstItem="g6L-0a-NiP" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" id="MoE-i8-orG"/>
                     <constraint firstItem="g6L-0a-NiP" firstAttribute="leading" secondItem="7Rf-I7-sF4" secondAttribute="leading" id="NDX-Uc-fiZ"/>
@@ -62,6 +67,7 @@
                     <constraint firstAttribute="centerY" secondItem="xiA-ri-RLo" secondAttribute="centerY" id="u7h-po-r6X"/>
                 </constraints>
             </tableViewCellContentView>
+            <animations/>
             <connections>
                 <outlet property="downloadBtn" destination="xiA-ri-RLo" id="iLC-RD-jFS"/>
                 <outlet property="nameLabel" destination="g6L-0a-NiP" id="yHx-7y-Mdn"/>

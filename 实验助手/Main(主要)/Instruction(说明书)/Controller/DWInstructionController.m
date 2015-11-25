@@ -8,15 +8,13 @@
 #import "SXQInstructionDetailController.h"
 #import "SXQInstructionListController.h"
 #import "DWInstructionController.h"
-#import "DWInstructionChildController.h"
-#import "SXQMenuViewController.h"
 #import "SXQColor.h"
 #import "UIView+MJ.h"
 #import "UIBarButtonItem+MJ.h"
 #import "SXQExpSubCategory.h"
 #import "SXQInstructionResultsController.h"
 #import <ReactiveCocoa/ReactiveCocoa.h>
-@interface DWInstructionController ()<DWInstructionChildControllerDelegate,UISearchControllerDelegate,UISearchBarDelegate>
+@interface DWInstructionController ()<UISearchControllerDelegate,UISearchBarDelegate>
 @property (nonatomic,assign) BOOL menuFold;
 @property (nonatomic,weak) UICollectionView *centerView;
 @property (nonatomic,strong) UISearchController *searchController;
@@ -52,36 +50,36 @@
 }
 - (void)p_setup
 {
-    self.edgesForExtendedLayout = UIRectEdgeNone;
-    UIButton *button = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
-    [button addTarget:self action:@selector(menuButtonClicked) forControlEvents:UIControlEventTouchUpInside];
-    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:button];
-    
-    self.navigationItem.rightBarButtonItem = [UIBarButtonItem itemWithIcon:@"search-20x20" highIcon:nil target:self action:@selector(showSearchVC)];
-    
-    //初始化子控制器
-    //1.左侧菜单
-    SXQMenuViewController *menuVC = [SXQMenuViewController new];
-    menuVC.view.width = MJMenuWidth;
-    menuVC.view.y = 0;
-    menuVC.view.height = self.view.frame.size.height;
-    [self.view addSubview:menuVC.view];
-    [self addChildViewController:menuVC];
-    
-    //2.中间内容
-    UICollectionViewFlowLayout *layout = [[UICollectionViewFlowLayout alloc] init];
-    layout.scrollDirection = UICollectionViewScrollDirectionVertical;
-    layout.itemSize = CGSizeMake(80, 80);
-    DWInstructionChildController *centerVC = [[DWInstructionChildController alloc] initWithCollectionViewLayout:layout];
-    centerVC.collectionView.frame = CGRectOffset(self.view.bounds, MJMenuWidth, 0);
-    centerVC.delegate = self;
-    [self.view addSubview:centerVC.collectionView];
-    _centerView = centerVC.collectionView;
-    [self addChildViewController:centerVC];
-    
-    menuVC.delegate = centerVC;
-    // 2.监听手势
-    [_centerView addGestureRecognizer:[[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(dragView:)]];
+//    self.edgesForExtendedLayout = UIRectEdgeNone;
+//    UIButton *button = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
+//    [button addTarget:self action:@selector(menuButtonClicked) forControlEvents:UIControlEventTouchUpInside];
+//    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:button];
+//    
+//    self.navigationItem.rightBarButtonItem = [UIBarButtonItem itemWithIcon:@"search-20x20" highIcon:nil target:self action:@selector(showSearchVC)];
+//    
+//    //初始化子控制器
+//    //1.左侧菜单
+//    SXQMenuViewController *menuVC = [SXQMenuViewController new];
+//    menuVC.view.width = MJMenuWidth;
+//    menuVC.view.y = 0;
+//    menuVC.view.height = self.view.frame.size.height;
+//    [self.view addSubview:menuVC.view];
+//    [self addChildViewController:menuVC];
+//    
+//    //2.中间内容
+//    UICollectionViewFlowLayout *layout = [[UICollectionViewFlowLayout alloc] init];
+//    layout.scrollDirection = UICollectionViewScrollDirectionVertical;
+//    layout.itemSize = CGSizeMake(80, 80);
+//    DWInstructionChildController *centerVC = [[DWInstructionChildController alloc] initWithCollectionViewLayout:layout];
+//    centerVC.collectionView.frame = CGRectOffset(self.view.bounds, MJMenuWidth, 0);
+//    centerVC.delegate = self;
+//    [self.view addSubview:centerVC.collectionView];
+//    _centerView = centerVC.collectionView;
+//    [self addChildViewController:centerVC];
+//    
+//    menuVC.delegate = centerVC;
+//    // 2.监听手势
+//    [_centerView addGestureRecognizer:[[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(dragView:)]];
 }
 - (void)showSearchVC
 {
@@ -137,12 +135,12 @@
 }
 
 #pragma mark instuctionController Delegate Method
-- (void)instructionController:(DWInstructionChildController *)vc SelectedItem:(SXQExpSubCategory *)item
-{
-    SXQInstructionListController *listVC = [SXQInstructionListController new];
-    listVC.categoryItem = item;
-    [self.navigationController pushViewController:listVC  animated:YES];
-}
+//- (void)instructionController:(DWInstructionChildController *)vc SelectedItem:(SXQExpSubCategory *)item
+//{
+//    SXQInstructionListController *listVC = [SXQInstructionListController new];
+//    listVC.categoryItem = item;
+//    [self.navigationController pushViewController:listVC  animated:YES];
+//}
 //- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 //{
 //    SXQInstructionDetailController *detailVC = [[SXQInstructionDetailController alloc] initWithInstruction:nil];

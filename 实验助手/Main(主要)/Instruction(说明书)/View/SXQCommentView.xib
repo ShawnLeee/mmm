@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="8191" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SXQCommentView">
             <connections>
-                <outlet property="stackView" destination="qkx-md-Mkt" id="Gqe-I4-IBg"/>
                 <outlet property="view" destination="iN0-l3-epB" id="dKw-1u-dmV"/>
                 <outletCollection property="starButtons" destination="OWO-f4-Q4i" id="8TN-6L-vsX"/>
                 <outletCollection property="starButtons" destination="P6l-1o-2Y9" id="ab7-fg-kUh"/>
@@ -20,65 +20,70 @@
             <rect key="frame" x="0.0" y="0.0" width="443" height="38"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="qkx-md-Mkt">
-                    <rect key="frame" x="0.0" y="0.0" width="443" height="38"/>
-                    <subviews>
-                        <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OWO-f4-Q4i">
-                            <rect key="frame" x="0.0" y="0.0" width="27" height="38"/>
-                            <animations/>
-                            <state key="normal" image="star_notrated"/>
-                            <state key="selected" image="star_imdb"/>
-                            <connections>
-                                <action selector="didClickStarButton:" destination="-1" eventType="touchUpInside" id="XrH-vi-fyE"/>
-                            </connections>
-                        </button>
-                        <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="P6l-1o-2Y9">
-                            <rect key="frame" x="104" y="0.0" width="27" height="38"/>
-                            <animations/>
-                            <state key="normal" image="star_notrated"/>
-                            <state key="selected" image="star_imdb"/>
-                            <connections>
-                                <action selector="didClickStarButton:" destination="-1" eventType="touchUpInside" id="ENp-1h-YlF"/>
-                            </connections>
-                        </button>
-                        <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gdg-bd-Mdo">
-                            <rect key="frame" x="208" y="0.0" width="27" height="38"/>
-                            <animations/>
-                            <state key="normal" image="star_notrated"/>
-                            <state key="selected" image="star_imdb"/>
-                            <connections>
-                                <action selector="didClickStarButton:" destination="-1" eventType="touchUpInside" id="68I-I5-Wec"/>
-                            </connections>
-                        </button>
-                        <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XI1-jW-6Ms">
-                            <rect key="frame" x="312" y="0.0" width="27" height="38"/>
-                            <animations/>
-                            <state key="normal" image="star_notrated"/>
-                            <state key="selected" image="star_imdb"/>
-                            <connections>
-                                <action selector="didClickStarButton:" destination="-1" eventType="touchUpInside" id="6dM-WX-MDB"/>
-                            </connections>
-                        </button>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2cb-ks-spL">
-                            <rect key="frame" x="416" y="0.0" width="27" height="38"/>
-                            <animations/>
-                            <state key="normal" image="star_notrated"/>
-                            <state key="selected" image="star_imdb"/>
-                            <connections>
-                                <action selector="didClickStarButton:" destination="-1" eventType="touchUpInside" id="VtM-W2-Y7L"/>
-                            </connections>
-                        </button>
-                    </subviews>
+                <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OWO-f4-Q4i">
+                    <rect key="frame" x="0.0" y="0.0" width="27" height="38"/>
                     <animations/>
-                </stackView>
+                    <state key="normal" image="star_notrated"/>
+                    <state key="selected" image="star_imdb"/>
+                    <connections>
+                        <action selector="didClickStarButton:" destination="-1" eventType="touchUpInside" id="XrH-vi-fyE"/>
+                    </connections>
+                </button>
+                <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="P6l-1o-2Y9">
+                    <rect key="frame" x="27" y="0.0" width="27" height="38"/>
+                    <animations/>
+                    <state key="normal" image="star_notrated"/>
+                    <state key="selected" image="star_imdb"/>
+                    <connections>
+                        <action selector="didClickStarButton:" destination="-1" eventType="touchUpInside" id="ENp-1h-YlF"/>
+                    </connections>
+                </button>
+                <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gdg-bd-Mdo">
+                    <rect key="frame" x="54" y="0.0" width="27" height="38"/>
+                    <animations/>
+                    <state key="normal" image="star_notrated"/>
+                    <state key="selected" image="star_imdb"/>
+                    <connections>
+                        <action selector="didClickStarButton:" destination="-1" eventType="touchUpInside" id="68I-I5-Wec"/>
+                    </connections>
+                </button>
+                <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XI1-jW-6Ms">
+                    <rect key="frame" x="81" y="0.0" width="27" height="38"/>
+                    <animations/>
+                    <state key="normal" image="star_notrated"/>
+                    <state key="selected" image="star_imdb"/>
+                    <connections>
+                        <action selector="didClickStarButton:" destination="-1" eventType="touchUpInside" id="6dM-WX-MDB"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2cb-ks-spL">
+                    <rect key="frame" x="108" y="0.0" width="27" height="38"/>
+                    <animations/>
+                    <state key="normal" image="star_notrated"/>
+                    <state key="selected" image="star_imdb"/>
+                    <connections>
+                        <action selector="didClickStarButton:" destination="-1" eventType="touchUpInside" id="VtM-W2-Y7L"/>
+                    </connections>
+                </button>
             </subviews>
             <animations/>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
-                <constraint firstAttribute="bottom" secondItem="qkx-md-Mkt" secondAttribute="bottom" id="4w7-sg-Raf"/>
-                <constraint firstItem="qkx-md-Mkt" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="EZU-C8-zP7"/>
-                <constraint firstItem="qkx-md-Mkt" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="dzL-vn-Dbq"/>
-                <constraint firstAttribute="trailing" secondItem="qkx-md-Mkt" secondAttribute="trailing" id="zb0-88-eKe"/>
+                <constraint firstItem="2cb-ks-spL" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="1JC-6B-bBt"/>
+                <constraint firstAttribute="bottom" secondItem="OWO-f4-Q4i" secondAttribute="bottom" id="3Lj-gh-gfb"/>
+                <constraint firstItem="Gdg-bd-Mdo" firstAttribute="leading" secondItem="P6l-1o-2Y9" secondAttribute="trailing" id="6zr-St-ZvC"/>
+                <constraint firstAttribute="bottom" secondItem="Gdg-bd-Mdo" secondAttribute="bottom" id="Gyc-qS-f9b"/>
+                <constraint firstItem="XI1-jW-6Ms" firstAttribute="leading" secondItem="Gdg-bd-Mdo" secondAttribute="trailing" id="O6O-ob-8bv"/>
+                <constraint firstItem="XI1-jW-6Ms" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="UpW-wm-He5"/>
+                <constraint firstAttribute="bottom" secondItem="P6l-1o-2Y9" secondAttribute="bottom" id="eap-Or-aps"/>
+                <constraint firstItem="OWO-f4-Q4i" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="fln-W7-Boy"/>
+                <constraint firstItem="P6l-1o-2Y9" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="i7i-rQ-AA4"/>
+                <constraint firstItem="P6l-1o-2Y9" firstAttribute="leading" secondItem="OWO-f4-Q4i" secondAttribute="trailing" id="liA-Aj-z1h"/>
+                <constraint firstItem="Gdg-bd-Mdo" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="lmy-f9-FCb"/>
+                <constraint firstAttribute="bottom" secondItem="XI1-jW-6Ms" secondAttribute="bottom" id="qCZ-xc-kAB"/>
+                <constraint firstItem="2cb-ks-spL" firstAttribute="leading" secondItem="XI1-jW-6Ms" secondAttribute="trailing" id="rjB-Eb-C1B"/>
+                <constraint firstAttribute="bottom" secondItem="2cb-ks-spL" secondAttribute="bottom" id="rmt-jZ-Rv6"/>
+                <constraint firstItem="OWO-f4-Q4i" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="sL1-fH-BGJ"/>
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
