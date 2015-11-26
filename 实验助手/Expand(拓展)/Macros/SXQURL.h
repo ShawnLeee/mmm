@@ -83,4 +83,5 @@ typedef NS_ENUM(NSUInteger,LABResponseType)
 //学校列表
 #define SchoolURL @"http://hualang.wicp.net:8090/LabAssistant/myInfo/colleges"
 #define ProfessionURL @"http://hualang.wicp.net:8090/LabAssistant/myInfo/educations"
+#define UserInfoURL @"http://172.18.1.55:8080/LabAssistant/myInfo/basic"
 #endif

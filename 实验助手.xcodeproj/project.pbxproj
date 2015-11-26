@@ -112,6 +112,10 @@
 		B062E2941BF9C34600A7C0FB /* DWInstructionDetailViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B062E2931BF9C34600A7C0FB /* DWInstructionDetailViewModel.m */; };
 		B062E29B1BF9D1FE00A7C0FB /* DWInstructionDisclosure.m in Sources */ = {isa = PBXBuildFile; fileRef = B062E2991BF9D1FE00A7C0FB /* DWInstructionDisclosure.m */; };
 		B062E29C1BF9D1FE00A7C0FB /* DWInstructionDisclosure.xib in Resources */ = {isa = PBXBuildFile; fileRef = B062E29A1BF9D1FE00A7C0FB /* DWInstructionDisclosure.xib */; };
+		B0648FF81C06E1D200B9C78E /* user.plist in Resources */ = {isa = PBXBuildFile; fileRef = B0648FF71C06E1D200B9C78E /* user.plist */; settings = {ASSET_TAGS = (); }; };
+		B0648FFB1C06E44B00B9C78E /* DWUserInfoViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B0648FFA1C06E44B00B9C78E /* DWUserInfoViewModel.m */; settings = {ASSET_TAGS = (); }; };
+		B06490041C06EAA500B9C78E /* DWMeEditCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B06490021C06EAA500B9C78E /* DWMeEditCell.m */; settings = {ASSET_TAGS = (); }; };
+		B06490051C06EAA500B9C78E /* DWMeEditCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B06490031C06EAA500B9C78E /* DWMeEditCell.xib */; settings = {ASSET_TAGS = (); }; };
 		B0665B8C1BF5830B0021E752 /* DWDoingViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B0665B8B1BF5830B0021E752 /* DWDoingViewModel.m */; };
 		B0665B8F1BF585E40021E752 /* DWDoingActionBar.m in Sources */ = {isa = PBXBuildFile; fileRef = B0665B8E1BF585E40021E752 /* DWDoingActionBar.m */; };
 		B0665B911BF586040021E752 /* DWDoingActionBar.xib in Resources */ = {isa = PBXBuildFile; fileRef = B0665B901BF586040021E752 /* DWDoingActionBar.xib */; };
@@ -566,6 +570,12 @@
 		B062E2981BF9D1FE00A7C0FB /* DWInstructionDisclosure.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DWInstructionDisclosure.h; sourceTree = "<group>"; };
 		B062E2991BF9D1FE00A7C0FB /* DWInstructionDisclosure.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DWInstructionDisclosure.m; sourceTree = "<group>"; };
 		B062E29A1BF9D1FE00A7C0FB /* DWInstructionDisclosure.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DWInstructionDisclosure.xib; sourceTree = "<group>"; };
+		B0648FF71C06E1D200B9C78E /* user.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = user.plist; sourceTree = "<group>"; };
+		B0648FF91C06E44B00B9C78E /* DWUserInfoViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DWUserInfoViewModel.h; sourceTree = "<group>"; };
+		B0648FFA1C06E44B00B9C78E /* DWUserInfoViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DWUserInfoViewModel.m; sourceTree = "<group>"; };
+		B06490011C06EAA500B9C78E /* DWMeEditCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DWMeEditCell.h; sourceTree = "<group>"; };
+		B06490021C06EAA500B9C78E /* DWMeEditCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DWMeEditCell.m; sourceTree = "<group>"; };
+		B06490031C06EAA500B9C78E /* DWMeEditCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DWMeEditCell.xib; sourceTree = "<group>"; };
 		B0665B8A1BF5830B0021E752 /* DWDoingViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DWDoingViewModel.h; sourceTree = "<group>"; };
 		B0665B8B1BF5830B0021E752 /* DWDoingViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DWDoingViewModel.m; sourceTree = "<group>"; };
 		B0665B8D1BF585E40021E752 /* DWDoingActionBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DWDoingActionBar.h; sourceTree = "<group>"; };
@@ -2029,6 +2039,8 @@
 				B079CE691BE9DF6F00CD54A9 /* SXQSettingArrowItem.m */,
 				B006ABCD1C057704008C6C76 /* DWMeItem.h */,
 				B006ABCE1C057704008C6C76 /* DWMeItem.m */,
+				B0648FF91C06E44B00B9C78E /* DWUserInfoViewModel.h */,
+				B0648FFA1C06E44B00B9C78E /* DWUserInfoViewModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -2060,6 +2072,9 @@
 				B006ABDD1C05945E008C6C76 /* DWMeInstructionCell.h */,
 				B006ABDE1C05945E008C6C76 /* DWMeInstructionCell.m */,
 				B006ABDF1C05945E008C6C76 /* DWMeInstructionCell.xib */,
+				B06490011C06EAA500B9C78E /* DWMeEditCell.h */,
+				B06490021C06EAA500B9C78E /* DWMeEditCell.m */,
+				B06490031C06EAA500B9C78E /* DWMeEditCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -2130,6 +2145,7 @@
 				B079CE631BE9D7F400CD54A9 /* setting.plist */,
 				B054C17C1BFC565A009662D6 /* signup.plist */,
 				B006ABCB1C0575F3008C6C76 /* me.plist */,
+				B0648FF71C06E1D200B9C78E /* user.plist */,
 			);
 			path = "Resources(资源)";
 			sourceTree = "<group>";
@@ -2719,6 +2735,7 @@
 				B062E29C1BF9D1FE00A7C0FB /* DWInstructionDisclosure.xib in Resources */,
 				B0F939CE1BA166F900D093F9 /* ShareSDKFlatShareViewUI.bundle in Resources */,
 				B08E7C5F1BB2544B0023893B /* SXQInstructionStepCell.xib in Resources */,
+				B06490051C06EAA500B9C78E /* DWMeEditCell.xib in Resources */,
 				B007348F1BF062530020DC79 /* SXQReviewCell.xib in Resources */,
 				B0FE89721BD9C71E00999DE2 /* DWExperimentCell.xib in Resources */,
 				B094C2771BFAF44500CDC289 /* DWInstructionContentController.xib in Resources */,
@@ -2736,6 +2753,7 @@
 				B0DDFF141BA67F6500E4AB3C /* SXQExperimentStepCell.xib in Resources */,
 				B0276F9B1BFDFF5600651C23 /* city.json in Resources */,
 				B03F97BC1BA2A05E009FD1B4 /* SXQLoginField.xib in Resources */,
+				B0648FF81C06E1D200B9C78E /* user.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2815,6 +2833,7 @@
 				B0F308941BC6016E00AD9EAF /* MJPhotoToolbar.m in Sources */,
 				B0F73BBA1BBBC1BE00B3D0A0 /* SXQSupplierListData.m in Sources */,
 				B0026BF71BCF8D4600FB70A9 /* SXQConsumable.m in Sources */,
+				B0648FFB1C06E44B00B9C78E /* DWUserInfoViewModel.m in Sources */,
 				B0DDFF0C1BA6679500E4AB3C /* DWGroup.m in Sources */,
 				B0F5B8B71BD888E5005D6AE4 /* SXQLoginViewModelServiceImpl.m in Sources */,
 				B054C16C1BFC212F009662D6 /* DWInstructionMainHeader.m in Sources */,
@@ -2941,6 +2960,7 @@
 				B054C1831BFC5E12009662D6 /* DGSignUpController.m in Sources */,
 				B0A270FD1BD73B5C00BA0C1B /* FSCalendarHeaderTouchDeliver.m in Sources */,
 				B0DEFB421BF5AABB00CF44AB /* DWDoingViewModelToolImpl.m in Sources */,
+				B06490041C06EAA500B9C78E /* DWMeEditCell.m in Sources */,
 				B0A3D9491BFEBB1C00D7BB4E /* DWSchoolPickerDelegate.m in Sources */,
 				B0FE89711BD9C71E00999DE2 /* DWExperimentCell.m in Sources */,
 				B0F6B1871BC7BBA50090E398 /* SXQExpConsumable.m in Sources */,

@@ -5,94 +5,100 @@
 //  Created by sxq on 15/11/25.
 //  Copyright © 2015年 SXQ. All rights reserved.
 //
-
+#import "DWMeEditCell.h"
+#import "DWMeServiceImpl.h"
+#import <ReactiveCocoa/ReactiveCocoa.h>
+#import "SXQColor.h"
 #import "DWMeEditController.h"
 
 @interface DWMeEditController ()
-
+@property (nonatomic,strong) id<DWMeService> service;
+@property (nonatomic,strong) NSArray *viewModels;
 @end
 
 @implementation DWMeEditController
-
+- (NSArray *)viewModels
+{
+    if (!_viewModels) {
+        _viewModels = @[];
+    }
+    return _viewModels;
+}
+- (id<DWMeService>)service
+{
+    if (!_service) {
+        _service = [[DWMeServiceImpl alloc] init];
+    }
+    return _service;
+}
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
-    
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    [self p_setupTableView];
+    [self p_loadUserInfo];
+    [self p_setupSelf];
+    [self p_setupTableFooter];
 }
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+- (void)p_setupTableView
+{
+    self.tableView.allowsSelection = NO;
+    [self.tableView registerNib:[UINib nibWithNibName:NSStringFromClass([DWMeEditCell class])  bundle:nil] forCellReuseIdentifier:NSStringFromClass([DWMeEditCell class])];
 }
-
-#pragma mark - Table view data source
-
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-#warning Incomplete implementation, return the number of sections
-    return 0;
+- (void)p_loadUserInfo
+{
+    @weakify(self)
+    [[self.service userInfoSignal]
+    subscribeNext:^(NSArray *viewModels) {
+        @strongify(self)
+        self.viewModels = viewModels;
+        [self.tableView reloadData];
+    }];
 }
-
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-#warning Incomplete implementation, return the number of rows
-    return 0;
+- (void)p_setupSelf
+{
+    self.title = @"个人信息";
 }
-
-/*
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
+- (void)p_setupTableFooter
+{
+    UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
+    [button setTitle:@"提交" forState:UIControlStateNormal];
+    [button setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    [button setBackgroundColor:LABBtnBgColor];
+    button.layer.cornerRadius = 6;
+    button.translatesAutoresizingMaskIntoConstraints = NO;
+    [self bindingButton:button];
     
-    // Configure the cell...
+    UIView *footer = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 44, 54)];
+    self.tableView.tableFooterView = footer;
+    [footer addSubview:button];
     
+    [footer addConstraint:[NSLayoutConstraint constraintWithItem:button attribute:NSLayoutAttributeLeading relatedBy:NSLayoutRelationEqual toItem:footer attribute:NSLayoutAttributeLeading multiplier:1.0 constant:10]];
+    [footer addConstraint:[NSLayoutConstraint constraintWithItem:button attribute:NSLayoutAttributeTop relatedBy:NSLayoutRelationEqual toItem:footer attribute:NSLayoutAttributeTop multiplier:1.0 constant:10]];
+    [footer addConstraint:[NSLayoutConstraint constraintWithItem:button attribute:NSLayoutAttributeTrailing relatedBy:NSLayoutRelationEqual toItem:footer attribute:NSLayoutAttributeTrailing multiplier:1.0 constant:-10]];
+    [footer addConstraint:[NSLayoutConstraint constraintWithItem:button attribute:NSLayoutAttributeBottom relatedBy:NSLayoutRelationEqual toItem:footer attribute:NSLayoutAttributeBottom multiplier:1.0 constant:-10]];
+    
+}
+- (void)bindingButton:(UIButton *)button
+{
+    [[button rac_signalForControlEvents:UIControlEventTouchUpInside]
+    subscribeNext:^(id x) {
+        
+    }];
+    
+}
+#pragma mark - TableView DataSource 
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    return self.viewModels.count;
+}
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    DWMeEditCell *cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([DWMeEditCell class]) forIndexPath:indexPath];
+    cell.viewModel = self.viewModels[indexPath.row];
     return cell;
 }
-*/
-
-/*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
+#pragma mark - TableView Delegate 
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView
+{
+    [self.tableView endEditing:YES];
 }
-*/
-
-/*
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    } else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
-}
-*/
-
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath {
-}
-*/
-
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
-
 @end

@@ -11,4 +11,5 @@
 @protocol DWMeService <NSObject>
 - (RACSignal *)meItemsSignal;
 - (RACSignal *)allInstructionsSignal;
+- (RACSignal *)userInfoSignal;
 @end

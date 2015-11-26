@@ -74,10 +74,14 @@
             [pickerView selectRow:0 inComponent:1 animated:NO];
             [pickerView reloadComponent:1];
             self.selectedProvince = [self.provinces objectAtIndex:row];
-            self.selectedCity = [self.cities objectAtIndex:0];
+            if (self.cities.count) {
+                self.selectedCity = [self.cities objectAtIndex:0];
+            }
             break;
         case 1:
-            self.selectedCity = [self.cities objectAtIndex:row];
+            if (self.cities.count) {
+                self.selectedCity = [self.cities objectAtIndex:row];
+            }
             break;
         default:
             break;
