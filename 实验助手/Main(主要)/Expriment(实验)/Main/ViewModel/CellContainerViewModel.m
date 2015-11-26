@@ -15,10 +15,7 @@
 @interface CellContainerViewModel ()
 @property (nonatomic,strong) id<SXQExperimentServices> service;
 @property (nonatomic,strong) SXQExpStep *experimentStep;
-/**
- *  计时器剩余时间
- */
-@property (nonatomic,assign) NSTimeInterval surplusTime;
+
 @property (nonatomic,assign) NSTimeInterval originTime;
 @property (nonatomic,copy) NSString *notificatitonBody;
 @end
@@ -54,6 +51,7 @@
     viewModel.experimentStep = expStep;
     viewModel.service = service;
     viewModel.startButtonActive = YES;
+    viewModel.onceStarted = NO;
     return viewModel;
 }
 -(void)setExperimentStep:(SXQExpStep *)experimentStep
@@ -164,6 +162,9 @@
 - (void)timerLabel:(MZTimerLabel *)timerLabel countingTo:(NSTimeInterval)time timertype:(MZTimerLabelType)timerType
 {
     self.surplusTime = time;
+    if (!self.onceStarted) {
+        self.onceStarted = YES;
+    }
 }
 
 -(void)timerLabel:(MZTimerLabel*)timerLabel finshedCountDownTimerWithTime:(NSTimeInterval)countTime

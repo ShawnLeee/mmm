@@ -25,6 +25,7 @@
 @property (nonatomic,weak) IBOutlet UIView *view;
 @property (nonatomic,assign) BOOL didSetupContraints;
 @property (nonatomic,strong) MZTimerLabel *mzLabel;
+//剩余时间
 //备注按钮
 @property (nonatomic,strong) IBOutlet UIButton *remarkButton;
 //启动按钮
@@ -59,6 +60,7 @@
 }
 - (void)setViewModel:(CellContainerViewModel *)viewModel
 {
+    
     _viewModel = viewModel;
     _mzLabel.delegate = viewModel;
     self.timeView.delegate = viewModel;
@@ -69,6 +71,7 @@
     self.stepDescLabel.text = viewModel.stepDesc;
     
     @weakify(self)
+    
     [RACObserve(viewModel, processMemo) subscribeNext:^(NSString *processMemo) {
         @strongify(self)
         self.stepMemoLabel.text = processMemo;
@@ -76,7 +79,12 @@
     [RACObserve(viewModel, stepTime) subscribeNext:^(NSNumber *stepTime) {
         @strongify(self)
         [self.mzLabel reset];
-        [self.mzLabel setCountDownTime:[stepTime doubleValue]];
+        if (viewModel.onceStarted) {
+            [self.mzLabel setCountDownTime:viewModel.surplusTime];
+        }else
+        {
+            [self.mzLabel setCountDownTime:[stepTime doubleValue]];
+        }
     }];
     [RACObserve(viewModel, isUseTimer) subscribeNext:^(NSNumber *isUseTimer) {
         @strongify(self)
