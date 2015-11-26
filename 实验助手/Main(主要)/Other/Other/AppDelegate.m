@@ -110,7 +110,7 @@
     UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"" message:notification.alertBody delegate:nil cancelButtonTitle:@"OK" otherButtonTitles: nil];
     [[alert rac_buttonClickedSignal]
      subscribeNext:^(id x) {
-         application.applicationIconBadgeNumber -= 1;
+         application.applicationIconBadgeNumber = 0;
      }];
     [alert show];
 }

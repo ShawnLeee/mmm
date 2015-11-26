@@ -15,4 +15,5 @@
 - (RACSignal *)remarkAddSignalWithViewModel:(CellContainerViewModel *)viewModel;
 - (RACSignal *)launchSignalWithViewModel:(CellContainerViewModel *)viewModel;
 - (RACSignal *)setCompleteWithMyExpId:(NSString *)myExpId;
+- (void)activeAllStep;
 @end

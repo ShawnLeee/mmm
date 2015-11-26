@@ -75,12 +75,15 @@
     }];
     [RACObserve(viewModel, stepTime) subscribeNext:^(NSNumber *stepTime) {
         @strongify(self)
+        [self.mzLabel reset];
         [self.mzLabel setCountDownTime:[stepTime doubleValue]];
     }];
     [RACObserve(viewModel, isUseTimer) subscribeNext:^(NSNumber *isUseTimer) {
         @strongify(self)
         self.chooseTimeBtn.enabled = ![isUseTimer boolValue];
          if([isUseTimer boolValue]) {
+             if (self.viewModel.stepTime == 0) {
+             }
              [self.mzLabel start];
              _timeLabel.textColor = [UIColor redColor];
          }else

@@ -5,6 +5,7 @@
 //  Created by SXQ on 15/10/25.
 //  Copyright © 2015年 SXQ. All rights reserved.
 //
+#import "MZTimerLabel.h"
 #import <ReactiveCocoa/ReactiveCocoa.h>
 #import "CellContainerViewModel.h"
 #import "SXQExpStep.h"
@@ -14,6 +15,12 @@
 @interface CellContainerViewModel ()
 @property (nonatomic,strong) id<SXQExperimentServices> service;
 @property (nonatomic,strong) SXQExpStep *experimentStep;
+/**
+ *  计时器剩余时间
+ */
+@property (nonatomic,assign) NSTimeInterval surplusTime;
+@property (nonatomic,assign) NSTimeInterval originTime;
+@property (nonatomic,copy) NSString *notificatitonBody;
 @end
 
 @implementation CellContainerViewModel
@@ -54,6 +61,10 @@
     _experimentStep = experimentStep;
     _stepImageName = [NSString stringWithFormat:@"step%d",experimentStep.stepNum];
     _stepDesc = experimentStep.expStepDesc;
+    _isUseTimer = experimentStep.isUserTimer;
+    _surplusTime = [experimentStep.expStepTime doubleValue] * 60;
+    _originTime = [experimentStep.expStepTime doubleValue] * 60;
+    _notificatitonBody = [_stepDesc stringByAppendingString:@"\n已完成"];
     self.images = experimentStep.images;
     
     @weakify(self)
@@ -70,9 +81,16 @@
     subscribeNext:^(NSMutableArray *images) {
         self.experimentStep.images = images;
     }];
-    [RACObserve(experimentStep, isUserTimer) subscribeNext:^(NSNumber *isUseTimer) {
+
+    [RACObserve(self, isUseTimer) subscribeNext:^(NSNumber *isUseTimer) {
         @strongify(self)
-        self.isUseTimer = [isUseTimer boolValue];
+        if ([isUseTimer boolValue]) {
+            
+            [UILocalNotification localNotificationWithBody:self.notificatitonBody timeIntervel:self.surplusTime indentifier:@"sss"];
+        }else
+        {
+            [[UIApplication sharedApplication] cancelAllLocalNotifications];
+        }
     }];
 }
 - (instancetype)init
@@ -143,10 +161,17 @@
     self.stepTime = time;
     [timeView hide];
 }
+- (void)timerLabel:(MZTimerLabel *)timerLabel countingTo:(NSTimeInterval)time timertype:(MZTimerLabelType)timerType
+{
+    self.surplusTime = time;
+}
 
 -(void)timerLabel:(MZTimerLabel*)timerLabel finshedCountDownTimerWithTime:(NSTimeInterval)countTime
 {
-    [UILocalNotification localNotificationWithBody:self.description timeIntervel:0 indentifier:@"sss"];
+    self.stepTime = 0;
+    self.isUseTimer = NO;
+    //置所有步骤为可启动状态
+    [self.service activeAllStep];
 }
 - (NSString *)description
 {

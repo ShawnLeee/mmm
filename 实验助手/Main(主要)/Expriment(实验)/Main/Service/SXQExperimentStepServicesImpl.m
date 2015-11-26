@@ -148,4 +148,8 @@
         return nil;
     }];
 }
+- (void)activeAllStep
+{
+    [self.experimentController dg_activeAllStep];
+}
 @end

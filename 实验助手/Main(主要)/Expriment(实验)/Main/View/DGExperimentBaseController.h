@@ -16,4 +16,5 @@
 @property (nonatomic,weak) CellContainerViewModel *currentViewModel;
 - (instancetype)initWithExperimentModel:(SXQExperimentModel *)experimentModel;
 - (RACSignal *)launchSignalWithModel:(CellContainerViewModel *)viewModel;
+- (void)dg_activeAllStep;
 @end

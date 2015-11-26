@@ -111,7 +111,10 @@
 //     
 //    }];
 }
-
+- (void)dg_activeAllStep
+{
+    [self p_activeAllStep];
+}
 - (RACSignal *)launchSignalWithModel:(CellContainerViewModel *)viewModel
 {
     @weakify(self)
@@ -150,9 +153,14 @@
         {
             //提示是否停止此前暂停的步骤
             //启动计时器
-            viewModel.isUseTimer = YES;
-            //置其他步骤为不能启动状态
-            [self p_deActiveStepExceptViewModel:viewModel];
+            if (viewModel.stepTime != 0) {
+                viewModel.isUseTimer = YES;
+                //置其他步骤为不能启动状态
+                [self p_deActiveStepExceptViewModel:viewModel];
+            }else
+            {
+                [MBProgressHUD showError:@"请选择时间"];
+            }
             [subscriber sendCompleted];
         }
         
