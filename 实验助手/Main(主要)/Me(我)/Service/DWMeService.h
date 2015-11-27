@@ -12,4 +12,5 @@
 - (RACSignal *)meItemsSignal;
 - (RACSignal *)allInstructionsSignal;
 - (RACSignal *)userInfoSignal;
+- (RACSignal *)uploadUserProfile;
 @end

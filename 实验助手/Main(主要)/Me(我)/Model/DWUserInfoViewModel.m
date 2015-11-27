@@ -28,7 +28,7 @@
 - (BOOL)textFieldShouldBeginEditing:(UITextField *)textField
 {
     switch (self.type) {
-        case MeEditTypeProvice:
+        case MeEditTypeZone:
             [self showZone:textField];
             break;
             
@@ -42,9 +42,9 @@
     DWZonePickerDelegate *zoneDelegate = [[DWZonePickerDelegate alloc] initWithDoneBlock:^(NSDictionary *province, NSDictionary *city) {
         NSString *zoneStr = [NSString stringWithFormat:@"%@  %@",province[@"name"],city[@"name"]];
         self.text = zoneStr;
-//        self.service.location.provinceId = @"";
-//        self.service.location.cityID = @"";
+        self.idDict = @{@"provinceId" : province[@"id"]? : @"",@"cityId" : city[@"id"]?:@""};
     } cancelBlock:^{
+        
     }];
     [ActionSheetCustomPicker showPickerWithTitle:@"" delegate:zoneDelegate showCancelButton:YES origin:textfield];
 }

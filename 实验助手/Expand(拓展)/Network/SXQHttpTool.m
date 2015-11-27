@@ -41,7 +41,9 @@
 {
     //1.创建请求管理对象
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
-    
+//    AFJSONResponseSerializer *serializer = [AFJSONResponseSerializer serializer];
+//    [serializer setRemovesKeysWithNullValues:YES];
+//    [manager setResponseSerializer:serializer];
     //2.发送请求
     [manager GET:url parameters:params success:^(AFHTTPRequestOperation *operation, id responseObject) {
         if (success) {

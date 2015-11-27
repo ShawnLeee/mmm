@@ -18,12 +18,20 @@
     _viewModel = viewModel;
     self.inputField.delegate = viewModel;
     self.itemLabel.text = viewModel.title;
-    
-   @weakify(self)
-    [RACObserve(self.viewModel, text)
-     subscribeNext:^(NSString *text) {
-         @strongify(self)
-         self.inputField.text = text;
-    }];
+    self.inputField.text = viewModel.text;
+   
+    if(viewModel.shouldBeginEditing)
+    {
+        RAC(viewModel,text) = self.inputField.rac_textSignal;
+    }else
+    {
+        @weakify(self)
+        [RACObserve(self.viewModel, text)
+         subscribeNext:^(NSString *text) {
+             @strongify(self)
+             self.inputField.text = text;
+        }];     
+    }
+   
 }
 @end

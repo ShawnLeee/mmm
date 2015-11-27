@@ -28,11 +28,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "Yes"
             filePath = "&#x5b9e;&#x9a8c;&#x52a9;&#x624b;/Expand(&#x62d3;&#x5c55;)/Network/SXQHttpTool.m"
-            timestampString = "465100958.672117"
+            timestampString = "470284487.336223"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "48"
-            endingLineNumber = "48"
+            startingLineNumber = "50"
+            endingLineNumber = "50"
             landmarkName = "+getWithURL:params:success:failure:"
             landmarkType = "5">
             <Actions>
@@ -113,6 +113,22 @@
                   </ActionContent>
                </BreakpointActionProxy>
             </Actions>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "&#x5b9e;&#x9a8c;&#x52a9;&#x624b;/Main(&#x4e3b;&#x8981;)/Me(&#x6211;)/Service/DWMeServiceImpl.m"
+            timestampString = "470295533.554568"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "133"
+            endingLineNumber = "133"
+            landmarkName = "-uploadUserProfile"
+            landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

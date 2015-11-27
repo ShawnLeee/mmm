@@ -5,6 +5,7 @@
 //  Created by sxq on 15/11/25.
 //  Copyright © 2015年 SXQ. All rights reserved.
 //
+#import "MBProgressHUD+MJ.h"
 #import "DWMeEditCell.h"
 #import "DWMeServiceImpl.h"
 #import <ReactiveCocoa/ReactiveCocoa.h>
@@ -79,9 +80,17 @@
 }
 - (void)bindingButton:(UIButton *)button
 {
-    [[button rac_signalForControlEvents:UIControlEventTouchUpInside]
-    subscribeNext:^(id x) {
-        
+    @weakify(self)
+    [[[button rac_signalForControlEvents:UIControlEventTouchUpInside]
+     flattenMap:^RACStream *(id value) {
+         @strongify(self)
+         return [self.service uploadUserProfile];
+     }]
+     subscribeNext:^(NSNumber *success) {
+         @strongify(self)
+         if ([success boolValue]) {
+             [self.navigationController popViewControllerAnimated:YES];
+         }
     }];
     
 }

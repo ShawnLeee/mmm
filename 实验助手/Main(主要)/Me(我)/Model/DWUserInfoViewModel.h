@@ -16,13 +16,13 @@ typedef NS_ENUM(NSUInteger,MeEditType){
     MeEditTypeIdentity ,//职称
     MeEditTypeTelNum ,
     MeEditTypeEmail ,
-    MeEditTypeProvice ,
-    MeEditTypeCity ,
+    MeEditTypeZone ,
 };
 @interface DWUserInfoViewModel : NSObject<UITextFieldDelegate>
 @property (nonatomic,copy) NSString *title;
 @property (nonatomic,copy) NSString *text;
 @property (nonatomic,copy) NSString *idStr;
+@property (nonatomic,strong) NSDictionary *idDict;
 @property (nonatomic,assign) BOOL shouldBeginEditing;
 @property (nonatomic,assign) MeEditType type;
 + (instancetype)userInforViewModelWithTitle:(NSString *)title text:(NSString *)text idStr:(NSString *)idStr;
