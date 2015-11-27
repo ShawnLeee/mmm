@@ -54,13 +54,15 @@ typedef NS_ENUM(NSUInteger,LABResponseType)
 //说明书下载
 #define DownloadInstructionURL @"http://hualang.wicp.net:8090/LabAssistant/lab/downloadInstruction"
 //说明书详情
-#define InstructionDetailURL @"http://hualang.wicp.net:8090/LabAssistant/lab/getInstructionDetail"
+#define InstructionDetailURL @"http://172.18.1.55:8080/LabAssistant/lab/getInstructionDetail"
 //热门说明书
 #define HotInstructionsURL @"http://hualang.wicp.net:8090/LabAssistant/lab/getHotInstructions"
 //搜索说明书
 #define SearchInstructionURL @"http://hualang.wicp.net:8090/LabAssistant/lab/getInstructionsByFilter"
 //评论详情
 #define CommentDetailURL @"http://hualang.wicp.net:8090/LabAssistant/lab/reviewDetail"
+//试剂详情
+#define ReagentDetailURL @"http://hualang.wicp.net:8090/LabAssistant/lab/expReagentDetail"
 //评论
 #define CommentURL @"http://hualang.wicp.net:8090/LabAssistant/lab/responseReview"
 //////////////////////////////说明书//////////////////////////////////////////////////////

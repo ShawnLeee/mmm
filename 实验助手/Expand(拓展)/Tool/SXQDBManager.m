@@ -1114,7 +1114,7 @@ static SXQDBManager *_dbManager = nil;
     }];
     return [tmpArr copy];
 }
-///////保存说明书/////////////////////////////////////////////////
+#pragma mark 保存说明书
 - (BOOL)saveInstructionWithInstructionDetail:(SXQInstructionDetail *)instructionDetail succeed:(void (^)(BOOL))succeed
 {
     [_queue inDatabase:^(FMDatabase *db) {

@@ -26,33 +26,35 @@
 		B003A28E1BDF58D700E2B282 /* DWMyExperimentImpl.m in Sources */ = {isa = PBXBuildFile; fileRef = B003A28D1BDF58D700E2B282 /* DWMyExperimentImpl.m */; };
 		B003A2921BDF5D9900E2B282 /* DWMyExperimentServicesImpl.m in Sources */ = {isa = PBXBuildFile; fileRef = B003A2911BDF5D9900E2B282 /* DWMyExperimentServicesImpl.m */; };
 		B006ABC21C0552D7008C6C76 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B06D817D1C05515400C0C20D /* Foundation.framework */; };
-		B006ABC51C055B29008C6C76 /* DWMeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B006ABC41C055B29008C6C76 /* DWMeViewController.m */; settings = {ASSET_TAGS = (); }; };
-		B006ABC81C055BC7008C6C76 /* DWMeHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = B006ABC71C055BC7008C6C76 /* DWMeHeader.m */; settings = {ASSET_TAGS = (); }; };
-		B006ABCA1C055BD2008C6C76 /* DWMeHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = B006ABC91C055BD2008C6C76 /* DWMeHeader.xib */; settings = {ASSET_TAGS = (); }; };
-		B006ABCC1C0575F3008C6C76 /* me.plist in Resources */ = {isa = PBXBuildFile; fileRef = B006ABCB1C0575F3008C6C76 /* me.plist */; settings = {ASSET_TAGS = (); }; };
-		B006ABCF1C057704008C6C76 /* DWMeItem.m in Sources */ = {isa = PBXBuildFile; fileRef = B006ABCE1C057704008C6C76 /* DWMeItem.m */; settings = {ASSET_TAGS = (); }; };
-		B006ABD31C057796008C6C76 /* DWMeServiceImpl.m in Sources */ = {isa = PBXBuildFile; fileRef = B006ABD21C057796008C6C76 /* DWMeServiceImpl.m */; settings = {ASSET_TAGS = (); }; };
-		B006ABD81C057A30008C6C76 /* DWMeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B006ABD61C057A30008C6C76 /* DWMeCell.m */; settings = {ASSET_TAGS = (); }; };
-		B006ABD91C057A30008C6C76 /* DWMeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B006ABD71C057A30008C6C76 /* DWMeCell.xib */; settings = {ASSET_TAGS = (); }; };
-		B006ABDC1C058933008C6C76 /* DWMeInstructionsController.m in Sources */ = {isa = PBXBuildFile; fileRef = B006ABDB1C058933008C6C76 /* DWMeInstructionsController.m */; settings = {ASSET_TAGS = (); }; };
-		B006ABE01C05945E008C6C76 /* DWMeInstructionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B006ABDE1C05945E008C6C76 /* DWMeInstructionCell.m */; settings = {ASSET_TAGS = (); }; };
-		B006ABE11C05945E008C6C76 /* DWMeInstructionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B006ABDF1C05945E008C6C76 /* DWMeInstructionCell.xib */; settings = {ASSET_TAGS = (); }; };
-		B006ABE41C05A071008C6C76 /* DWMeEditController.m in Sources */ = {isa = PBXBuildFile; fileRef = B006ABE31C05A071008C6C76 /* DWMeEditController.m */; settings = {ASSET_TAGS = (); }; };
+		B006ABC51C055B29008C6C76 /* DWMeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B006ABC41C055B29008C6C76 /* DWMeViewController.m */; };
+		B006ABC81C055BC7008C6C76 /* DWMeHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = B006ABC71C055BC7008C6C76 /* DWMeHeader.m */; };
+		B006ABCA1C055BD2008C6C76 /* DWMeHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = B006ABC91C055BD2008C6C76 /* DWMeHeader.xib */; };
+		B006ABCC1C0575F3008C6C76 /* me.plist in Resources */ = {isa = PBXBuildFile; fileRef = B006ABCB1C0575F3008C6C76 /* me.plist */; };
+		B006ABCF1C057704008C6C76 /* DWMeItem.m in Sources */ = {isa = PBXBuildFile; fileRef = B006ABCE1C057704008C6C76 /* DWMeItem.m */; };
+		B006ABD31C057796008C6C76 /* DWMeServiceImpl.m in Sources */ = {isa = PBXBuildFile; fileRef = B006ABD21C057796008C6C76 /* DWMeServiceImpl.m */; };
+		B006ABD81C057A30008C6C76 /* DWMeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B006ABD61C057A30008C6C76 /* DWMeCell.m */; };
+		B006ABD91C057A30008C6C76 /* DWMeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B006ABD71C057A30008C6C76 /* DWMeCell.xib */; };
+		B006ABDC1C058933008C6C76 /* DWMeInstructionsController.m in Sources */ = {isa = PBXBuildFile; fileRef = B006ABDB1C058933008C6C76 /* DWMeInstructionsController.m */; };
+		B006ABE01C05945E008C6C76 /* DWMeInstructionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B006ABDE1C05945E008C6C76 /* DWMeInstructionCell.m */; };
+		B006ABE11C05945E008C6C76 /* DWMeInstructionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B006ABDF1C05945E008C6C76 /* DWMeInstructionCell.xib */; };
+		B006ABE41C05A071008C6C76 /* DWMeEditController.m in Sources */ = {isa = PBXBuildFile; fileRef = B006ABE31C05A071008C6C76 /* DWMeEditController.m */; };
 		B00734841BF038EC0020DC79 /* SXQReviewDetailController.m in Sources */ = {isa = PBXBuildFile; fileRef = B00734831BF038EC0020DC79 /* SXQReviewDetailController.m */; };
 		B007348E1BF062530020DC79 /* SXQReviewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B007348C1BF062530020DC79 /* SXQReviewCell.m */; };
 		B007348F1BF062530020DC79 /* SXQReviewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B007348D1BF062530020DC79 /* SXQReviewCell.xib */; };
 		B00734921BF073D20020DC79 /* SXQSupplierViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B00734911BF073D20020DC79 /* SXQSupplierViewModel.m */; };
-		B01383141C02AD2300F37F76 /* DWEditStepController.m in Sources */ = {isa = PBXBuildFile; fileRef = B01383121C02AD2300F37F76 /* DWEditStepController.m */; settings = {ASSET_TAGS = (); }; };
-		B01383151C02AD2300F37F76 /* DWEditStepController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B01383131C02AD2300F37F76 /* DWEditStepController.xib */; settings = {ASSET_TAGS = (); }; };
-		B013831F1C02B57800F37F76 /* DWDoneServiceImpl.m in Sources */ = {isa = PBXBuildFile; fileRef = B013831E1C02B57800F37F76 /* DWDoneServiceImpl.m */; settings = {ASSET_TAGS = (); }; };
-		B01383221C02B9DE00F37F76 /* DWCommentController.m in Sources */ = {isa = PBXBuildFile; fileRef = B01383211C02B9DE00F37F76 /* DWCommentController.m */; settings = {ASSET_TAGS = (); }; };
-		B01383251C02BF4300F37F76 /* DWCommentViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B01383241C02BF4300F37F76 /* DWCommentViewModel.m */; settings = {ASSET_TAGS = (); }; };
-		B01383281C02D86200F37F76 /* DWStarView.m in Sources */ = {isa = PBXBuildFile; fileRef = B01383271C02D86200F37F76 /* DWStarView.m */; settings = {ASSET_TAGS = (); }; };
-		B013832A1C02D8AF00F37F76 /* DWStarView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B01383291C02D8AF00F37F76 /* DWStarView.xib */; settings = {ASSET_TAGS = (); }; };
-		B013832E1C02DCC300F37F76 /* DWCommentCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B013832C1C02DCC300F37F76 /* DWCommentCell.m */; settings = {ASSET_TAGS = (); }; };
-		B013832F1C02DCC300F37F76 /* DWCommentCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B013832D1C02DCC300F37F76 /* DWCommentCell.xib */; settings = {ASSET_TAGS = (); }; };
-		B01383331C03056500F37F76 /* DWReportViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B01383311C03056500F37F76 /* DWReportViewController.m */; settings = {ASSET_TAGS = (); }; };
-		B01383341C03056500F37F76 /* DWReportViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B01383321C03056500F37F76 /* DWReportViewController.xib */; settings = {ASSET_TAGS = (); }; };
+		B010CF9E1C082B0C00F5053F /* DWReagentDetailController.m in Sources */ = {isa = PBXBuildFile; fileRef = B010CF9C1C082B0C00F5053F /* DWReagentDetailController.m */; };
+		B010CF9F1C082B0C00F5053F /* DWReagentDetailController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B010CF9D1C082B0C00F5053F /* DWReagentDetailController.xib */; };
+		B01383141C02AD2300F37F76 /* DWEditStepController.m in Sources */ = {isa = PBXBuildFile; fileRef = B01383121C02AD2300F37F76 /* DWEditStepController.m */; };
+		B01383151C02AD2300F37F76 /* DWEditStepController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B01383131C02AD2300F37F76 /* DWEditStepController.xib */; };
+		B013831F1C02B57800F37F76 /* DWDoneServiceImpl.m in Sources */ = {isa = PBXBuildFile; fileRef = B013831E1C02B57800F37F76 /* DWDoneServiceImpl.m */; };
+		B01383221C02B9DE00F37F76 /* DWCommentController.m in Sources */ = {isa = PBXBuildFile; fileRef = B01383211C02B9DE00F37F76 /* DWCommentController.m */; };
+		B01383251C02BF4300F37F76 /* DWCommentViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B01383241C02BF4300F37F76 /* DWCommentViewModel.m */; };
+		B01383281C02D86200F37F76 /* DWStarView.m in Sources */ = {isa = PBXBuildFile; fileRef = B01383271C02D86200F37F76 /* DWStarView.m */; };
+		B013832A1C02D8AF00F37F76 /* DWStarView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B01383291C02D8AF00F37F76 /* DWStarView.xib */; };
+		B013832E1C02DCC300F37F76 /* DWCommentCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B013832C1C02DCC300F37F76 /* DWCommentCell.m */; };
+		B013832F1C02DCC300F37F76 /* DWCommentCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B013832D1C02DCC300F37F76 /* DWCommentCell.xib */; };
+		B01383331C03056500F37F76 /* DWReportViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B01383311C03056500F37F76 /* DWReportViewController.m */; };
+		B01383341C03056500F37F76 /* DWReportViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B01383321C03056500F37F76 /* DWReportViewController.xib */; };
 		B01AE6BA1BD8BCD1004064D1 /* UILocalNotification+DG.m in Sources */ = {isa = PBXBuildFile; fileRef = B01AE6B91BD8BCD1004064D1 /* UILocalNotification+DG.m */; };
 		B01B429E1BFC728E006A1F80 /* DWSignUpHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = B01B429D1BFC728E006A1F80 /* DWSignUpHeader.m */; };
 		B0205C491BB9291800DE6E33 /* UIImage+Size.m in Sources */ = {isa = PBXBuildFile; fileRef = B0205C481BB9291800DE6E33 /* UIImage+Size.m */; };
@@ -112,10 +114,10 @@
 		B062E2941BF9C34600A7C0FB /* DWInstructionDetailViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B062E2931BF9C34600A7C0FB /* DWInstructionDetailViewModel.m */; };
 		B062E29B1BF9D1FE00A7C0FB /* DWInstructionDisclosure.m in Sources */ = {isa = PBXBuildFile; fileRef = B062E2991BF9D1FE00A7C0FB /* DWInstructionDisclosure.m */; };
 		B062E29C1BF9D1FE00A7C0FB /* DWInstructionDisclosure.xib in Resources */ = {isa = PBXBuildFile; fileRef = B062E29A1BF9D1FE00A7C0FB /* DWInstructionDisclosure.xib */; };
-		B0648FF81C06E1D200B9C78E /* user.plist in Resources */ = {isa = PBXBuildFile; fileRef = B0648FF71C06E1D200B9C78E /* user.plist */; settings = {ASSET_TAGS = (); }; };
-		B0648FFB1C06E44B00B9C78E /* DWUserInfoViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B0648FFA1C06E44B00B9C78E /* DWUserInfoViewModel.m */; settings = {ASSET_TAGS = (); }; };
-		B06490041C06EAA500B9C78E /* DWMeEditCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B06490021C06EAA500B9C78E /* DWMeEditCell.m */; settings = {ASSET_TAGS = (); }; };
-		B06490051C06EAA500B9C78E /* DWMeEditCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B06490031C06EAA500B9C78E /* DWMeEditCell.xib */; settings = {ASSET_TAGS = (); }; };
+		B0648FF81C06E1D200B9C78E /* user.plist in Resources */ = {isa = PBXBuildFile; fileRef = B0648FF71C06E1D200B9C78E /* user.plist */; };
+		B0648FFB1C06E44B00B9C78E /* DWUserInfoViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B0648FFA1C06E44B00B9C78E /* DWUserInfoViewModel.m */; };
+		B06490041C06EAA500B9C78E /* DWMeEditCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B06490021C06EAA500B9C78E /* DWMeEditCell.m */; };
+		B06490051C06EAA500B9C78E /* DWMeEditCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B06490031C06EAA500B9C78E /* DWMeEditCell.xib */; };
 		B0665B8C1BF5830B0021E752 /* DWDoingViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B0665B8B1BF5830B0021E752 /* DWDoingViewModel.m */; };
 		B0665B8F1BF585E40021E752 /* DWDoingActionBar.m in Sources */ = {isa = PBXBuildFile; fileRef = B0665B8E1BF585E40021E752 /* DWDoingActionBar.m */; };
 		B0665B911BF586040021E752 /* DWDoingActionBar.xib in Resources */ = {isa = PBXBuildFile; fileRef = B0665B901BF586040021E752 /* DWDoingActionBar.xib */; };
@@ -175,12 +177,12 @@
 		B0A271151BD74E7D00BA0C1B /* SXQScheduleParam.m in Sources */ = {isa = PBXBuildFile; fileRef = B0A271141BD74E7D00BA0C1B /* SXQScheduleParam.m */; };
 		B0A271181BD768B800BA0C1B /* SXQCountTimeView.m in Sources */ = {isa = PBXBuildFile; fileRef = B0A271171BD768B800BA0C1B /* SXQCountTimeView.m */; };
 		B0A2711A1BD768C900BA0C1B /* SXQCountTimeView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B0A271191BD768C900BA0C1B /* SXQCountTimeView.xib */; };
-		B0A3D9491BFEBB1C00D7BB4E /* DWSchoolPickerDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B0A3D9481BFEBB1C00D7BB4E /* DWSchoolPickerDelegate.m */; settings = {ASSET_TAGS = (); }; };
-		B0A3D94C1BFECE2100D7BB4E /* DWProfessionsDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B0A3D94B1BFECE2100D7BB4E /* DWProfessionsDelegate.m */; settings = {ASSET_TAGS = (); }; };
-		B0A3D94F1BFEE7F000D7BB4E /* DWSupplierDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B0A3D94E1BFEE7F000D7BB4E /* DWSupplierDelegate.m */; settings = {ASSET_TAGS = (); }; };
-		B0A3D9521BFEF24900D7BB4E /* DWReagentAmountViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B0A3D9511BFEF24900D7BB4E /* DWReagentAmountViewModel.m */; settings = {ASSET_TAGS = (); }; };
-		B0A3D9561BFEF43A00D7BB4E /* DWReagentAmountCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B0A3D9541BFEF43A00D7BB4E /* DWReagentAmountCell.m */; settings = {ASSET_TAGS = (); }; };
-		B0A3D9571BFEF43A00D7BB4E /* DWReagentAmountCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B0A3D9551BFEF43A00D7BB4E /* DWReagentAmountCell.xib */; settings = {ASSET_TAGS = (); }; };
+		B0A3D9491BFEBB1C00D7BB4E /* DWSchoolPickerDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B0A3D9481BFEBB1C00D7BB4E /* DWSchoolPickerDelegate.m */; };
+		B0A3D94C1BFECE2100D7BB4E /* DWProfessionsDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B0A3D94B1BFECE2100D7BB4E /* DWProfessionsDelegate.m */; };
+		B0A3D94F1BFEE7F000D7BB4E /* DWSupplierDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B0A3D94E1BFEE7F000D7BB4E /* DWSupplierDelegate.m */; };
+		B0A3D9521BFEF24900D7BB4E /* DWReagentAmountViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B0A3D9511BFEF24900D7BB4E /* DWReagentAmountViewModel.m */; };
+		B0A3D9561BFEF43A00D7BB4E /* DWReagentAmountCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B0A3D9541BFEF43A00D7BB4E /* DWReagentAmountCell.m */; };
+		B0A3D9571BFEF43A00D7BB4E /* DWReagentAmountCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B0A3D9551BFEF43A00D7BB4E /* DWReagentAmountCell.xib */; };
 		B0B544C91BE6FA37003CB14F /* SXQExpPlan.m in Sources */ = {isa = PBXBuildFile; fileRef = B0B544C81BE6FA37003CB14F /* SXQExpPlan.m */; };
 		B0B544CC1BE70024003CB14F /* SXQAddScheduleParam.m in Sources */ = {isa = PBXBuildFile; fileRef = B0B544CB1BE70024003CB14F /* SXQAddScheduleParam.m */; };
 		B0B544CF1BE708A1003CB14F /* SXQAddScheduleController.m in Sources */ = {isa = PBXBuildFile; fileRef = B0B544CE1BE708A1003CB14F /* SXQAddScheduleController.m */; };
@@ -439,6 +441,9 @@
 		B007348D1BF062530020DC79 /* SXQReviewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SXQReviewCell.xib; sourceTree = "<group>"; };
 		B00734901BF073D20020DC79 /* SXQSupplierViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SXQSupplierViewModel.h; sourceTree = "<group>"; };
 		B00734911BF073D20020DC79 /* SXQSupplierViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SXQSupplierViewModel.m; sourceTree = "<group>"; };
+		B010CF9B1C082B0C00F5053F /* DWReagentDetailController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DWReagentDetailController.h; sourceTree = "<group>"; };
+		B010CF9C1C082B0C00F5053F /* DWReagentDetailController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DWReagentDetailController.m; sourceTree = "<group>"; };
+		B010CF9D1C082B0C00F5053F /* DWReagentDetailController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DWReagentDetailController.xib; sourceTree = "<group>"; };
 		B01383111C02AD2300F37F76 /* DWEditStepController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DWEditStepController.h; sourceTree = "<group>"; };
 		B01383121C02AD2300F37F76 /* DWEditStepController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DWEditStepController.m; sourceTree = "<group>"; };
 		B01383131C02AD2300F37F76 /* DWEditStepController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DWEditStepController.xib; sourceTree = "<group>"; };
@@ -1402,6 +1407,9 @@
 				B094C2731BFAF44500CDC289 /* DWInstructionContentController.h */,
 				B094C2741BFAF44500CDC289 /* DWInstructionContentController.m */,
 				B094C2751BFAF44500CDC289 /* DWInstructionContentController.xib */,
+				B010CF9B1C082B0C00F5053F /* DWReagentDetailController.h */,
+				B010CF9C1C082B0C00F5053F /* DWReagentDetailController.m */,
+				B010CF9D1C082B0C00F5053F /* DWReagentDetailController.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -2727,6 +2735,7 @@
 				B0A2711A1BD768C900BA0C1B /* SXQCountTimeView.xib in Resources */,
 				B0DDFF291BA69E7C00E4AB3C /* SXQSegmentedControll.xib in Resources */,
 				B0C168261BEC913300E85361 /* SXQCommentView.xib in Resources */,
+				B010CF9F1C082B0C00F5053F /* DWReagentDetailController.xib in Resources */,
 				B006ABCC1C0575F3008C6C76 /* me.plist in Resources */,
 				B0F939C61BA166F800D093F9 /* Resource.bundle in Resources */,
 				B01383151C02AD2300F37F76 /* DWEditStepController.xib in Resources */,
@@ -2877,6 +2886,7 @@
 				B0A271011BD73B5C00BA0C1B /* NSString+FSExtension.m in Sources */,
 				B0C73CD41B932C6000F4B6D2 /* SXQGroupCell.m in Sources */,
 				B0221C461BFB177D00DB4083 /* SXQExpCategory.m in Sources */,
+				B010CF9E1C082B0C00F5053F /* DWReagentDetailController.m in Sources */,
 				B0026BE81BCF88D000FB70A9 /* SXQSupplierResult.m in Sources */,
 				B0A270F71BD73B5C00BA0C1B /* FSCalendar+IBExtension.m in Sources */,
 				B0F73BB71BBBB3E600B3D0A0 /* FPTouchView.m in Sources */,

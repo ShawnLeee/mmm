@@ -8,9 +8,10 @@
 #import "SXQReview.h"
 #import "SXQCommentCell.h"
 #import "SXQCommentView.h"
+#import "DWStarView.h"
 @interface SXQCommentCell ()
 @property (nonatomic,weak) IBOutlet UILabel *nameLabel;
-@property (nonatomic,weak) IBOutlet SXQCommentView *commentView;
+@property (nonatomic,weak) IBOutlet DWStarView *startView;
 @end
 @implementation SXQCommentCell
 
@@ -27,6 +28,6 @@
 {
     _review = review;
     self.nameLabel.text = review.nickName;
-    self.commentView.scores = review.expScore;
+    self.startView.scores = review.expScore;
 }
 @end

@@ -5,6 +5,10 @@
 //  Created by sxq on 15/11/17.
 //  Copyright © 2015年 SXQ. All rights reserved.
 //
+#import "SXQHttpTool.h"
+#import <ReactiveCocoa/ReactiveCocoa.h>
+#import "DWReagentDetailController.h"
+#import "SXQExpReagent.h"
 #import "DWEditStepController.h"
 #import "DWInstructionStepViewModel.h"
 #import "DWInstructionContentController.h"
@@ -68,6 +72,21 @@
 }
 - (void)p_pushDetailViewModel:(DWInstructionDetailViewModel *)viewModel
 {
-    
+    if ([viewModel.model isKindOfClass:[SXQExpReagent class]]) {
+        DWReagentDetailController *reagentDetailVC = [[DWReagentDetailController alloc] initWithExpReagent:viewModel.model service:self];
+        [self.nav pushViewController:reagentDetailVC animated:YES];
+    }
+}
+- (RACSignal *)reagentSignalWithReagentModel:(SXQExpReagent *)reagent
+{
+    NSDictionary *param = @{@"reagentID":reagent.expReagentID,@"expInstructionID":reagent.expInstructionID};
+    return [RACSignal createSignal:^RACDisposable *(id<RACSubscriber> subscriber) {
+        [SXQHttpTool getWithURL:ReagentDetailURL params:param success:^(id json) {
+            
+        } failure:^(NSError *error) {
+            
+        }];
+        return nil;
+    }];
 }
 @end

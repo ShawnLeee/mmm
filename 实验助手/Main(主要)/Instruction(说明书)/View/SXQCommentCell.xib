@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="8191" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9060" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
@@ -20,24 +20,28 @@
                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <view contentMode="scaleToFill" placeholderIntrinsicWidth="119" placeholderIntrinsicHeight="16" translatesAutoresizingMaskIntoConstraints="NO" id="Er3-gC-aau" customClass="SXQCommentView">
-                        <rect key="frame" x="168" y="14" width="119" height="16"/>
+                    <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7ef-td-ZHe" customClass="DWStarView">
+                        <rect key="frame" x="142" y="8" width="135" height="28"/>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="28" id="UHN-RV-44m"/>
+                            <constraint firstAttribute="width" constant="135" id="poE-al-Qg2"/>
+                        </constraints>
                     </view>
                 </subviews>
                 <animations/>
                 <constraints>
-                    <constraint firstItem="Er3-gC-aau" firstAttribute="centerY" secondItem="D7r-iR-IH6" secondAttribute="centerY" id="0Am-72-LpW"/>
                     <constraint firstItem="D7r-iR-IH6" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="9BC-0r-gPQ"/>
-                    <constraint firstAttribute="trailing" secondItem="Er3-gC-aau" secondAttribute="trailing" id="bD1-YU-VzY"/>
+                    <constraint firstAttribute="trailing" secondItem="7ef-td-ZHe" secondAttribute="trailing" constant="10" id="AcM-lb-Bi1"/>
+                    <constraint firstItem="7ef-td-ZHe" firstAttribute="centerY" secondItem="D7r-iR-IH6" secondAttribute="centerY" id="djw-8l-n4s"/>
                     <constraint firstItem="D7r-iR-IH6" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="vdH-5x-BdO"/>
                 </constraints>
             </tableViewCellContentView>
             <animations/>
             <connections>
-                <outlet property="commentView" destination="Er3-gC-aau" id="EJq-vs-7bw"/>
                 <outlet property="nameLabel" destination="D7r-iR-IH6" id="4yj-7y-55z"/>
+                <outlet property="startView" destination="7ef-td-ZHe" id="GVo-z7-PKs"/>
             </connections>
             <point key="canvasLocation" x="320" y="290"/>
         </tableViewCell>
