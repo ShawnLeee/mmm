@@ -5,6 +5,7 @@
 //  Created by sxq on 15/11/27.
 //  Copyright © 2015年 SXQ. All rights reserved.
 //
+#import "DWReagentDetail.h"
 #import <ReactiveCocoa/ReactiveCocoa.h>
 #import "SXQExpReagent.h"
 #import "DWReagentDetailController.h"
@@ -36,13 +37,29 @@
 }
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.title = @"试剂详情";
     [self p_loadData];
 }
 - (void)p_loadData
 {
     [[self.service reagentSignalWithReagentModel:self.reagent]
-    subscribeNext:^(id x) {
-        
+    subscribeNext:^(DWReagentDetail *reagentDetail) {
+        [self p_updateUIWithReagentDetail:reagentDetail];
     }];
     
-} @end
+}
+- (void)p_updateUIWithReagentDetail:(DWReagentDetail *)reagentDetail
+{
+    self.reagentNameLabel.text = reagentDetail.reagentName;
+    self.chemicalLabel.text = reagentDetail.chemicalName;
+    self.supplierLabel.text = reagentDetail.supplier;
+    self.firstLabel.text = reagentDetail.levelOne;
+    self.secondeLabel.text = reagentDetail.levelTwo;
+    self.placeLabel.text = reagentDetail.originPlace;
+    self.productNumLabel.text = reagentDetail.productNo;
+    self.createLabel.text = reagentDetail.agents;
+    self.guigeLabel.text = reagentDetail.specification;
+    self.casnumLabel.text = reagentDetail.casNo;
+    self.demonstrationLabel.text = reagentDetail.memo;
+}
+@end

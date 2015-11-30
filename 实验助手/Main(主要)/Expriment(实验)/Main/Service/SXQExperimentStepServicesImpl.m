@@ -95,9 +95,6 @@
         }];
         return nil;
     }];
-    
-    
-    
     return imageSignal;
 }
 /**

@@ -151,39 +151,39 @@
                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="settings_statistic_form_background_line" translatesAutoresizingMaskIntoConstraints="NO" id="cEA-LY-Jux">
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="settings_statistic_form_background_line" translatesAutoresizingMaskIntoConstraints="NO" id="cEA-LY-Jux">
                     <rect key="frame" x="10" y="48" width="300" height="2"/>
                     <animations/>
                 </imageView>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="settings_statistic_form_background_line" translatesAutoresizingMaskIntoConstraints="NO" id="wOI-cc-kT1">
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="settings_statistic_form_background_line" translatesAutoresizingMaskIntoConstraints="NO" id="wOI-cc-kT1">
                     <rect key="frame" x="10" y="86" width="300" height="2"/>
                     <animations/>
                 </imageView>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="settings_statistic_form_background_line" translatesAutoresizingMaskIntoConstraints="NO" id="Vsv-rK-gCJ">
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="settings_statistic_form_background_line" translatesAutoresizingMaskIntoConstraints="NO" id="Vsv-rK-gCJ">
                     <rect key="frame" x="10" y="124" width="300" height="2"/>
                     <animations/>
                 </imageView>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="settings_statistic_form_background_line" translatesAutoresizingMaskIntoConstraints="NO" id="pud-R7-04d">
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="settings_statistic_form_background_line" translatesAutoresizingMaskIntoConstraints="NO" id="pud-R7-04d">
                     <rect key="frame" x="10" y="162" width="300" height="2"/>
                     <animations/>
                 </imageView>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="settings_statistic_form_background_line" translatesAutoresizingMaskIntoConstraints="NO" id="dVx-ue-d3c">
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="settings_statistic_form_background_line" translatesAutoresizingMaskIntoConstraints="NO" id="dVx-ue-d3c">
                     <rect key="frame" x="10" y="200" width="300" height="2"/>
                     <animations/>
                 </imageView>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="settings_statistic_form_background_line" translatesAutoresizingMaskIntoConstraints="NO" id="7eg-sg-lYB">
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="settings_statistic_form_background_line" translatesAutoresizingMaskIntoConstraints="NO" id="7eg-sg-lYB">
                     <rect key="frame" x="10" y="238" width="300" height="2"/>
                     <animations/>
                 </imageView>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="settings_statistic_form_background_line" translatesAutoresizingMaskIntoConstraints="NO" id="l9e-1r-j1S">
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="settings_statistic_form_background_line" translatesAutoresizingMaskIntoConstraints="NO" id="l9e-1r-j1S">
                     <rect key="frame" x="10" y="276" width="300" height="2"/>
                     <animations/>
                 </imageView>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="settings_statistic_form_background_line" translatesAutoresizingMaskIntoConstraints="NO" id="Wc1-XW-AnJ">
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="settings_statistic_form_background_line" translatesAutoresizingMaskIntoConstraints="NO" id="Wc1-XW-AnJ">
                     <rect key="frame" x="10" y="314" width="300" height="2"/>
                     <animations/>
                 </imageView>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="settings_statistic_form_background_line" translatesAutoresizingMaskIntoConstraints="NO" id="6Df-kv-a2H">
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="settings_statistic_form_background_line" translatesAutoresizingMaskIntoConstraints="NO" id="6Df-kv-a2H">
                     <rect key="frame" x="10" y="352" width="300" height="2"/>
                     <animations/>
                 </imageView>

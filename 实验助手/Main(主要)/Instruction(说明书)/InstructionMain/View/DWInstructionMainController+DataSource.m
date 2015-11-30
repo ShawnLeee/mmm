@@ -48,5 +48,9 @@
     }
     return nil;
 }
-
+- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    const CGFloat cellWidth = [UIScreen mainScreen].bounds.size.width/3;
+    return CGSizeMake(cellWidth, 44);
+}
 @end

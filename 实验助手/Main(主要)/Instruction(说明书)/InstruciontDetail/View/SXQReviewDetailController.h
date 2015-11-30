@@ -7,8 +7,9 @@
 //
 @class SXQReview;
 #import "SXQInstructionService.h"
+#import "DWInstructionService.h"
 #import <UIKit/UIKit.h>
 
 @interface SXQReviewDetailController : UITableViewController
-- (instancetype)initWithReview:(SXQReview *)review service:(id<SXQInstructionService>)service;
+- (instancetype)initWithReview:(SXQReview *)review service:(id<DWInstructionService>)service;
 @end

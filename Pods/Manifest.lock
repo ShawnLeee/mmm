@@ -26,6 +26,7 @@ PODS:
   - FMDB/common (2.5)
   - FMDB/standard (2.5):
     - FMDB/common
+  - JSONModel (1.1.2)
   - MBProgressHUD (0.9.1)
   - MJExtension (2.5.16)
   - MJRefresh (2.4.12)
@@ -44,6 +45,7 @@ DEPENDENCIES:
   - ActionSheetPicker-3.0 (~> 2.0.3)
   - AFNetworking
   - FMDB (~> 2.5)
+  - JSONModel
   - MBProgressHUD
   - MJExtension
   - MJRefresh
@@ -54,10 +56,11 @@ SPEC CHECKSUMS:
   ActionSheetPicker-3.0: 11f2053085d3088dc1ef9d38a9f11c18b528dd9e
   AFNetworking: 8e4e60500beb8bec644cf575beee72990a76d399
   FMDB: 96e8f1bcc1329e269330f99770ad4285d9003e52
+  JSONModel: 216584d0311b053ff714f1d6cb700dbf890847bc
   MBProgressHUD: c47f2c166c126cf2ce36498d80f33e754d4e93ad
   MJExtension: b8c1321a77d91bcc007b94d38cbf5383c95ea30e
   MJRefresh: ca8e9589895977df32d379d46e6b8a5450b3ff44
   ReactiveCocoa: eb38dee0a0e698f73a9b25e5c1faea2bb4c79240
   SDWebImage: 1d2b1a1efda1ade1b00b6f8498865f8ddedc8a84
 
-COCOAPODS: 0.38.2
+COCOAPODS: 0.39.0

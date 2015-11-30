@@ -35,6 +35,11 @@
     self.time = [NSString stringWithFormat:@"%@分钟", instructionStep.expStepTime];
     self.stepIconName = [NSString stringWithFormat:@"step%d",instructionStep.stepNum];
     self.stepDesc = instructionStep.expStepDesc;
+    
+    [RACObserve(self, stepDesc)
+    subscribeNext:^(NSString *stepDesc) {
+        instructionStep.expStepDesc = stepDesc;
+    }];
 }
 
 @end

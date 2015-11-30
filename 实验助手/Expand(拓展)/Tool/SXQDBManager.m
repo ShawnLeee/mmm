@@ -1119,7 +1119,7 @@ static SXQDBManager *_dbManager = nil;
 {
     [_queue inDatabase:^(FMDatabase *db) {
         NSString *originInstructionId = instructionDetail.expInstructionID;
-        [self saveInstructionWithInstructionDetail:instructionDetail db:db];
+        [self saveInstructionWithInstructionDetail:instructionDetail originalID:originInstructionId db:db];
         [self updateInstructionStepWithInstructionId:originInstructionId instructionDetail:instructionDetail db:db];
         [self updateReagentsWithInstructionId:originInstructionId instructionDetail:instructionDetail db:db];
         [self updateEquipmentWithInstructionId:originInstructionId instructionDetial:instructionDetail db:db];
@@ -1129,10 +1129,10 @@ static SXQDBManager *_dbManager = nil;
     succeed(YES);
     return YES;
 }
-- (NSString *)saveInstructionWithInstructionDetail:(SXQInstructionDetail *)instructionDetail db:(FMDatabase *)db
+- (NSString *)saveInstructionWithInstructionDetail:(SXQInstructionDetail *)instructionDetail originalID:(NSString *)originalID db:(FMDatabase *)db
 {
     
-    SXQExpInstruction *instruction = [self fetchInstructionWithInstructionID:instructionDetail.expInstructionID db:db];
+    SXQExpInstruction *instruction = [self fetchInstructionWithInstructionID:originalID db:db];
     if (instruction.localized) {//是副本，是用副本说明书id
         return instructionDetail.expInstructionID;
     }

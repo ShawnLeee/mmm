@@ -119,12 +119,12 @@
     _startCommand = [[RACCommand alloc] initWithEnabled:RACObserve(self, startButtonActive) signalBlock:^RACSignal *(id input) {
                         return [self.service launchSignalWithViewModel:self];
                     }];
+    [self p_setupButtonBusiness];
 }
 - (void)p_setupButtonBusiness
 {
     @weakify(self)
-    [[[_addImageCommand.executionSignals
-      switchToLatest]
+    [[[_addImageCommand.executionSignals switchToLatest]
      takeUntil:self.cell.rac_prepareForReuseSignal]
      subscribeNext:^(UIImage *image) {
          @strongify(self)

@@ -41,7 +41,7 @@ static NSString * const reuseIdentifier = @"Cell";
 #pragma mark - 设置collectionview
 - (void)p_setupCollecitonView
 {
-    self.collectionView.backgroundColor = RGB(226, 226, 226);
+    self.collectionView.backgroundColor = [UIColor whiteColor];
     self.title = @"说明书";
     [self.collectionView registerNib:[UINib nibWithNibName:NSStringFromClass([DWInstructionCell class]) bundle:nil] forCellWithReuseIdentifier:NSStringFromClass([DWInstructionCell class])];
 }

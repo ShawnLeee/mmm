@@ -10,5 +10,5 @@
 
 @interface SXQReviewItem : NSObject
 @property (nonatomic,copy) NSString *expReviewOptName;
-@property (nonatomic,copy) NSString *reviewOptScore;
+@property (nonatomic,assign) NSUInteger reviewOptScore;
 @end

@@ -12,11 +12,11 @@
 #import "ArrayDataSource+TableView.h"
 #import "DWGroup.h"
 #import "SXQReviewItem.h"
-#import "SXQReviewCell.h"
-#define ReviewCellIdentifier @"Review Cell"
+#import "DWReviewDetailCell.h"
+#import "DWReviewDetailFooter.h"
 @interface SXQReviewDetailController ()
 @property (nonatomic,strong) SXQReview *review;
-@property (nonatomic,strong) id<SXQInstructionService> service;
+@property (nonatomic,strong) id<DWInstructionService> service;
 @property (nonatomic,strong) ArrayDataSource *arraryDataSource;
 @property (nonatomic,strong) NSMutableArray *groups;
 @end
@@ -28,7 +28,7 @@
     }
     return _groups;
 }
-- (instancetype)initWithReview:(SXQReview *)review service:(id<SXQInstructionService>)service
+- (instancetype)initWithReview:(SXQReview *)review service:(id<DWInstructionService>)service
 {
     self = [super init];
     if (self) {
@@ -39,19 +39,22 @@
 }
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self p_setupTableFooter];
     [self p_setupTableView];
     [self p_loadReviewDetailData];
 }
 - (void)p_setupTableView
 {
-    [self.tableView registerNib:[UINib nibWithNibName:@"SXQReviewCell" bundle:nil] forCellReuseIdentifier:ReviewCellIdentifier];
+    self.title = @"评论详情";
+    self.tableView.allowsSelection = NO;
+    [self.tableView registerNib:[UINib nibWithNibName:@"DWReviewDetailCell" bundle:nil] forCellReuseIdentifier:NSStringFromClass([DWReviewDetailCell class])];
     _arraryDataSource = [[ArrayDataSource alloc] initWithGroups:self.groups];
     self.tableView.dataSource = _arraryDataSource;
 }
 - (void)p_loadReviewDetailData
 {
     @weakify(self)
-    [[[[self.service getService] reviewDetailSignalWithReview:self.review]
+    [[[self.service reviewDetailSignalWithReview:self.review]
      map:^id(SXQReviewDetail *reviewDetail) {
          return [self groupWithReviewDetail:reviewDetail];
      }]
@@ -59,19 +62,24 @@
         @strongify(self)
         [self.groups insertObject:group atIndex:0];
         [self.tableView reloadData];
+        
     } error:^(NSError *error) {
         
     }];
 }
 - (DWGroup *)groupWithReviewDetail:(SXQReviewDetail *)reviewDetail
 {
-    DWGroup *group = [[DWGroup alloc] initWithWithHeader:reviewDetail.reviewInfo footer:nil items:reviewDetail.reviewOpts];
-    group.identifier = ReviewCellIdentifier;
-    group.configureBlk = ^(SXQReviewCell *cell,SXQReviewItem *item)
+    DWGroup *group = [[DWGroup alloc] initWithWithHeader:nil footer:nil items:reviewDetail.reviewOpts];
+    group.identifier = NSStringFromClass([DWReviewDetailCell class]);
+    group.configureBlk = ^(DWReviewDetailCell *cell,SXQReviewItem *item)
     {
-        cell.textLabel.text = item.expReviewOptName;
-        cell.detailTextLabel.text = item.reviewOptScore;
+        cell.reviewItem = item;
     };
     return group;
+}
+- (void)p_setupTableFooter
+{
+    DWReviewDetailFooter *detailFooter = [[DWReviewDetailFooter alloc] initWithFrame:CGRectMake(0, 0, 30, 40)];
+    self.tableView.tableFooterView = detailFooter;
 }
 @end

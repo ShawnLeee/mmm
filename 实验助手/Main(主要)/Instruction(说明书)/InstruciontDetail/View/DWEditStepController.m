@@ -34,12 +34,19 @@
 {
     self.title = @"实验步骤";
     self.navigationItem.rightBarButtonItem = [UIBarButtonItem itemWithTitle:@"确定" action:^{
-#warning save 
+        [self.navigationController popViewControllerAnimated:YES];
+//#warning save
+//        [self.textView resignFirstResponder];
     }];
 }
 - (void)p_bindingViewModel
 {
     self.textView.text = _viewModel.stepDesc;
-    RAC(self.viewModel,stepDesc) = self.textView.rac_textSignal;
+    @weakify(self)
+    [self.textView.rac_textSignal
+    subscribeNext:^(NSString *text) {
+        @strongify(self)
+        self.viewModel.stepDesc = text;
+    }];
 }
 @end
