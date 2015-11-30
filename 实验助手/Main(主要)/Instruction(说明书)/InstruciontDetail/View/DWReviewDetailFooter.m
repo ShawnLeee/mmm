@@ -12,10 +12,7 @@
 @property (nonatomic,weak) IBOutlet UIImageView *bgView;
 @end
 @implementation DWReviewDetailFooter
-- (void)awakeFromNib
-{
-    self.reviewInfoLabel.backgroundColor = [UIColor redColor];
-}
+
 - (instancetype)initWithFrame:(CGRect)frame
 {
     self = [super initWithFrame:frame];
@@ -38,5 +35,6 @@
 {
     _reviewInfo = [reviewInfo copy];
     self.reviewInfoLabel.text = reviewInfo;
+    self.reviewInfoLabel.preferredMaxLayoutWidth = CGRectGetWidth(self.reviewInfoLabel.frame);
 }
 @end

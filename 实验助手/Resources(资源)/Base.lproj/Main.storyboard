@@ -231,11 +231,13 @@
                             <outlet property="delegate" destination="PO8-9R-MiV" id="Ywj-8d-06K"/>
                         </connections>
                     </collectionView>
-                    <navigationItem key="navigationItem" id="ESb-01-0vW"/>
+                    <navigationItem key="navigationItem" id="ESb-01-0vW">
+                        <barButtonItem key="rightBarButtonItem" systemItem="search" id="hOz-hv-j1q"/>
+                    </navigationItem>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ieb-9S-bBJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1105" y="-602"/>
+            <point key="canvasLocation" x="-1121" y="-602"/>
         </scene>
         <!--Sub Instruction Controller-->
         <scene sceneID="6bd-c8-94z">

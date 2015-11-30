@@ -47,6 +47,7 @@
 		B011AD1F1C0C1D6B00DD94DC /* DWReviewDetailCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B011AD1D1C0C1D6B00DD94DC /* DWReviewDetailCell.xib */; };
 		B011AD221C0C20FB00DD94DC /* DWReviewDetailFooter.m in Sources */ = {isa = PBXBuildFile; fileRef = B011AD211C0C20FB00DD94DC /* DWReviewDetailFooter.m */; };
 		B011AD241C0C211000DD94DC /* DWReviewDetailFooter.xib in Resources */ = {isa = PBXBuildFile; fileRef = B011AD231C0C211000DD94DC /* DWReviewDetailFooter.xib */; };
+		B011AD261C0C3AFB00DD94DC /* sample.pdf in Resources */ = {isa = PBXBuildFile; fileRef = B011AD251C0C3AFB00DD94DC /* sample.pdf */; };
 		B01383141C02AD2300F37F76 /* DWEditStepController.m in Sources */ = {isa = PBXBuildFile; fileRef = B01383121C02AD2300F37F76 /* DWEditStepController.m */; };
 		B01383151C02AD2300F37F76 /* DWEditStepController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B01383131C02AD2300F37F76 /* DWEditStepController.xib */; };
 		B013831F1C02B57800F37F76 /* DWDoneServiceImpl.m in Sources */ = {isa = PBXBuildFile; fileRef = B013831E1C02B57800F37F76 /* DWDoneServiceImpl.m */; };
@@ -451,6 +452,7 @@
 		B011AD201C0C20FB00DD94DC /* DWReviewDetailFooter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DWReviewDetailFooter.h; sourceTree = "<group>"; };
 		B011AD211C0C20FB00DD94DC /* DWReviewDetailFooter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DWReviewDetailFooter.m; sourceTree = "<group>"; };
 		B011AD231C0C211000DD94DC /* DWReviewDetailFooter.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DWReviewDetailFooter.xib; sourceTree = "<group>"; };
+		B011AD251C0C3AFB00DD94DC /* sample.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = sample.pdf; sourceTree = "<group>"; };
 		B01383111C02AD2300F37F76 /* DWEditStepController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DWEditStepController.h; sourceTree = "<group>"; };
 		B01383121C02AD2300F37F76 /* DWEditStepController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DWEditStepController.m; sourceTree = "<group>"; };
 		B01383131C02AD2300F37F76 /* DWEditStepController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DWEditStepController.xib; sourceTree = "<group>"; };
@@ -2155,6 +2157,7 @@
 		B0C73CA41B92F39E00F4B6D2 /* Resources(资源) */ = {
 			isa = PBXGroup;
 			children = (
+				B011AD251C0C3AFB00DD94DC /* sample.pdf */,
 				B0276F9A1BFDFF5600651C23 /* city.json */,
 				B0C73CA51B92F39E00F4B6D2 /* LaunchScreen.xib */,
 				B0C73CA71B92F39E00F4B6D2 /* Main.storyboard */,
@@ -2772,6 +2775,7 @@
 				B0FCF6241BF5D97C0075434F /* DWActivityIndicatorView.xib in Resources */,
 				B0DDFF141BA67F6500E4AB3C /* SXQExperimentStepCell.xib in Resources */,
 				B0276F9B1BFDFF5600651C23 /* city.json in Resources */,
+				B011AD261C0C3AFB00DD94DC /* sample.pdf in Resources */,
 				B03F97BC1BA2A05E009FD1B4 /* SXQLoginField.xib in Resources */,
 				B0648FF81C06E1D200B9C78E /* user.plist in Resources */,
 			);

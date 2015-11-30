@@ -8,6 +8,6 @@
 @class SXQReportViewModel;
 #import <UIKit/UIKit.h>
 
-@interface SXQPdfController : UIViewController
+@interface SXQPdfController : UIViewController<UIDocumentInteractionControllerDelegate>
 - (instancetype)initWithReportViewModel:(SXQReportViewModel *)viewModel;
 @end

@@ -15,8 +15,8 @@
             <rect key="frame" x="0.0" y="0.0" width="600" height="341"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tNl-az-zdu">
-                    <rect key="frame" x="0.0" y="0.0" width="600" height="341"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tNl-az-zdu">
+                    <rect key="frame" x="10" y="10" width="580" height="321"/>
                     <animations/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -26,10 +26,10 @@
             <animations/>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
-                <constraint firstItem="tNl-az-zdu" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="CZK-Je-f34"/>
-                <constraint firstAttribute="bottom" secondItem="tNl-az-zdu" secondAttribute="bottom" id="FqG-bT-CtY"/>
-                <constraint firstAttribute="trailing" secondItem="tNl-az-zdu" secondAttribute="trailing" id="VCj-Wx-wGJ"/>
-                <constraint firstItem="tNl-az-zdu" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="s3I-9k-bv6"/>
+                <constraint firstItem="tNl-az-zdu" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="10" id="CZK-Je-f34"/>
+                <constraint firstAttribute="bottom" secondItem="tNl-az-zdu" secondAttribute="bottom" constant="10" id="FqG-bT-CtY"/>
+                <constraint firstAttribute="trailing" secondItem="tNl-az-zdu" secondAttribute="trailing" constant="10" id="VCj-Wx-wGJ"/>
+                <constraint firstItem="tNl-az-zdu" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="10" id="s3I-9k-bv6"/>
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>

@@ -19,6 +19,7 @@
 @property (nonatomic,strong) id<DWInstructionService> service;
 @property (nonatomic,strong) ArrayDataSource *arraryDataSource;
 @property (nonatomic,strong) NSMutableArray *groups;
+@property (nonatomic,weak) DWReviewDetailFooter *footer;
 @end
 @implementation SXQReviewDetailController
 - (NSMutableArray *)groups
@@ -56,6 +57,9 @@
     @weakify(self)
     [[[self.service reviewDetailSignalWithReview:self.review]
      map:^id(SXQReviewDetail *reviewDetail) {
+         @strongify(self)
+         self.footer.reviewInfo = reviewDetail.reviewInfo;
+         [self p_layoutTableFooter];
          return [self groupWithReviewDetail:reviewDetail];
      }]
     subscribeNext:^(DWGroup *group) {
@@ -80,6 +84,17 @@
 - (void)p_setupTableFooter
 {
     DWReviewDetailFooter *detailFooter = [[DWReviewDetailFooter alloc] initWithFrame:CGRectMake(0, 0, 30, 40)];
+    _footer = detailFooter;
     self.tableView.tableFooterView = detailFooter;
+}
+- (void)p_layoutTableFooter
+{
+    [self.footer setNeedsLayout];
+    [self.footer layoutIfNeeded];
+    
+    CGFloat height = [self.footer systemLayoutSizeFittingSize:UILayoutFittingCompressedSize].height;
+    CGRect footerFrame = self.footer.frame;
+    footerFrame.size.height = height;
+    self.footer.frame = footerFrame;
 }
 @end
