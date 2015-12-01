@@ -5,6 +5,7 @@
 //  Created by sxq on 15/10/29.
 //  Copyright © 2015年 SXQ. All rights reserved.
 //
+#import "DWInstructionDetailController.h"
 #import "SXQInstructionServiceImpl.h"
 #import <ReactiveCocoa/ReactiveCocoa.h>
 #import "SXQInstructionResultsController.h"
@@ -69,8 +70,11 @@
 }
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    
     SXQExpInstruction *instruction = _arrayDataSource.items[indexPath.row];
-    SXQInstructionDetailController *detailVC = [[SXQInstructionDetailController alloc] initWithInstruction:instruction];
+    DWInstructionDetailController *detailVC = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:NSStringFromClass([DWInstructionDetailController class])];
+    detailVC.instruction = instruction;
     [self.nav pushViewController:detailVC animated:YES];
 }
 @end

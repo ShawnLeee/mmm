@@ -87,4 +87,10 @@ typedef NS_ENUM(NSUInteger,LABResponseType)
 #define ProfessionURL @"http://172.18.1.55:8080/LabAssistant/myInfo/educations"
 #define UserInfoURL @"http://172.18.1.55:8080/LabAssistant/myInfo/basic"
 #define EditUserInfoURL @"http://172.18.1.55:8080/LabAssistant/myInfo/edit"
+/**
+ *  bbs
+ */
+#define BBSModulesURL @"http://172.18.1.55:8080/LabAssistant/bbs/modules"
+#define BBSThemesURL @"http://172.18.1.55:8080/LabAssistant/bbs/topics"
+#define BBSCommentsURL @"http://172.18.1.55:8080/LabAssistant/bbs/reviews"
 #endif

@@ -12,13 +12,29 @@
 #import "DWInstructionMainController.h"
 #import "DWInstructionCell.h"
 #import "DWInstructionMainHeader.h"
-
-@interface DWInstructionMainController ()
+#import "SXQInstructionResultsController.h"
+@interface DWInstructionMainController ()<UISearchBarDelegate,UISearchControllerDelegate>
 @property (nonatomic,strong) id<SXQInstructionService> service;
+@property (nonatomic,strong) UISearchController *searchController;
 @end
 
 @implementation DWInstructionMainController
-static NSString * const reuseIdentifier = @"Cell";
+- (UISearchController *)searchController
+{
+    if (_searchController == nil) {
+        self.definesPresentationContext = YES;
+        SXQInstructionResultsController *resultsVC = [[SXQInstructionResultsController alloc] initWithNavigationController:self.navigationController];
+        resultsVC.searchBarTextSingal = [self rac_signalForSelector:@selector(searchBar:textDidChange:) fromProtocol:@protocol(UISearchBarDelegate)];
+        _searchController = [[UISearchController alloc] initWithSearchResultsController:resultsVC];
+        _searchController.hidesNavigationBarDuringPresentation = YES;
+        _searchController.searchBar.delegate = self;
+        //        _searchController.searchResultsUpdater = resultsVC;
+        _searchController.delegate = self;
+        //        resultsVC.tableView.delegate = self;
+        
+    }
+    return _searchController;
+}
 - (NSArray *)expCategories
 {
     if (!_expCategories) {
@@ -37,6 +53,10 @@ static NSString * const reuseIdentifier = @"Cell";
     [super viewDidLoad];
     [self p_setupCollecitonView];
     [self p_loadData];
+}
+- (IBAction)searchInstruction:(UIBarButtonItem *)sender {
+//        self.tabBarController.tabBar.hidden = YES;
+    [self presentViewController:self.searchController animated:YES completion:nil];
 }
 #pragma mark - 设置collectionview
 - (void)p_setupCollecitonView

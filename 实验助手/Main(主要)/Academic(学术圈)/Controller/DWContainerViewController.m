@@ -7,19 +7,27 @@
 //
 
 #import "DWContainerViewController.h"
-#import "DWBBSViewController.h"
+#import "DWBBSController.h"
 #import "DWExchangeController.h"
 #import "DWConsultTViewController.h"
+#import "DWAcademicServiceImpl.h"
 @interface DWContainerViewController ()<UIScrollViewDelegate>
 
 @property (nonatomic,copy) NSArray *viewControllers;
 @property (nonatomic,strong) UIView *containerView;
 @property (nonatomic,assign) NSUInteger selectedIndex;
 @property (nonatomic,strong) UISegmentedControl *segmentControl;
+@property (nonatomic,strong) id<DWAcademicService> service;
 @end
 
 @implementation DWContainerViewController
-
+- (id<DWAcademicService>)service
+{
+    if (!_service) {
+        _service = [[DWAcademicServiceImpl alloc] initWithNavigationController:self.navigationController];
+    }
+    return _service;
+}
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.navigationItem.title = @"学术交流及最新资讯";
@@ -37,7 +45,10 @@
 }
 - (void)loadViewCustomView
 {
-    NSArray *vcs = @[[DWBBSViewController new],[DWConsultTViewController new],[DWExchangeController new]];
+    DWBBSController *bbsVC = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:NSStringFromClass([DWBBSController class])];
+    bbsVC.service = self.service;
+    
+    NSArray *vcs = @[bbsVC,[DWConsultTViewController new],[DWExchangeController new]];
     _viewControllers = vcs;
    
     //Add containerView and segmentControl
@@ -104,7 +115,7 @@
         // 转场动画
         CATransition *transition = [CATransition animation];
         transition.type = kCATransitionPush;
-        if (from > to) {
+        if (from < to) {//
             transition.subtype = kCATransitionFromRight;
         }else
         {

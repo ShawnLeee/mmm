@@ -103,19 +103,29 @@
 {
     const CGFloat screenWidth = [UIScreen mainScreen].bounds.size.width;
     if (indexPath.section == 2 || indexPath.section == 3 || indexPath.section == 4) {
-        return CGSizeMake((screenWidth - 40)/3, 40);
+        const CGFloat cellWidth = screenWidth/3;
+        return CGSizeMake(cellWidth, 44);
     }else
     {
         return CGSizeMake(screenWidth - 20, 21);
     }
 }
+- (UIEdgeInsets)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout insetForSectionAtIndex:(NSInteger)section
+{
+    if (section == 2 || section == 3 || section == 4) {
+        return UIEdgeInsetsZero;
+    }else
+    {
+        return UIEdgeInsetsMake(0, 10, 0, 10);
+    }
+}
 - (CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout minimumLineSpacingForSectionAtIndex:(NSInteger)section
 {
-    return 10;
+    return 0;
 }
 - (CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout minimumInteritemSpacingForSectionAtIndex:(NSInteger)section
 {
-    return 10;
+    return 0;
 }
 - (NSArray *)convertModelToViewModel:(NSArray *)modelArray
 {

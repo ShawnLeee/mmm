@@ -23,20 +23,20 @@
 }
 - (void)viewDidLoad {
     [super viewDidLoad];
-    NSString *samPath = [[NSBundle mainBundle] pathForResource:@"sample" ofType:@"pdf"];
-    NSURL *fileURL = [NSURL fileURLWithPath:samPath];
-    if (fileURL) {
-        // Initialize Document Interaction Controller
-        self.documentInteractionController = [UIDocumentInteractionController interactionControllerWithURL:fileURL];
-        
-        // Configure Document Interaction Controller
-        [self.documentInteractionController setDelegate:self];
-        
-        // Preview PDF
-            [self.documentInteractionController presentPreviewAnimated:YES];
-    }
-    // Do any additional setup after loading the view.
-//    [self p_setupWebView];
+//    NSString *samPath = [[NSBundle mainBundle] pathForResource:@"sample" ofType:@"pdf"];
+//    NSURL *fileURL = [NSURL fileURLWithPath:samPath];
+//    if (fileURL) {
+//        // Initialize Document Interaction Controller
+//        self.documentInteractionController = [UIDocumentInteractionController interactionControllerWithURL:fileURL];
+//        
+//        // Configure Document Interaction Controller
+//        [self.documentInteractionController setDelegate:self];
+//        
+//        // Preview PDF
+//            [self.documentInteractionController presentPreviewAnimated:YES];
+//    }
+//    // Do any additional setup after loading the view.
+    [self p_setupWebView];
 }
 
 
