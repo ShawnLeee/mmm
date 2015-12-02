@@ -5,6 +5,7 @@
 //  Created by sxq on 15/9/15.
 //  Copyright (c) 2015年 SXQ. All rights reserved.
 //
+#import "SXQBaseParam.h"
 #import <Foundation/Foundation.h>
 #import <CoreLocation/CoreLocation.h>
 typedef void (^AdjacentUserCompletion)(NSArray *adjacentUsers);
@@ -14,7 +15,7 @@ typedef void (^AdjacentUserCompletion)(NSArray *adjacentUsers);
 @end
 
 
-@interface AdjacentUserParam : NSObject
+@interface AdjacentUserParam : SXQBaseParam
 @property (nonatomic,copy) NSString *userID;
 @property (nonatomic,copy) NSString *longitude;
 @property (nonatomic,copy) NSString *latitude;

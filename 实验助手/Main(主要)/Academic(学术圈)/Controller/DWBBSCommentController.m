@@ -5,6 +5,8 @@
 //  Created by sxq on 15/12/1.
 //  Copyright © 2015年 SXQ. All rights reserved.
 //
+#import "SXQNavgationController.h"
+#import "DWBBSWriteComment.h"
 #import "DWBBSCommentCell.h"
 #import <ReactiveCocoa/ReactiveCocoa.h>
 #import "DWBBSTheme.h"
@@ -42,8 +44,14 @@
     self.navigationItem.rightBarButtonItem =  [[UIBarButtonItem alloc] initWithCustomView:button];
     [[button rac_signalForControlEvents:UIControlEventTouchUpInside]
      subscribeNext:^(id x) {
-        
+         [self p_showWriteCommentController];
     }];
+}
+- (void)p_showWriteCommentController
+{
+    DWBBSWriteComment *writeCommentVC = [[DWBBSWriteComment alloc] init];
+    SXQNavgationController *nav = [[SXQNavgationController alloc] initWithRootViewController:writeCommentVC];
+    [self presentViewController:nav animated:YES completion:nil];
 }
 - (void)p_setupTableView
 {

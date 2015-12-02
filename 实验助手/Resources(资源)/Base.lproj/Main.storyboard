@@ -119,7 +119,11 @@
         <scene sceneID="CsG-M0-zxz">
             <objects>
                 <navigationController id="ywk-4X-8l7" userLabel="说明书Nav" customClass="SXQNavgationController" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="说明书" image="home" id="tT8-OI-UW6"/>
+                    <tabBarItem key="tabBarItem" title="说明书" image="lab_instruction_normal" id="tT8-OI-UW6">
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="image" keyPath="selectedImage" value="lab_instruction"/>
+                        </userDefinedRuntimeAttributes>
+                    </tabBarItem>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="JkD-0k-JiG">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -318,7 +322,11 @@
         <scene sceneID="IpX-i2-Dwd">
             <objects>
                 <navigationController id="k56-kH-4KZ" customClass="SXQNavgationController" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="我" image="People_Normal" id="7nU-Uq-3vQ"/>
+                    <tabBarItem key="tabBarItem" title="我" image="lab_me_normal" id="7nU-Uq-3vQ">
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="image" keyPath="selectedImage" value="lab_me"/>
+                        </userDefinedRuntimeAttributes>
+                    </tabBarItem>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="bWV-ip-mrW">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -363,7 +371,11 @@
         <scene sceneID="M4L-9K-bGK">
             <objects>
                 <navigationController id="Xif-q6-91x" customClass="SXQNavgationController" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="实验" image="Notice_Normal" id="bK7-Eg-Suc"/>
+                    <tabBarItem key="tabBarItem" title="实验" image="lab_practice_normal" id="bK7-Eg-Suc">
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="image" keyPath="selectedImage" value="lab_practice"/>
+                        </userDefinedRuntimeAttributes>
+                    </tabBarItem>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Igi-G4-wR2">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -419,15 +431,15 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aFC-Ff-Hnl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-952" y="950"/>
+            <point key="canvasLocation" x="-959" y="963"/>
         </scene>
         <!--学术圈-->
         <scene sceneID="cok-vH-aId">
             <objects>
                 <navigationController id="MaC-wl-CPG" customClass="SXQNavgationController" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="学术圈" image="Find_Normal" id="STT-XC-vM9">
+                    <tabBarItem key="tabBarItem" title="学术圈" image="lab_circle_normal" id="STT-XC-vM9">
                         <userDefinedRuntimeAttributes>
-                            <userDefinedRuntimeAttribute type="image" keyPath="selectedImage" value="Find_Highlight"/>
+                            <userDefinedRuntimeAttribute type="image" keyPath="selectedImage" value="lab_circle"/>
                         </userDefinedRuntimeAttributes>
                     </tabBarItem>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
@@ -908,7 +920,11 @@
         <scene sceneID="t5n-l3-4nU">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="zdt-iD-V06" customClass="SXQNavgationController" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="计划" image="Night_Feed_Normal" id="ySr-dW-wmP"/>
+                    <tabBarItem key="tabBarItem" title="计划" image="lab_plan_normal" id="ySr-dW-wmP">
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="image" keyPath="selectedImage" value="lab_plan"/>
+                        </userDefinedRuntimeAttributes>
+                    </tabBarItem>
                     <toolbarItems/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="GEM-X5-llG">
@@ -1260,15 +1276,19 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Find_Highlight" width="29" height="29"/>
-        <image name="Find_Normal" width="29" height="29"/>
-        <image name="Night_Feed_Normal" width="29" height="29"/>
-        <image name="Notice_Normal" width="29" height="29"/>
-        <image name="People_Normal" width="29" height="29"/>
         <image name="common_icon_arrow" width="12" height="12"/>
         <image name="common_icon_arrow_highlighted" width="12" height="12"/>
         <image name="detail_bg" width="143" height="41"/>
         <image name="detail_divider" width="10" height="1"/>
-        <image name="home" width="25" height="22"/>
+        <image name="lab_circle" width="25" height="25"/>
+        <image name="lab_circle_normal" width="25" height="25"/>
+        <image name="lab_instruction" width="25" height="25"/>
+        <image name="lab_instruction_normal" width="25" height="25"/>
+        <image name="lab_me" width="25" height="25"/>
+        <image name="lab_me_normal" width="25" height="25"/>
+        <image name="lab_plan" width="25" height="25"/>
+        <image name="lab_plan_normal" width="25" height="25"/>
+        <image name="lab_practice" width="25" height="25"/>
+        <image name="lab_practice_normal" width="25" height="25"/>
     </resources>
 </document>

@@ -14,7 +14,6 @@
 + (void)fetchAdjacentUserDataWithCurrentLocation:(CLLocationCoordinate2D)currentLocationCoordinate completion:(AdjacentUserCompletion)completion
 {
     AdjacentUserParam *param = [AdjacentUserParam paramWithCoordiante:currentLocationCoordinate];
-    param.userID = @"4028c681494b994701494b99aba50000";
     [SXQHttpTool getWithURL:AdjacentReagentURL params:param.keyValues success:^(id json) {
         NSArray *resultArr = [SXQAdjacentUser objectArrayWithKeyValuesArray:json[@"aroundUser"]];
         if (completion) {

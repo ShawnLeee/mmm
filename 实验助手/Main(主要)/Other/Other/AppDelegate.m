@@ -23,6 +23,7 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    [self p_setTabBarColor];
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
     [self.window makeKeyAndVisible];
     if ([AccountTool account]) {//已登录
@@ -60,6 +61,14 @@
         [defaults setObject:currentVersion forKey:key];
         [defaults synchronize];
     }
+}
+- (void)p_setTabBarColor
+{
+    UIColor *normalColor = [UIColor colorWithRed:0.59 green:0.59 blue:0.59 alpha:1.0];
+    UIColor *selectedColor = [UIColor colorWithRed:0.09 green:0.64 blue:0.70 alpha:1.0];
+    [[UITabBar appearance] setTintColor:selectedColor];
+    [[UIBarButtonItem appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName : normalColor} forState:UIControlStateDisabled];
+    [[UIBarButtonItem appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName : selectedColor} forState:UIControlStateHighlighted ];
 }
 - (void)initializeSDK:(NSDictionary *)launchOptions
 {

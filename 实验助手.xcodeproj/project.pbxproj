@@ -106,6 +106,8 @@
 		B054C1871BFC5E74009662D6 /* DWSignUpServiceImpl.m in Sources */ = {isa = PBXBuildFile; fileRef = B054C1861BFC5E74009662D6 /* DWSignUpServiceImpl.m */; };
 		B054C18A1BFC60A4009662D6 /* DWSignUpGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = B054C1891BFC60A4009662D6 /* DWSignUpGroup.m */; };
 		B05855DB1BEAFC73006C29AC /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B05855DA1BEAFC6F006C29AC /* XCTest.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		B05ED8571C0E928E00C0DEB0 /* DWBBSWriteComment.m in Sources */ = {isa = PBXBuildFile; fileRef = B05ED8551C0E928E00C0DEB0 /* DWBBSWriteComment.m */; };
+		B05ED8581C0E928E00C0DEB0 /* DWBBSWriteComment.xib in Resources */ = {isa = PBXBuildFile; fileRef = B05ED8561C0E928E00C0DEB0 /* DWBBSWriteComment.xib */; };
 		B06239491B9587C100F0CAFB /* SXQInstructionListController.m in Sources */ = {isa = PBXBuildFile; fileRef = B06239471B9587C100F0CAFB /* SXQInstructionListController.m */; };
 		B062E2781BF969CE00A7C0FB /* UIButton+Action.m in Sources */ = {isa = PBXBuildFile; fileRef = B062E2771BF969CE00A7C0FB /* UIButton+Action.m */; };
 		B062E2831BF99DAA00A7C0FB /* DWInstructionDetailController.m in Sources */ = {isa = PBXBuildFile; fileRef = B062E2821BF99DAA00A7C0FB /* DWInstructionDetailController.m */; };
@@ -579,6 +581,9 @@
 		B054C1881BFC60A4009662D6 /* DWSignUpGroup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DWSignUpGroup.h; sourceTree = "<group>"; };
 		B054C1891BFC60A4009662D6 /* DWSignUpGroup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DWSignUpGroup.m; sourceTree = "<group>"; };
 		B05855DA1BEAFC6F006C29AC /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Platforms/iPhoneOS.platform/Developer/Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		B05ED8541C0E928E00C0DEB0 /* DWBBSWriteComment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DWBBSWriteComment.h; sourceTree = "<group>"; };
+		B05ED8551C0E928E00C0DEB0 /* DWBBSWriteComment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DWBBSWriteComment.m; sourceTree = "<group>"; };
+		B05ED8561C0E928E00C0DEB0 /* DWBBSWriteComment.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DWBBSWriteComment.xib; sourceTree = "<group>"; };
 		B06239461B9587C100F0CAFB /* SXQInstructionListController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SXQInstructionListController.h; sourceTree = "<group>"; };
 		B06239471B9587C100F0CAFB /* SXQInstructionListController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SXQInstructionListController.m; sourceTree = "<group>"; };
 		B062E2761BF969CE00A7C0FB /* UIButton+Action.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+Action.h"; sourceTree = "<group>"; };
@@ -2662,6 +2667,9 @@
 				B0FD56A91C0D6C5E00E9E377 /* DWBBSThemeController.m */,
 				B0FD56B51C0D769600E9E377 /* DWBBSCommentController.h */,
 				B0FD56B61C0D769600E9E377 /* DWBBSCommentController.m */,
+				B05ED8541C0E928E00C0DEB0 /* DWBBSWriteComment.h */,
+				B05ED8551C0E928E00C0DEB0 /* DWBBSWriteComment.m */,
+				B05ED8561C0E928E00C0DEB0 /* DWBBSWriteComment.xib */,
 			);
 			name = BBS;
 			sourceTree = "<group>";
@@ -2849,6 +2857,7 @@
 				B013832A1C02D8AF00F37F76 /* DWStarView.xib in Resources */,
 				B0A270FF1BD73B5C00BA0C1B /* Info.plist in Resources */,
 				B0A1E51C1B95897200440141 /* SXQListCell.xib in Resources */,
+				B05ED8581C0E928E00C0DEB0 /* DWBBSWriteComment.xib in Resources */,
 				B0221C6B1BFB1EC000DB4083 /* DWLoginViewController.xib in Resources */,
 				B0FD56A11C0D608300E9E377 /* DWBBSModuleCell.xib in Resources */,
 				B0F73BA11BBBA97800B3D0A0 /* SXQReagentCell.xib in Resources */,
@@ -3047,6 +3056,7 @@
 				B0C73CD41B932C6000F4B6D2 /* SXQGroupCell.m in Sources */,
 				B0221C461BFB177D00DB4083 /* SXQExpCategory.m in Sources */,
 				B010CF9E1C082B0C00F5053F /* DWReagentDetailController.m in Sources */,
+				B05ED8571C0E928E00C0DEB0 /* DWBBSWriteComment.m in Sources */,
 				B0026BE81BCF88D000FB70A9 /* SXQSupplierResult.m in Sources */,
 				B0A270F71BD73B5C00BA0C1B /* FSCalendar+IBExtension.m in Sources */,
 				B0FD56951C0D475300E9E377 /* DWConsultToolImpl.m in Sources */,

@@ -6,6 +6,7 @@
 //  Copyright (c) 2015年 sxq. All rights reserved.
 //
 
+#import "SXQReagentContoller.h"
 #import "DWContainerViewController.h"
 #import "DWBBSController.h"
 #import "DWExchangeController.h"
@@ -48,7 +49,7 @@
     DWBBSController *bbsVC = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:NSStringFromClass([DWBBSController class])];
     bbsVC.service = self.service;
     
-    NSArray *vcs = @[bbsVC,[DWConsultTViewController new],[DWExchangeController new]];
+    NSArray *vcs = @[bbsVC,[DWConsultTViewController new],[SXQReagentContoller new]];
     _viewControllers = vcs;
    
     //Add containerView and segmentControl
