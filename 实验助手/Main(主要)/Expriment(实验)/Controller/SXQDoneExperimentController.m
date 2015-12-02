@@ -62,6 +62,7 @@
     self.tableView.rowHeight = UITableViewAutomaticDimension;
     self.tableView.estimatedRowHeight =  100;
     self.tableView.allowsSelection = NO;
+    self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     
     [self.tableView registerNib:[UINib nibWithNibName:NSStringFromClass([DWDoingCell class]) bundle:nil] forCellReuseIdentifier:cellIdentifier];
     _arrayDataSource = [[ArrayDataSource alloc] initWithItems:self.experiments cellIdentifier:cellIdentifier cellConfigureBlock:^(DWDoingCell *cell,DWDoingViewModel *viewModel) {

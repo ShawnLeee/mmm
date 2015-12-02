@@ -5,6 +5,7 @@
 //  Created by sxq on 15/12/1.
 //  Copyright © 2015年 SXQ. All rights reserved.
 //
+#import "DWBBSCommentParam.h"
 #import "DWBBSCommentViewModel.h"
 #import "DWBBSComment.h"
 #import "DWBBSTheme.h"
@@ -113,5 +114,18 @@
         [tmpArray addObject:viewModel];
     }];
     return [tmpArray copy];
+}
+- (RACSignal *)commentWithParam:(DWBBSCommentParam *)param
+{
+    return [RACSignal createSignal:^RACDisposable *(id<RACSubscriber> subscriber) {
+        [SXQHttpTool postWithURL:BBSWriteCommentURL params:param.keyValues success:^(id json) {
+            BOOL success = [json[@"code"] isEqualToString:@"1"];
+            [subscriber sendNext:@(success)];
+            [subscriber sendCompleted];  
+        } failure:^(NSError *error) {
+            [subscriber sendError:error];
+        }];
+        return nil;
+    }];
 }
 @end

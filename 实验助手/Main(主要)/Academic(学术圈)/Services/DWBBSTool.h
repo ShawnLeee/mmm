@@ -5,7 +5,7 @@
 //  Created by sxq on 15/12/1.
 //  Copyright © 2015年 SXQ. All rights reserved.
 //
-@class RACSignal,DWBBSTheme,DWBBSModel;
+@class RACSignal,DWBBSTheme,DWBBSModel,DWBBSCommentParam;
 #import <Foundation/Foundation.h>
 
 @protocol DWBBSTool <NSObject>
@@ -13,4 +13,5 @@
 - (void)bbsPushModel:(id)model;
 - (RACSignal *)themesWithBBSModel:(DWBBSModel *)bbsModel;
 - (RACSignal *)commentsSignalWithBBSTheme:(DWBBSTheme *)bbsTheme;
+- (RACSignal *)commentWithParam:(DWBBSCommentParam *)param;
 @end

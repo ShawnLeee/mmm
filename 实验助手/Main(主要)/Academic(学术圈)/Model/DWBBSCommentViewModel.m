@@ -23,9 +23,10 @@
 - (void)setComment:(DWBBSComment *)comment
 {
     _comment = comment;
+    self.reviewID = comment.reviewID;
     self.userName = comment.reviewer;
     if (comment.parentReviewer.length) {
-        self.commentContent = [NSString stringWithFormat:@"回复:%@%@",comment.parentReviewer,comment.reviewDetail];
+        self.commentContent = [NSString stringWithFormat:@"回复:%@ %@",comment.parentReviewer,comment.reviewDetail];
     }else
     {
         self.commentContent = comment.reviewDetail;

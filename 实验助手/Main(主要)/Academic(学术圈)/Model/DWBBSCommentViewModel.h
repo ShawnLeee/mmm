@@ -13,5 +13,6 @@
 @property (nonatomic,copy) NSString *userName;
 @property (nonatomic,copy) NSString *createTime;
 @property (nonatomic,copy) NSString *commentContent;
+@property (nonatomic,copy) NSString *reviewID;
 - (instancetype)initWithComment:(DWBBSComment *)comment bbsTool:(id<DWBBSTool>)bbsTool;
 @end

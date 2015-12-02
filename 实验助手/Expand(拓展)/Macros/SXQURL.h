@@ -93,4 +93,5 @@ typedef NS_ENUM(NSUInteger,LABResponseType)
 #define BBSModulesURL @"http://172.18.1.55:8080/LabAssistant/bbs/modules"
 #define BBSThemesURL @"http://172.18.1.55:8080/LabAssistant/bbs/topics"
 #define BBSCommentsURL @"http://172.18.1.55:8080/LabAssistant/bbs/reviews"
+#define BBSWriteCommentURL @"http://172.18.1.55:8080/LabAssistant/bbs/responseReview"
 #endif

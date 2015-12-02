@@ -6,21 +6,30 @@
 //  Copyright (c) 2015年 SXQ. All rights reserved.
 //
 @import MapKit;
+@import CoreLocation;
 #import "SXQReagentContoller.h"
 #import "SXQAnnotation.h"
 #import "SXQAnnotationView.h"
 #import "AcademicTool.h"
 #import "SXQAdjacentUser.h"
+#define IS_OS_8_OR_LATER ([[[UIDevice currentDevice] systemVersion] floatValue] >= 8.0)
 @interface SXQReagentContoller ()<MKMapViewDelegate,CLLocationManagerDelegate>
 @property (weak, nonatomic) IBOutlet MKMapView *mapView;
+@property (nonatomic,strong) CLLocationManager *locationManager;
 @end
 @implementation SXQReagentContoller
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    _locationManager = [[CLLocationManager alloc] init];
+    _locationManager.delegate = self;
+    if (IS_OS_8_OR_LATER) {
+        [self.locationManager requestAlwaysAuthorization];
+    }
+    [self.locationManager startUpdatingLocation];
+    self.mapView.showsUserLocation = YES;
     _mapView.userTrackingMode = MKUserTrackingModeFollow;
     _mapView.mapType = MKMapTypeStandard;
-    
 }
 
 - (MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id<MKAnnotation>)annotation

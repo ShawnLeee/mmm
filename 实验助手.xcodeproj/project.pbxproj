@@ -129,6 +129,7 @@
 		B06CE1691BAAB803008BB98E /* DWConsultTViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B06CE1631BAAB803008BB98E /* DWConsultTViewController.m */; };
 		B06CE16B1BAAB803008BB98E /* DWExchangeController.m in Sources */ = {isa = PBXBuildFile; fileRef = B06CE1671BAAB803008BB98E /* DWExchangeController.m */; };
 		B0711B691BAFD23F00EA7E14 /* InstructionTool.m in Sources */ = {isa = PBXBuildFile; fileRef = B0711B681BAFD23F00EA7E14 /* InstructionTool.m */; };
+		B0739CC21C0EB65D00896F2D /* DWBBSCommentParam.m in Sources */ = {isa = PBXBuildFile; fileRef = B0739CC11C0EB65D00896F2D /* DWBBSCommentParam.m */; };
 		B079CE5E1BE9D49C00CD54A9 /* SXQSettingCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B079CE5C1BE9D49C00CD54A9 /* SXQSettingCell.m */; };
 		B079CE5F1BE9D49C00CD54A9 /* SXQSettingCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B079CE5D1BE9D49C00CD54A9 /* SXQSettingCell.xib */; };
 		B079CE621BE9D77500CD54A9 /* SXQSettingController.m in Sources */ = {isa = PBXBuildFile; fileRef = B079CE611BE9D77500CD54A9 /* SXQSettingController.m */; };
@@ -622,6 +623,8 @@
 		B06D817D1C05515400C0C20D /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		B0711B671BAFD23F00EA7E14 /* InstructionTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InstructionTool.h; sourceTree = "<group>"; };
 		B0711B681BAFD23F00EA7E14 /* InstructionTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InstructionTool.m; sourceTree = "<group>"; };
+		B0739CC01C0EB65D00896F2D /* DWBBSCommentParam.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DWBBSCommentParam.h; sourceTree = "<group>"; };
+		B0739CC11C0EB65D00896F2D /* DWBBSCommentParam.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DWBBSCommentParam.m; sourceTree = "<group>"; };
 		B079CE5B1BE9D49C00CD54A9 /* SXQSettingCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SXQSettingCell.h; sourceTree = "<group>"; };
 		B079CE5C1BE9D49C00CD54A9 /* SXQSettingCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SXQSettingCell.m; sourceTree = "<group>"; };
 		B079CE5D1BE9D49C00CD54A9 /* SXQSettingCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SXQSettingCell.xib; sourceTree = "<group>"; };
@@ -1535,6 +1538,16 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
+		B0739CC31C0EDF6700896F2D /* Exchange */ = {
+			isa = PBXGroup;
+			children = (
+				B0DDFF2A1BA6A07000E4AB3C /* SXQReagentContoller.h */,
+				B0DDFF2B1BA6A07000E4AB3C /* SXQReagentContoller.m */,
+				B0DDFF2C1BA6A07000E4AB3C /* SXQReagentContoller.xib */,
+			);
+			name = Exchange;
+			sourceTree = "<group>";
+		};
 		B094C2651BFACF3B00CDC289 /* Comment */ = {
 			isa = PBXGroup;
 			children = (
@@ -1823,6 +1836,7 @@
 		B0C73C851B92F39E00F4B6D2 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				B0739CC31C0EDF6700896F2D /* Exchange */,
 				B0FD56A71C0D6C1600E9E377 /* BBS */,
 				B06CE1601BAAB803008BB98E /* DWContainerViewController.h */,
 				B06CE1611BAAB803008BB98E /* DWContainerViewController.m */,
@@ -1830,9 +1844,6 @@
 				B06CE1631BAAB803008BB98E /* DWConsultTViewController.m */,
 				B06CE1661BAAB803008BB98E /* DWExchangeController.h */,
 				B06CE1671BAAB803008BB98E /* DWExchangeController.m */,
-				B0DDFF2A1BA6A07000E4AB3C /* SXQReagentContoller.h */,
-				B0DDFF2B1BA6A07000E4AB3C /* SXQReagentContoller.m */,
-				B0DDFF2C1BA6A07000E4AB3C /* SXQReagentContoller.xib */,
 				B0F8453D1BE07CAE00BC539A /* DWConsultDetailController.h */,
 				B0F8453E1BE07CAE00BC539A /* DWConsultDetailController.m */,
 				B0F8453F1BE07CAE00BC539A /* DWConsultDetailController.xib */,
@@ -1857,6 +1868,8 @@
 		B0C73C871B92F39E00F4B6D2 /* Other */ = {
 			isa = PBXGroup;
 			children = (
+				B0739CC01C0EB65D00896F2D /* DWBBSCommentParam.h */,
+				B0739CC11C0EB65D00896F2D /* DWBBSCommentParam.m */,
 			);
 			path = Other;
 			sourceTree = "<group>";
@@ -3239,6 +3252,7 @@
 				B0F73BB51BBBB3E600B3D0A0 /* FPPopoverController.m in Sources */,
 				B0F3088F1BC6016E00AD9EAF /* MJPhoto.m in Sources */,
 				B0FCF5F71BF5C98A0075434F /* DWButton.m in Sources */,
+				B0739CC21C0EB65D00896F2D /* DWBBSCommentParam.m in Sources */,
 				B0DDFF311BA6A99200E4AB3C /* SXQAnnotation.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
