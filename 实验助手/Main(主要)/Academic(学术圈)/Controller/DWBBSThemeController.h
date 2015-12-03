@@ -11,4 +11,6 @@
 
 @interface DWBBSThemeController : UITableViewController
 - (instancetype)initWithBBSModel:(DWBBSModel *)bbsModel bbsTool:(id<DWBBSTool>)bbsTool;
+@property (nonatomic,strong) id<DWBBSTool> bbsTool;
+@property (nonatomic,strong) DWBBSModel *bbsModel;
 @end

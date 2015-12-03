@@ -38,4 +38,18 @@
     }];
     return [[UIBarButtonItem alloc] initWithCustomView:button];
 }
++ (UIBarButtonItem *)itemWithTitle:(NSString *)title titleColor:(UIColor *)titleColor font:(CGFloat)font action:(void (^)())action
+{
+     UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
+    button.titleLabel.font = [UIFont systemFontOfSize:font];
+    [button setTitle:title forState:UIControlStateNormal];
+    [button setTitleColor:titleColor forState:UIControlStateNormal];
+    button.frame = CGRectMake(0, 0, 60, 30);
+    [[button rac_signalForControlEvents:UIControlEventTouchDown]
+        subscribeNext:^(id x) {
+            action();
+    }];
+    return [[UIBarButtonItem alloc] initWithCustomView:button];
+}
 @end
+

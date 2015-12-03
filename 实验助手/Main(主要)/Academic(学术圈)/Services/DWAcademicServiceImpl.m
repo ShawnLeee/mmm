@@ -70,4 +70,8 @@
 {
     return self.reagentExchangeTool;
 }
+- (void)presentViewController:(UIViewController *)viewControllerToPresent
+{
+    [self.navigationController presentViewController:viewControllerToPresent animated:YES completion:nil];
+}
 @end

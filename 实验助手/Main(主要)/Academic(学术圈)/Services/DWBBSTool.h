@@ -14,4 +14,5 @@
 - (RACSignal *)themesWithBBSModel:(DWBBSModel *)bbsModel;
 - (RACSignal *)commentsSignalWithBBSTheme:(DWBBSTheme *)bbsTheme;
 - (RACSignal *)commentWithParam:(DWBBSCommentParam *)param;
+- (RACSignal *)signalForThemeSearchWithText:(NSString *)text moduleID:(NSString *)moduleID;
 @end

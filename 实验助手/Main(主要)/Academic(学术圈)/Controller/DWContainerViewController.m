@@ -47,9 +47,10 @@
 - (void)loadViewCustomView
 {
     DWBBSController *bbsVC = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:NSStringFromClass([DWBBSController class])];
+    SXQReagentContoller *reagentVC = [[SXQReagentContoller alloc] initWithService:self.service];
     bbsVC.service = self.service;
     
-    NSArray *vcs = @[bbsVC,[DWConsultTViewController new],[SXQReagentContoller new]];
+    NSArray *vcs = @[bbsVC,[DWConsultTViewController new],reagentVC];
     _viewControllers = vcs;
    
     //Add containerView and segmentControl

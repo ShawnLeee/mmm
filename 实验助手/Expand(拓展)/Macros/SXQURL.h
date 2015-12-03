@@ -16,6 +16,7 @@ typedef NS_ENUM(NSUInteger,LABResponseType)
 };
 
 ////////////////////////////////////////////实验部分////////////////////////////////////
+#define SetReagentURL @"http://172.18.1.55:8080/LabAssistant/map/setReagents"
 //获取实验或说明书下所有的实验步骤
 #define ExperimentStepURL @"http://172.18.1.55:8080/LabAssistant/lab/getAllProcessExceptComplete?userID=4028c681494b994701494b99aba50000"
 //附近的试剂交换
@@ -94,4 +95,5 @@ typedef NS_ENUM(NSUInteger,LABResponseType)
 #define BBSThemesURL @"http://172.18.1.55:8080/LabAssistant/bbs/topics"
 #define BBSCommentsURL @"http://172.18.1.55:8080/LabAssistant/bbs/reviews"
 #define BBSWriteCommentURL @"http://172.18.1.55:8080/LabAssistant/bbs/responseReview"
+#define BBSThemeSearchURL @"http://172.18.1.55:8080/LabAssistant/bbs/searchTopics"
 #endif

@@ -12,4 +12,5 @@
 + (UIBarButtonItem *)itemWithTitle:(NSString *)title target:(id)target action:(SEL)action;
 + (UIBarButtonItem *)itemWithImage:(NSString *)imageName target:(id)target action:(SEL)action;
 + (UIBarButtonItem *)itemWithTitle:(NSString *)title action:(void (^)())action;
++ (UIBarButtonItem *)itemWithTitle:(NSString *)title titleColor:(UIColor *)titleColor font:(CGFloat)font action:(void (^)())action;
 @end

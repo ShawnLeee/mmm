@@ -60,7 +60,10 @@
     [sendBtn setTitleColor:[UIColor grayColor] forState:UIControlStateDisabled];
     [sendBtn setTitleColor:normal forState:UIControlStateNormal];
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:sendBtn];
-    [[[sendBtn rac_signalForControlEvents:UIControlEventTouchUpInside]
+    [[[[sendBtn rac_signalForControlEvents:UIControlEventTouchUpInside]
+      doNext:^(id x) {
+          sendBtn.enabled = NO;
+      }]
      flattenMap:^RACStream *(id value) {
          @strongify(self)
          return [self.bbsTool commentWithParam:self.param];
@@ -72,6 +75,7 @@
          }else
          {
              [MBProgressHUD showError:@"评论失败"];
+             sendBtn.enabled = YES;
          }
     }];
     

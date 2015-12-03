@@ -5,6 +5,7 @@
 //  Created by sxq on 15/12/1.
 //  Copyright © 2015年 SXQ. All rights reserved.
 //
+#import "DWBBSTopicResult.h"
 #import <MJRefresh.h>
 #import "SXQNavgationController.h"
 #import "DWBBSCommentViewModel.h"
@@ -33,7 +34,6 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self p_setupRefresh];
-//    [self p_loadData];
     [self p_setupTableView];
     [self p_setupNavigation];
 }
@@ -51,9 +51,9 @@
     MJRefreshStateHeader *header = [MJRefreshStateHeader headerWithRefreshingBlock:^{
         @weakify(self)
         [[self.bbsTool commentsSignalWithBBSTheme:_bbsTheme]
-         subscribeNext:^(NSArray *comments) {
+         subscribeNext:^(DWBBSTopicResult *result) {
              @strongify(self)
-             self.comments = comments;
+             self.comments = result.reviews;
              [self.tableView reloadData];
              [self.tableView.header endRefreshing];
          }];
@@ -85,16 +85,7 @@
     self.tableView.estimatedRowHeight = 60;
     [self.tableView registerNib:[UINib nibWithNibName:NSStringFromClass([DWBBSCommentCell class]) bundle:nil] forCellReuseIdentifier: NSStringFromClass([DWBBSCommentCell class])];
 }
-- (void)p_loadData
-{
-    @weakify(self)
-    [[self.bbsTool commentsSignalWithBBSTheme:_bbsTheme]
-    subscribeNext:^(NSArray *comments) {
-        @strongify(self)
-        self.comments = comments;
-        [self.tableView reloadData];
-    }];
-}
+
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     return self.comments.count;

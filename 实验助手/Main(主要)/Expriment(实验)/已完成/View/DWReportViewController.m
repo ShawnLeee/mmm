@@ -8,7 +8,7 @@
 #import "UIBarButtonItem+SXQ.h"
 #import "DWReportViewController.h"
 
-@interface DWReportViewController ()
+@interface DWReportViewController ()<NSURLConnectionDataDelegate>
 @property (nonatomic,weak) IBOutlet UIWebView *webView;
 @property (nonatomic,copy) NSString *reportURLStr;
 @end
@@ -26,8 +26,8 @@
     [self p_setupSelf];
     
     NSURL *url = [NSURL URLWithString:self.reportURLStr];
-    NSURLRequest *request = [NSURLRequest requestWithURL:url];
-    [self.webView loadRequest:request];
+    NSData *data = [NSData dataWithContentsOfURL:url];
+    [self.webView loadData:data MIMEType:@"application/pdf" textEncodingName:@"gb2312" baseURL:url];
 }
 - (void)p_setupSelf
 {

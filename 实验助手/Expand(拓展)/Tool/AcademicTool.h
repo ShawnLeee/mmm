@@ -16,7 +16,6 @@ typedef void (^AdjacentUserCompletion)(NSArray *adjacentUsers);
 
 
 @interface AdjacentUserParam : SXQBaseParam
-@property (nonatomic,copy) NSString *userID;
 @property (nonatomic,copy) NSString *longitude;
 @property (nonatomic,copy) NSString *latitude;
 + (instancetype)paramWithCoordiante:(CLLocationCoordinate2D)coordinate;

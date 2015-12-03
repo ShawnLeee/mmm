@@ -7,18 +7,27 @@
 //
 @import MapKit;
 @import CoreLocation;
+#import "SXQNavgationController.h"
+#import "SXQAddReagentExchangeController.h"
 #import "SXQReagentContoller.h"
-#import "SXQAnnotation.h"
-#import "SXQAnnotationView.h"
-#import "AcademicTool.h"
+#import "SXQReagentAnnotation.h"
+#import "SXQReagentAnnotationView.h"
 #import "SXQAdjacentUser.h"
+#import "SXQAdjacentUserParam.h"
 #define IS_OS_8_OR_LATER ([[[UIDevice currentDevice] systemVersion] floatValue] >= 8.0)
 @interface SXQReagentContoller ()<MKMapViewDelegate,CLLocationManagerDelegate>
 @property (weak, nonatomic) IBOutlet MKMapView *mapView;
 @property (nonatomic,strong) CLLocationManager *locationManager;
+@property (nonatomic,strong) id<DWAcademicService> service;
 @end
 @implementation SXQReagentContoller
-
+- (instancetype)initWithService:(id<DWAcademicService>)service
+{
+    if (self = [super init]) {
+        _service = service;
+    }
+    return self;
+}
 - (void)viewDidLoad {
     [super viewDidLoad];
     _locationManager = [[CLLocationManager alloc] init];
@@ -34,12 +43,12 @@
 
 - (MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id<MKAnnotation>)annotation
 {
-    MKPinAnnotationView *annotionView = [[MKPinAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:@"sss"];
-    annotionView.pinColor = MKPinAnnotationColorGreen;
-    annotionView.canShowCallout = YES;
-    UIButton *button = [UIButton buttonWithType:UIButtonTypeContactAdd];
-    annotionView.rightCalloutAccessoryView = button;
-    return annotionView;
+    if ([annotation isKindOfClass:[SXQReagentAnnotation class]]) {
+        SXQReagentAnnotationView *annoView = [SXQReagentAnnotationView annotationViewWithMapView:mapView];
+        annoView.annotation = annotation;
+        return annoView;
+    }
+    return nil;
     
 }
 - (void)mapView:(MKMapView *)mapView didUpdateUserLocation:(MKUserLocation *)userLocation
@@ -54,14 +63,21 @@
 //获取附近用户添加大头针
 - (void)addAdjacentUserWithCurrentLocation:(CLLocationCoordinate2D)currentLocationCoordinate
 {
-    //获取附近用户的数据
-    [AcademicTool fetchAdjacentUserDataWithCurrentLocation:currentLocationCoordinate completion:^(NSArray *adjacentUsers) {
-        //添加数据到地图
-        [adjacentUsers enumerateObjectsUsingBlock:^(SXQAdjacentUser *user, NSUInteger idx, BOOL *stop) {
-            SXQAnnotation *annotation = [SXQAnnotation annotationWithAdjacentUser:user];
-            [_mapView addAnnotation:annotation];
-        }];
+    SXQAdjacentUserParam *param = [SXQAdjacentUserParam paramWithCoordiante:currentLocationCoordinate];
+    [[[self.service getReagentExchangeTool] adjacentUserSignalWith:param]
+    subscribeNext:^(NSArray *annotations) {
+        [self p_addAnnotations:annotations];
     }];
 }
-
+- (void)p_addAnnotations:(NSArray *)annotations
+{
+    [annotations enumerateObjectsUsingBlock:^(SXQReagentAnnotation *annotation, NSUInteger idx, BOOL *stop) {
+            [_mapView addAnnotation:annotation];
+        }];
+}
+- (IBAction)addRagent {
+    SXQAddReagentExchangeController *addreagentVC = [[SXQAddReagentExchangeController alloc] initWithReagentExchangeTool:[self.service getReagentExchangeTool]];
+    SXQNavgationController *nav = [[SXQNavgationController alloc] initWithRootViewController:addreagentVC];
+    [self.service presentViewController:nav];
+}
 @end

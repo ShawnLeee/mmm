@@ -17,4 +17,5 @@
 - (id<DWBBSTool>)getBBSTool;
 - (id<DWConsultTool>)getConsultTool;
 - (id<DWReagentExchangeTool>)getReagentExchangeTool;
+- (void)presentViewController:(UIViewController *)viewControllerToPresent;
 @end

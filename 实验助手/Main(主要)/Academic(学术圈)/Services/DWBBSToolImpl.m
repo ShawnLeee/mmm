@@ -5,6 +5,9 @@
 //  Created by sxq on 15/12/1.
 //  Copyright © 2015年 SXQ. All rights reserved.
 //
+#import "DWBBSThemeSearchParam.h"
+#import "DWBBSTopic.h"
+#import "DWBBSTopicResult.h"
 #import "DWBBSCommentParam.h"
 #import "DWBBSCommentViewModel.h"
 #import "DWBBSComment.h"
@@ -43,7 +46,9 @@
 }
 - (void)p_pushBBSModel:(DWBBSModel *)bbsModel
 {
-    DWBBSThemeController *bbsThemeVC = [[DWBBSThemeController alloc] initWithBBSModel:bbsModel bbsTool:self];
+    DWBBSThemeController *bbsThemeVC = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:NSStringFromClass([DWBBSThemeController class])];
+    bbsThemeVC.bbsTool = self;
+    bbsThemeVC.bbsModel = bbsModel;
     [self.navigationController pushViewController:bbsThemeVC animated:YES];
 }
 - (RACSignal *)bbsModulesSignal
@@ -91,9 +96,10 @@
     return [RACSignal createSignal:^RACDisposable *(id<RACSubscriber> subscriber) {
         [SXQHttpTool getWithURL:BBSCommentsURL params:param success:^(id json) {
             if ([json[@"code"] isEqualToString:@"1"]) {
-                NSArray *comments = [DWBBSComment objectArrayWithKeyValuesArray:json[@"data"][@"reviews"]];
-                NSArray *viewModels = [self p_viewModleArrayWithCommentArray:comments];
-                [subscriber sendNext:viewModels];
+                DWBBSTopicResult *result = [DWBBSTopicResult objectWithKeyValues:json[@"data"]];
+                NSArray *viewModels = [self p_viewModleArrayWithCommentArray:result.reviews];
+                result.reviews = viewModels;
+                [subscriber sendNext:result];
                 [subscriber sendCompleted];
             }else
             {
@@ -122,6 +128,26 @@
             BOOL success = [json[@"code"] isEqualToString:@"1"];
             [subscriber sendNext:@(success)];
             [subscriber sendCompleted];  
+        } failure:^(NSError *error) {
+            [subscriber sendError:error];
+        }];
+        return nil;
+    }];
+}
+- (RACSignal *)signalForThemeSearchWithText:(NSString *)text moduleID:(NSString *)moduleID
+{
+    DWBBSThemeSearchParam *param = [DWBBSThemeSearchParam paramWithModuleID:moduleID searchStr:text];
+    return [RACSignal createSignal:^RACDisposable *(id<RACSubscriber> subscriber) {
+        [SXQHttpTool getWithURL:BBSThemeSearchURL params:param.keyValues success:^(id json) {
+            if ([json[@"code"] isEqualToString:@"1"]) {
+                NSArray *themes = [DWBBSTheme objectArrayWithKeyValuesArray:json[@"data"]];
+                [subscriber sendNext:themes];
+                [subscriber sendCompleted];
+            }else
+            {
+                [subscriber sendNext:nil];
+                [subscriber sendCompleted];
+            }
         } failure:^(NSError *error) {
             [subscriber sendError:error];
         }];
