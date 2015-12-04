@@ -53,10 +53,10 @@
 
 - (void)setupCustomView
 {
-    [self addConstraint:[self.view.leadingAnchor constraintEqualToAnchor:self.leadingAnchor]];
-    [self addConstraint:[self.view.topAnchor constraintEqualToAnchor:self.topAnchor]];
-    [self addConstraint:[self.view.trailingAnchor constraintEqualToAnchor:self.trailingAnchor]];
-    [self addConstraint:[self.view.bottomAnchor constraintEqualToAnchor:self.bottomAnchor]];
+    [self addConstraint:[NSLayoutConstraint constraintWithItem:_view attribute:NSLayoutAttributeLeading relatedBy:NSLayoutRelationEqual toItem:self attribute:NSLayoutAttributeLeading multiplier:1.0 constant:0]];
+    [self addConstraint:[NSLayoutConstraint constraintWithItem:_view attribute:NSLayoutAttributeTop relatedBy:NSLayoutRelationEqual toItem:self attribute:NSLayoutAttributeTop multiplier:1.0 constant:0]];
+    [self addConstraint:[NSLayoutConstraint constraintWithItem:_view attribute:NSLayoutAttributeBottom relatedBy:NSLayoutRelationEqual toItem:self attribute:NSLayoutAttributeBottom multiplier:1.0 constant:0]];
+    [self addConstraint:[NSLayoutConstraint constraintWithItem:_view attribute:NSLayoutAttributeTrailing relatedBy:NSLayoutRelationEqual toItem:self attribute:NSLayoutAttributeTrailing multiplier:1.0 constant:0]];
 }
 - (void)show
 {

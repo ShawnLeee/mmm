@@ -38,7 +38,7 @@
 }
 - (void)p_addConstraints
 {
-    [self.contentView addConstraint:[_headerLabel.leadingAnchor constraintEqualToAnchor:self.contentView.leadingAnchor constant:10]];
-    [self.contentView addConstraint:[_headerLabel.centerYAnchor constraintEqualToAnchor:self.contentView.centerYAnchor ]];
+    [self.contentView addConstraint:[NSLayoutConstraint constraintWithItem:self.headerLabel attribute:NSLayoutAttributeLeading relatedBy:NSLayoutRelationEqual toItem:self.contentView attribute:NSLayoutAttributeLeading multiplier:1.0 constant:10]];
+    [self.contentView addConstraint:[NSLayoutConstraint constraintWithItem:self.headerLabel attribute:NSLayoutAttributeCenterY relatedBy:NSLayoutRelationEqual toItem:self.contentView attribute:NSLayoutAttributeCenterY multiplier:1.0 constant:0]];
 }
 @end

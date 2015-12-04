@@ -48,10 +48,10 @@
 }
 - (void)p_setupConstaints
 {
-    [self addConstraint:[self.headerView.leadingAnchor constraintEqualToAnchor:self.leadingAnchor]];
-    [self addConstraint:[self.headerView.topAnchor constraintEqualToAnchor:self.topAnchor]];
-    [self addConstraint:[self.headerView.bottomAnchor constraintEqualToAnchor:self.bottomAnchor]];
-    [self addConstraint:[self.headerView.trailingAnchor constraintEqualToAnchor:self.trailingAnchor]];
+    [self addConstraint:[NSLayoutConstraint constraintWithItem:self.headerView attribute:NSLayoutAttributeLeading relatedBy:NSLayoutRelationEqual toItem:self attribute:NSLayoutAttributeLeading multiplier:1.0 constant:0]];
+    [self addConstraint:[NSLayoutConstraint constraintWithItem:self.headerView attribute:NSLayoutAttributeTop relatedBy:NSLayoutRelationEqual toItem:self attribute:NSLayoutAttributeTop multiplier:1.0 constant:0]];
+    [self addConstraint:[NSLayoutConstraint constraintWithItem:self.headerView attribute:NSLayoutAttributeBottom relatedBy:NSLayoutRelationEqual toItem:self attribute:NSLayoutAttributeBottom multiplier:1.0 constant:0]];
+    [self addConstraint:[NSLayoutConstraint constraintWithItem:self.headerView attribute:NSLayoutAttributeTrailing relatedBy:NSLayoutRelationEqual toItem:self attribute:NSLayoutAttributeTrailing multiplier:1.0 constant:0]];
 }
 - (IBAction)buttonClicked:(UIButton *)sender {
     if ([self.delegate respondsToSelector:@selector(dw_meHeader:didClickedHeaderButton:)]) {

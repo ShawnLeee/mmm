@@ -73,10 +73,10 @@
 }
 - (void)p_addConstraints
 {
-    [self addConstraint:[_view.leadingAnchor constraintEqualToAnchor:self.leadingAnchor]];
-    [self addConstraint:[_view.topAnchor constraintEqualToAnchor:self.topAnchor]];
-    [self addConstraint:[_view.bottomAnchor constraintEqualToAnchor:self.bottomAnchor]];
-    [self addConstraint:[_view.trailingAnchor constraintEqualToAnchor:self.trailingAnchor]];
+    [self addConstraint:[NSLayoutConstraint constraintWithItem:_view attribute:NSLayoutAttributeLeading relatedBy:NSLayoutRelationEqual toItem:self attribute:NSLayoutAttributeLeading multiplier:1.0 constant:0]];
+    [self addConstraint:[NSLayoutConstraint constraintWithItem:_view attribute:NSLayoutAttributeTop relatedBy:NSLayoutRelationEqual toItem:self attribute:NSLayoutAttributeTop multiplier:1.0 constant:0]];
+    [self addConstraint:[NSLayoutConstraint constraintWithItem:_view attribute:NSLayoutAttributeBottom relatedBy:NSLayoutRelationEqual toItem:self attribute:NSLayoutAttributeBottom multiplier:1.0 constant:0]];
+    [self addConstraint:[NSLayoutConstraint constraintWithItem:_view attribute:NSLayoutAttributeTrailing relatedBy:NSLayoutRelationEqual toItem:self attribute:NSLayoutAttributeTrailing multiplier:1.0 constant:0]];
 }
 - (void)awakeFromNib
 {

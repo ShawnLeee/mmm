@@ -90,35 +90,32 @@
 - (void)layoutCustomView
 {
     self.reagentName.translatesAutoresizingMaskIntoConstraints = NO;
-    [self addConstraint:[self.reagentName.leadingAnchor constraintEqualToAnchor:self.leadingAnchor constant:0]];
-    [self addConstraint:[self.reagentName.topAnchor constraintEqualToAnchor:self.topAnchor constant:0]];
-    [self addConstraint:[self.reagentName.bottomAnchor constraintEqualToAnchor:self.bottomAnchor constant:0]];
-    [self.reagentName addConstraint:[self.reagentName.widthAnchor constraintEqualToAnchor:nil constant:kPerWidth]];
+    [self addConstraint:[NSLayoutConstraint constraintWithItem:self.reagentName attribute:NSLayoutAttributeLeading relatedBy:NSLayoutRelationEqual toItem:self attribute:NSLayoutAttributeLeading multiplier:1.0 constant:0]];
+    [self addConstraint:[NSLayoutConstraint constraintWithItem:self.reagentName attribute:NSLayoutAttributeTop relatedBy:NSLayoutRelationEqual toItem:self attribute:NSLayoutAttributeTop multiplier:1.0 constant:0]];
+    [self addConstraint:[NSLayoutConstraint constraintWithItem:self.reagentName attribute:NSLayoutAttributeBottom relatedBy:NSLayoutRelationEqual toItem:self attribute:NSLayoutAttributeBottom multiplier:1.0 constant:0]];
+    [self addConstraint:[NSLayoutConstraint constraintWithItem:self.reagentName attribute:NSLayoutAttributeWidth relatedBy:NSLayoutRelationEqual toItem:nil attribute:NSLayoutAttributeNotAnAttribute multiplier:1.0 constant:kPerWidth]];
     
     self.reagentCount.translatesAutoresizingMaskIntoConstraints = NO;
-    [self addConstraint:[self.reagentCount.leadingAnchor constraintEqualToAnchor:self.reagentName.trailingAnchor constant:0]];
-    [self addConstraint:[self.reagentCount.topAnchor constraintEqualToAnchor:self.topAnchor constant:0]];
-    [self addConstraint:[self.reagentCount.lastBaselineAnchor constraintEqualToAnchor:self.reagentName.lastBaselineAnchor constant:0]];
-    [self.reagentCount addConstraint:[self.reagentCount.widthAnchor constraintEqualToAnchor:nil constant:kPerWidth]];
-
+    [self addConstraint:[NSLayoutConstraint constraintWithItem:self.reagentCount attribute:NSLayoutAttributeLeading relatedBy:NSLayoutRelationEqual toItem:self.reagentName attribute:NSLayoutAttributeTrailing multiplier:1.0 constant:0]];
+    [self addConstraint:[NSLayoutConstraint constraintWithItem:self.reagentCount attribute:NSLayoutAttributeTop relatedBy:NSLayoutRelationEqual toItem:self attribute:NSLayoutAttributeTop multiplier:1.0 constant:0]];
+    [self addConstraint:[NSLayoutConstraint constraintWithItem:self.reagentCount attribute:NSLayoutAttributeLastBaseline relatedBy:NSLayoutRelationEqual toItem:self.reagentName attribute:NSLayoutAttributeLastBaseline multiplier:1.0 constant:0]];
+    [self addConstraint:[NSLayoutConstraint constraintWithItem:self.reagentCount attribute:NSLayoutAttributeWidth relatedBy:NSLayoutRelationEqual toItem:nil attribute:NSLayoutAttributeNotAnAttribute multiplier:1.0 constant:kPerWidth]];
+    
     self.sampleCount.translatesAutoresizingMaskIntoConstraints = NO;
-    [self addConstraint:[self.sampleCount.leadingAnchor constraintEqualToAnchor:self.reagentCount.trailingAnchor constant:0]];
-//    [self addConstraint:[self.sampleCount.topAnchor constraintEqualToAnchor:self.topAnchor constant:0]];
-    [self addConstraint:[self.sampleCount.bottomAnchor constraintEqualToAnchor:self.bottomAnchor constant:0]];
-    [self.sampleCount addConstraint:[self.sampleCount.widthAnchor constraintEqualToAnchor:nil constant:kPerWidth - 10]];
+    [self addConstraint:[NSLayoutConstraint constraintWithItem:self.sampleCount attribute:NSLayoutAttributeLeading relatedBy:NSLayoutRelationEqual toItem:self.reagentCount attribute:NSLayoutAttributeTrailing multiplier:1.0 constant:0]];
+    [self addConstraint:[NSLayoutConstraint constraintWithItem:self.sampleCount attribute:NSLayoutAttributeBottom relatedBy:NSLayoutRelationEqual toItem:self attribute:NSLayoutAttributeBottom multiplier:1.0 constant:0]];
+    [self.sampleCount addConstraint:[NSLayoutConstraint constraintWithItem:self.sampleCount attribute:NSLayoutAttributeWidth relatedBy:NSLayoutRelationEqual toItem:nil attribute:NSLayoutAttributeNotAnAttribute multiplier:1.0 constant:kPerWidth - 10]];
 
     self.repeatCount.translatesAutoresizingMaskIntoConstraints = NO;
-    [self addConstraint:[self.repeatCount.leadingAnchor constraintEqualToAnchor:self.sampleCount.trailingAnchor constant:10]];
-//    [self addConstraint:[self.repeatCount.topAnchor constraintEqualToAnchor:self.topAnchor constant:0]];
-    [self addConstraint:[self.repeatCount.bottomAnchor constraintEqualToAnchor:self.bottomAnchor constant:0]];
-    [self.repeatCount addConstraint:[self.repeatCount.widthAnchor constraintEqualToAnchor:nil constant:kPerWidth - 10]];
+    [self addConstraint:[NSLayoutConstraint constraintWithItem:self.repeatCount attribute:NSLayoutAttributeLeading relatedBy:NSLayoutRelationEqual toItem:self.sampleCount attribute:NSLayoutAttributeTrailing multiplier:1.0 constant:10]];
+    [self addConstraint:[NSLayoutConstraint constraintWithItem:self.repeatCount attribute:NSLayoutAttributeBottom relatedBy:NSLayoutRelationEqual toItem:self attribute:NSLayoutAttributeBottom multiplier:1.0 constant:0]];
+    [self.repeatCount addConstraint:[NSLayoutConstraint constraintWithItem:self.repeatCount attribute:NSLayoutAttributeWidth relatedBy:NSLayoutRelationEqual toItem:nil attribute:NSLayoutAttributeNotAnAttribute multiplier:1.0 constant:kPerWidth- 10]];
     
     self.totalCount.translatesAutoresizingMaskIntoConstraints = NO;
-    
-    [self addConstraint:[self.totalCount.leadingAnchor constraintEqualToAnchor:self.repeatCount.trailingAnchor constant:10]];
-    [self addConstraint:[self.totalCount.topAnchor constraintEqualToAnchor:self.topAnchor constant:0]];
-    [self addConstraint:[self.totalCount.bottomAnchor constraintEqualToAnchor:self.bottomAnchor constant:0]];
-    [self.totalCount addConstraint:[self.totalCount.widthAnchor constraintEqualToAnchor:nil constant:kPerWidth]];
+    [self addConstraint:[NSLayoutConstraint constraintWithItem:self.totalCount attribute:NSLayoutAttributeLeading relatedBy:NSLayoutRelationEqual toItem:self.repeatCount attribute:NSLayoutAttributeTrailing multiplier:1.0 constant:10]];
+    [self addConstraint:[NSLayoutConstraint constraintWithItem:self.totalCount attribute:NSLayoutAttributeTop relatedBy:NSLayoutRelationEqual toItem:self attribute:NSLayoutAttributeTop multiplier:1.0 constant:0]];
+    [self addConstraint:[NSLayoutConstraint constraintWithItem:self.totalCount attribute:NSLayoutAttributeBottom relatedBy:NSLayoutRelationEqual toItem:self attribute:NSLayoutAttributeBottom multiplier:1.0 constant:0]];
+    [self.totalCount addConstraint:[NSLayoutConstraint constraintWithItem:self.totalCount attribute:NSLayoutAttributeWidth relatedBy:NSLayoutRelationEqual toItem:nil attribute:NSLayoutAttributeNotAnAttribute multiplier:1.0 constant:kPerWidth]];
     
     [self layoutIfNeeded];
 }
