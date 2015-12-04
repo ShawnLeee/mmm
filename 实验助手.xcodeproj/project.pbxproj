@@ -1117,6 +1117,7 @@
 		B0FD56BD1C0D7D7B00E9E377 /* DWBBSCommentCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DWBBSCommentCell.xib; sourceTree = "<group>"; };
 		B0FD56C11C0D825800E9E377 /* DWBBSCommentViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DWBBSCommentViewModel.h; sourceTree = "<group>"; };
 		B0FD56C21C0D825800E9E377 /* DWBBSCommentViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DWBBSCommentViewModel.m; sourceTree = "<group>"; };
+		B0FE56861C11838500E0F21C /* SXQLab.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SXQLab.pch; sourceTree = "<group>"; };
 		B0FE896E1BD9C71E00999DE2 /* DWExperimentCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DWExperimentCell.h; sourceTree = "<group>"; };
 		B0FE896F1BD9C71E00999DE2 /* DWExperimentCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DWExperimentCell.m; sourceTree = "<group>"; };
 		B0FE89701BD9C71E00999DE2 /* DWExperimentCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DWExperimentCell.xib; sourceTree = "<group>"; };
@@ -2253,6 +2254,7 @@
 		B0C73CA01B92F39E00F4B6D2 /* Public */ = {
 			isa = PBXGroup;
 			children = (
+				B0FE56861C11838500E0F21C /* SXQLab.pch */,
 			);
 			path = Public;
 			sourceTree = "<group>";
@@ -3491,6 +3493,8 @@
 					/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/Library/Frameworks,
 					"$(inherited)",
 				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "实验助手/Main(主要)/Other/Public/SXQLab.pch";
 				INFOPLIST_FILE = "实验助手/Resources(资源)/Plist/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -3549,6 +3553,8 @@
 					/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/Library/Frameworks,
 					"$(inherited)",
 				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "实验助手/Main(主要)/Other/Public/SXQLab.pch";
 				INFOPLIST_FILE = "实验助手/Resources(资源)/Plist/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

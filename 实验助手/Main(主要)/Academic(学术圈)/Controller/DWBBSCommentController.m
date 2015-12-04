@@ -5,7 +5,6 @@
 //  Created by sxq on 15/12/1.
 //  Copyright © 2015年 SXQ. All rights reserved.
 //
-#import "SXQColor.h"
 #import "DWBBSThemeView.h"
 #import "DWBBSTopicResult.h"
 #import <MJRefresh.h>
