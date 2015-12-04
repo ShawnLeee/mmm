@@ -5,6 +5,7 @@
 //  Created by sxq on 15/12/1.
 //  Copyright © 2015年 SXQ. All rights reserved.
 //
+#import "DWAddThemeParam.h"
 #import "DWBBSThemeSearchParam.h"
 #import "DWBBSTopic.h"
 #import "DWBBSTopicResult.h"
@@ -148,6 +149,18 @@
                 [subscriber sendNext:nil];
                 [subscriber sendCompleted];
             }
+        } failure:^(NSError *error) {
+            [subscriber sendError:error];
+        }];
+        return nil;
+    }];
+}
+- (RACSignal *)addThemeWithParam:(DWAddThemeParam *)addThemeParam
+{
+    return [RACSignal createSignal:^RACDisposable *(id<RACSubscriber> subscriber) {
+        [SXQHttpTool postWithURL:BBSAddThemeURL params:addThemeParam.keyValues success:^(id json) {
+            [subscriber sendNext:@([json[@"code"] isEqualToString:@"1"])];
+            [subscriber sendCompleted];
         } failure:^(NSError *error) {
             [subscriber sendError:error];
         }];

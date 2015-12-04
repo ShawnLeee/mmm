@@ -11,4 +11,5 @@
 @interface DWBBSTopic : NSObject
 @property (nonatomic,copy) NSString *topicDetail;
 @property (nonatomic,copy) NSString *topicID;
+@property (nonatomic,copy) NSString *topicName;
 @end

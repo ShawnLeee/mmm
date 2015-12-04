@@ -34,7 +34,7 @@
                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="settings_statistic_form_background_line" translatesAutoresizingMaskIntoConstraints="NO" id="leE-qz-Z0h">
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="settings_statistic_form_background_line" translatesAutoresizingMaskIntoConstraints="NO" id="leE-qz-Z0h">
                         <rect key="frame" x="0.0" y="154" width="320" height="2"/>
                         <animations/>
                     </imageView>

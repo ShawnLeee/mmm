@@ -18,4 +18,13 @@
     [button addTarget:target action:action forControlEvents:UIControlEventTouchUpInside];
     return [[UIBarButtonItem alloc] initWithCustomView:button];
 }
++ (UIBarButtonItem *)itemWithIcon:(NSString *)icon highIcon:(NSString *)highIcon target:(id)target action:(SEL)action size:(CGSize)size
+{
+    UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
+    [button setBackgroundImage:[UIImage imageWithName:icon] forState:UIControlStateNormal];
+    [button setBackgroundImage:[UIImage imageWithName:highIcon] forState:UIControlStateHighlighted];
+    button.frame = (CGRect){CGPointZero, size};
+    [button addTarget:target action:action forControlEvents:UIControlEventTouchUpInside];
+    return [[UIBarButtonItem alloc] initWithCustomView:button];
+}
 @end

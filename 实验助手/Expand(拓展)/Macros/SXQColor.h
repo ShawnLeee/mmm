@@ -18,4 +18,5 @@
 #define LoginBgColor [UIColor colorWithRed:0.27 green:0.33 blue:0.41 alpha:1.0]
 #define RGB(r,g,b) [UIColor colorWithRed:(r)/255.0 green:(g)/255.0 blue:(b)/255.0 alpha:1.0]
 #define LABBtnBgColor [UIColor colorWithRed:0.00 green:0.64 blue:0.70 alpha:1.0]
+#define DWRGB(r,g,b) [UIColor colorWithRed:(r) green:(g) blue:(b) alpha:1.0]
 #endif

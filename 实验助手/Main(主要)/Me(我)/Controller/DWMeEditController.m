@@ -51,6 +51,9 @@
     subscribeNext:^(NSArray *viewModels) {
         @strongify(self)
         self.viewModels = viewModels;
+        [UIView animateWithDuration:0.5 animations:^{
+            self.tableView.tableFooterView.hidden = NO;
+        }];
         [self.tableView reloadData];
     }];
 }
@@ -70,6 +73,7 @@
     
     UIView *footer = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 44, 54)];
     self.tableView.tableFooterView = footer;
+    self.tableView.tableFooterView.hidden = YES;
     [footer addSubview:button];
     
     [footer addConstraint:[NSLayoutConstraint constraintWithItem:button attribute:NSLayoutAttributeLeading relatedBy:NSLayoutRelationEqual toItem:footer attribute:NSLayoutAttributeLeading multiplier:1.0 constant:10]];

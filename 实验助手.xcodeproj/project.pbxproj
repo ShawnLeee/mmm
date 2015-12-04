@@ -242,6 +242,11 @@
 		B0DEFB421BF5AABB00CF44AB /* DWDoingViewModelToolImpl.m in Sources */ = {isa = PBXBuildFile; fileRef = B0DEFB411BF5AABB00CF44AB /* DWDoingViewModelToolImpl.m */; };
 		B0E054B71B9470AD00C7F9D0 /* SXQNavgationController.m in Sources */ = {isa = PBXBuildFile; fileRef = B0E054B61B9470AD00C7F9D0 /* SXQNavgationController.m */; };
 		B0E054BB1B94715A00C7F9D0 /* SXQNavgationBar.m in Sources */ = {isa = PBXBuildFile; fileRef = B0E054BA1B94715A00C7F9D0 /* SXQNavgationBar.m */; };
+		B0E3256C1C11289C0048AD25 /* DWBBSThemeView.m in Sources */ = {isa = PBXBuildFile; fileRef = B0E3256B1C11289C0048AD25 /* DWBBSThemeView.m */; };
+		B0E3256E1C112A580048AD25 /* DWBBSThemeView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B0E3256D1C112A580048AD25 /* DWBBSThemeView.xib */; };
+		B0E325711C113C0F0048AD25 /* DWAddThemeParam.m in Sources */ = {isa = PBXBuildFile; fileRef = B0E325701C113C0F0048AD25 /* DWAddThemeParam.m */; };
+		B0E325751C113C780048AD25 /* DWBBSAddThemeController.m in Sources */ = {isa = PBXBuildFile; fileRef = B0E325731C113C780048AD25 /* DWBBSAddThemeController.m */; };
+		B0E325761C113C780048AD25 /* DWBBSAddThemeController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B0E325741C113C780048AD25 /* DWBBSAddThemeController.xib */; };
 		B0E46F351BDC72E300B1F2D8 /* CellContainerViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B0E46F341BDC72E300B1F2D8 /* CellContainerViewModel.m */; };
 		B0E46F381BDCE31800B1F2D8 /* DWExperimentToolBar.m in Sources */ = {isa = PBXBuildFile; fileRef = B0E46F371BDCE31800B1F2D8 /* DWExperimentToolBar.m */; };
 		B0E46F3A1BDCE32C00B1F2D8 /* DWExperimentToolBar.xib in Resources */ = {isa = PBXBuildFile; fileRef = B0E46F391BDCE32C00B1F2D8 /* DWExperimentToolBar.xib */; };
@@ -845,6 +850,14 @@
 		B0E054B61B9470AD00C7F9D0 /* SXQNavgationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SXQNavgationController.m; sourceTree = "<group>"; };
 		B0E054B91B94715A00C7F9D0 /* SXQNavgationBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SXQNavgationBar.h; sourceTree = "<group>"; };
 		B0E054BA1B94715A00C7F9D0 /* SXQNavgationBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SXQNavgationBar.m; sourceTree = "<group>"; };
+		B0E3256A1C11289C0048AD25 /* DWBBSThemeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DWBBSThemeView.h; sourceTree = "<group>"; };
+		B0E3256B1C11289C0048AD25 /* DWBBSThemeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DWBBSThemeView.m; sourceTree = "<group>"; };
+		B0E3256D1C112A580048AD25 /* DWBBSThemeView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DWBBSThemeView.xib; sourceTree = "<group>"; };
+		B0E3256F1C113C0F0048AD25 /* DWAddThemeParam.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DWAddThemeParam.h; sourceTree = "<group>"; };
+		B0E325701C113C0F0048AD25 /* DWAddThemeParam.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DWAddThemeParam.m; sourceTree = "<group>"; };
+		B0E325721C113C780048AD25 /* DWBBSAddThemeController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DWBBSAddThemeController.h; sourceTree = "<group>"; };
+		B0E325731C113C780048AD25 /* DWBBSAddThemeController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DWBBSAddThemeController.m; sourceTree = "<group>"; };
+		B0E325741C113C780048AD25 /* DWBBSAddThemeController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DWBBSAddThemeController.xib; sourceTree = "<group>"; };
 		B0E46F331BDC72E300B1F2D8 /* CellContainerViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CellContainerViewModel.h; sourceTree = "<group>"; };
 		B0E46F341BDC72E300B1F2D8 /* CellContainerViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CellContainerViewModel.m; sourceTree = "<group>"; };
 		B0E46F361BDCE31800B1F2D8 /* DWExperimentToolBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DWExperimentToolBar.h; sourceTree = "<group>"; };
@@ -2731,6 +2744,9 @@
 				B05ED8541C0E928E00C0DEB0 /* DWBBSWriteComment.h */,
 				B05ED8551C0E928E00C0DEB0 /* DWBBSWriteComment.m */,
 				B05ED8561C0E928E00C0DEB0 /* DWBBSWriteComment.xib */,
+				B0E325721C113C780048AD25 /* DWBBSAddThemeController.h */,
+				B0E325731C113C780048AD25 /* DWBBSAddThemeController.m */,
+				B0E325741C113C780048AD25 /* DWBBSAddThemeController.xib */,
 			);
 			name = BBS;
 			sourceTree = "<group>";
@@ -2750,6 +2766,8 @@
 				B05EE6501C1024540086656A /* DWBBSTopicResult.m */,
 				B05EE6781C1036FC0086656A /* DWBBSThemeSearchParam.h */,
 				B05EE6791C1036FC0086656A /* DWBBSThemeSearchParam.m */,
+				B0E3256F1C113C0F0048AD25 /* DWAddThemeParam.h */,
+				B0E325701C113C0F0048AD25 /* DWAddThemeParam.m */,
 			);
 			name = BBS;
 			sourceTree = "<group>";
@@ -2766,6 +2784,9 @@
 				B0FD56BB1C0D7D7B00E9E377 /* DWBBSCommentCell.h */,
 				B0FD56BC1C0D7D7B00E9E377 /* DWBBSCommentCell.m */,
 				B0FD56BD1C0D7D7B00E9E377 /* DWBBSCommentCell.xib */,
+				B0E3256A1C11289C0048AD25 /* DWBBSThemeView.h */,
+				B0E3256B1C11289C0048AD25 /* DWBBSThemeView.m */,
+				B0E3256D1C112A580048AD25 /* DWBBSThemeView.xib */,
 			);
 			name = BBS;
 			sourceTree = "<group>";
@@ -2951,6 +2972,7 @@
 				B0F6B1841BC7AB860090E398 /* SXQAddExpController.xib in Resources */,
 				B08E7C641BB25BCA0023893B /* SXQInstrutionCell.xib in Resources */,
 				B0A2711A1BD768C900BA0C1B /* SXQCountTimeView.xib in Resources */,
+				B0E325761C113C780048AD25 /* DWBBSAddThemeController.xib in Resources */,
 				B0DDFF291BA69E7C00E4AB3C /* SXQSegmentedControll.xib in Resources */,
 				B0C168261BEC913300E85361 /* SXQCommentView.xib in Resources */,
 				B010CF9F1C082B0C00F5053F /* DWReagentDetailController.xib in Resources */,
@@ -2971,6 +2993,7 @@
 				B0F5662B1BA7E2D400BA1F7B /* SXQMyInstructionCell.xib in Resources */,
 				B006ABD91C057A30008C6C76 /* DWMeCell.xib in Resources */,
 				B0665B911BF586040021E752 /* DWDoingActionBar.xib in Resources */,
+				B0E3256E1C112A580048AD25 /* DWBBSThemeView.xib in Resources */,
 				B0E46F3A1BDCE32C00B1F2D8 /* DWExperimentToolBar.xib in Resources */,
 				B0F845411BE07CAE00BC539A /* DWConsultDetailController.xib in Resources */,
 				B0026BE41BCF754900FB70A9 /* SXQSupplierCell.xib in Resources */,
@@ -3146,6 +3169,7 @@
 				B0DDFF131BA67F6500E4AB3C /* SXQExperimentStepCell.m in Sources */,
 				B054C1741BFC3C98009662D6 /* SXQExpCategoryViewModel.m in Sources */,
 				B0F738B11BA9011600EA7E9E /* UIView+MJ.m in Sources */,
+				B0E325711C113C0F0048AD25 /* DWAddThemeParam.m in Sources */,
 				B04C735F1BF1B0590038B1A6 /* SXQReportHelperImpl.m in Sources */,
 				B0F5B8A81BD87842005D6AE4 /* SXQLoginContainer.m in Sources */,
 				B0F64BDF1BAF99EB001CF997 /* SXQExperiment.m in Sources */,
@@ -3200,6 +3224,7 @@
 				B0B544CC1BE70024003CB14F /* SXQAddScheduleParam.m in Sources */,
 				B0C167E91BEC406000E85361 /* SXQTitle.m in Sources */,
 				B006ABD31C057796008C6C76 /* DWMeServiceImpl.m in Sources */,
+				B0E3256C1C11289C0048AD25 /* DWBBSThemeView.m in Sources */,
 				B00221481BDA1E59007A41F9 /* CellContainerView.m in Sources */,
 				B0FD568E1C0D43B900E9E377 /* DWBBSModel.m in Sources */,
 				B0A3D9521BFEF24900D7BB4E /* DWReagentAmountViewModel.m in Sources */,
@@ -3217,6 +3242,7 @@
 				B054C1831BFC5E12009662D6 /* DGSignUpController.m in Sources */,
 				B0A270FD1BD73B5C00BA0C1B /* FSCalendarHeaderTouchDeliver.m in Sources */,
 				B0DEFB421BF5AABB00CF44AB /* DWDoingViewModelToolImpl.m in Sources */,
+				B0E325751C113C780048AD25 /* DWBBSAddThemeController.m in Sources */,
 				B06490041C06EAA500B9C78E /* DWMeEditCell.m in Sources */,
 				B0FD56B31C0D716B00E9E377 /* DWBBSThemeCell.m in Sources */,
 				B0A3D9491BFEBB1C00D7BB4E /* DWSchoolPickerDelegate.m in Sources */,

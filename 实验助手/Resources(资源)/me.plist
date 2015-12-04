@@ -8,7 +8,7 @@
 		<key>title</key>
 		<string>我的说明书</string>
 		<key>icon</key>
-		<string>Icon</string>
+		<string>my_instruction</string>
 	</dict>
 	<dict>
 		<key>segueIdentifier</key>
@@ -16,7 +16,7 @@
 		<key>title</key>
 		<string>我的报告</string>
 		<key>icon</key>
-		<string>Icon</string>
+		<string>lab_report</string>
 	</dict>
 </array>
 </plist>

@@ -5,11 +5,15 @@
 //  Created by sxq on 15/12/1.
 //  Copyright © 2015年 SXQ. All rights reserved.
 //
+#import <MJRefresh/MJRefresh.h>
+#import "SXQNavgationController.h"
+#import "DWAddThemeParam.h"
+#import "UIBarButtonItem+MJ.h"
 #import "DWBBSThemeCell.h"
 #import <ReactiveCocoa/ReactiveCocoa.h>
 #import "DWBBSModel.h"
 #import "DWBBSThemeController.h"
-
+#import "DWBBSAddThemeController.h"
 @interface DWBBSThemeController ()<UISearchBarDelegate,UISearchDisplayDelegate>
 @property (nonatomic,strong) NSArray *themes;
 @property (nonatomic,strong) NSArray *searchResultThemes;
@@ -17,6 +21,11 @@
 @end
 
 @implementation DWBBSThemeController
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    [self.tableView.header beginRefreshing];
+}
 - (NSArray *)searchResultThemes
 {
     if (!_searchResultThemes) {
@@ -40,11 +49,45 @@
     }
     return self;
 }
+#pragma mark - 下拉刷新
+- (void)p_setupRefresh
+{
+    
+    MJRefreshStateHeader *header = [MJRefreshStateHeader headerWithRefreshingBlock:^{
+        @weakify(self)
+        [[self.bbsTool themesWithBBSModel:_bbsModel]
+         subscribeNext:^(NSArray *themes) {
+             @strongify(self)
+             self.themes = themes;
+             [self.tableView reloadData];
+             [self.tableView.header endRefreshing];
+         }];
+    }];
+    self.tableView.header = header;
+    [self.tableView.header beginRefreshing];
+}
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self p_setupNavigationItem];
     [self p_setupTableView];
-    [self p_loadData];
+//    [self p_loadData];
+    [self p_setupRefresh];
     [self p_setupSearchBar];
+}
+- (void)p_setupNavigationItem
+{
+    self.navigationItem.rightBarButtonItem = [UIBarButtonItem itemWithIcon:@"FeedSearchAddQuestion_Normal"
+                                                                  highIcon:@"FeedSearchAddQuestion_Highlight"
+                                                                    target:self
+                                                                    action:@selector(p_addTheme)
+                                                                      size:CGSizeMake(20, 20)];
+}
+- (void)p_addTheme
+{
+    DWAddThemeParam *param = [DWAddThemeParam paramWithModuleID:_bbsModel.moduleID];
+    DWBBSAddThemeController *themeVC = [[DWBBSAddThemeController alloc] initWithAddThemeParam:param bbsTool:self.bbsTool];
+    SXQNavgationController *nav = [[SXQNavgationController alloc] initWithRootViewController:themeVC];
+    [self presentViewController:nav animated:YES completion:nil];
 }
 - (void)p_setupSearchBar
 {
@@ -76,17 +119,7 @@
     resultsView.rowHeight = UITableViewAutomaticDimension;
     resultsView.estimatedRowHeight = 50;
 }
-- (void)p_loadData
-{
-    @weakify(self)
-    [[self.bbsTool themesWithBBSModel:_bbsModel]
-    subscribeNext:^(NSArray *themes) {
-        @strongify(self)
-        self.themes = themes;
-        [self.tableView reloadData];
-    }];
-    
-}
+
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     if ([tableView isEqual:self.searchDisplayController.searchResultsTableView]) {

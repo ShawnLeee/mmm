@@ -5,6 +5,8 @@
 //  Created by sxq on 15/12/1.
 //  Copyright © 2015年 SXQ. All rights reserved.
 //
+#import "SXQColor.h"
+#import "DWBBSThemeView.h"
 #import "DWBBSTopicResult.h"
 #import <MJRefresh.h>
 #import "SXQNavgationController.h"
@@ -19,6 +21,7 @@
 @property (nonatomic,strong) DWBBSTheme *bbsTheme;
 @property (nonatomic,strong) id<DWBBSTool> bbsTool;
 @property (nonatomic,strong) NSArray *comments;
+@property (nonatomic,weak) DWBBSThemeView *themeView;
 @end
 
 @implementation DWBBSCommentController
@@ -33,6 +36,7 @@
 }
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self setupTableHeader];
     [self p_setupRefresh];
     [self p_setupTableView];
     [self p_setupNavigation];
@@ -53,14 +57,20 @@
         [[self.bbsTool commentsSignalWithBBSTheme:_bbsTheme]
          subscribeNext:^(DWBBSTopicResult *result) {
              @strongify(self)
-             self.comments = result.reviews;
-             [self.tableView reloadData];
-             [self.tableView.header endRefreshing];
+             [self p_setupWithResult:result];
          }];
     }];
     
     self.tableView.header = header;
     [self.tableView.header beginRefreshing];
+}
+- (void)p_setupWithResult:(DWBBSTopicResult *)result
+{
+    self.themeView.bbsTopic = result.topic;
+    [self p_layoutTableFooter];
+     self.comments = result.reviews;
+     [self.tableView reloadData];
+     [self.tableView.header endRefreshing];
 }
 - (void)p_setupNavigation
 {
@@ -76,10 +86,27 @@
          [self p_showWriteCommentControllerWithParam:param];
     }];
 }
-
+- (void)setupTableHeader
+{
+    DWBBSThemeView *themeView = [DWBBSThemeView themeView];
+    themeView.backgroundColor = DWRGB(0.95, 0.95, 0.95);
+    self.themeView = themeView;
+    self.tableView.tableHeaderView = themeView;
+}
+- (void)p_layoutTableFooter
+{
+    [self.themeView setNeedsLayout];
+    [self.themeView layoutIfNeeded];
+    
+    CGFloat height = [self.themeView systemLayoutSizeFittingSize:UILayoutFittingCompressedSize].height;
+    CGRect footerFrame = self.themeView.frame;
+    footerFrame.size.height = height;
+    self.themeView.frame = footerFrame;
+}
 - (void)p_setupTableView
 {
     self.title = @"评论";
+    self.tableView.backgroundColor = DWRGB(0.95, 0.95, 0.95);
     self.tableView.rowHeight = UITableViewAutomaticDimension;
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     self.tableView.estimatedRowHeight = 60;
