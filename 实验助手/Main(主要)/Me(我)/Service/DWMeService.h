@@ -13,4 +13,5 @@
 - (RACSignal *)allInstructionsSignal;
 - (RACSignal *)userInfoSignal;
 - (RACSignal *)uploadUserProfile;
+- (void)signOut;
 @end

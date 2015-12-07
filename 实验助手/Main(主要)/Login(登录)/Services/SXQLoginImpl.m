@@ -71,4 +71,18 @@
         return nil;
     }];
 }
+- (RACSignal *)forgetPassSignalWithEmailAddress:(NSString *)email
+{
+    NSDictionary *param = @{@"eMail" : email};
+    return [RACSignal createSignal:^RACDisposable *(id<RACSubscriber> subscriber) {
+        [SXQHttpTool postWithURL:ForgetPassURL params:param success:^(id json) {
+            [subscriber sendNext:@([json[@"code"] isEqualToString:@"1"])];
+            [subscriber sendCompleted];
+        } failure:^(NSError *error) {
+            [subscriber sendNext:@(NO)];
+            [subscriber sendCompleted];
+        }];
+        return nil;
+    }];
+}
 @end

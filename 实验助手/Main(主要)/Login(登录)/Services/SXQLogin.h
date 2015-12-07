@@ -19,4 +19,5 @@
  *  获取职称列表
  */
 - (RACSignal *)indentitySignal;
+- (RACSignal *)forgetPassSignalWithEmailAddress:(NSString *)email;
 @end

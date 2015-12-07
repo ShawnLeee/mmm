@@ -39,6 +39,13 @@
     _signupCmd = [[RACCommand alloc] initWithSignalBlock:^RACSignal *(id input) {
         return [RACSignal empty];
     }];
+    _forgetCmd = [[RACCommand alloc] initWithSignalBlock:^RACSignal *(id input) {
+        return  [RACSignal createSignal:^RACDisposable *(id<RACSubscriber> subscriber) {
+            [self.service pushViewModel:self];
+            [subscriber sendCompleted];
+            return nil;
+        }];
+    }];
 }
 - (RACSignal *)loginSignal
 {

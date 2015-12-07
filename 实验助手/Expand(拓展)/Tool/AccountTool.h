@@ -19,4 +19,5 @@
  *  取账号
  */
 + (Account *)account;
++ (BOOL)deleteAccount;
 @end

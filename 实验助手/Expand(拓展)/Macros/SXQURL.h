@@ -76,6 +76,7 @@ typedef NS_ENUM(NSUInteger,LABResponseType)
 #define ScheduleURL @"http://hualang.wicp.net:8090/LabAssistant/lab/getMyExpPlan"
 #define DeleteScheduleURL @"http://hualang.wicp.net:8090/LabAssistant/lab/deleteMyExpPlan"
 #define AddScheduleURL @"http://hualang.wicp.net:8090/LabAssistant/lab/setMyExpPlan"
+#define ForgetPassURL @"http://hualang.wicp.net:8090/LabAssistant/findPwd"
 //资讯
 #define NewsURL @"http://hualang.wicp.net:8090/LabAssistant/grabNews"
 #define ProvinceURL @"http://hualang.wicp.net:8090/LabAssistant/myInfo/provinceAndCity"

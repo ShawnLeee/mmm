@@ -20,4 +20,9 @@
     Account *ac = [NSKeyedUnarchiver unarchiveObjectWithFile:IWAccountFile];
     return ac;
 }
++ (BOOL)deleteAccount
+{
+    NSFileManager *defaultManager = [NSFileManager defaultManager];
+    return [defaultManager removeItemAtPath:IWAccountFile error:nil];
+}
 @end

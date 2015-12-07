@@ -5,6 +5,7 @@
 //  Created by sxq on 15/12/1.
 //  Copyright © 2015年 SXQ. All rights reserved.
 //
+#import "DWBBSTopicController.h"
 #import "DWAddThemeParam.h"
 #import "DWBBSThemeSearchParam.h"
 #import "DWBBSTopic.h"
@@ -38,7 +39,15 @@
     }else if([model isKindOfClass:[DWBBSTheme class]])
     {
         [self p_pushThemeModel:model];
+    }else if([model isKindOfClass:[DWBBSTopic class]])
+    {
+        [self p_pushBBSTopic:model];
     }
+}
+- (void)p_pushBBSTopic:(DWBBSTopic *)bbsTopic
+{
+    DWBBSTopicController *topicVC = [[DWBBSTopicController alloc] initWithBBSTopic:bbsTopic bbsTool:self];
+    [self.navigationController pushViewController:topicVC animated:YES];
 }
 - (void)p_pushThemeModel:(DWBBSTheme *)themeModel
 {

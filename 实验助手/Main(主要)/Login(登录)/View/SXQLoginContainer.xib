@@ -47,7 +47,7 @@
                     <rect key="frame" x="232" y="163" width="68" height="30"/>
                     <animations/>
                     <state key="normal" title="忘记密码?">
-                        <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     </state>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EcT-Pg-bSt">

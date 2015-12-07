@@ -9,4 +9,5 @@
 #import <Foundation/Foundation.h>
 
 @interface SXQLoginViewModelServiceImpl : NSObject<SXQLoginViewModelService>
+- (instancetype)initWithNavigationController:(UINavigationController *)nav;
 @end

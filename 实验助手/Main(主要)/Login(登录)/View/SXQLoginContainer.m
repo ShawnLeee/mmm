@@ -49,7 +49,7 @@
     RAC(viewModel,username) = _userNameField.rac_textSignal;
     RAC(viewModel,password) = _password.rac_textSignal;
     _logBtn.rac_command = viewModel.loginCmd;
-    
+    _forgetBtn.rac_command  = viewModel.forgetCmd;
     [viewModel.loginCmd.executionSignals
     subscribeNext:^(NSNumber *ss) {
         [self endEditing:YES];

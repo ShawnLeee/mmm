@@ -5,6 +5,7 @@
 //  Created by sxq on 15/11/25.
 //  Copyright © 2015年 SXQ. All rights reserved.
 //
+#import "DWLoginViewController.h"
 #import "MBProgressHUD+MJ.h"
 #import "SXQBaseParam.h"
 #import "Account.h"
@@ -133,5 +134,16 @@
         }];
         return nil;
     }];
+}
+- (void)signOut
+{
+    BOOL success = [AccountTool deleteAccount];
+    if (success) {
+        DWLoginViewController *loginVc = [[DWLoginViewController alloc] init];
+        [UIApplication sharedApplication].keyWindow.rootViewController = loginVc;
+    }else
+    {
+        [MBProgressHUD showError:@"注销失败"];
+    }
 }
 @end

@@ -10,16 +10,27 @@
 @interface DWBBSThemeView ()
 @property (nonatomic,weak) IBOutlet UILabel *themeLabel;
 @property (nonatomic,weak) IBOutlet UILabel *themeContentLabel;
+@property (nonatomic,strong) id<DWBBSTool> bbsTool;
 @end
 @implementation DWBBSThemeView
 + (instancetype)themeView
 {
     return [[[NSBundle mainBundle] loadNibNamed:NSStringFromClass([DWBBSThemeView class]) owner:nil options:nil] lastObject];
 }
++ (instancetype)themeViewWithBBSTool:(id<DWBBSTool>)bbsTool
+{
+    DWBBSThemeView *themeView = [self themeView];
+    themeView.bbsTool = bbsTool;
+    return themeView;
+}
 - (void)setBbsTopic:(DWBBSTopic *)bbsTopic
 {
     _bbsTopic = bbsTopic;
     self.themeLabel.text = bbsTopic.topicName;
     self.themeContentLabel.text = bbsTopic.topicDetail;
+}
+- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event
+{
+    [self.bbsTool bbsPushModel:self.bbsTopic];
 }
 @end

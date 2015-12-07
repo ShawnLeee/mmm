@@ -87,7 +87,7 @@
 }
 - (void)setupTableHeader
 {
-    DWBBSThemeView *themeView = [DWBBSThemeView themeView];
+    DWBBSThemeView *themeView = [DWBBSThemeView themeViewWithBBSTool:self.bbsTool];
     themeView.backgroundColor = DWRGB(0.95, 0.95, 0.95);
     self.themeView = themeView;
     self.tableView.tableHeaderView = themeView;

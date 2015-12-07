@@ -29,14 +29,21 @@
     [self.venderView setNeedsUpdateConstraints];
     [self.venderView layoutIfNeeded];
 }
+- (SXQLoginViewModelServiceImpl *)service
+{
+    if (!_service) {
+        _service = [[SXQLoginViewModelServiceImpl alloc] initWithNavigationController:self.navigationController];
+    }
+    return _service;
+}
 - (instancetype)initWithCoder:(NSCoder *)aDecoder
 {
     if (self = [super initWithCoder:aDecoder]) {
-        _service = [SXQLoginViewModelServiceImpl new];
-        _viewModel = [[SXQLoginViewModel alloc] initWithService:_service];
+        _viewModel = [[SXQLoginViewModel alloc] initWithService:self.service];
     }
     return self;
 }
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self p_setupSelf];
