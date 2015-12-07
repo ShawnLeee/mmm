@@ -204,6 +204,7 @@
 		B0A3D9521BFEF24900D7BB4E /* DWReagentAmountViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B0A3D9511BFEF24900D7BB4E /* DWReagentAmountViewModel.m */; };
 		B0A3D9561BFEF43A00D7BB4E /* DWReagentAmountCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B0A3D9541BFEF43A00D7BB4E /* DWReagentAmountCell.m */; };
 		B0A3D9571BFEF43A00D7BB4E /* DWReagentAmountCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B0A3D9551BFEF43A00D7BB4E /* DWReagentAmountCell.xib */; };
+		B0A604D61C159FE1008D527A /* CheckButton.m in Sources */ = {isa = PBXBuildFile; fileRef = B0A604D51C159FE1008D527A /* CheckButton.m */; };
 		B0B544C91BE6FA37003CB14F /* SXQExpPlan.m in Sources */ = {isa = PBXBuildFile; fileRef = B0B544C81BE6FA37003CB14F /* SXQExpPlan.m */; };
 		B0B544CC1BE70024003CB14F /* SXQAddScheduleParam.m in Sources */ = {isa = PBXBuildFile; fileRef = B0B544CB1BE70024003CB14F /* SXQAddScheduleParam.m */; };
 		B0B544CF1BE708A1003CB14F /* SXQAddScheduleController.m in Sources */ = {isa = PBXBuildFile; fileRef = B0B544CE1BE708A1003CB14F /* SXQAddScheduleController.m */; };
@@ -786,6 +787,8 @@
 		B0A3D9531BFEF43A00D7BB4E /* DWReagentAmountCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DWReagentAmountCell.h; sourceTree = "<group>"; };
 		B0A3D9541BFEF43A00D7BB4E /* DWReagentAmountCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DWReagentAmountCell.m; sourceTree = "<group>"; };
 		B0A3D9551BFEF43A00D7BB4E /* DWReagentAmountCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DWReagentAmountCell.xib; sourceTree = "<group>"; };
+		B0A604D41C159FE1008D527A /* CheckButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CheckButton.h; sourceTree = "<group>"; };
+		B0A604D51C159FE1008D527A /* CheckButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CheckButton.m; sourceTree = "<group>"; };
 		B0B544C71BE6FA37003CB14F /* SXQExpPlan.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SXQExpPlan.h; sourceTree = "<group>"; };
 		B0B544C81BE6FA37003CB14F /* SXQExpPlan.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SXQExpPlan.m; sourceTree = "<group>"; };
 		B0B544CA1BE70024003CB14F /* SXQAddScheduleParam.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SXQAddScheduleParam.h; sourceTree = "<group>"; };
@@ -2414,6 +2417,8 @@
 		B0E054B81B94715A00C7F9D0 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				B0A604D41C159FE1008D527A /* CheckButton.h */,
+				B0A604D51C159FE1008D527A /* CheckButton.m */,
 				B0FCF6201BF5D97C0075434F /* DWActivityIndicatorView.h */,
 				B0FCF6211BF5D97C0075434F /* DWActivityIndicatorView.m */,
 				B0FCF6221BF5D97C0075434F /* DWActivityIndicatorView.xib */,
@@ -3346,6 +3351,7 @@
 				B0A270FB1BD73B5C00BA0C1B /* FSCalendarConstance.m in Sources */,
 				B027BCD21C1528F9002B74EA /* DWForgetPassController.m in Sources */,
 				B0F73B991BBB8D5C00B3D0A0 /* SXQReagentListController.m in Sources */,
+				B0A604D61C159FE1008D527A /* CheckButton.m in Sources */,
 				B062E29B1BF9D1FE00A7C0FB /* DWInstructionDisclosure.m in Sources */,
 				B0F505401BABB0A900B88A3D /* SXQExperimentStep.m in Sources */,
 				B0C167EC1BEC40EF00E85361 /* SXQProfession.m in Sources */,
