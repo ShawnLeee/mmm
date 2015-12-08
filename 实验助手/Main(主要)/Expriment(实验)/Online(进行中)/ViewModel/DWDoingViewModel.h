@@ -11,6 +11,7 @@
 #import <Foundation/Foundation.h>
 
 @interface DWDoingViewModel : NSObject
+@property (nonatomic,copy) NSString *myExpID;
 @property (nonatomic,assign) BOOL isShowingActionBar;
 @property (nonatomic,copy) NSString *experimentName;
 @property (nonatomic,copy) NSString *expInstructionID;

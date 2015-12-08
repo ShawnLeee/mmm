@@ -5,13 +5,15 @@
 //  Created by sxq on 15/11/13.
 //  Copyright © 2015年 SXQ. All rights reserved.
 //
+#import "DWCommentHeaderViewModel.h"
 #import "MBProgressHUD+MJ.h"
 #import "DWReportViewController.h"
 #import "Account.h"
 #import "AccountTool.h"
 #import <MJExtension/MJExtension.h>
-#import "DWCommentViewModel.h"
+#import "DWCommentGroup.h"
 #import "SXQHttpTool.h"
+#import "DWCommentViewModel.h"
 #import "SXQNavgationController.h"
 #import "DWCommentController.h"
 #import "DWDoingViewModelToolImpl.h"
@@ -56,12 +58,14 @@
     SXQNavgationController *nav = [[SXQNavgationController alloc] initWithRootViewController:commentVc];
     [self.tableViewController presentViewController:nav animated:YES completion:nil];
 }
-- (RACSignal *)commentViewModelSignal
+- (RACSignal *)commentViewModelSignalWithExpId:(NSString *)myExpId
 {
+    NSDictionary *param = @{@"myExpID" : myExpId? : @""};
     return [RACSignal createSignal:^RACDisposable *(id<RACSubscriber> subscriber) {
-        [SXQHttpTool getWithURL:CommentListURL params:nil success:^(id json) {
+        [SXQHttpTool getWithURL:CommentListURL params:param success:^(id json) {
             if ([json[@"code"] isEqualToString:@"1"]) {
-                NSArray *viewModels = [DWCommentViewModel objectArrayWithKeyValuesArray:json[@"data"]];
+                NSArray *models = [DWCommentGroup objectArrayWithKeyValuesArray:json[@"data"]];
+                NSArray *viewModels = [self p_viewModelsWithModels:models];
                 [subscriber sendNext:viewModels];
                 [subscriber sendCompleted];
             }else
@@ -74,6 +78,15 @@
         }];
         return nil;
     }];
+}
+- (NSArray *)p_viewModelsWithModels:(NSArray *)models
+{
+    __block NSMutableArray *tmpArray = [NSMutableArray array];
+    [models enumerateObjectsUsingBlock:^(DWCommentGroup *commentGroup, NSUInteger idx, BOOL * _Nonnull stop) {
+        DWCommentHeaderViewModel *viewModel = [[DWCommentHeaderViewModel alloc] initWithCommentGroup:commentGroup];
+        [tmpArray addObject:viewModel];
+    }];
+    return [tmpArray copy];
 }
 - (RACSignal *)commentWithExpinstructionID:(NSString *)expInstructionID content:(NSString *)content viewModels:(NSArray *)viewModels
 {

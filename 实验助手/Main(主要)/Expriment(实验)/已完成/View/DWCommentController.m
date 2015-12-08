@@ -5,6 +5,9 @@
 //  Created by sxq on 15/11/23.
 //  Copyright © 2015年 SXQ. All rights reserved.
 //
+#import "DWCommentItemCell.h"
+#import "DWCommentHeaderViewModel.h"
+#import "DWCommentHeader.h"
 #import "MBProgressHUD+MJ.h"
 #import "DWDoingViewModel.h"
 #import "UIBarButtonItem+SXQ.h"
@@ -12,7 +15,8 @@
 #import "DWCommentController.h"
 #import "DWCommentCell.h"
 #import <ReactiveCocoa/ReactiveCocoa.h>
-@interface DWCommentController ()<UITextViewDelegate>
+#import "DWDoingViewModel.h"
+@interface DWCommentController ()<UITextViewDelegate,DWCommentHeaderDelegate>
 @property (nonatomic,strong) DWDoingViewModel *viewModel;
 @property (nonatomic,strong) id<DWDoingModelService> service;
 @property (nonatomic,strong) NSArray *viewModels;
@@ -41,14 +45,14 @@
 - (void)p_loadData
 {
     @weakify(self)
-    [[self.service commentViewModelSignal]
+    [[self.service commentViewModelSignalWithExpId:self.viewModel.myExpID]
     subscribeNext:^(NSArray *viewModels) {
         @strongify(self)
         self.viewModels = viewModels;
         [self.tableView reloadData];
     }];
 }
-- (void)p_setupSelf
+- (void)p_setNavigationItem
 {
     self.title = @"评论";
     
@@ -72,9 +76,15 @@
         }error:^(NSError *error) {
             
         }];
-    }];
+    }]; 
+}
+- (void)p_setupTableView
+{
     self.tableView.allowsSelection = NO;
-    [self.tableView registerNib:[UINib nibWithNibName:NSStringFromClass([DWCommentCell class]) bundle:nil] forCellReuseIdentifier:NSStringFromClass([DWCommentCell class])];
+    [self.tableView registerNib:[UINib nibWithNibName:NSStringFromClass([DWCommentItemCell class]) bundle:nil] forCellReuseIdentifier:NSStringFromClass([DWCommentItemCell class])];
+    
+    [self.tableView registerNib:[UINib nibWithNibName:NSStringFromClass([DWCommentHeader class]) bundle:nil] forHeaderFooterViewReuseIdentifier:NSStringFromClass([DWCommentHeader class])];
+    
     UITextView *footerView = [[UITextView alloc] initWithFrame:CGRectMake(0, 0, 200, 100)];
    
     _commentView = footerView;
@@ -82,16 +92,39 @@
     footerView.text = @"请输入评论";
     footerView.textColor = [UIColor lightGrayColor];
     footerView.font = [UIFont systemFontOfSize:16];
-    self.tableView.tableFooterView = footerView;
+    self.tableView.tableFooterView = footerView; 
 }
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+- (void)p_setupSelf
+{
+    [self p_setNavigationItem];
+    [self p_setupTableView];
+}
+- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
+{
+    DWCommentHeaderViewModel *viewModel = self.viewModels[section];
+    DWCommentHeader *header = [tableView dequeueReusableHeaderFooterViewWithIdentifier:NSStringFromClass([DWCommentHeader class])];
+    header.delegate = self;
+    header.viewModel = viewModel;
+    return header;
+}
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
+{
+    return 44;
+}
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
     return self.viewModels.count;
 }
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    DWCommentHeaderViewModel *viewModel = self.viewModels[section];
+    return (viewModel.opened ? viewModel.items.count : 0);
+}
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    DWCommentCell *cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([DWCommentCell class]) forIndexPath:indexPath];
-    cell.viewModel = self.viewModels[indexPath.row];
+    DWCommentHeaderViewModel *headerModel = self.viewModels[indexPath.section];
+    DWCommentItemCell *cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([DWCommentItemCell class]) forIndexPath:indexPath];
+    cell.viewModel = headerModel.items[indexPath.row];
     return cell;
 }
 - (void)textViewDidBeginEditing:(UITextView *)textView
@@ -118,5 +151,10 @@
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView
 {
     [self.tableView.tableFooterView resignFirstResponder];
+}
+#pragma mark - HeaderDelegate Method
+- (void)commentHeaderClickedFoldBtn:(DWCommentHeader *)header
+{
+    [self.tableView reloadData];
 }
 @end

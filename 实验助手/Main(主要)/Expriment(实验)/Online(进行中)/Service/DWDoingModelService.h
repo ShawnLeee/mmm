@@ -16,4 +16,5 @@
 - (void)presentReportWithMyExpId:(NSString *)myexpId;
 - (RACSignal *)commentViewModelSignal;
 - (RACSignal *)commentWithExpinstructionID:(NSString *)expInstructionID content:(NSString *)content viewModels:(NSArray *)viewModels;
+- (RACSignal *)commentViewModelSignalWithExpId:(NSString *)myExpId;
 @end

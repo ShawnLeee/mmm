@@ -29,6 +29,7 @@
 {
     self.experimentName = _experimentModel.experimentName;
     self.expInstructionID = _experimentModel.expInstructionID;
+    self.myExpID = _experimentModel.myExpID;
     @weakify(self)
    _showActionBarCommand = [[RACCommand alloc] initWithSignalBlock:^RACSignal *(id input) {
        @strongify(self)

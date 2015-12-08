@@ -18,7 +18,7 @@
 }
 - (void)drawRect:(CGRect)rect {
     CGFloat lineWidth = 2;
-    CGFloat padding = 8;
+    CGFloat padding = 5;
     CGFloat centerXY = rect.size.width/2;
     CGFloat radius = (rect.size.width - lineWidth)/2;
     
@@ -54,4 +54,9 @@
     _checked = checked;
     [self setNeedsDisplay];
 }
+//- (void)setSelected:(BOOL)selected
+//{
+//    [super setSelected:selected];
+//    self.checked = selected;
+//}
 @end
