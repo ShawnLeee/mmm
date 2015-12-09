@@ -1344,7 +1344,7 @@
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eAJ-V0-yMk">
                                 <rect key="frame" x="0.0" y="10" width="375" height="657"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="duS-Cm-chg" userLabel="containerView">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="duS-Cm-chg" userLabel="containerView" customClass="DWInstructionContainer">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="768"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hRU-P0-VXL">
@@ -1372,12 +1372,18 @@
                                                 <animations/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
+                                                <connections>
+                                                    <outlet property="delegate" destination="duS-Cm-chg" id="g1X-it-vbj"/>
+                                                </connections>
                                             </textField>
                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="二级分类" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="yy7-fK-aoM">
                                                 <rect key="frame" x="198" y="33" width="167" height="30"/>
                                                 <animations/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
+                                                <connections>
+                                                    <outlet property="delegate" destination="duS-Cm-chg" id="qrV-0D-21B"/>
+                                                </connections>
                                             </textField>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oC1-c4-Qk5">
                                                 <rect key="frame" x="0.0" y="73" width="375" height="23"/>
@@ -1422,6 +1428,9 @@
                                                 <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                <connections>
+                                                    <outlet property="delegate" destination="duS-Cm-chg" id="pQv-Z3-W62"/>
+                                                </connections>
                                             </textView>
                                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="9hA-7i-ZVQ">
                                                 <rect key="frame" x="10" y="458" width="355" height="300"/>
@@ -1430,6 +1439,9 @@
                                                 <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                <connections>
+                                                    <outlet property="delegate" destination="duS-Cm-chg" id="cym-he-ZCv"/>
+                                                </connections>
                                             </textView>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="settings_statistic_form_background_line" translatesAutoresizingMaskIntoConstraints="NO" id="wbK-wO-8w6">
                                                 <rect key="frame" x="0.0" y="453" width="375" height="2"/>
@@ -1469,6 +1481,13 @@
                                             <constraint firstItem="n6a-fb-dmw" firstAttribute="leading" secondItem="duS-Cm-chg" secondAttribute="leading" constant="10" id="tih-aL-3Iz"/>
                                             <constraint firstAttribute="bottom" secondItem="9hA-7i-ZVQ" secondAttribute="bottom" constant="10" id="zYh-os-W1I"/>
                                         </constraints>
+                                        <connections>
+                                            <outlet property="categoryField" destination="n6a-fb-dmw" id="4sq-nP-WUv"/>
+                                            <outlet property="instructionDescView" destination="eWe-Bd-6Y9" id="rzy-1U-rjR"/>
+                                            <outlet property="instructionName" destination="GM0-pL-REl" id="uv4-N2-tqx"/>
+                                            <outlet property="instructionTheoryView" destination="9hA-7i-ZVQ" id="sOa-Pk-EHi"/>
+                                            <outlet property="subCategoryField" destination="yy7-fK-aoM" id="Jfj-Yt-r6j"/>
+                                        </connections>
                                     </view>
                                 </subviews>
                                 <animations/>
@@ -1499,10 +1518,13 @@
                     </view>
                     <navigationItem key="navigationItem" title="创建说明书" id="auJ-vK-H6Y"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="instructionContainer" destination="duS-Cm-chg" id="qMu-Ww-rMh"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gDy-nC-RKN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="687.5" y="1071.5"/>
+            <point key="canvasLocation" x="306.5" y="668.5"/>
         </scene>
     </scenes>
     <resources>

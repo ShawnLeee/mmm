@@ -275,6 +275,7 @@
 		B0E5128D1C1801B50071BCA5 /* DWAddExpEquipment.m in Sources */ = {isa = PBXBuildFile; fileRef = B0E5128C1C1801B50071BCA5 /* DWAddExpEquipment.m */; };
 		B0E512901C1801D70071BCA5 /* DWAddExpStep.m in Sources */ = {isa = PBXBuildFile; fileRef = B0E5128F1C1801D70071BCA5 /* DWAddExpStep.m */; };
 		B0E512931C1804E50071BCA5 /* NSString+UUID.m in Sources */ = {isa = PBXBuildFile; fileRef = B0E512921C1804E50071BCA5 /* NSString+UUID.m */; };
+		B0E512EF1C181CBB0071BCA5 /* DWInstructionContainer.m in Sources */ = {isa = PBXBuildFile; fileRef = B0E512EE1C181CBB0071BCA5 /* DWInstructionContainer.m */; };
 		B0E752541B94AA38009781E1 /* SXQSegmentedControl.m in Sources */ = {isa = PBXBuildFile; fileRef = B0E752531B94AA38009781E1 /* SXQSegmentedControl.m */; };
 		B0EBC4911BA16DB3000ECCA0 /* SXQMeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B0EBC4901BA16DB3000ECCA0 /* SXQMeViewController.m */; };
 		B0F18C241BD5FF7F0025DE73 /* DWSignUpController.m in Sources */ = {isa = PBXBuildFile; fileRef = B0F18C231BD5FF7F0025DE73 /* DWSignUpController.m */; };
@@ -930,6 +931,8 @@
 		B0E5128F1C1801D70071BCA5 /* DWAddExpStep.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DWAddExpStep.m; sourceTree = "<group>"; };
 		B0E512911C1804E50071BCA5 /* NSString+UUID.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+UUID.h"; sourceTree = "<group>"; };
 		B0E512921C1804E50071BCA5 /* NSString+UUID.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+UUID.m"; sourceTree = "<group>"; };
+		B0E512ED1C181CBB0071BCA5 /* DWInstructionContainer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DWInstructionContainer.h; sourceTree = "<group>"; };
+		B0E512EE1C181CBB0071BCA5 /* DWInstructionContainer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DWInstructionContainer.m; sourceTree = "<group>"; };
 		B0E752521B94AA38009781E1 /* SXQSegmentedControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SXQSegmentedControl.h; sourceTree = "<group>"; };
 		B0E752531B94AA38009781E1 /* SXQSegmentedControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SXQSegmentedControl.m; sourceTree = "<group>"; };
 		B0EBC48F1BA16DB3000ECCA0 /* SXQMeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SXQMeViewController.h; sourceTree = "<group>"; };
@@ -2533,6 +2536,8 @@
 			children = (
 				B0E5127C1C17F9AC0071BCA5 /* DWAppendInstructionController.h */,
 				B0E5127D1C17F9AC0071BCA5 /* DWAppendInstructionController.m */,
+				B0E512ED1C181CBB0071BCA5 /* DWInstructionContainer.h */,
+				B0E512EE1C181CBB0071BCA5 /* DWInstructionContainer.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -3344,6 +3349,7 @@
 				B0F308A41BC6016E00AD9EAF /* SDWebImageManager+MJ.m in Sources */,
 				B0A3D94C1BFECE2100D7BB4E /* DWProfessionsDelegate.m in Sources */,
 				B0BB69E01C16AE260057E2B0 /* DWCommentGroup.m in Sources */,
+				B0E512EF1C181CBB0071BCA5 /* DWInstructionContainer.m in Sources */,
 				B0A2710F1BD7462300BA0C1B /* SXQScheduleImpl.m in Sources */,
 				B0221C5C1BFB187400DB4083 /* DWInstructionMainController.m in Sources */,
 				B094C2761BFAF44500CDC289 /* DWInstructionContentController.m in Sources */,
