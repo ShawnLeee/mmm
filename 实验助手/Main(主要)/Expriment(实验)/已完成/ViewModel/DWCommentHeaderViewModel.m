@@ -11,7 +11,6 @@
 #import "DWCommentHeaderViewModel.h"
 #import <ReactiveCocoa/ReactiveCocoa.h>
 @interface DWCommentHeaderViewModel ()
-@property (nonatomic,strong) DWCommentGroup *commentGroup;
 @end
 @implementation DWCommentHeaderViewModel
 - (instancetype)initWithCommentGroup:(DWCommentGroup *)commentGroup
@@ -20,7 +19,7 @@
         _commentGroup = commentGroup;
         self.groupName = commentGroup.expReviewOptName;
         self.items = [self commentItemViewModelArrayWithItemArray:commentGroup.expReviewDetailOfOpts];
-        RAC(commentGroup,reviewOptScore) = RACObserve(self, groupScore);
+        RAC(commentGroup,expReviewOptScore) = RACObserve(self, groupScore);
     }
     return self;
 }

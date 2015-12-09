@@ -70,7 +70,7 @@
         //transition
         CATransition *transition = [CATransition animation];
         transition.type = kCATransitionPush;
-        if (_currentIndex < newIndex) {
+        if (_currentIndex > newIndex) {
             transition.subtype = kCATransitionFromLeft;
         }else
         {

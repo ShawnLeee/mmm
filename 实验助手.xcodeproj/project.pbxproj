@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		06DD1FAD0B6EA5DB92F35C0A /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4853626AABF57EFB86948D6D /* libPods.a */; };
+		9006C06D15EE539E2F0AE00C /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 85E5D9AA4367E191F04BF908 /* libPods.a */; };
 		B002213F1BDA04A9007A41F9 /* SXQExperimentStepImpl.m in Sources */ = {isa = PBXBuildFile; fileRef = B002213E1BDA04A9007A41F9 /* SXQExperimentStepImpl.m */; };
 		B00221421BDA0700007A41F9 /* SXQExperimentStepServicesImpl.m in Sources */ = {isa = PBXBuildFile; fileRef = B00221411BDA0700007A41F9 /* SXQExperimentStepServicesImpl.m */; };
 		B00221451BDA1CCF007A41F9 /* CellContainerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B00221441BDA1CCF007A41F9 /* CellContainerView.xib */; };
@@ -267,6 +267,14 @@
 		B0E46F3A1BDCE32C00B1F2D8 /* DWExperimentToolBar.xib in Resources */ = {isa = PBXBuildFile; fileRef = B0E46F391BDCE32C00B1F2D8 /* DWExperimentToolBar.xib */; };
 		B0E46F401BDCF89300B1F2D8 /* DGExperimentBaseController.m in Sources */ = {isa = PBXBuildFile; fileRef = B0E46F3E1BDCF89300B1F2D8 /* DGExperimentBaseController.m */; };
 		B0E46F411BDCF89300B1F2D8 /* DGExperimentBaseController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B0E46F3F1BDCF89300B1F2D8 /* DGExperimentBaseController.xib */; };
+		B0E5127E1C17F9AC0071BCA5 /* DWAppendInstructionController.m in Sources */ = {isa = PBXBuildFile; fileRef = B0E5127D1C17F9AC0071BCA5 /* DWAppendInstructionController.m */; };
+		B0E512811C1800950071BCA5 /* DWAddInstructionViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B0E512801C1800950071BCA5 /* DWAddInstructionViewModel.m */; };
+		B0E512841C1801630071BCA5 /* DWAddExpInstruction.m in Sources */ = {isa = PBXBuildFile; fileRef = B0E512831C1801630071BCA5 /* DWAddExpInstruction.m */; };
+		B0E512871C18018A0071BCA5 /* DWAddExpReagent.m in Sources */ = {isa = PBXBuildFile; fileRef = B0E512861C18018A0071BCA5 /* DWAddExpReagent.m */; };
+		B0E5128A1C1801A20071BCA5 /* DWAddExpConsumable.m in Sources */ = {isa = PBXBuildFile; fileRef = B0E512891C1801A20071BCA5 /* DWAddExpConsumable.m */; };
+		B0E5128D1C1801B50071BCA5 /* DWAddExpEquipment.m in Sources */ = {isa = PBXBuildFile; fileRef = B0E5128C1C1801B50071BCA5 /* DWAddExpEquipment.m */; };
+		B0E512901C1801D70071BCA5 /* DWAddExpStep.m in Sources */ = {isa = PBXBuildFile; fileRef = B0E5128F1C1801D70071BCA5 /* DWAddExpStep.m */; };
+		B0E512931C1804E50071BCA5 /* NSString+UUID.m in Sources */ = {isa = PBXBuildFile; fileRef = B0E512921C1804E50071BCA5 /* NSString+UUID.m */; };
 		B0E752541B94AA38009781E1 /* SXQSegmentedControl.m in Sources */ = {isa = PBXBuildFile; fileRef = B0E752531B94AA38009781E1 /* SXQSegmentedControl.m */; };
 		B0EBC4911BA16DB3000ECCA0 /* SXQMeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B0EBC4901BA16DB3000ECCA0 /* SXQMeViewController.m */; };
 		B0F18C241BD5FF7F0025DE73 /* DWSignUpController.m in Sources */ = {isa = PBXBuildFile; fileRef = B0F18C231BD5FF7F0025DE73 /* DWSignUpController.m */; };
@@ -424,8 +432,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		0FDB7AA2AE99ED779EEAD281 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
-		4853626AABF57EFB86948D6D /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		24263CB54E630AD295654538 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		85E5D9AA4367E191F04BF908 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		B002213C1BDA0353007A41F9 /* DWExperimentStep.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DWExperimentStep.h; sourceTree = "<group>"; };
 		B002213D1BDA04A9007A41F9 /* SXQExperimentStepImpl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SXQExperimentStepImpl.h; sourceTree = "<group>"; };
 		B002213E1BDA04A9007A41F9 /* SXQExperimentStepImpl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SXQExperimentStepImpl.m; sourceTree = "<group>"; };
@@ -906,6 +914,22 @@
 		B0E46F3D1BDCF89300B1F2D8 /* DGExperimentBaseController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DGExperimentBaseController.h; sourceTree = "<group>"; };
 		B0E46F3E1BDCF89300B1F2D8 /* DGExperimentBaseController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DGExperimentBaseController.m; sourceTree = "<group>"; };
 		B0E46F3F1BDCF89300B1F2D8 /* DGExperimentBaseController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DGExperimentBaseController.xib; sourceTree = "<group>"; };
+		B0E5127C1C17F9AC0071BCA5 /* DWAppendInstructionController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DWAppendInstructionController.h; sourceTree = "<group>"; };
+		B0E5127D1C17F9AC0071BCA5 /* DWAppendInstructionController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DWAppendInstructionController.m; sourceTree = "<group>"; };
+		B0E5127F1C1800950071BCA5 /* DWAddInstructionViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DWAddInstructionViewModel.h; sourceTree = "<group>"; };
+		B0E512801C1800950071BCA5 /* DWAddInstructionViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DWAddInstructionViewModel.m; sourceTree = "<group>"; };
+		B0E512821C1801630071BCA5 /* DWAddExpInstruction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DWAddExpInstruction.h; sourceTree = "<group>"; };
+		B0E512831C1801630071BCA5 /* DWAddExpInstruction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DWAddExpInstruction.m; sourceTree = "<group>"; };
+		B0E512851C18018A0071BCA5 /* DWAddExpReagent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DWAddExpReagent.h; sourceTree = "<group>"; };
+		B0E512861C18018A0071BCA5 /* DWAddExpReagent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DWAddExpReagent.m; sourceTree = "<group>"; };
+		B0E512881C1801A20071BCA5 /* DWAddExpConsumable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DWAddExpConsumable.h; sourceTree = "<group>"; };
+		B0E512891C1801A20071BCA5 /* DWAddExpConsumable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DWAddExpConsumable.m; sourceTree = "<group>"; };
+		B0E5128B1C1801B50071BCA5 /* DWAddExpEquipment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DWAddExpEquipment.h; sourceTree = "<group>"; };
+		B0E5128C1C1801B50071BCA5 /* DWAddExpEquipment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DWAddExpEquipment.m; sourceTree = "<group>"; };
+		B0E5128E1C1801D70071BCA5 /* DWAddExpStep.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DWAddExpStep.h; sourceTree = "<group>"; };
+		B0E5128F1C1801D70071BCA5 /* DWAddExpStep.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DWAddExpStep.m; sourceTree = "<group>"; };
+		B0E512911C1804E50071BCA5 /* NSString+UUID.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+UUID.h"; sourceTree = "<group>"; };
+		B0E512921C1804E50071BCA5 /* NSString+UUID.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+UUID.m"; sourceTree = "<group>"; };
 		B0E752521B94AA38009781E1 /* SXQSegmentedControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SXQSegmentedControl.h; sourceTree = "<group>"; };
 		B0E752531B94AA38009781E1 /* SXQSegmentedControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SXQSegmentedControl.m; sourceTree = "<group>"; };
 		B0EBC48F1BA16DB3000ECCA0 /* SXQMeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SXQMeViewController.h; sourceTree = "<group>"; };
@@ -1161,7 +1185,7 @@
 		B0FE896E1BD9C71E00999DE2 /* DWExperimentCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DWExperimentCell.h; sourceTree = "<group>"; };
 		B0FE896F1BD9C71E00999DE2 /* DWExperimentCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DWExperimentCell.m; sourceTree = "<group>"; };
 		B0FE89701BD9C71E00999DE2 /* DWExperimentCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DWExperimentCell.xib; sourceTree = "<group>"; };
-		C6F18907431E81E714D5DD65 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		BA10C25B56685BF3E3D3D5E3 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1190,7 +1214,6 @@
 				B0F939D31BA1675100D093F9 /* libstdc++.6.dylib in Frameworks */,
 				B0F939D41BA1675100D093F9 /* libstdc++.dylib in Frameworks */,
 				B0F939CC1BA166F900D093F9 /* libWeChatSDK.a in Frameworks */,
-				06DD1FAD0B6EA5DB92F35C0A /* libPods.a in Frameworks */,
 				B0F939C81BA166F800D093F9 /* TencentOpenAPI.framework in Frameworks */,
 				B0F939951BA166D700D093F9 /* Parse.framework in Frameworks */,
 				B0F939C51BA166F800D093F9 /* MOBFoundation.framework in Frameworks */,
@@ -1206,6 +1229,7 @@
 				B0F939BF1BA166F800D093F9 /* CopyConnection.framework in Frameworks */,
 				B0F939D01BA166F900D093F9 /* ShareSDKShareActionSheet.framework in Frameworks */,
 				B0F939CF1BA166F900D093F9 /* ShareSDKFlatShareViewUI.framework in Frameworks */,
+				9006C06D15EE539E2F0AE00C /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1219,11 +1243,11 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		79053445D87DEC3B0CBB43AA /* Pods */ = {
+		11202F2F872D7345068F41B7 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				0FDB7AA2AE99ED779EEAD281 /* Pods.debug.xcconfig */,
-				C6F18907431E81E714D5DD65 /* Pods.release.xcconfig */,
+				BA10C25B56685BF3E3D3D5E3 /* Pods.debug.xcconfig */,
+				24263CB54E630AD295654538 /* Pods.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -1251,7 +1275,7 @@
 				B0F939D51BA1675C00D093F9 /* SystemConfiguration.framework */,
 				B0F939D11BA1675100D093F9 /* libstdc++.6.dylib */,
 				B0F939D21BA1675100D093F9 /* libstdc++.dylib */,
-				4853626AABF57EFB86948D6D /* libPods.a */,
+				85E5D9AA4367E191F04BF908 /* libPods.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -1723,8 +1747,8 @@
 				B0A05F1D1B92871300EAEBF2 /* 实验助手 */,
 				B0A05F371B92871300EAEBF2 /* 实验助手Tests */,
 				B0A05F1C1B92871300EAEBF2 /* Products */,
-				79053445D87DEC3B0CBB43AA /* Pods */,
 				AA59C8EF080EA844EB02887B /* Frameworks */,
+				11202F2F872D7345068F41B7 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -2203,6 +2227,7 @@
 		B0C73C951B92F39E00F4B6D2 /* Me(我) */ = {
 			isa = PBXGroup;
 			children = (
+				B0E512541C17C3970071BCA5 /* AppendInstruction(新增实验) */,
 				B006ABD01C05777C008C6C76 /* Service */,
 				B0C73C961B92F39E00F4B6D2 /* Controller */,
 				B0C73C971B92F39E00F4B6D2 /* Model */,
@@ -2468,6 +2493,59 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		B0E512541C17C3970071BCA5 /* AppendInstruction(新增实验) */ = {
+			isa = PBXGroup;
+			children = (
+				B0E512551C17C3970071BCA5 /* Model */,
+				B0E512561C17C3970071BCA5 /* Service */,
+				B0E512571C17C3970071BCA5 /* View */,
+				B0E512581C17C3970071BCA5 /* ViewModel */,
+			);
+			path = "AppendInstruction(新增实验)";
+			sourceTree = "<group>";
+		};
+		B0E512551C17C3970071BCA5 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				B0E512821C1801630071BCA5 /* DWAddExpInstruction.h */,
+				B0E512831C1801630071BCA5 /* DWAddExpInstruction.m */,
+				B0E512851C18018A0071BCA5 /* DWAddExpReagent.h */,
+				B0E512861C18018A0071BCA5 /* DWAddExpReagent.m */,
+				B0E512881C1801A20071BCA5 /* DWAddExpConsumable.h */,
+				B0E512891C1801A20071BCA5 /* DWAddExpConsumable.m */,
+				B0E5128B1C1801B50071BCA5 /* DWAddExpEquipment.h */,
+				B0E5128C1C1801B50071BCA5 /* DWAddExpEquipment.m */,
+				B0E5128E1C1801D70071BCA5 /* DWAddExpStep.h */,
+				B0E5128F1C1801D70071BCA5 /* DWAddExpStep.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		B0E512561C17C3970071BCA5 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		B0E512571C17C3970071BCA5 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				B0E5127C1C17F9AC0071BCA5 /* DWAppendInstructionController.h */,
+				B0E5127D1C17F9AC0071BCA5 /* DWAppendInstructionController.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		B0E512581C17C3970071BCA5 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				B0E5127F1C1800950071BCA5 /* DWAddInstructionViewModel.h */,
+				B0E512801C1800950071BCA5 /* DWAddInstructionViewModel.m */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 		B0F308611BC6016E00AD9EAF /* MJPhotoBrowser */ = {
 			isa = PBXGroup;
 			children = (
@@ -2592,6 +2670,8 @@
 				B0F845441BE0B79F00BC539A /* NSString+Base64.m */,
 				B062E2761BF969CE00A7C0FB /* UIButton+Action.h */,
 				B062E2771BF969CE00A7C0FB /* UIButton+Action.m */,
+				B0E512911C1804E50071BCA5 /* NSString+UUID.h */,
+				B0E512921C1804E50071BCA5 /* NSString+UUID.m */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -3196,6 +3276,7 @@
 				B0C73CC41B93093B00F4B6D2 /* SXQHttpTool.m in Sources */,
 				B094C2601BFAC71400CDC289 /* DWInstructionServiceImpl.m in Sources */,
 				B006ABC51C055B29008C6C76 /* DWMeViewController.m in Sources */,
+				B0E512931C1804E50071BCA5 /* NSString+UUID.m in Sources */,
 				B079CE6A1BE9DF6F00CD54A9 /* SXQSettingArrowItem.m in Sources */,
 				B0F738C51BA92C6D00EA7E9E /* SXQInstructionCell.m in Sources */,
 				B0FD56B71C0D769600E9E377 /* DWBBSCommentController.m in Sources */,
@@ -3230,6 +3311,7 @@
 				B0A270F71BD73B5C00BA0C1B /* FSCalendar+IBExtension.m in Sources */,
 				B0FD56951C0D475300E9E377 /* DWConsultToolImpl.m in Sources */,
 				B0473B361C1013E800C9AA1D /* SXQAddReagentExchangeController.m in Sources */,
+				B0E512811C1800950071BCA5 /* DWAddInstructionViewModel.m in Sources */,
 				B01A73FE1C167CB20039399B /* DWCommentHeader.m in Sources */,
 				B0F73BB71BBBB3E600B3D0A0 /* FPTouchView.m in Sources */,
 				B054C1801BFC5D04009662D6 /* DWSignUpViewModel.m in Sources */,
@@ -3268,6 +3350,7 @@
 				B0C73CB01B92F39E00F4B6D2 /* main.m in Sources */,
 				B0DDFEFE1BA6622C00E4AB3C /* SXQDoneExperimentController.m in Sources */,
 				B0F5662E1BA7EDA400BA1F7B /* AcademicTool.m in Sources */,
+				B0E512901C1801D70071BCA5 /* DWAddExpStep.m in Sources */,
 				B084045C1BCB46E300019039 /* SXQInstructionDownloadResult.m in Sources */,
 				B0DDFF021BA6624A00E4AB3C /* SXQExpeirmentController.m in Sources */,
 				B0C73CBC1B92F52C00F4B6D2 /* ArrayDataSource+CollectionView.m in Sources */,
@@ -3277,6 +3360,7 @@
 				B03F97BF1BA2CAEE009FD1B4 /* SXQVenderLoginTool.m in Sources */,
 				B0FD56BE1C0D7D7B00E9E377 /* DWBBSCommentCell.m in Sources */,
 				B0A270F91BD73B5C00BA0C1B /* FSCalendarAppearance.m in Sources */,
+				B0E5128A1C1801A20071BCA5 /* DWAddExpConsumable.m in Sources */,
 				B0F5661E1BA7BEDE00BA1F7B /* UIBarButtonItem+SXQ.m in Sources */,
 				B04C73661BF1B3AD0038B1A6 /* SXQReportItem.m in Sources */,
 				B0F308911BC6016E00AD9EAF /* MJPhotoBrowser.m in Sources */,
@@ -3324,6 +3408,7 @@
 				B06490041C06EAA500B9C78E /* DWMeEditCell.m in Sources */,
 				B0FD56B31C0D716B00E9E377 /* DWBBSThemeCell.m in Sources */,
 				B0A3D9491BFEBB1C00D7BB4E /* DWSchoolPickerDelegate.m in Sources */,
+				B0E5127E1C17F9AC0071BCA5 /* DWAppendInstructionController.m in Sources */,
 				B0FE89711BD9C71E00999DE2 /* DWExperimentCell.m in Sources */,
 				B0F6B1871BC7BBA50090E398 /* SXQExpConsumable.m in Sources */,
 				B006ABCF1C057704008C6C76 /* DWMeItem.m in Sources */,
@@ -3342,6 +3427,7 @@
 				B0A3D94F1BFEE7F000D7BB4E /* DWSupplierDelegate.m in Sources */,
 				B011AD221C0C20FB00DD94DC /* DWReviewDetailFooter.m in Sources */,
 				B0473B2D1C1005CF00C9AA1D /* SXQReagentAnnotationView.m in Sources */,
+				B0E512871C18018A0071BCA5 /* DWAddExpReagent.m in Sources */,
 				B0F5B8BE1BD88F43005D6AE4 /* SXQLoginController.m in Sources */,
 				B062E28C1BF9A7CA00A7C0FB /* DWInstructionDetailHeader.m in Sources */,
 				B0E46F381BDCE31800B1F2D8 /* DWExperimentToolBar.m in Sources */,
@@ -3392,6 +3478,8 @@
 				B01383281C02D86200F37F76 /* DWStarView.m in Sources */,
 				B0F845401BE07CAE00BC539A /* DWConsultDetailController.m in Sources */,
 				B0F308951BC6016E00AD9EAF /* MJPhotoView.m in Sources */,
+				B0E512841C1801630071BCA5 /* DWAddExpInstruction.m in Sources */,
+				B0E5128D1C1801B50071BCA5 /* DWAddExpEquipment.m in Sources */,
 				B0A270FB1BD73B5C00BA0C1B /* FSCalendarConstance.m in Sources */,
 				B027BCD21C1528F9002B74EA /* DWForgetPassController.m in Sources */,
 				B0F73B991BBB8D5C00B3D0A0 /* SXQReagentListController.m in Sources */,
@@ -3557,7 +3645,7 @@
 		};
 		B0A05F3F1B92871300EAEBF2 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 0FDB7AA2AE99ED779EEAD281 /* Pods.debug.xcconfig */;
+			baseConfigurationReference = BA10C25B56685BF3E3D3D5E3 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -3617,7 +3705,7 @@
 		};
 		B0A05F401B92871300EAEBF2 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = C6F18907431E81E714D5DD65 /* Pods.release.xcconfig */;
+			baseConfigurationReference = 24263CB54E630AD295654538 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -3677,7 +3765,7 @@
 		};
 		B0A05F421B92871300EAEBF2 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 0FDB7AA2AE99ED779EEAD281 /* Pods.debug.xcconfig */;
+			baseConfigurationReference = BA10C25B56685BF3E3D3D5E3 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Wei Feng Hou (W5X736XVC4)";
@@ -3698,7 +3786,7 @@
 		};
 		B0A05F431B92871300EAEBF2 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = C6F18907431E81E714D5DD65 /* Pods.release.xcconfig */;
+			baseConfigurationReference = 24263CB54E630AD295654538 /* Pods.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				FRAMEWORK_SEARCH_PATHS = (

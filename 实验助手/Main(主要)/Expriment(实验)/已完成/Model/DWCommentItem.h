@@ -12,5 +12,5 @@
 @property (nonatomic,copy) NSString *itemID;
 @property (nonatomic,copy) NSString *itemName;
 @property (nonatomic,copy) NSString *supplierID;
-@property (nonatomic,assign) BOOL itemScore;
+@property (nonatomic,assign) int itemScore;
 @end

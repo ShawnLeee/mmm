@@ -16,5 +16,7 @@
 @property (nonatomic,assign) NSInteger groupScore;
 
 @property (nonatomic,assign) BOOL opened;
+
+@property (nonatomic,strong) DWCommentGroup *commentGroup;
 - (instancetype)initWithCommentGroup:(DWCommentGroup *)commentGroup;
 @end

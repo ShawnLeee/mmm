@@ -93,7 +93,7 @@
     return [RACSignal createSignal:^RACDisposable *(id<RACSubscriber> subscriber) {
         NSDictionary *commentData = [self reviewDataWithExpInstructionID:expInstructionID content:content viewModels:viewModels];
         NSString *jsonStr = [self jsonStrWithCommentData:commentData];
-        NSDictionary *params = @{@"json" : jsonStr};
+        NSDictionary *params = @{@"reviewJson" : jsonStr};
         [SXQHttpTool postWithURL:CommentURL params:params success:^(id json) {
             [subscriber sendNext:@([json[@"code"] isEqualToString:@"1"])];
             [subscriber sendCompleted];
@@ -113,16 +113,16 @@
 - (NSInteger)averageWithViewModels:(NSArray *)viewModels
 {
     __block NSInteger sum = 0;
-    [viewModels enumerateObjectsUsingBlock:^(DWCommentViewModel *viewModel, NSUInteger idx, BOOL * _Nonnull stop) {
-        sum += viewModel.reviewOptScore;
+    [viewModels enumerateObjectsUsingBlock:^(DWCommentHeaderViewModel *viewModel, NSUInteger idx, BOOL * _Nonnull stop) {
+        sum += viewModel.groupScore;
     }];
     return sum/viewModels.count;
 }
 - (NSArray *)reviewDetailsWithViewModels:(NSArray *)viewModels
 {
     __block NSMutableArray *tmpArray = [NSMutableArray array];
-    [viewModels enumerateObjectsUsingBlock:^(DWCommentViewModel *viewModel, NSUInteger idx, BOOL * _Nonnull stop) {
-        NSDictionary *reviewItem = @{@"expReviewOptID" : viewModel.expReviewOptID?:@"" ,@"expReviewOptScore" : @(viewModel.reviewOptScore)?:@""};
+    [viewModels enumerateObjectsUsingBlock:^(DWCommentHeaderViewModel *viewModel, NSUInteger idx, BOOL * _Nonnull stop) {
+        NSDictionary *reviewItem = viewModel.commentGroup.keyValues;
         [tmpArray addObject:reviewItem];
     }];
     return [tmpArray copy];

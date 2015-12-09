@@ -5,6 +5,8 @@
 //  Created by sxq on 15/11/25.
 //  Copyright © 2015年 SXQ. All rights reserved.
 //
+#import "DWAppendInstructionController.h"
+#import "UIBarButtonItem+SXQ.h"
 #import "DWSignOutView.h"
 #import "DWMeEditController.h"
 #import <ReactiveCocoa/ReactiveCocoa.h>
@@ -45,7 +47,30 @@
 {
     [self.tableView registerNib:[UINib nibWithNibName:NSStringFromClass([DWMeCell class]) bundle:nil] forCellReuseIdentifier:NSStringFromClass([DWMeCell class])];
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+     self.navigationItem.rightBarButtonItem = [UIBarButtonItem itemWithImage:@"Night_ZHNavigationBarAddIcon_iOS7" target:self action:@selector(p_appendInstruction)];
     
+}
+- (void)p_appendInstruction
+{
+    UIActionSheet *actionSheet = [[UIActionSheet alloc] initWithTitle:@"新增说明书"
+                                                             delegate:nil
+                                                    cancelButtonTitle:@"取消"
+                                               destructiveButtonTitle:nil
+                                                    otherButtonTitles:@"创建一份",@"选择模版", nil];
+    [actionSheet.rac_buttonClickedSignal subscribeNext:^(NSNumber *buttonIndex) {
+        switch ([buttonIndex integerValue]) {
+            case 0:
+            {
+                DWAppendInstructionController *appendVC = [[UIStoryboard storyboardWithName:@"Main" bundle:nil]
+                                        instantiateViewControllerWithIdentifier:NSStringFromClass([DWAppendInstructionController class])];
+                [self.navigationController pushViewController:appendVC animated:YES];
+                break;
+            }
+            case 1:
+                break;
+        }
+    }];
+    [actionSheet showInView:self.view];
 }
 - (void)p_setupTableFooter
 {

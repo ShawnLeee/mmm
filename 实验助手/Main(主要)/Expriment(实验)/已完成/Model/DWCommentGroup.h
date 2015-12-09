@@ -12,5 +12,5 @@
 @property (nonatomic,copy) NSString *expReviewOptID;
 @property (nonatomic,copy) NSString *expReviewOptName;
 @property (nonatomic,strong) NSArray *expReviewDetailOfOpts;
-@property (nonatomic,assign) NSInteger reviewOptScore;
+@property (nonatomic,assign) NSInteger expReviewOptScore;
 @end
