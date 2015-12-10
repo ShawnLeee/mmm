@@ -235,6 +235,9 @@
 		B0C73CD41B932C6000F4B6D2 /* SXQGroupCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B0C73CD31B932C6000F4B6D2 /* SXQGroupCell.m */; };
 		B0C73CD51B93369A00F4B6D2 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = B0C73CA51B92F39E00F4B6D2 /* LaunchScreen.xib */; };
 		B0C73CD61B93369A00F4B6D2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B0C73CA71B92F39E00F4B6D2 /* Main.storyboard */; };
+		B0DC38931C190F7E0011134A /* DWAddInstructionServiceImpl.m in Sources */ = {isa = PBXBuildFile; fileRef = B0DC38921C190F7E0011134A /* DWAddInstructionServiceImpl.m */; };
+		B0DC38961C1911A60011134A /* DWCategoryDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B0DC38951C1911A60011134A /* DWCategoryDelegate.m */; };
+		B0DC38991C191CC90011134A /* DWSubCategoryDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B0DC38981C191CC90011134A /* DWSubCategoryDelegate.m */; };
 		B0DDFEFE1BA6622C00E4AB3C /* SXQDoneExperimentController.m in Sources */ = {isa = PBXBuildFile; fileRef = B0DDFEFD1BA6622C00E4AB3C /* SXQDoneExperimentController.m */; };
 		B0DDFF021BA6624A00E4AB3C /* SXQExpeirmentController.m in Sources */ = {isa = PBXBuildFile; fileRef = B0DDFF001BA6624A00E4AB3C /* SXQExpeirmentController.m */; };
 		B0DDFF091BA6664F00E4AB3C /* SXQExperimentDetailController.m in Sources */ = {isa = PBXBuildFile; fileRef = B0DDFF081BA6664F00E4AB3C /* SXQExperimentDetailController.m */; };
@@ -859,6 +862,13 @@
 		B0C73CCB1B93271200F4B6D2 /* SXQGroup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SXQGroup.m; sourceTree = "<group>"; };
 		B0C73CD21B932C6000F4B6D2 /* SXQGroupCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SXQGroupCell.h; sourceTree = "<group>"; };
 		B0C73CD31B932C6000F4B6D2 /* SXQGroupCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SXQGroupCell.m; sourceTree = "<group>"; };
+		B0DC38901C190F590011134A /* DWAddInstructionService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DWAddInstructionService.h; sourceTree = "<group>"; };
+		B0DC38911C190F7E0011134A /* DWAddInstructionServiceImpl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DWAddInstructionServiceImpl.h; sourceTree = "<group>"; };
+		B0DC38921C190F7E0011134A /* DWAddInstructionServiceImpl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DWAddInstructionServiceImpl.m; sourceTree = "<group>"; };
+		B0DC38941C1911A60011134A /* DWCategoryDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DWCategoryDelegate.h; sourceTree = "<group>"; };
+		B0DC38951C1911A60011134A /* DWCategoryDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DWCategoryDelegate.m; sourceTree = "<group>"; };
+		B0DC38971C191CC90011134A /* DWSubCategoryDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DWSubCategoryDelegate.h; sourceTree = "<group>"; };
+		B0DC38981C191CC90011134A /* DWSubCategoryDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DWSubCategoryDelegate.m; sourceTree = "<group>"; };
 		B0DDFEFC1BA6622C00E4AB3C /* SXQDoneExperimentController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SXQDoneExperimentController.h; sourceTree = "<group>"; };
 		B0DDFEFD1BA6622C00E4AB3C /* SXQDoneExperimentController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SXQDoneExperimentController.m; sourceTree = "<group>"; };
 		B0DDFEFF1BA6624A00E4AB3C /* SXQExpeirmentController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SXQExpeirmentController.h; sourceTree = "<group>"; };
@@ -2527,6 +2537,13 @@
 		B0E512561C17C3970071BCA5 /* Service */ = {
 			isa = PBXGroup;
 			children = (
+				B0DC38901C190F590011134A /* DWAddInstructionService.h */,
+				B0DC38911C190F7E0011134A /* DWAddInstructionServiceImpl.h */,
+				B0DC38921C190F7E0011134A /* DWAddInstructionServiceImpl.m */,
+				B0DC38941C1911A60011134A /* DWCategoryDelegate.h */,
+				B0DC38951C1911A60011134A /* DWCategoryDelegate.m */,
+				B0DC38971C191CC90011134A /* DWSubCategoryDelegate.h */,
+				B0DC38981C191CC90011134A /* DWSubCategoryDelegate.m */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -3260,6 +3277,7 @@
 				B0F308941BC6016E00AD9EAF /* MJPhotoToolbar.m in Sources */,
 				B0F73BBA1BBBC1BE00B3D0A0 /* SXQSupplierListData.m in Sources */,
 				B0026BF71BCF8D4600FB70A9 /* SXQConsumable.m in Sources */,
+				B0DC38991C191CC90011134A /* DWSubCategoryDelegate.m in Sources */,
 				B0FD569C1C0D483500E9E377 /* DWReagentExchangeToolImpl.m in Sources */,
 				B0648FFB1C06E44B00B9C78E /* DWUserInfoViewModel.m in Sources */,
 				B0DDFF0C1BA6679500E4AB3C /* DWGroup.m in Sources */,
@@ -3375,6 +3393,7 @@
 				B0981F7D1BF1E65300925D5B /* SXQPdfController.m in Sources */,
 				B0DDFF181BA67FFE00E4AB3C /* SXQEquipMentCell.m in Sources */,
 				B05EE64E1C1023FE0086656A /* DWBBSTopic.m in Sources */,
+				B0DC38961C1911A60011134A /* DWCategoryDelegate.m in Sources */,
 				B013832E1C02DCC300F37F76 /* DWCommentCell.m in Sources */,
 				B01383331C03056500F37F76 /* DWReportViewController.m in Sources */,
 				B00734921BF073D20020DC79 /* SXQSupplierViewModel.m in Sources */,
@@ -3446,6 +3465,7 @@
 				B0BB69D21C168ABF0057E2B0 /* DWCommentHeaderViewModel.m in Sources */,
 				B0221C4A1BFB17A800DB4083 /* SXQExpInstruction.m in Sources */,
 				B0A271121BD74DF900BA0C1B /* SXQBaseParam.m in Sources */,
+				B0DC38931C190F7E0011134A /* DWAddInstructionServiceImpl.m in Sources */,
 				B0665B8C1BF5830B0021E752 /* DWDoingViewModel.m in Sources */,
 				B0F5B8BB1BD88A2D005D6AE4 /* SXQLoginImpl.m in Sources */,
 				B06CE1691BAAB803008BB98E /* DWConsultTViewController.m in Sources */,

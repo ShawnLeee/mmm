@@ -21,7 +21,7 @@
 {
     [SXQHttpTool getWithURL:AllExpURL params:nil success:^(id json) {
         if (success) {
-            ExpCategoryResult *result = [ExpCategoryResult objectWithKeyValues:json];
+            ExpCategoryResult *result = [ExpCategoryResult mj_objectWithKeyValues:json];
             success(result);
         }
     } failure:^(NSError *error) {
