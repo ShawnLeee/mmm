@@ -9,5 +9,5 @@
 #import <Foundation/Foundation.h>
 
 @interface DWAddInstructionServiceImpl : NSObject<DWAddInstructionService>
-
+- (instancetype)initWithNavigationController:(UINavigationController *)navigationController;
 @end

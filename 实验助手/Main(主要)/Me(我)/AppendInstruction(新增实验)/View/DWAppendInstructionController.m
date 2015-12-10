@@ -5,6 +5,7 @@
 //  Created by sxq on 15/12/9.
 //  Copyright © 2015年 SXQ. All rights reserved.
 //
+#import "DWAddItemController.h"
 #import "DWAddInstructionViewModel.h"
 #import "UIBarButtonItem+SXQ.h"
 #import "DWAppendInstructionController.h"
@@ -38,7 +39,10 @@
 - (void)p_setNavigationBar
 {
     self.navigationItem.rightBarButtonItem = [UIBarButtonItem itemWithTitle:@"下一步" titleColor:LABBtnBgColor font:15 action:^{
-        NSLog(@"%@",_addInstructionViewModel);
+        DWAddItemController *itemController = [DWAddItemController new];
+        itemController.addInstrucitonViewModel = self.addInstructionViewModel;
+        
+        [self.navigationController pushViewController:itemController animated:YES];
     }];
 }
 @end

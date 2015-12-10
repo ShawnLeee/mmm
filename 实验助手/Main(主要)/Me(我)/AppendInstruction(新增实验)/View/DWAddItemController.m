@@ -1,0 +1,82 @@
+//
+//  DWAddItemController.m
+//  实验助手
+//
+//  Created by sxq on 15/12/10.
+//  Copyright © 2015年 SXQ. All rights reserved.
+//
+#import "DWAddItemHeader.h"
+#import "DWAddInstructionViewModel.h"
+#import "DWAddItemViewModel.h"
+#import "DWAddItemController.h"
+#import <ReactiveCocoa/ReactiveCocoa.h>
+#import "DWAddInstructionServiceImpl.h"
+#import "DWAddExpInstruction.h"
+#import "UIBarButtonItem+SXQ.h"
+@interface DWAddItemController ()
+@property (nonatomic,strong) NSArray<DWAddItemViewModel *> *itemViewModels;
+@property (nonatomic,strong) id<DWAddInstructionService> service;
+@end
+
+@implementation DWAddItemController
+- (id<DWAddInstructionService>)service
+{
+    if (!_service) {
+        _service = [[DWAddInstructionServiceImpl alloc] initWithNavigationController:self.navigationController];
+    }
+    return _service;
+}
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    [self p_setupNavigationBar];
+    [self p_setupViewModel];
+    [self p_setupTableView];
+}
+#pragma mark - Private Helper Method
+- (void)p_setupNavigationBar
+{
+    self.title = @"创建说明书";
+    self.navigationItem.rightBarButtonItem = [UIBarButtonItem itemWithTitle:@"下一步" titleColor:MainBgColor font:15 action:^{
+        
+    }];
+}
+#pragma mark - TableView DataSource
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+{
+    return self.itemViewModels.count;
+}
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    return 0;
+}
+- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
+{
+    DWAddItemHeader *header = [tableView dequeueReusableHeaderFooterViewWithIdentifier:NSStringFromClass([DWAddItemHeader class])];
+    header.viewModel = self.itemViewModels[section];
+    return header;
+}
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
+{
+    return 30;
+}
+- (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section
+{
+    return 20;
+}
+#pragma mark - Private Helper Method
+- (void)p_setupTableView
+{
+    self.tableView.allowsSelection = NO;
+    [self.tableView registerNib:[UINib nibWithNibName:NSStringFromClass([DWAddItemHeader class]) bundle:nil] forHeaderFooterViewReuseIdentifier:NSStringFromClass([DWAddItemHeader class])];
+}
+- (void)p_setupViewModel
+{
+    @weakify(self)
+    [[self.service itemViewModelSignalWithInstructionID:self.addInstrucitonViewModel.expInstruction.expInstructionID]
+    subscribeNext:^(NSArray *itemViewModels) {
+        @strongify(self)
+        self.itemViewModels = itemViewModels;
+        [self.tableView reloadData];
+    }];
+}
+@end
