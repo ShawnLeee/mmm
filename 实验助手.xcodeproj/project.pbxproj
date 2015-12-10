@@ -177,6 +177,8 @@
 		B0981F741BF1B92200925D5B /* SXQReportCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B0981F721BF1B92200925D5B /* SXQReportCell.xib */; };
 		B0981F771BF1B95700925D5B /* SXQReportViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B0981F761BF1B95700925D5B /* SXQReportViewModel.m */; };
 		B0981F7D1BF1E65300925D5B /* SXQPdfController.m in Sources */ = {isa = PBXBuildFile; fileRef = B0981F7C1BF1E65300925D5B /* SXQPdfController.m */; };
+		B09F9D7C1C1972A900E69DF8 /* DWAddReagentCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B09F9D7A1C1972A900E69DF8 /* DWAddReagentCell.m */; };
+		B09F9D7D1C1972A900E69DF8 /* DWAddReagentCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B09F9D7B1C1972A900E69DF8 /* DWAddReagentCell.xib */; };
 		B0A1E51B1B95897200440141 /* SXQListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B0A1E5191B95897200440141 /* SXQListCell.m */; };
 		B0A1E51C1B95897200440141 /* SXQListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B0A1E51A1B95897200440141 /* SXQListCell.xib */; };
 		B0A270D01BD60E5900BA0C1B /* DWSignUpLogicController.m in Sources */ = {isa = PBXBuildFile; fileRef = B0A270CF1BD60E5900BA0C1B /* DWSignUpLogicController.m */; };
@@ -754,6 +756,9 @@
 		B0981F761BF1B95700925D5B /* SXQReportViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SXQReportViewModel.m; sourceTree = "<group>"; };
 		B0981F7B1BF1E65300925D5B /* SXQPdfController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SXQPdfController.h; sourceTree = "<group>"; };
 		B0981F7C1BF1E65300925D5B /* SXQPdfController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SXQPdfController.m; sourceTree = "<group>"; };
+		B09F9D791C1972A900E69DF8 /* DWAddReagentCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DWAddReagentCell.h; sourceTree = "<group>"; };
+		B09F9D7A1C1972A900E69DF8 /* DWAddReagentCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DWAddReagentCell.m; sourceTree = "<group>"; };
+		B09F9D7B1C1972A900E69DF8 /* DWAddReagentCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DWAddReagentCell.xib; sourceTree = "<group>"; };
 		B0A05F1B1B92871300EAEBF2 /* 实验助手.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "实验助手.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B0A05F341B92871300EAEBF2 /* 实验助手Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "实验助手Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B0A05F391B92871300EAEBF2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -2504,6 +2509,9 @@
 				B0DC389D1C1942440011134A /* DWAddItemHeader.h */,
 				B0DC389E1C1942440011134A /* DWAddItemHeader.m */,
 				B0DC38A01C19425F0011134A /* DWAddItemHeader.xib */,
+				B09F9D791C1972A900E69DF8 /* DWAddReagentCell.h */,
+				B09F9D7A1C1972A900E69DF8 /* DWAddReagentCell.m */,
+				B09F9D7B1C1972A900E69DF8 /* DWAddReagentCell.xib */,
 			);
 			name = views;
 			sourceTree = "<group>";
@@ -3169,6 +3177,7 @@
 				B0473B371C1013E800C9AA1D /* SXQAddReagentExchangeController.xib in Resources */,
 				B0FD56A11C0D608300E9E377 /* DWBBSModuleCell.xib in Resources */,
 				B0F73BA11BBBA97800B3D0A0 /* SXQReagentCell.xib in Resources */,
+				B09F9D7D1C1972A900E69DF8 /* DWAddReagentCell.xib in Resources */,
 				B013832F1C02DCC300F37F76 /* DWCommentCell.xib in Resources */,
 				B006ABCA1C055BD2008C6C76 /* DWMeHeader.xib in Resources */,
 				B027BCCE1C151E69002B74EA /* DWBBSTopicController.xib in Resources */,
@@ -3507,6 +3516,7 @@
 				B0473B2D1C1005CF00C9AA1D /* SXQReagentAnnotationView.m in Sources */,
 				B0E512871C18018A0071BCA5 /* DWAddExpReagent.m in Sources */,
 				B0F5B8BE1BD88F43005D6AE4 /* SXQLoginController.m in Sources */,
+				B09F9D7C1C1972A900E69DF8 /* DWAddReagentCell.m in Sources */,
 				B062E28C1BF9A7CA00A7C0FB /* DWInstructionDetailHeader.m in Sources */,
 				B0E46F381BDCE31800B1F2D8 /* DWExperimentToolBar.m in Sources */,
 				B062E2861BF99DE300A7C0FB /* DWInstructionDetailController+DataSource.m in Sources */,
