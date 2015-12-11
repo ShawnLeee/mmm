@@ -5,6 +5,7 @@
 //  Created by sxq on 15/12/10.
 //  Copyright © 2015年 SXQ. All rights reserved.
 //
+#import "DWItemCell.h"
 #import "DWAddItemHeader.h"
 #import "DWAddInstructionViewModel.h"
 #import "DWAddItemViewModel.h"
@@ -22,7 +23,7 @@
 - (id<DWAddInstructionService>)service
 {
     if (!_service) {
-        _service = [[DWAddInstructionServiceImpl alloc] initWithNavigationController:self.navigationController];
+        _service = [[DWAddInstructionServiceImpl alloc] initWithNavigationController:self.navigationController tableView:self.tableView];
     }
     return _service;
 }
@@ -47,13 +48,22 @@
 }
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 0;
+    DWAddItemViewModel *headerModel = self.itemViewModels[section];
+    return headerModel.items.count;
 }
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
 {
     DWAddItemHeader *header = [tableView dequeueReusableHeaderFooterViewWithIdentifier:NSStringFromClass([DWAddItemHeader class])];
     header.viewModel = self.itemViewModels[section];
     return header;
+}
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    
+    DWAddItemViewModel *headerModel = self.itemViewModels[indexPath.section];
+    DWItemCell *cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([DWItemCell class]) forIndexPath:indexPath];
+    cell.viewModel = headerModel.items[indexPath.row];
+    return cell;
 }
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
 {
@@ -67,6 +77,8 @@
 - (void)p_setupTableView
 {
     self.tableView.allowsSelection = NO;
+    [self.tableView registerNib:[UINib nibWithNibName:NSStringFromClass([DWItemCell class]) bundle:nil] forCellReuseIdentifier:NSStringFromClass([DWItemCell class])];
+    
     [self.tableView registerNib:[UINib nibWithNibName:NSStringFromClass([DWAddItemHeader class]) bundle:nil] forHeaderFooterViewReuseIdentifier:NSStringFromClass([DWAddItemHeader class])];
 }
 - (void)p_setupViewModel

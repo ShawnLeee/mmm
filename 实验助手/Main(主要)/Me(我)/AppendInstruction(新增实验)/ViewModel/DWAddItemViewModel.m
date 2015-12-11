@@ -11,6 +11,7 @@
 #import "DWAddReagentViewModel.h"
 #import <ReactiveCocoa/ReactiveCocoa.h>
 #import "DWAddItemViewModel.h"
+#import "DWItemCellViewModel.h"
 typedef void (^AddDoneBlock)(id itemModel);
 @interface DWAddItemViewModel ()
 @property (nonatomic,strong) id<DWAddInstructionService> service;
@@ -47,7 +48,9 @@ typedef void (^AddDoneBlock)(id itemModel);
             reagentVC.instrucitonID = self.instructionID;
             reagentVC.doneBlock = ^(DWAddReagentViewModel *reagentViewModel)
             {
-                
+                DWItemCellViewModel *cellViewModel = [[DWItemCellViewModel alloc] initWithModel:reagentViewModel.expReagent];
+                [self.items addObject:cellViewModel];
+                [self.service refreshData];
             };
             viewController = reagentVC;
             break;

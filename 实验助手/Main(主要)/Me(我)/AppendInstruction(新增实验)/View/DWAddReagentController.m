@@ -41,7 +41,10 @@
 {
     self.navigationItem.leftBarButtonItem = [UIBarButtonItem itemWithIcon:@"Cancel_Normal" highIcon:@"Cancel_Highlight" target:self action:@selector(disMissSelf)];
     self.navigationItem.rightBarButtonItem = [UIBarButtonItem itemWithTitle:@"确定" titleColor:MainBgColor font:15 action:^{
-        self.doneBlock(self.reagentViewModel);
+        if (self.reagentViewModel.expReagent.reagentID) {
+            self.doneBlock(self.reagentViewModel);
+        }
+        [self disMissSelf];
     }];
 }
 - (void)disMissSelf
@@ -56,6 +59,7 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     DWAddReagentCell *cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([DWAddReagentCell class]) forIndexPath:indexPath];
+    cell.reagentViewModel = self.reagentViewModel;
     return cell;
 }
 @end

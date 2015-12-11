@@ -14,12 +14,14 @@
 #import "DWAddInstructionServiceImpl.h"
 @interface DWAddInstructionServiceImpl ()
 @property (nonatomic,weak) UINavigationController *navigationController;
+@property (nonatomic,weak) UITableView *tableView;
 @end
 @implementation DWAddInstructionServiceImpl
-- (instancetype)initWithNavigationController:(UINavigationController *)navigationController
+- (instancetype)initWithNavigationController:(UINavigationController *)navigationController tableView:(UITableView *)tableView
 {
     if (self = [super init]) {
         self.navigationController = navigationController;
+        self.tableView = tableView;
     }
     return self;
 }
@@ -82,5 +84,9 @@
 - (void)presentViewController:(UIViewController *)viewControllerToPresent
 {
     [self.navigationController presentViewController:viewControllerToPresent animated:YES completion:nil];
+}
+- (void)refreshData
+{
+    [self.tableView  reloadData];
 }
 @end

@@ -6,7 +6,7 @@
 //  Copyright © 2015年 SXQ. All rights reserved.
 //
 
-@class DWAddExpReagent;
+@class DWAddExpReagent,RACCommand;
 #import <Foundation/Foundation.h>
 
 @interface DWAddReagentViewModel : NSObject
@@ -16,5 +16,6 @@
 @property (nonatomic,assign) int amount;
 @property (nonatomic,copy) NSString *supplier;
 @property (nonatomic,strong) DWAddExpReagent *expReagent;
+
 + (instancetype)reagentViewModel;
 @end

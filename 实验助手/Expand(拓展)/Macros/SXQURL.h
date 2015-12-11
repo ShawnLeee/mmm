@@ -98,4 +98,11 @@ typedef NS_ENUM(NSUInteger,LABResponseType)
 #define BBSWriteCommentURL @"http://hualang.wicp.net:8090/LabAssistant/bbs/responseReview"
 #define BBSThemeSearchURL @"http://hualang.wicp.net:8090/LabAssistant/bbs/searchTopics"
 #define BBSAddThemeURL @"http://hualang.wicp.net:8090/LabAssistant/bbs/releaseTopic"
+/**
+ *  append item
+ */
+#define ReagentFirstClarifyURL @"http://hualang.wicp.net:8090/LabAssistant/create/levelOne"
+#define ReagentSecondClarifyURL @"http://hualang.wicp.net:8090/LabAssistant/create/levelTwo"
+#define GetReagentURL @"http://hualang.wicp.net:8090/LabAssistant/create/getReagents"
+#define GetSupplierURL @"http://hualang.wicp.net:8090/LabAssistant/create/getSuppliers"
 #endif

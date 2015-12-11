@@ -1,0 +1,27 @@
+//
+//  DWItemCellViewModel.m
+//  实验助手
+//
+//  Created by sxq on 15/12/11.
+//  Copyright © 2015年 SXQ. All rights reserved.
+//
+#import "DWAddExpReagent.h"
+#import "DWItemCellViewModel.h"
+#import "SXQSupplier.h"
+
+@implementation DWItemCellViewModel
+- (instancetype)initWithModel:(id)model
+{
+    if (self = [super init]) {
+        if ([model isKindOfClass:[DWAddExpReagent class]]) {
+            [self p_setupWithExpReagent:model];
+        }
+    }
+    return self;
+}
+- (void)p_setupWithExpReagent:(DWAddExpReagent *)expReagent
+{
+    _itemName = expReagent.reagentName;
+    _supplierName = expReagent.supplier.supplierName;
+}
+@end

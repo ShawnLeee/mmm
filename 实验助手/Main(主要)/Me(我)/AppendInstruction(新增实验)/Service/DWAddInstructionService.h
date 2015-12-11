@@ -13,4 +13,5 @@
 - (RACSignal *)secondCategorySignalWithCategoryID:(NSString *)categoryID;
 - (RACSignal *)itemViewModelSignalWithInstructionID:(NSString *)instructionID;
 - (void)presentViewController:(UIViewController *)viewControllerToPresent;
+- (void)refreshData;
 @end
