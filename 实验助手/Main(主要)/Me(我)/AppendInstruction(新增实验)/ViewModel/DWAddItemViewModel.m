@@ -5,6 +5,7 @@
 //  Created by sxq on 15/12/10.
 //  Copyright © 2015年 SXQ. All rights reserved.
 //
+#import "DWAddEquipmentController.h"
 #import "DWAddReagentViewModel.h"
 #import "SXQNavgationController.h"
 #import "DWAddReagentController.h"
@@ -12,6 +13,7 @@
 #import <ReactiveCocoa/ReactiveCocoa.h>
 #import "DWAddItemViewModel.h"
 #import "DWItemCellViewModel.h"
+#import "DWAddConsumableController.h"
 typedef void (^AddDoneBlock)(id itemModel);
 @interface DWAddItemViewModel ()
 @property (nonatomic,strong) id<DWAddInstructionService> service;
@@ -56,9 +58,17 @@ typedef void (^AddDoneBlock)(id itemModel);
             break;
         }
         case DWAddItemTypeConsumable:
+        {
+            DWAddConsumableController *consumableVC = [[UIStoryboard storyboardWithName:@"AddItem" bundle:nil] instantiateViewControllerWithIdentifier:NSStringFromClass([DWAddConsumableController class])];
+            viewController = consumableVC;
             break;
+        }
         case DWAddItemTypeEquipment:
+        {
+            DWAddEquipmentController *equipmentVC = [[UIStoryboard storyboardWithName:@"AddItem" bundle:nil] instantiateViewControllerWithIdentifier:NSStringFromClass([DWAddEquipmentController class])];
+            viewController = equipmentVC;
             break;
+        }
     }
     SXQNavgationController *nav = [[SXQNavgationController alloc] initWithRootViewController:viewController];
     [self.service presentViewController:nav];

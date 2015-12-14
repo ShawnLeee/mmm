@@ -12,6 +12,7 @@
 @implementation DWItemCellViewModel
 - (instancetype)initWithModel:(id)model
 {
+    _model = model;
     if (self = [super init]) {
         if ([model isKindOfClass:[DWAddExpReagent class]]) {
             [self p_setupWithExpReagent:model];

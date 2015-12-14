@@ -5,6 +5,8 @@
 //  Created by sxq on 15/12/11.
 //  Copyright © 2015年 SXQ. All rights reserved.
 //
+#import "DWAddExpConsumable.h"
+#import "DWReagentSearchModel.h"
 #import "SXQSupplier.h"
 #import "DWReagentOption.h"
 #import "DWReagentSecondClarify.h"
@@ -141,6 +143,39 @@
         } failure:^(NSError *error) {
                 [subscriber sendNext:@[]];
                 [subscriber sendCompleted];
+        }];
+        return nil;
+    }];
+}
+- (RACSignal *)searchItemSignalWithName:(NSString *)name itemType:(DWAddItemType)itemType
+{
+    NSDictionary *param = @{@"name" : name? : @"",@"mark" : @(itemType)};
+    return [RACSignal createSignal:^RACDisposable *(id<RACSubscriber> subscriber) {
+        [SXQHttpTool getWithURL:SearchItemURL params:param success:^(id json) {
+            NSArray *itemsArray = @[];
+            if ([json[@"code"] isEqualToString:@"1"]) {
+                switch (itemType) {
+                case DWAddItemTypeReagent:
+                {
+                    itemsArray = [DWReagentSearchModel mj_objectArrayWithKeyValuesArray:json[@"data"]];
+                    break;
+                }
+                case DWAddItemTypeConsumable:
+                {
+                    itemsArray = [DWAddExpConsumable mj_objectArrayWithKeyValuesArray: json[@"data"]];
+                    break;
+                }
+                case DWAddItemTypeEquipment:
+                {
+                    break;
+                }
+            }
+                
+        }
+       [subscriber sendNext:itemsArray];
+       [subscriber sendCompleted];
+        } failure:^(NSError *error) {
+            
         }];
         return nil;
     }];

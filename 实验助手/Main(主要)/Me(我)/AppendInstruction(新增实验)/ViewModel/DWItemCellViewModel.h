@@ -11,5 +11,6 @@
 @interface DWItemCellViewModel : NSObject
 @property (nonatomic,copy) NSString *itemName;
 @property (nonatomic,copy) NSString *supplierName;
+@property (nonatomic,strong) id model;
 - (instancetype)initWithModel:(id)model;
 @end

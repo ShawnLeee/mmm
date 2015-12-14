@@ -6,7 +6,7 @@
 //  Copyright © 2015年 SXQ. All rights reserved.
 //
 
-@class DWAddExpReagent,RACCommand;
+@class DWAddExpReagent,RACCommand,DWReagentSearchModel;
 #import <Foundation/Foundation.h>
 
 @interface DWAddReagentViewModel : NSObject
@@ -18,4 +18,5 @@
 @property (nonatomic,strong) DWAddExpReagent *expReagent;
 
 + (instancetype)reagentViewModel;
+- (instancetype)initWithSearchModel:(DWReagentSearchModel *)searchModel;
 @end

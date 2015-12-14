@@ -11,4 +11,5 @@
 @interface DWReagentOption : NSObject
 @property (nonatomic,copy) NSString *reagentID;
 @property (nonatomic,copy) NSString *reagentName;
++ (instancetype)reagentOption;
 @end

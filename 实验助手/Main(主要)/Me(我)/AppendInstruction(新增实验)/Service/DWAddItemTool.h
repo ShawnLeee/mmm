@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+@class RACSignal;
 typedef NS_ENUM(NSUInteger,DWAddItemType)
 {
     DWAddItemTypeReagent = 1,
@@ -19,4 +20,5 @@ typedef void (^CompletionHandler)(id result);
 - (void)showSecondPickerWithOrigin:(id)origin levelOne:(NSString *)levelOneID handler:(CompletionHandler)handler;
 - (void)showReagentWithOrigin:(id)origin levelOne:(NSString *)levelOneID levelTwo:(NSString *)levelTwoID handler:(CompletionHandler)handler;
 - (void)showSupplierWithOrigin:(id)origin itemType:(DWAddItemType)itemType itemID:(NSString *)itemID handler:(CompletionHandler)handler;
+- (RACSignal *)searchItemSignalWithName:(NSString *)name itemType:(DWAddItemType)itemType;
 @end

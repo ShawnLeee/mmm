@@ -9,5 +9,12 @@
 #import <Foundation/Foundation.h>
 
 @interface DWAddExpConsumable : NSObject
+@property (nonatomic,copy) NSString *consumableID;
+@property (nonatomic,copy) NSString *consumableName;
+@property (nonatomic,assign) int consumableCount;
 
+@property (nonatomic,copy) NSString *supplierID;
+@property (nonatomic,copy) NSString *supplierName;
+
+@property (nonatomic,strong) NSArray *suppliers;
 @end
