@@ -5,6 +5,7 @@
 //  Created by sxq on 15/12/11.
 //  Copyright © 2015年 SXQ. All rights reserved.
 //
+#import "DWAddExpEquipment.h"
 #import "DWAddExpConsumable.h"
 #import "DWReagentSearchModel.h"
 #import "SXQSupplier.h"
@@ -167,6 +168,7 @@
                 }
                 case DWAddItemTypeEquipment:
                 {
+                    itemsArray = [DWAddExpEquipment mj_objectArrayWithKeyValuesArray:json[@"data"]];
                     break;
                 }
             }

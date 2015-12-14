@@ -22,6 +22,6 @@
 - (void)p_bindingViewModel
 {
     RAC(self.equipmentNameField,text) = [RACObserve(self.equipmentViewModel, equipmentName) takeUntil:self.rac_prepareForReuseSignal];
-#warning coming here
+    RAC(self.supplierField,text) = [RACObserve(self.equipmentViewModel,supplierName) takeUntil:self.rac_prepareForReuseSignal];
 }
 @end

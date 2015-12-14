@@ -5,18 +5,28 @@
 //  Created by sxq on 15/12/14.
 //  Copyright © 2015年 SXQ. All rights reserved.
 //
+#import "DWAddExpEquipment.h"
 #import <ReactiveCocoa/ReactiveCocoa.h>
 #import "UIBarButtonItem+SXQ.h"
 #import "UIBarButtonItem+MJ.h"
 #import "DWAddEquipmentController.h"
 #import "DWAddEquipmentCell.h"
 #import "DWAddItemToolImpl.h"
+#import "DWAddEquipmentViewModel.h"
 @interface DWAddEquipmentController ()
 @property (nonatomic,strong) id<DWAddItemTool> addItemTool;
 @property (nonatomic,strong) NSArray *searchResults;
+@property (nonatomic,strong) DWAddEquipmentViewModel *equipmentViewModel;
 @end
 
 @implementation DWAddEquipmentController
+- (DWAddEquipmentViewModel *)equipmentViewModel
+{
+    if (!_equipmentViewModel) {
+        _equipmentViewModel = [[DWAddEquipmentViewModel alloc] init];
+    }
+    return _equipmentViewModel;
+}
 - (id<DWAddItemTool>)addItemTool
 {
     if (!_addItemTool) {
@@ -85,15 +95,19 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if ([tableView isEqual:self.searchDisplayController.searchResultsTableView]) {
+        DWAddExpEquipment *addExpEquipment = self.searchResults[indexPath.row];
         UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([UITableViewCell class]) forIndexPath:indexPath];
+        cell.textLabel.text = addExpEquipment.equipmentName;
         return cell;
     }
     DWAddEquipmentCell *cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([DWAddEquipmentCell class]) forIndexPath:indexPath];
+    cell.equipmentViewModel = self.equipmentViewModel;
     return cell;
 }
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if ([tableView isEqual:self.searchDisplayController.searchResultsTableView]) {
+        self.equipmentViewModel.addExpEquipment = self.searchResults[indexPath.row];
         [self.searchDisplayController setActive:NO animated:YES];
         [self.tableView reloadData];
     }
