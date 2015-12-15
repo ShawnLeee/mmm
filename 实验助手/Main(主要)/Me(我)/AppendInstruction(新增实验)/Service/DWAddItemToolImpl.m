@@ -5,6 +5,8 @@
 //  Created by sxq on 15/12/11.
 //  Copyright © 2015年 SXQ. All rights reserved.
 //
+#import "DWAddEquipmentDelegate.h"
+#import "DWAddConsumableDelegate.h"
 #import "DWAddExpEquipment.h"
 #import "DWAddExpConsumable.h"
 #import "DWReagentSearchModel.h"
@@ -181,6 +183,48 @@
         }];
         return nil;
     }];
+}
+- (RACSignal *)fetchConsumablesSignal
+{
+    return [RACSignal createSignal:^RACDisposable *(id<RACSubscriber> subscriber) {
+        [SXQHttpTool getWithURL:FetchAddConsumabelsURL params:nil success:^(id json) {
+            NSArray *equipments = @[];
+            if ([json[@"code"] isEqualToString:@"1"]) {
+                equipments = [DWAddExpEquipment mj_objectArrayWithKeyValuesArray:json[@"data"]];
+            }
+            [subscriber sendNext:equipments];
+            [subscriber sendCompleted];
+        } failure:^(NSError *error) {
+            
+        }];
+        return nil;
+    }];
+}
+- (void)showConsumablePickerWithConsumables:(NSArray *)consumables origin:(id)origin handler:(CompletionHandler)handler
+{
+    DWAddConsumableDelegate *consumableDelegate = [[DWAddConsumableDelegate alloc] initWithConsumables:consumables doneBlock:handler];
+    [ActionSheetCustomPicker showPickerWithTitle:@"选择耗材" delegate:consumableDelegate showCancelButton:YES origin:origin];
+}
+- (RACSignal *)fetchEqupmentsSignal
+{
+    return [RACSignal createSignal:^RACDisposable *(id<RACSubscriber> subscriber) {
+        [SXQHttpTool getWithURL:FetchAddEquipmentsURL params:nil success:^(id json) {
+            NSArray *consumables = @[];
+            if ([json[@"code"] isEqualToString:@"1"]) {
+                consumables = [DWAddExpEquipment mj_objectArrayWithKeyValuesArray:json[@"data"]];
+            }
+            [subscriber sendNext:consumables];
+            [subscriber sendCompleted];
+        } failure:^(NSError *error) {
+            
+        }];
+        return nil;
+    }];
+}
+- (void)showEquipmentPickerWithEquipments:(NSArray *)equipments origin:(id)origin handler:(CompletionHandler)handler
+{
+    DWAddEquipmentDelegate *equipmentDelegate = [[DWAddEquipmentDelegate alloc] initWithEquipments:equipments doneBlock:handler];
+    [ActionSheetCustomPicker showPickerWithTitle:@"选择设备" delegate:equipmentDelegate showCancelButton:YES origin:origin];
 }
 @end
 

@@ -25,6 +25,7 @@
 {
     if (!_equipmentViewModel) {
         _equipmentViewModel = [[DWAddEquipmentViewModel alloc] init];
+        _equipmentViewModel.addExpEquipment = [[DWAddExpEquipment alloc] init];
     }
     return _equipmentViewModel;
 }

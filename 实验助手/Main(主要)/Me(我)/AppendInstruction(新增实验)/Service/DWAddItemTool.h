@@ -21,4 +21,9 @@ typedef void (^CompletionHandler)(id result);
 - (void)showReagentWithOrigin:(id)origin levelOne:(NSString *)levelOneID levelTwo:(NSString *)levelTwoID handler:(CompletionHandler)handler;
 - (void)showSupplierWithOrigin:(id)origin itemType:(DWAddItemType)itemType itemID:(NSString *)itemID handler:(CompletionHandler)handler;
 - (RACSignal *)searchItemSignalWithName:(NSString *)name itemType:(DWAddItemType)itemType;
+
+- (RACSignal *)fetchConsumablesSignal;
+- (void)showConsumablePickerWithConsumables:(NSArray *)consumables origin:(id)origin handler:(CompletionHandler)handler;
+- (RACSignal *)fetchEqupmentsSignal;
+- (void)showEquipmentPickerWithEquipments:(NSArray *)equipments origin:(id)origin handler:(CompletionHandler)handler;
 @end

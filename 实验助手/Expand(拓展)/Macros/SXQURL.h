@@ -106,4 +106,6 @@ typedef NS_ENUM(NSUInteger,LABResponseType)
 #define GetReagentURL @"http://hualang.wicp.net:8090/LabAssistant/create/getReagents"
 #define GetSupplierURL @"http://hualang.wicp.net:8090/LabAssistant/create/getSuppliers"
 #define SearchItemURL @"http://hualang.wicp.net:8090/LabAssistant/create/search"
+#define FetchAddConsumabelsURL @"http://hualang.wicp.net:8090/LabAssistant/create/getConsumables"
+#define FetchAddEquipmentsURL @"http://hualang.wicp.net:8090/LabAssistant/create/getEquipments"
 #endif
