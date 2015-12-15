@@ -5,6 +5,7 @@
 //  Created by sxq on 15/12/10.
 //  Copyright © 2015年 SXQ. All rights reserved.
 //
+#import "DWAddStepController.h"
 #import "DWItemCell.h"
 #import "DWAddItemHeader.h"
 #import "DWAddInstructionViewModel.h"
@@ -39,6 +40,9 @@
     self.title = @"创建说明书";
     self.navigationItem.rightBarButtonItem = [UIBarButtonItem itemWithTitle:@"下一步" titleColor:MainBgColor font:15 action:^{
         [self loadData];
+        DWAddStepController *stepVC = [[DWAddStepController alloc] init];
+        stepVC.addInstrucitonViewModel = self.addInstrucitonViewModel;
+        [self.navigationController pushViewController:stepVC animated:YES];
     }];
 }
 - (void)loadData
