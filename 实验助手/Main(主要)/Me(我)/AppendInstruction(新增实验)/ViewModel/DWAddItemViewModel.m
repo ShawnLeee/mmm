@@ -5,6 +5,7 @@
 //  Created by sxq on 15/12/10.
 //  Copyright © 2015年 SXQ. All rights reserved.
 //
+#import "DWAddExpEquipment.h"
 #import "DWAddEquipmentController.h"
 #import "DWAddReagentViewModel.h"
 #import "SXQNavgationController.h"
@@ -14,6 +15,7 @@
 #import "DWAddItemViewModel.h"
 #import "DWItemCellViewModel.h"
 #import "DWAddConsumableController.h"
+#import "DWAddExpConsumable.h"
 typedef void (^AddDoneBlock)(id itemModel);
 @interface DWAddItemViewModel ()
 @property (nonatomic,strong) id<DWAddInstructionService> service;
@@ -60,12 +62,23 @@ typedef void (^AddDoneBlock)(id itemModel);
         case DWAddItemTypeConsumable:
         {
             DWAddConsumableController *consumableVC = [[UIStoryboard storyboardWithName:@"AddItem" bundle:nil] instantiateViewControllerWithIdentifier:NSStringFromClass([DWAddConsumableController class])];
+            consumableVC.doneBlock = ^(DWAddExpConsumable *addExpConsumable){
+                DWItemCellViewModel *cellViewModel = [[DWItemCellViewModel alloc] initWithModel:addExpConsumable];
+                [self.items addObject:cellViewModel];
+                [self.service refreshData];
+            };
             viewController = consumableVC;
             break;
         }
         case DWAddItemTypeEquipment:
         {
             DWAddEquipmentController *equipmentVC = [[UIStoryboard storyboardWithName:@"AddItem" bundle:nil] instantiateViewControllerWithIdentifier:NSStringFromClass([DWAddEquipmentController class])];
+            equipmentVC.doneBlock = ^(DWAddExpEquipment *addExpEquipment)
+            {
+                DWItemCellViewModel *cellViewModel = [[DWItemCellViewModel alloc] initWithModel:addExpEquipment];
+                [self.items addObject:cellViewModel];
+                [self.service refreshData];
+            };
             viewController = equipmentVC;
             break;
         }

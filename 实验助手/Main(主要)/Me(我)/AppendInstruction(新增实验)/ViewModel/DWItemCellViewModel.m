@@ -8,6 +8,8 @@
 #import "DWAddExpReagent.h"
 #import "DWItemCellViewModel.h"
 #import "SXQSupplier.h"
+#import "DWAddExpEquipment.h"
+#import "DWAddExpConsumable.h"
 
 @implementation DWItemCellViewModel
 - (instancetype)initWithModel:(id)model
@@ -16,9 +18,26 @@
     if (self = [super init]) {
         if ([model isKindOfClass:[DWAddExpReagent class]]) {
             [self p_setupWithExpReagent:model];
+        }else if([model isKindOfClass:[DWAddExpEquipment class]])
+        {
+            [self p_setupWithExpEquipment:model];
+        }else if([model isKindOfClass:[DWAddExpConsumable class]])
+        {
+            [self p_setupWihtExpConsumable:model];
         }
+        
     }
     return self;
+}
+- (void)p_setupWithExpEquipment:(DWAddExpEquipment *)addExpEquipment
+{
+    _itemName = addExpEquipment.equipmentName;
+    _supplierName = addExpEquipment.supplierName;
+}
+- (void)p_setupWihtExpConsumable:(DWAddExpConsumable *)addExpConsumable
+{
+    _itemName  = addExpConsumable.consumableName;
+    _supplierName = addExpConsumable.supplierName;
 }
 - (void)p_setupWithExpReagent:(DWAddExpReagent *)expReagent
 {

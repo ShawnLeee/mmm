@@ -5,6 +5,7 @@
 //  Created by sxq on 15/12/14.
 //  Copyright © 2015年 SXQ. All rights reserved.
 //
+#import "MBProgressHUD+MJ.h"
 #import "DWAddExpConsumable.h"
 #import "DWAddConsumableCell.h"
 #import "DWAddConsumableController.h"
@@ -62,7 +63,15 @@
 {
     self.navigationItem.leftBarButtonItem = [UIBarButtonItem itemWithIcon:@"Cancel_Normal" highIcon:@"Cancel_Highlight" target:self action:@selector(disMissSelf)];
     self.navigationItem.rightBarButtonItem = [UIBarButtonItem itemWithTitle:@"确定" titleColor:MainBgColor font:15 action:^{
-        [self disMissSelf];
+        if(self.consumableViewModel.supplierName && self.consumableViewModel.consumableName)
+        {
+            self.doneBlock(self.consumableViewModel.addExpConsumable);
+            [self disMissSelf];
+        }else
+        {
+            [MBProgressHUD showError:@"请填写完整信息"];
+        }
+        
     }];
 }
 - (void)disMissSelf
