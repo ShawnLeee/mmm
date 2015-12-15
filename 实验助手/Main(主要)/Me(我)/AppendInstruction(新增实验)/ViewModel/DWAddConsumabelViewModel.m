@@ -30,7 +30,15 @@
     self.consumableName = addExpConsumable.consumableName;
     self.consumableID = addExpConsumable.consumableID;
     self.amout = addExpConsumable.consumableCount;
-    self.supplierName = [[[addExpConsumable suppliers] firstObject] supplierName];
+    if (addExpConsumable.suppliers.count) {
+        self.supplierName = [[[addExpConsumable suppliers] firstObject] supplierName];
+        self.supplierID = [[[addExpConsumable suppliers] firstObject] supplierID];
+    }else
+    {
+        self.supplierID = addExpConsumable.supplierID;
+        self.supplierName = addExpConsumable.supplierName;
+    }
+    
     [self p_bindingModel];
 }
 - (void)p_bindingModel
@@ -38,6 +46,7 @@
     RAC(self.addExpConsumable,consumableName) = RACObserve(self,consumableName);
     RAC(self.addExpConsumable,consumableID) = RACObserve(self, consumableID);
     RAC(self.addExpConsumable,supplierName) = RACObserve(self, supplierName);
+    RAC(self.addExpConsumable,supplierID)  = RACObserve(self, supplierID);
     RAC(self.addExpConsumable,consumableCount) = RACObserve(self, amout);
 }
 @end

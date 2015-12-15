@@ -7,9 +7,11 @@
 //
 #import "DWAddEquipmentDelegate.h"
 #import "DWAddConsumableDelegate.h"
+
 #import "DWAddExpEquipment.h"
 #import "DWAddExpConsumable.h"
-#import "DWReagentSearchModel.h"
+#import "DWAddExpReagent.h"
+
 #import "SXQSupplier.h"
 #import "DWReagentOption.h"
 #import "DWReagentSecondClarify.h"
@@ -160,7 +162,7 @@
                 switch (itemType) {
                 case DWAddItemTypeReagent:
                 {
-                    itemsArray = [DWReagentSearchModel mj_objectArrayWithKeyValuesArray:json[@"data"]];
+                    itemsArray = [DWAddExpReagent mj_objectArrayWithKeyValuesArray:json[@"data"]];
                     break;
                 }
                 case DWAddItemTypeConsumable:
@@ -190,7 +192,7 @@
         [SXQHttpTool getWithURL:FetchAddConsumabelsURL params:nil success:^(id json) {
             NSArray *equipments = @[];
             if ([json[@"code"] isEqualToString:@"1"]) {
-                equipments = [DWAddExpEquipment mj_objectArrayWithKeyValuesArray:json[@"data"]];
+                equipments = [DWAddExpConsumable mj_objectArrayWithKeyValuesArray:json[@"data"]];
             }
             [subscriber sendNext:equipments];
             [subscriber sendCompleted];

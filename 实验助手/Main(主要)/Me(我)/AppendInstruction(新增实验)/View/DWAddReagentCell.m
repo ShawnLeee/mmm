@@ -61,10 +61,10 @@
         self.reagentViewModel.expReagent.supplier = self.customSupplier;
         self.supplier.text = self.customSupplier.supplierName ;
     }];
-    RAC(self.firstField,text) = RACObserve(self.reagentViewModel, firstClass);
-    RAC(self.secondField,text) = RACObserve(self.reagentViewModel, secondClass);
-    RAC(self.reagentNameField,text) = RACObserve(self.reagentViewModel, reagentName);
-    RAC(self.reagentViewModel,amount) =[[self.amountField.rac_textSignal
+    RAC(self.firstField,text) = [RACObserve(self.reagentViewModel, firstClass) takeUntil:self.rac_prepareForReuseSignal];
+    RAC(self.secondField,text) = [RACObserve(self.reagentViewModel, secondClass) takeUntil:self.rac_prepareForReuseSignal];
+    RAC(self.reagentNameField,text) = [RACObserve(self.reagentViewModel, reagentName) takeUntil:self.rac_prepareForReuseSignal];
+    RAC(self.reagentViewModel,amount) =[[[self.amountField.rac_textSignal takeUntil:self.rac_prepareForReuseSignal ]
                                          filter:^BOOL(NSString *amount) {
                                             if (![amount dg_isNumber]) {
                                                 [MBProgressHUD showError:@"请输入数字"];
@@ -74,7 +74,7 @@
                                          map:^id(NSString *amount) {
                                              return @([amount integerValue]);
                                          }];
-    RAC(self.supplier,text) = RACObserve(self.reagentViewModel, supplier);
+    RAC(self.supplier,text) = [RACObserve(self.reagentViewModel, supplierName) takeUntil:self.rac_prepareForReuseSignal];
     
     [self bindingCommand];
 }
@@ -90,7 +90,7 @@
     
     [[[[[self.secondField.rightButton rac_signalForControlEvents:UIControlEventTouchUpInside] takeUntil:self.rac_prepareForReuseSignal]
       map:^id(id value) {
-          return @(self.reagentViewModel.expReagent.levelOneID ? YES : NO);
+          return @(self.reagentViewModel.expReagent.levelOneSortID ? YES : NO);
       }]
      filter:^BOOL(NSNumber *levelChoosed) {
          if (![levelChoosed boolValue]) {
@@ -147,7 +147,7 @@
 - (RACSignal *)p_levelValidSignal
 {
     return [RACSignal createSignal:^RACDisposable *(id<RACSubscriber> subscriber) {
-        [subscriber sendNext:@(self.reagentViewModel.expReagent.levelOneID && self.reagentViewModel.expReagent.levelTwoID)];
+        [subscriber sendNext:@(self.reagentViewModel.expReagent.levelOneSortID && self.reagentViewModel.expReagent.levelTwoSortID)];
         [subscriber sendCompleted];
         return nil;
     }];
@@ -167,7 +167,7 @@
         return NO;
     }else if([textField isEqual:self.secondField])
     {
-        if(!self.reagentViewModel.expReagent.levelOneID)
+        if(!self.reagentViewModel.expReagent.levelOneSortID)
         {
              [MBProgressHUD showError:@"请先选择一级分类"];
             return NO;
@@ -180,8 +180,14 @@
 - (void)textFieldDidEndEditing:(UITextField *)textField
 {
     if ([textField isEqual:self.reagentNameField]) {
-        self.reagentViewModel.expReagent.reagentID = [NSString uuid];
-        self.reagentViewModel.expReagent.reagentName = textField.text;
+        self.reagentViewModel.reagentName = textField.text;
+        self.reagentViewModel.reagentID = [NSString uuid];
+        self.reagentViewModel.supplierID = nil;
+        self.reagentViewModel.supplierName = nil;
+    }else if([textField isEqual:self.supplier])
+    {
+        self.reagentViewModel.supplierName = textField.text;
+        self.reagentViewModel.supplierID = [NSString uuid];
     }
 }
 #pragma mark - Picker Method
@@ -189,22 +195,28 @@
 {
     [self.addItemTool showFirstPickerWithOrigin:self.firstField.rightButton handler:^(DWReagentFirstClarify *firstClarify) {
             self.firstField.text = firstClarify.levelOneSortName;
-            self.reagentViewModel.expReagent.levelOneID = firstClarify.levelOneSortID;
+            self.reagentViewModel.expReagent.levelOneSortID = firstClarify.levelOneSortID;
         }];
 }
 - (void)p_showSecondPicker
 {
-    [self.addItemTool showSecondPickerWithOrigin:self.secondField levelOne:self.reagentViewModel.expReagent.levelOneID handler:^(DWReagentSecondClarify *secondClarify) {
+    [self.addItemTool showSecondPickerWithOrigin:self.secondField levelOne:self.reagentViewModel.expReagent.levelOneSortID handler:^(DWReagentSecondClarify *secondClarify) {
             self.secondField.text = secondClarify.levelTwoSortName;
-            self.reagentViewModel.expReagent.levelTwoID = secondClarify.levelTwoSortID;
+            self.reagentViewModel.expReagent.levelTwoSortID = secondClarify.levelTwoSortID;
         }];
 }
 - (void)p_showReagentPicker
 {
-    [self.addItemTool showReagentWithOrigin:self.reagentNameField  levelOne:self.reagentViewModel.expReagent.levelOneID levelTwo:self.reagentViewModel.expReagent.levelTwoID handler:^(DWReagentOption *reagentOption) {
+    [self.addItemTool showReagentWithOrigin:self.reagentNameField  levelOne:self.reagentViewModel.expReagent.levelOneSortID levelTwo:self.reagentViewModel.expReagent.levelTwoSortID handler:^(DWReagentOption *reagentOption) {
            self.reagentViewModel.expReagent.reagentID = reagentOption.reagentID;
            self.reagentViewModel.expReagent.reagentName = reagentOption.reagentName;
            self.reagentNameField.text = reagentOption.reagentName;
        }];
+}
+- (void)dismissKeyBoard
+{
+    [self.reagentNameField resignFirstResponder];
+    [self.amountField resignFirstResponder];
+    [self.supplier resignFirstResponder];
 }
 @end

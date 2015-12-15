@@ -10,4 +10,5 @@
 
 @interface DWAddReagentCell : UITableViewCell
 @property (nonatomic,strong) DWAddReagentViewModel *reagentViewModel;
+- (void)dismissKeyBoard;
 @end

@@ -5,6 +5,7 @@
 //  Created by sxq on 15/12/14.
 //  Copyright © 2015年 SXQ. All rights reserved.
 //
+#import "NSString+UUID.h"
 #import "SXQSupplier.h"
 #import "MBProgressHUD+MJ.h"
 #import "DWAddItemToolImpl.h"
@@ -13,7 +14,7 @@
 #import "DWAddEquipmentCell.h"
 #import "DWTextField.h"
 #import <ReactiveCocoa/ReactiveCocoa.h>
-@interface DWAddEquipmentCell ()
+@interface DWAddEquipmentCell ()<UITextFieldDelegate>
 @property (nonatomic,weak) IBOutlet DWTextField *equipmentNameField;
 @property (nonatomic,weak) IBOutlet DWTextField *supplierField;
 @property (nonatomic,strong) id<DWAddItemTool> addItemTool;
@@ -48,7 +49,7 @@
     [[[[[self.supplierField.rightButton rac_signalForControlEvents:UIControlEventTouchUpInside] takeUntil:self.rac_prepareForReuseSignal]
     doNext:^(id x) {
         @strongify(self)
-        [self.equipmentNameField resignFirstResponder];
+        [self dismissKeyboard];
     }]
     filter:^BOOL(id value) {
         if (self.equipmentViewModel.equipmentID) {
@@ -76,6 +77,7 @@
     [[[[[self.equipmentNameField.rightButton rac_signalForControlEvents:UIControlEventTouchUpInside]
      takeUntil:self.rac_prepareForReuseSignal]
     doNext:^(UIButton *button) {
+        [self dismissKeyboard];
     }]
      flattenMap:^RACStream *(id value) {
          @strongify(self)
@@ -90,5 +92,23 @@
             self.equipmentViewModel.supplierName = nil;
         }];
     }];
+}
+- (void)textFieldDidEndEditing:(UITextField *)textField
+{
+    if ([textField isEqual:self.equipmentNameField]) {
+        self.equipmentViewModel.equipmentName = textField.text;
+        self.equipmentViewModel.equipmentID = [NSString uuid];
+        self.equipmentViewModel.supplierName = nil;
+        self.equipmentViewModel.supplierID = nil;
+    }else if([textField isEqual:self.supplierField])
+    {
+        self.equipmentViewModel.supplierName = textField.text;
+        self.equipmentViewModel.supplierID = [NSString uuid];
+    }
+}
+- (void)dismissKeyboard
+{
+    [self.equipmentNameField resignFirstResponder];
+    [self.supplierField resignFirstResponder];
 }
 @end

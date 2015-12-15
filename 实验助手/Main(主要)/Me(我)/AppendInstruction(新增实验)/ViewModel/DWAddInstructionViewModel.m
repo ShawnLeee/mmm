@@ -15,32 +15,4 @@
     instrucitonViewModel.expInstruction = [DWAddExpInstruction expInstruction];
     return instrucitonViewModel;
 }
-- (NSMutableArray *)expExpStep
-{
-    if (!_expExpStep) {
-        _expExpStep = [@[] mutableCopy];
-    }
-    return _expExpStep;
-}
-- (NSMutableArray *)expConsumable
-{
-    if (!_expConsumable) {
-        _expConsumable = [NSMutableArray array];
-    }
-    return _expConsumable;
-}
-- (NSMutableArray *)expEquipment
-{
-    if (!_expEquipment) {
-        _expEquipment = [NSMutableArray array];
-    }
-    return _expEquipment;
-}
-- (NSMutableArray *)expReagent
-{
-    if (!_expReagent) {
-        _expReagent = [NSMutableArray array];
-    }
-    return _expReagent;
-}
 @end

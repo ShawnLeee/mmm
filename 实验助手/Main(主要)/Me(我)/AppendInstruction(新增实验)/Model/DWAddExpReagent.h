@@ -11,10 +11,17 @@
 @interface DWAddExpReagent : NSObject
 @property (nonatomic,copy) NSString *expReagentID;
 @property (nonatomic,copy) NSString *expInstructionID;
-@property (nonatomic,copy) NSString *levelOneID;
-@property (nonatomic,copy) NSString *levelTwoID;
+
+@property (nonatomic,copy) NSString *levelOneSortID;
+@property (nonatomic,copy) NSString *levelOneSortName;
+
+@property (nonatomic,copy) NSString *levelTwoSortID;
+@property (nonatomic,copy) NSString *levelTwoSortName;
+
 @property (nonatomic,copy) NSString *reagentID;
 @property (nonatomic,copy) NSString *reagentName;
+
 @property (nonatomic,assign) int useAmount;
 @property (nonatomic,strong) SXQSupplier *supplier;
+@property (nonatomic,strong) NSArray *suppliers;
 @end

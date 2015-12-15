@@ -6,49 +6,53 @@
 //  Copyright © 2015年 SXQ. All rights reserved.
 //
 #import "SXQSupplier.h"
-#import "DWReagentSearchModel.h"
 #import "DWAddExpReagent.h"
 #import "DWAddReagentViewModel.h"
 #import <ReactiveCocoa/ReactiveCocoa.h>
 #import "DWAddItemToolImpl.h"
 @interface DWAddReagentViewModel ()
-@property (nonatomic,strong) id<DWAddItemTool> addItemTool;
 @end
 @implementation DWAddReagentViewModel
-- (id<DWAddItemTool>)addItemTool
+- (instancetype)initWithAddExpReagent:(DWAddExpReagent *)addExpReagent
 {
-    if (!_addItemTool) {
-        _addItemTool = [[DWAddItemToolImpl alloc] init];
+    if (self = [super init]) {
+        self.expReagent = addExpReagent;
     }
-    return _addItemTool;
+    return self;
 }
-
-+ (instancetype)reagentViewModel
+- (void)setExpReagent:(DWAddExpReagent *)expReagent
 {
-    DWAddReagentViewModel *viewModel = [[DWAddReagentViewModel alloc] init];
-    viewModel.expReagent = [DWAddExpReagent new];
-    [viewModel bingModel];
-    return viewModel;
+    _expReagent = expReagent;
+    _firstClass = expReagent.levelOneSortName;
+    _firstID = expReagent.levelTwoSortID;
+    
+    _secondClass = expReagent.levelTwoSortName;
+    _secondID = expReagent.levelTwoSortID;
+    
+    _reagentName = expReagent.reagentName;
+    _reagentID = expReagent.reagentID;
+    
+    _amount = expReagent.useAmount;
+    
+    _supplierName = expReagent.supplier.supplierName;
+    _supplierID = expReagent.supplier.supplierID;
+    
+    [self bingModel];
 }
 - (void)bingModel
 {
+    RAC(self.expReagent,levelOneSortID) = RACObserve(self, firstID);
+    RAC(self.expReagent,levelOneSortName) = RACObserve(self, firstClass);
+    
+    RAC(self.expReagent,levelTwoSortID) = RACObserve(self, secondID);
+    RAC(self.expReagent,levelTwoSortName) = RACObserve(self, secondClass);
+    
     RAC(self.expReagent,reagentName) = RACObserve(self, reagentName);
+    RAC(self.expReagent,reagentID) = RACObserve(self, reagentID);
+    
     RAC(self.expReagent,useAmount) = RACObserve(self, amount);
-}
-- (instancetype)initWithSearchModel:(DWReagentSearchModel *)searchModel
-{
-    if (self = [super init]) {
-        self.firstClass = searchModel.levelOneSortName;
-        self.secondClass = searchModel.levelTwoSortName;
-        self.reagentName = searchModel.reagentName;
-        self.supplier = [[searchModel.suppliers firstObject] supplierName];
-        self.expReagent = [DWAddExpReagent new];
-        self.expReagent.levelOneID = searchModel.levelOneSortID;
-        self.expReagent.levelTwoID = searchModel.levelTwoSortID;
-        self.expReagent.reagentID = searchModel.reagentID;
-        self.expReagent.reagentName = searchModel.reagentName;
-        self.expReagent.supplier = [searchModel.suppliers firstObject];
-    }
-    return self;
+    
+    RAC(self.expReagent.supplier,supplierName) = RACObserve(self, supplierName);
+    RAC(self.expReagent.supplier,supplierID) = RACObserve(self, supplierID);
 }
 @end

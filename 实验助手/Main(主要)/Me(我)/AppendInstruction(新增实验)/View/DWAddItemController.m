@@ -38,8 +38,14 @@
 {
     self.title = @"创建说明书";
     self.navigationItem.rightBarButtonItem = [UIBarButtonItem itemWithTitle:@"下一步" titleColor:MainBgColor font:15 action:^{
-        
+        [self loadData];
     }];
+}
+- (void)loadData
+{
+    self.addInstrucitonViewModel.expReagent = [self.itemViewModels[0] itemModels];
+    self.addInstrucitonViewModel.expConsumable = [self.itemViewModels[1] itemModels];
+    self.addInstrucitonViewModel.expEquipment = [self.itemViewModels[2] itemModels];
 }
 #pragma mark - TableView DataSource
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView

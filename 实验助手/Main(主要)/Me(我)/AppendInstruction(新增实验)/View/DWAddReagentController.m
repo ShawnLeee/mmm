@@ -5,7 +5,7 @@
 //  Created by sxq on 15/12/10.
 //  Copyright © 2015年 SXQ. All rights reserved.
 //
-#import "DWReagentSearchModel.h"
+#import "MBProgressHUD+MJ.h"
 #import <ReactiveCocoa/ReactiveCocoa.h>
 #import "DWAddReagentCell.h"
 #import "DWAddReagentViewModel.h"
@@ -22,6 +22,14 @@
 @end
 
 @implementation DWAddReagentController
+- (DWAddReagentViewModel *)reagentViewModel
+{
+    if (!_reagentViewModel) {
+        _reagentViewModel = [[DWAddReagentViewModel alloc] init];
+        _reagentViewModel.expReagent = [[DWAddExpReagent alloc] init];
+    }
+    return _reagentViewModel;
+}
 - (NSArray *)reagentResutls
 {
     if (!_reagentResutls) {
@@ -39,7 +47,6 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self p_setupTableView];
-    [self p_setupViewModel];
     [self p_setupNavigationBar];
     [self p_setupSearchBar];
 }
@@ -72,20 +79,43 @@
     UITableView *resultsTableView = self.searchDisplayController.searchResultsTableView;
     [resultsTableView registerClass:[UITableViewCell class] forCellReuseIdentifier:NSStringFromClass([UITableViewCell class])];
 }
-- (void)p_setupViewModel
-{
-    self.reagentViewModel = [DWAddReagentViewModel reagentViewModel];
-    self.reagentViewModel.expReagent.expInstructionID = self.instrucitonID;
-}
 - (void)p_setupNavigationBar
 {
     self.navigationItem.leftBarButtonItem = [UIBarButtonItem itemWithIcon:@"Cancel_Normal" highIcon:@"Cancel_Highlight" target:self action:@selector(disMissSelf)];
     self.navigationItem.rightBarButtonItem = [UIBarButtonItem itemWithTitle:@"确定" titleColor:MainBgColor font:15 action:^{
-        if (self.reagentViewModel.expReagent.reagentID) {
-            self.doneBlock(self.reagentViewModel);
+        DWAddReagentCell *cell = [[self.tableView visibleCells] firstObject];
+        [cell dismissKeyBoard];
+        
+        if ([self p_dataValid]) {
+            self.doneBlock(self.reagentViewModel.expReagent);
+            [self disMissSelf];
         }
-        [self disMissSelf];
     }];
+}
+- (BOOL)p_dataValid
+{
+    if (!self.reagentViewModel.firstClass) {
+        [MBProgressHUD showError:@"请选择一级分类"];
+        return NO;
+    }
+    if(!self.reagentViewModel.secondClass)
+    {
+        [MBProgressHUD showError:@"请选择二级分类"];
+        return NO;
+        
+    }
+    if (!self.reagentViewModel.reagentName)
+    {
+        [MBProgressHUD showError:@"请填写试剂名称"];
+        return NO;
+    }
+    if (!self.reagentViewModel.supplierName)
+    {
+        [MBProgressHUD showError:@"请输入供应商"];
+        return NO;
+    }
+    return YES;
+    
 }
 - (void)disMissSelf
 {
@@ -103,9 +133,9 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if ([tableView isEqual:self.searchDisplayController.searchResultsTableView]) {
-        DWReagentSearchModel *searchModel = self.reagentResutls[indexPath.row];
+        DWAddExpReagent *addExpReagent = self.reagentResutls[indexPath.row];
         UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([UITableViewCell class])];
-        cell.textLabel.text = searchModel.reagentName;
+        cell.textLabel.text = addExpReagent.reagentName;
         return cell;
     }
     DWAddReagentCell *cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([DWAddReagentCell class]) forIndexPath:indexPath];
@@ -115,8 +145,8 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if ([tableView isEqual:self.searchDisplayController.searchResultsTableView]) {
-        DWReagentSearchModel *searchModel = self.reagentResutls[indexPath.row];
-        self.reagentViewModel = [[DWAddReagentViewModel alloc] initWithSearchModel:searchModel];
+        DWAddExpReagent *expReagent = self.reagentResutls[indexPath.row];
+        self.reagentViewModel.expReagent = expReagent;
         [self.tableView reloadData];
         [self.searchDisplayController setActive:NO animated:YES];
     }

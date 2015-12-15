@@ -63,6 +63,9 @@
 {
     self.navigationItem.leftBarButtonItem = [UIBarButtonItem itemWithIcon:@"Cancel_Normal" highIcon:@"Cancel_Highlight" target:self action:@selector(disMissSelf)];
     self.navigationItem.rightBarButtonItem = [UIBarButtonItem itemWithTitle:@"确定" titleColor:MainBgColor font:15 action:^{
+        DWAddEquipmentCell *cell = [[self.tableView visibleCells] firstObject];
+        [cell dismissKeyboard];
+        
         if (![self p_contentValid]) {
             [MBProgressHUD showError:@"请填写完整信息"];
         }else

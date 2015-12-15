@@ -32,6 +32,7 @@ typedef void (^AddDoneBlock)(id itemModel);
         _itemName = itemName;
         _service = service;
         _items = [NSMutableArray array];
+        _itemModels = [NSMutableArray array];
         _addCommand = [[RACCommand alloc] initWithSignalBlock:^RACSignal *(id input) {
             return [RACSignal createSignal:^RACDisposable *(id<RACSubscriber> subscriber) {
                 [self pushVCWithItemType:self.itemType];
@@ -50,9 +51,11 @@ typedef void (^AddDoneBlock)(id itemModel);
         {
             DWAddReagentController *reagentVC = [[UIStoryboard storyboardWithName:@"AddItem" bundle:nil] instantiateViewControllerWithIdentifier:NSStringFromClass([DWAddReagentController class])];
             reagentVC.instrucitonID = self.instructionID;
-            reagentVC.doneBlock = ^(DWAddReagentViewModel *reagentViewModel)
+            reagentVC.doneBlock = ^(DWAddExpReagent *addExpReagent)
             {
-                DWItemCellViewModel *cellViewModel = [[DWItemCellViewModel alloc] initWithModel:reagentViewModel.expReagent];
+                [self.itemModels addObject:addExpReagent];
+                
+                DWItemCellViewModel *cellViewModel = [[DWItemCellViewModel alloc] initWithModel:addExpReagent];
                 [self.items addObject:cellViewModel];
                 [self.service refreshData];
             };
@@ -63,6 +66,8 @@ typedef void (^AddDoneBlock)(id itemModel);
         {
             DWAddConsumableController *consumableVC = [[UIStoryboard storyboardWithName:@"AddItem" bundle:nil] instantiateViewControllerWithIdentifier:NSStringFromClass([DWAddConsumableController class])];
             consumableVC.doneBlock = ^(DWAddExpConsumable *addExpConsumable){
+                [self.itemModels addObject:addExpConsumable];
+                
                 DWItemCellViewModel *cellViewModel = [[DWItemCellViewModel alloc] initWithModel:addExpConsumable];
                 [self.items addObject:cellViewModel];
                 [self.service refreshData];
@@ -75,6 +80,8 @@ typedef void (^AddDoneBlock)(id itemModel);
             DWAddEquipmentController *equipmentVC = [[UIStoryboard storyboardWithName:@"AddItem" bundle:nil] instantiateViewControllerWithIdentifier:NSStringFromClass([DWAddEquipmentController class])];
             equipmentVC.doneBlock = ^(DWAddExpEquipment *addExpEquipment)
             {
+                [self.itemModels addObject:addExpEquipment];
+                
                 DWItemCellViewModel *cellViewModel = [[DWItemCellViewModel alloc] initWithModel:addExpEquipment];
                 [self.items addObject:cellViewModel];
                 [self.service refreshData];

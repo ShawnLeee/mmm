@@ -10,9 +10,9 @@
 
 @interface DWAddInstructionViewModel : NSObject
 @property (nonatomic,strong) DWAddExpInstruction *expInstruction;
-@property (nonatomic,strong) NSMutableArray *expReagent;
-@property (nonatomic,strong) NSMutableArray *expConsumable;
-@property (nonatomic,strong) NSMutableArray *expEquipment;
-@property (nonatomic,strong) NSMutableArray *expExpStep;
+@property (nonatomic,strong) NSArray *expReagent;
+@property (nonatomic,strong) NSArray *expConsumable;
+@property (nonatomic,strong) NSArray *expEquipment;
+@property (nonatomic,strong) NSArray *expExpStep;
 + (instancetype)instructionViewModel;
 @end

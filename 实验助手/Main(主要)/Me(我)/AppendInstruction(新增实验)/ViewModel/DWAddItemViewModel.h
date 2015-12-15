@@ -18,6 +18,7 @@ typedef NS_ENUM(NSUInteger,DWAddItemType)
 @interface DWAddItemViewModel : NSObject
 @property (nonatomic,copy) NSString *itemName;
 @property (nonatomic,strong) NSMutableArray *items;
+@property (nonatomic,strong) NSMutableArray *itemModels;
 @property (nonatomic,strong) RACCommand *addCommand;
 @property (nonatomic,assign) DWAddItemType itemType;
 @property (nonatomic,copy) NSString *instructionID;

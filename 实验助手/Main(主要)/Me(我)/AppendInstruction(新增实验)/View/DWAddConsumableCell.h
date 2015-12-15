@@ -11,4 +11,5 @@
 
 @interface DWAddConsumableCell : UITableViewCell
 @property (nonatomic,strong) DWAddConsumabelViewModel *consumableViewModel;
+- (void)dismissKeyboard;
 @end

@@ -10,4 +10,5 @@
 #import <UIKit/UIKit.h>
 @interface DWAddEquipmentCell : UITableViewCell
 @property (nonatomic,strong) DWAddEquipmentViewModel *equipmentViewModel;
+- (void)dismissKeyboard;
 @end

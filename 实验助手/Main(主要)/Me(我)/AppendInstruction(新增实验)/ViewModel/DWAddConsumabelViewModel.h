@@ -13,6 +13,7 @@
 @property (nonatomic,copy) NSString *consumableID;
 @property (nonatomic,assign) int amout;
 @property (nonatomic,copy) NSString *supplierName;
+@property (nonatomic,copy) NSString *supplierID;
 
 @property (nonatomic,strong) DWAddExpConsumable *addExpConsumable;
 - (instancetype)initWithExpConsumabel:(DWAddExpConsumable *)addExpConsumable;
