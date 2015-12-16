@@ -1325,7 +1325,72 @@ static SXQDBManager *_dbManager = nil;
     NSString *insertSQL = [NSString stringWithFormat:@"insert into t_expProcess (expInstructionID ,expStepDesc ,expStepID ,expStepTime ,stepNum ) values ('%@','%@','%@','%lu','%lu')",dwAddExpStep.expInstructionID,dwAddExpStep.expStepDesc,dwAddExpStep.expStepID,(unsigned long)dwAddExpStep.expStepTime,(unsigned long)dwAddExpStep.stepNum];
     return [db executeUpdate:insertSQL];
 }
+- (BOOL)saveInstructionConsumables:(NSArray<DWAddExpConsumable *> *)consumables db:(FMDatabase *)db
+{
+    __block BOOL success = NO;
+    [consumables enumerateObjectsUsingBlock:^(DWAddExpConsumable * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+        success = [self insertIntoExpConsumableWithAddExpConsumable:obj db:db];
+        *stop = !success;
+    }];
+    return success;
+}
+- (BOOL)insertIntoExpConsumableWithAddExpConsumable:(DWAddExpConsumable *)consumble db:(FMDatabase *)db
+{
+    NSString *insertSQL = [NSString stringWithFormat:@"insert into t_expConsumable (consumableID,expConsumableID,expInstructionID,consumableName,supplierID) values ('%@','%@','%@','%@','%@')",consumble.consumableID,consumble.expConsumableID,consumble.expInstructionID,consumble.consumableName,consumble.supplierID];
+    return [db executeUpdate:insertSQL];
+}
+- (BOOL)saveInstructionReagents:(NSArray<DWAddExpReagent *> *)reagents db:(FMDatabase *)db
+{
+    __block BOOL success = NO;
+    [reagents enumerateObjectsUsingBlock:^(DWAddExpReagent * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+        success = [self insertIntoExpReagentWithAddExpReagent:obj db:db];
+        *stop = !success;
+    }];
+    return success;
+}
+- (BOOL)insertIntoExpReagentWithAddExpReagent:(DWAddExpReagent *)expReagent db:(FMDatabase *)db
+{
+    NSString *insertSQL = [NSString stringWithFormat:@"insert into t_expreaget (expInstructionID ,expReagentID ,reagentID ,reagentName ,useAmount,supplierID) values ('%@','%@','%@','%@','%d','%@')",expReagent.expInstructionID,expReagent.expReagentID,expReagent.reagentID,expReagent.reagentName,expReagent.useAmount,expReagent.supplier.supplierID];
+    return [db executeUpdate:insertSQL];
+}
+- (BOOL)saveInstructionEquipments:(NSArray<DWAddExpEquipment *> *)equipments db:(FMDatabase *)db
+{
+    __block BOOL success = NO;
+    [equipments enumerateObjectsUsingBlock:^(DWAddExpEquipment * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+        success = [self insertIntoExpEquipmentWithAddExpEquipment:obj db:db];
+        *stop = !success;
+    }];
+    return success;
+}
+- (BOOL)insertIntoExpEquipmentWithAddExpEquipment:(DWAddExpEquipment *)addExpEquipment db:(FMDatabase *)db
+{
+    NSString *insertSQL = [NSString stringWithFormat:@"insert into  t_expEquipment (equipmentID ,equipmentName ,expEquipmentID ,expInstructionID ,supplierID) values ('%@','%@','%@','%@','%@')",addExpEquipment.equipmentID,addExpEquipment.equipmentName,addExpEquipment.expEquipmentID,addExpEquipment.expInstructionID,addExpEquipment.supplierID];
+    return [db executeUpdate:insertSQL];
+}
 @end
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

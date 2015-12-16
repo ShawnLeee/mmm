@@ -9,6 +9,8 @@
 #import <Foundation/Foundation.h>
 
 @interface DWAddExpConsumable : NSObject
+@property (nonatomic,copy) NSString *expInstructionID;
+@property (nonatomic,copy) NSString *expConsumableID;
 @property (nonatomic,copy) NSString *consumableID;
 @property (nonatomic,copy) NSString *consumableName;
 @property (nonatomic,assign) int consumableCount;

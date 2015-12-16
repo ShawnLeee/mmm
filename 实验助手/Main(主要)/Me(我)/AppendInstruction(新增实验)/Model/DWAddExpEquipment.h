@@ -9,6 +9,8 @@
 #import <Foundation/Foundation.h>
 
 @interface DWAddExpEquipment : NSObject
+@property (nonatomic,copy) NSString *expEquipmentID;
+@property (nonatomic,copy) NSString *expInstructionID;
 @property (nonatomic,copy) NSString *equipmentID;
 @property (nonatomic,copy) NSString *equipmentName;
 
