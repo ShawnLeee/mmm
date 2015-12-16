@@ -9,5 +9,10 @@
 #import <Foundation/Foundation.h>
 
 @interface DWAddExpStep : NSObject
-
+@property (nonatomic,copy) NSString *expStepID;
+@property (nonatomic,copy) NSString *expInstructionID;
+@property (nonatomic,assign) NSUInteger stepNum;
+@property (nonatomic,copy) NSString *expStepDesc;
+@property (nonatomic,assign) NSUInteger expStepTime;
+- (instancetype)initWithStepNum:(NSUInteger)stepNum;
 @end

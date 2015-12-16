@@ -10,4 +10,5 @@
 
 @interface DWAddStepCell : UITableViewCell
 @property (nonatomic,strong) DWAddStepViewModel *stepViewModel;
+@property (nonatomic,weak) UITableView *tableView;
 @end

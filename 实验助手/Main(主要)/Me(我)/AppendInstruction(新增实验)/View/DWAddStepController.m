@@ -38,8 +38,16 @@
     self.tableView.contentInset = UIEdgeInsetsMake(0, 0, 54, 0);
     [self.tableView registerNib:[UINib nibWithNibName:NSStringFromClass([DWAddStepCell class]) bundle:nil]
          forCellReuseIdentifier:NSStringFromClass([DWAddStepCell class])];
+    UITapGestureRecognizer *tapGestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(p_dismissKeyboard:)];
+    [self.view addGestureRecognizer:tapGestureRecognizer];
     [self p_setupTableFooter];
+    
 }
+- (void)p_dismissKeyboard:(UITapGestureRecognizer *)tapReconizer
+{
+    [self.view endEditing:YES];
+}
+
 - (void)p_setupTableFooter
 {
     typeof(self) weakSelf = self;
@@ -58,8 +66,11 @@
 }
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    DWAddStepViewModel *stepViewModel = self.addedSteps[indexPath.row];
     DWAddStepCell *cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([DWAddStepCell class]) forIndexPath:indexPath];
-    cell.stepViewModel = self.addedSteps[indexPath.row];
+    cell.tableView = self.tableView;
+    cell.stepViewModel = stepViewModel;
+    
     return cell;
 }
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
@@ -76,4 +87,5 @@
         
     }
 }
+
 @end

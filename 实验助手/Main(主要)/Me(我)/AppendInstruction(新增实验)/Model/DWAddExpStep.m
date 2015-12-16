@@ -9,5 +9,11 @@
 #import "DWAddExpStep.h"
 
 @implementation DWAddExpStep
-
+- (instancetype)initWithStepNum:(NSUInteger)stepNum
+{
+    if (self = [super init]) {
+        _stepNum = stepNum;
+    }
+    return self;
+}
 @end
