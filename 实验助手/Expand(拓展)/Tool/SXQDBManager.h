@@ -5,7 +5,7 @@
 //  Created by sxq on 15/9/25.
 //  Copyright © 2015年 SXQ. All rights reserved.
 //
-@class SXQExpInstruction,SXQInstructionData,SXQCurrentExperimentData,SXQExperimentModel,SXQInstructionDetail;
+@class SXQExpInstruction,SXQInstructionData,SXQCurrentExperimentData,SXQExperimentModel,SXQInstructionDetail,DWAddInstructionViewModel;
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 typedef void  (^CompletionHandler)(BOOL success,NSDictionary *info);
@@ -73,6 +73,7 @@ typedef NS_ENUM(NSUInteger,ExperimentState) {
  */
 - (NSDictionary *)getMyExpDataWithMyExpId:(NSString *)myexpid;
 - (BOOL)saveInstructionWithInstructionDetail:(SXQInstructionDetail *)instructionDetail succeed:(void (^)(BOOL succeed))succeed;
+- (BOOL)saveInstructionWithDWAddInstructionViewModel:(DWAddInstructionViewModel *)addInstructionViewModel;
 /**
  *  完成实验
  */

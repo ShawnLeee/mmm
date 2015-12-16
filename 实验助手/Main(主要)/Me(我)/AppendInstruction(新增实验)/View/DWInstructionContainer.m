@@ -67,6 +67,8 @@
                                                                                 {
                                                                                     self.categoryField.text = expCategory.expCategoryName;
                                                                                     self.instructionViewModel.expCategoryID = expCategory.expCategoryID;
+                                                                                    self.subCategoryField.text = nil;
+                                                                                    self.instructionViewModel.expSubCategoryID = nil;
                                                                                 }
                                                                      cancelBlock:^{
         

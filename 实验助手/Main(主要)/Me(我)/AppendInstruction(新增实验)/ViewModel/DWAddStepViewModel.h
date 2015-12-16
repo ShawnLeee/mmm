@@ -17,6 +17,7 @@
 
 @property (nonatomic,strong) DWAddExpStep *addExpStep;
 
-- (instancetype)initWithStepNum:(NSUInteger)stepNum;
+@property (nonatomic,weak) NSIndexPath *indexPath;
+- (instancetype)initWithInstructionID:(NSString *)instructionID;
 
 @end

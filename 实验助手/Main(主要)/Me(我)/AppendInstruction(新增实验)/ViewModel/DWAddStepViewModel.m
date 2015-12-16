@@ -13,10 +13,10 @@
 @property (nonatomic,assign) NSUInteger stepTime;
 @end
 @implementation DWAddStepViewModel
-- (instancetype)initWithStepNum:(NSUInteger)stepNum
+- (instancetype)initWithInstructionID:(NSString *)instructionID
 {
     if (self = [super init]) {
-        self.addExpStep = [[DWAddExpStep alloc] initWithStepNum:stepNum];
+        self.addExpStep = [[DWAddExpStep alloc] initWithInstructionID:instructionID];
         [self p_setupTimeCommand];
     }
     return self;
@@ -36,7 +36,12 @@
     RAC(self.addExpStep,expStepTime) = RACObserve(self, stepTime);
     RAC(self,stepTimeStr) = [RACObserve(self, stepTime)
                              map:^id(NSNumber *stepTime) {
-                                return [NSString stringWithFormat:@"%ld分钟",[stepTime integerValue]];
+                                 if ([stepTime integerValue] == 0) {
+                                     return @"设置时间";
+                                 }else
+                                 {
+                                     return [NSString stringWithFormat:@"%ld分钟",[stepTime integerValue]];
+                                 }
                             }];
     RAC(self.addExpStep,stepNum) = RACObserve(self, stepNum);
     
@@ -63,5 +68,10 @@
     } cancelBlock:^(ActionSheetDatePicker *picker) {
         
     } origin:origin];
+}
+- (void)setIndexPath:(NSIndexPath *)indexPath
+{
+    _indexPath = indexPath;
+    self.stepNum = indexPath.row + 1;
 }
 @end

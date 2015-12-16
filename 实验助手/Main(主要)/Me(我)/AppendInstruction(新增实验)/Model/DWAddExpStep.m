@@ -5,14 +5,16 @@
 //  Created by sxq on 15/12/9.
 //  Copyright © 2015年 SXQ. All rights reserved.
 //
-
+#import "NSString+UUID.h"
 #import "DWAddExpStep.h"
 
 @implementation DWAddExpStep
-- (instancetype)initWithStepNum:(NSUInteger)stepNum
+- (instancetype)initWithInstructionID:(NSString *)instructionID
 {
-    if (self = [super init]) {
-        _stepNum = stepNum;
+    if(self = [super init])
+    {
+        self.expInstructionID = instructionID;
+        self.expStepID = [NSString uuid];
     }
     return self;
 }

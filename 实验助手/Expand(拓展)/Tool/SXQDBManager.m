@@ -6,6 +6,13 @@
 //  Copyright © 2015年 SXQ. All rights reserved.
 //
 @import UIKit;
+#import "DWAddExpInstruction.h"
+#import "DWAddExpStep.h"
+#import "DWAddExpReagent.h"
+#import "DWAddExpConsumable.h"
+#import "DWAddExpEquipment.h"
+#import "DWAddInstructionViewModel.h"
+
 #import "NSString+Base64.h"
 #import "SXQExpProcessAttch.h"
 #import "SXQExperimentModel.h"
@@ -141,7 +148,7 @@ static SXQDBManager *_dbManager = nil;
 - (NSArray *)setupMyInstruction
 {
     //实验说明书主表
-    NSString *instuctionMainSQL = @"create table if not exists t_expinstructionsMain(expinstructionid text primary key,experimentname text,experimentdesc text,experimenttheory text,provideuser text,supplierid text,suppliername text,productnum text,expcategoryid text,expsubcategoryid text,createdate numeric,expversion integer,allowdownload integer,filterstr text,reviewcount integer,downloadcount integer,uploadTime text,editTime text,localized int);";
+    NSString *instuctionMainSQL = @"create table if not exists t_expinstructionsMain(expinstructionid text primary key,experimentname text,experimentdesc text,experimenttheory text,provideuser text,supplierid text,suppliername text,productnum text,expcategoryid text,expsubcategoryid text,createdate numeric,expversion integer,allowdownload integer,filterstr text,reviewcount integer,downloadcount integer,uploadTime text,editTime text,localized integer,self_created integer default 0);";
     //实验试剂表
     NSString *expReagentSQL = @"create table if not exists t_expreaget (createMethod text,expInstructionID text,expReagentID text primary key,reagentCommonName text,reagentID text,reagentName text,reagentSpec text,useAmount integer,supplierID text);";
     //实验流程表
@@ -1115,6 +1122,7 @@ static SXQDBManager *_dbManager = nil;
     return [tmpArr copy];
 }
 #pragma mark 保存说明书
+
 - (BOOL)saveInstructionWithInstructionDetail:(SXQInstructionDetail *)instructionDetail succeed:(void (^)(BOOL))succeed
 {
     [_queue inDatabase:^(FMDatabase *db) {
@@ -1275,6 +1283,47 @@ static SXQDBManager *_dbManager = nil;
     }];
     [_queue close];
     return success;
+}
+#pragma mark － 保存自己创建的说明书
+- (BOOL)saveInstructionWithDWAddInstructionViewModel:(DWAddInstructionViewModel *)addInstructionViewModel
+{
+    __block BOOL success = NO;
+    [_queue inTransaction:^(FMDatabase *db, BOOL *rollback) {
+        if ([self saveMainInstructionWithDWAddInstruction:addInstructionViewModel.expInstruction db:db]) {
+            if ([self saveInstructionSteps:addInstructionViewModel.expExpStep db:db]) {
+                
+            }else
+            {
+                *rollback = YES;
+                return;
+            }
+        }else
+        {
+            *rollback = YES;
+            return;
+        }
+    }];
+    [_queue close];
+    return success;
+}
+- (BOOL)saveMainInstructionWithDWAddInstruction:(DWAddExpInstruction *)addExpInstruction db:(FMDatabase *)db
+{
+    NSString *insertSql = [NSString stringWithFormat:@"insert into t_expinstructionsMain (expinstructionid ,experimentname ,experimentdesc ,experimenttheory ,provideuser,expcategoryid ,expsubcategoryid ,createdate ,allowdownload, expversion,self_created) values('%@','%@','%@','%@','%@','%@','%@','%@','%d','%d','%d')",addExpInstruction.expInstructionID,addExpInstruction.experimentName,addExpInstruction.experimentDesc,addExpInstruction.experimentTheory,addExpInstruction.provideUser,addExpInstruction.expCategoryID,addExpInstruction.expSubCategoryID,addExpInstruction.createDate,addExpInstruction.allowDownload,addExpInstruction.expVersion,1];
+    return [db executeUpdate:insertSql];
+}
+- (BOOL)saveInstructionSteps:(NSArray<DWAddExpStep *> *)instructionSteps db:(FMDatabase *)db
+{
+    __block BOOL success = NO;
+    [instructionSteps enumerateObjectsUsingBlock:^(DWAddExpStep * _Nonnull addStep, NSUInteger idx, BOOL * _Nonnull stop) {
+        success = [self insertIntoExpProcessWithAddExpStep:addStep db:db];
+        *stop = !success;
+    }];
+    return success;
+}
+- (BOOL)insertIntoExpProcessWithAddExpStep:(DWAddExpStep *)dwAddExpStep db:(FMDatabase *)db
+{
+    NSString *insertSQL = [NSString stringWithFormat:@"insert into t_expProcess (expInstructionID ,expStepDesc ,expStepID ,expStepTime ,stepNum ) values ('%@','%@','%@','%lu','%lu')",dwAddExpStep.expInstructionID,dwAddExpStep.expStepDesc,dwAddExpStep.expStepID,(unsigned long)dwAddExpStep.expStepTime,(unsigned long)dwAddExpStep.stepNum];
+    return [db executeUpdate:insertSQL];
 }
 @end
 

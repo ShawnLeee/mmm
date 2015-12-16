@@ -1359,7 +1359,7 @@
                                                     </label>
                                                 </subviews>
                                                 <animations/>
-                                                <color key="backgroundColor" red="0.0" green="0.50196081400000003" blue="0.25098040700000002" alpha="1" colorSpace="calibratedRGB"/>
+                                                <color key="backgroundColor" red="0.10588235294117647" green="0.5725490196078431" blue="0.63921568627450975" alpha="1" colorSpace="calibratedRGB"/>
                                                 <constraints>
                                                     <constraint firstItem="Sc3-YX-Glp" firstAttribute="leading" secondItem="hRU-P0-VXL" secondAttribute="leading" constant="10" id="0LD-K8-ire"/>
                                                     <constraint firstItem="Sc3-YX-Glp" firstAttribute="top" secondItem="hRU-P0-VXL" secondAttribute="top" constant="5" id="WOp-ll-lJu"/>
@@ -1397,7 +1397,7 @@
                                                     </label>
                                                 </subviews>
                                                 <animations/>
-                                                <color key="backgroundColor" red="0.0" green="0.50196081400000003" blue="0.25098040700000002" alpha="1" colorSpace="calibratedRGB"/>
+                                                <color key="backgroundColor" red="0.10588235294117647" green="0.5725490196078431" blue="0.63921568627450975" alpha="1" colorSpace="calibratedRGB"/>
                                                 <constraints>
                                                     <constraint firstItem="Ney-i8-WME" firstAttribute="top" secondItem="oC1-c4-Qk5" secondAttribute="top" constant="5" id="13g-8C-oXi"/>
                                                     <constraint firstAttribute="trailing" secondItem="Ney-i8-WME" secondAttribute="trailing" id="CFr-de-fcK"/>
@@ -1497,6 +1497,9 @@
                                     <constraint firstAttribute="bottom" secondItem="duS-Cm-chg" secondAttribute="bottom" constant="10" id="lod-uH-sZ7"/>
                                     <constraint firstItem="duS-Cm-chg" firstAttribute="top" secondItem="eAJ-V0-yMk" secondAttribute="top" id="qSu-vH-K7K"/>
                                 </constraints>
+                                <connections>
+                                    <outlet property="delegate" destination="Ej3-qV-vEW" id="iJT-tB-6SP"/>
+                                </connections>
                             </scrollView>
                         </subviews>
                         <animations/>
@@ -1524,7 +1527,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gDy-nC-RKN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="221.5" y="664.5"/>
+            <point key="canvasLocation" x="398.5" y="596.5"/>
         </scene>
     </scenes>
     <resources>
