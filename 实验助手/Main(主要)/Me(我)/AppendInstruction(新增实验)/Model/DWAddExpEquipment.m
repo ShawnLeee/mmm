@@ -8,6 +8,7 @@
 #import <MJExtension/MJExtension.h>
 #import "DWAddExpEquipment.h"
 #import "SXQSupplier.h"
+#import "NSString+UUID.h"
 @implementation DWAddExpEquipment
 + (NSDictionary *)mj_objectClassInArray
 {
@@ -20,5 +21,12 @@
         _supplierID = [[self.suppliers firstObject] supplierID];
     }
     return _supplierName;
+}
+- (NSString *)expEquipmentID
+{
+    if (!_expEquipmentID) {
+        _expEquipmentID = [NSString uuid];
+    }
+    return _expEquipmentID;
 }
 @end

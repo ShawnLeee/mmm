@@ -194,23 +194,26 @@
 - (void)p_showFirstPicker
 {
     [self.addItemTool showFirstPickerWithOrigin:self.firstField.rightButton handler:^(DWReagentFirstClarify *firstClarify) {
-            self.firstField.text = firstClarify.levelOneSortName;
-            self.reagentViewModel.expReagent.levelOneSortID = firstClarify.levelOneSortID;
+        self.reagentViewModel.firstClass = firstClarify.levelOneSortName;
+        self.reagentViewModel.firstID = firstClarify.levelOneSortID;
+        self.reagentViewModel.secondID = nil;
+        self.reagentViewModel.secondClass = nil;
         }];
 }
 - (void)p_showSecondPicker
 {
     [self.addItemTool showSecondPickerWithOrigin:self.secondField levelOne:self.reagentViewModel.expReagent.levelOneSortID handler:^(DWReagentSecondClarify *secondClarify) {
-            self.secondField.text = secondClarify.levelTwoSortName;
-            self.reagentViewModel.expReagent.levelTwoSortID = secondClarify.levelTwoSortID;
+        self.reagentViewModel.secondClass = secondClarify.levelTwoSortName;
+        self.reagentViewModel.secondID = secondClarify.levelTwoSortID;
         }];
 }
 - (void)p_showReagentPicker
 {
     [self.addItemTool showReagentWithOrigin:self.reagentNameField  levelOne:self.reagentViewModel.expReagent.levelOneSortID levelTwo:self.reagentViewModel.expReagent.levelTwoSortID handler:^(DWReagentOption *reagentOption) {
-           self.reagentViewModel.expReagent.reagentID = reagentOption.reagentID;
-           self.reagentViewModel.expReagent.reagentName = reagentOption.reagentName;
-           self.reagentNameField.text = reagentOption.reagentName;
+        self.reagentViewModel.reagentID = reagentOption.reagentID;
+        self.reagentViewModel.reagentName = reagentOption.reagentName;
+        self.reagentViewModel.supplierID = nil;
+        self.reagentViewModel.supplierName = nil;
        }];
 }
 - (void)dismissKeyBoard

@@ -22,7 +22,9 @@
 
 @property (nonatomic,copy) NSString *supplierID;
 
-
+@property (nonatomic,copy) NSString * levelOneSortID;
+@property (nonatomic,copy) NSString * levelTwoSortID;
+@property (nonatomic,copy) NSString * supplierName;
 /**
  *   所有供应商
  */

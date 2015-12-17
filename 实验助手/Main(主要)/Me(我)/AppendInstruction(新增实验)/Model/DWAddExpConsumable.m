@@ -8,10 +8,18 @@
 #import <MJExtension/MJExtension.h>
 #import "DWAddExpConsumable.h"
 #import "SXQSupplier.h"
+#import "NSString+UUID.h"
 
 @implementation DWAddExpConsumable
 + (NSDictionary *)mj_objectClassInArray
 {
     return @{@"suppliers" : [SXQSupplier class]};
+}
+- (NSString *)expConsumableID
+{
+    if (!_expConsumableID) {
+        _expConsumableID = [NSString uuid];
+    }
+    return _expConsumableID;
 }
 @end

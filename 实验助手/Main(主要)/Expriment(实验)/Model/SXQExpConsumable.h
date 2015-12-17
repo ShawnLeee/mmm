@@ -19,6 +19,7 @@
 @property (nonatomic,copy) NSString *expInstructionID;
 @property (nonatomic,copy) NSString *consumableName;
 @property (nonatomic,copy) NSString *supplierID;
+@property (nonatomic,copy) NSString *supplierName;
 
 /**
  *  所有供应商
