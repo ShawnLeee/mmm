@@ -5,6 +5,7 @@
 //  Created by sxq on 15/12/15.
 //  Copyright © 2015年 SXQ. All rights reserved.
 //
+#import "MBProgressHUD+MJ.h"
 #import "SXQDBManager.h"
 #import "DWAddExpStep.h"
 #import "DWAddStepViewModel.h"
@@ -40,7 +41,15 @@
 {
     self.navigationItem.rightBarButtonItem = [UIBarButtonItem itemWithTitle:@"添加" titleColor:MainBgColor font:15 action:^{
         self.addInstrucitonViewModel.expExpStep = [self p_loadData];
-        [[SXQDBManager sharedManager] saveInstructionWithDWAddInstructionViewModel:self.addInstrucitonViewModel];
+        [[SXQDBManager sharedManager] saveInstructionWithDWAddInstructionViewModel:self.addInstrucitonViewModel completion:^(BOOL success) {
+            if (success) {
+                [self.navigationController popToRootViewControllerAnimated:YES];
+            }else
+            {
+                [MBProgressHUD showError:@"创建失败"];
+                [self.navigationController popToRootViewControllerAnimated:YES];
+            }
+        }];
     }];
 }
 - (void)p_setupTableView

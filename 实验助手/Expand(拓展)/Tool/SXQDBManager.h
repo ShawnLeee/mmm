@@ -73,13 +73,17 @@ typedef NS_ENUM(NSUInteger,ExperimentState) {
  */
 - (NSDictionary *)getMyExpDataWithMyExpId:(NSString *)myexpid;
 - (BOOL)saveInstructionWithInstructionDetail:(SXQInstructionDetail *)instructionDetail succeed:(void (^)(BOOL succeed))succeed;
-- (BOOL)saveInstructionWithDWAddInstructionViewModel:(DWAddInstructionViewModel *)addInstructionViewModel;
+- (void)saveInstructionWithDWAddInstructionViewModel:(DWAddInstructionViewModel *)addInstructionViewModel completion:(void (^)(BOOL success))completion;
 /**
  *  完成实验
  */
 - (BOOL)fulfillExperimentWithMyExpId:(NSString *)myExpId;
 
 - (NSArray *)meAllInstructions;
+/**
+ *  查询本地实验
+ */
+- (NSArray *)allInstructionsOfMine:(BOOL)isMine;
 @end
 
 
