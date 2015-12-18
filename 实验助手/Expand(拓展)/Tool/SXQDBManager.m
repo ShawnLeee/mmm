@@ -7,6 +7,7 @@
 //
 
 @import UIKit;
+#import "NSString+Date.h"
 #import "DWInstructionUploadParam.h"
 #import "NSString+UUID.h"
 #import "DWAddExpInstruction.h"
@@ -206,8 +207,8 @@ static SXQDBManager *_dbManager = nil;
 
 - (void)insertInstruciton:(SXQInstructionData *)instructionData completion:(CompletionHandler)completion
 {
-//     NSDictionary *expMain = instruction[@"expInstructionMain"];
     SXQExpInstruction *instructionMain = instructionData.expInstructionMain;
+    instructionMain.createDate = [NSString dw_formateDateWithString:instructionMain.createDate];
     if ([self expInstrucitonExist:instructionMain.expInstructionID]) {
         completion(NO,@{@"msg" :@"说明书已下载"});
         return;

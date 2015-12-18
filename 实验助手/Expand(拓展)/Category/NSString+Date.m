@@ -30,4 +30,12 @@
     [formatter setDateFormat:@"MM"];
     return [formatter stringFromDate:date];
 }
++ (NSString *)dw_formateDateWithString:(NSString *)dateStr
+{
+    NSDate *date = [NSDate dateWithTimeIntervalSince1970:[dateStr doubleValue]/1000];
+    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+    [formatter setDateFormat:@"yyyy-MM-dd"];
+    return [formatter stringFromDate:date];
+    return nil;
+}
 @end

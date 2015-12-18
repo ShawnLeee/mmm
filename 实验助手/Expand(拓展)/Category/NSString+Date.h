@@ -12,4 +12,5 @@
 + (NSString *)dw_currentDate;
 + (NSString *)dw_year;
 + (NSString *)dw_month;
++ (NSString *)dw_formateDateWithString:(NSString *)dateStr;
 @end

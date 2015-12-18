@@ -69,7 +69,7 @@
 {
     SXQExpInstruction *instruction = self.instructions[indexPath.row];
     [[self.service uploadInstructionWithInstrucitonID:instruction.expInstructionID allowDownload:0]
-    subscribeNext:^(id x) {
+    subscribeNext:^(NSNumber *success) {
         
     }];
 }
