@@ -10,7 +10,7 @@
 @class DWAddInstructionViewModel;
 
 @interface DWAddItemController : UITableViewController
-
+@property (nonatomic,assign) BOOL createFromModel;
 @property (nonatomic,strong) DWAddInstructionViewModel *addInstrucitonViewModel;
 
 @end

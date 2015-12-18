@@ -20,6 +20,8 @@
 @property (nonatomic,copy) NSString *expCategoryID;
 @property (nonatomic,copy) NSString *expSubCategoryID;
 @property (nonatomic,copy) NSString *createDate;
+@property (nonatomic,copy) NSString *expSubCategoryName;
+@property (nonatomic,copy) NSString *expCategoryName;
 /**
  *  0-不允许下载，1-允许下载，2 share
  */

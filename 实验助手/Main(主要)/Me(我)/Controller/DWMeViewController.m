@@ -5,6 +5,9 @@
 //  Created by sxq on 15/11/25.
 //  Copyright © 2015年 SXQ. All rights reserved.
 //
+#import "DWAddInstructionViewModel.h"
+#import "SXQNavgationController.h"
+#import "DWInstructionModelController.h"
 #import "DWAppendInstructionController.h"
 #import "UIBarButtonItem+SXQ.h"
 #import "DWSignOutView.h"
@@ -58,16 +61,26 @@
                                                destructiveButtonTitle:nil
                                                     otherButtonTitles:@"创建一份",@"选择模版", nil];
     [actionSheet.rac_buttonClickedSignal subscribeNext:^(NSNumber *buttonIndex) {
+        DWAppendInstructionController *appendVC = [[UIStoryboard storyboardWithName:@"Main" bundle:nil]
+                                                   instantiateViewControllerWithIdentifier:NSStringFromClass([DWAppendInstructionController class])];
         switch ([buttonIndex integerValue]) {
             case 0:
             {
-                DWAppendInstructionController *appendVC = [[UIStoryboard storyboardWithName:@"Main" bundle:nil]
-                                        instantiateViewControllerWithIdentifier:NSStringFromClass([DWAppendInstructionController class])];
+                appendVC.createFromModel = NO;
                 [self.navigationController pushViewController:appendVC animated:YES];
                 break;
             }
             case 1:
+            {
+                DWInstructionModelController *modelVC = [[DWInstructionModelController alloc] initWithService:self.service completion:^(DWAddInstructionViewModel *addInstructionViewModel) {
+                    appendVC.addInstructionViewModel = addInstructionViewModel;
+                    appendVC.createFromModel = YES;
+                    [self.navigationController pushViewController:appendVC animated:YES];
+                }];
+                SXQNavgationController *nav = [[SXQNavgationController alloc] initWithRootViewController:modelVC];
+                [self presentViewController:nav animated:YES completion:nil];
                 break;
+            }
         }
     }];
     [actionSheet showInView:self.view];

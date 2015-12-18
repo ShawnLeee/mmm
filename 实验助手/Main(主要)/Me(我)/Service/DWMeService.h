@@ -15,4 +15,11 @@
 - (RACSignal *)uploadUserProfile;
 - (void)signOut;
 - (RACSignal *)uploadInstructionWithInstrucitonID:(NSString *)instructionID allowDownload:(int)allowDownload;
+- (RACSignal *)addExpInstructionInstructionID:(NSString *)instructionID;
+/**
+ *  Get local instructions
+ *
+ *  @return NSArray<DWAddExpInstruction *>
+ */
+- (RACSignal *)localInstructions;
 @end

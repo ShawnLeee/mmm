@@ -28,4 +28,6 @@
 
 @property (nonatomic,assign,getter=isDownloaded) BOOL downloaded;
 @property (nonatomic,assign) int localized;
+@property (nonatomic,copy) NSString *expCategoryName;
+@property (nonatomic,copy) NSString *expSubCategoryName;
 @end

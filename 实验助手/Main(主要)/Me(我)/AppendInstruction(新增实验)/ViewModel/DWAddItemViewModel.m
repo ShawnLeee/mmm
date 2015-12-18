@@ -16,6 +16,7 @@
 #import "DWItemCellViewModel.h"
 #import "DWAddConsumableController.h"
 #import "DWAddExpConsumable.h"
+#import "DWAddExpReagent.h"
 typedef void (^AddDoneBlock)(id itemModel);
 @interface DWAddItemViewModel ()
 @property (nonatomic,strong) id<DWAddInstructionService> service;
@@ -42,6 +43,24 @@ typedef void (^AddDoneBlock)(id itemModel);
         }];
     }
     return self;
+}
+- (instancetype)initWithItemName:(NSString *)itemName itemType:(DWAddItemType)itemType service:(id<DWAddInstructionService>)service instructionID:(NSString *)instructionID itemModels:(NSArray *)itemModels
+{
+    if (self = [self initWithItemName:itemName itemType:itemType service:service instructionID:instructionID]) {
+        self.itemModels = [itemModels mutableCopy];
+        self.items = [self p_itemsWithItemModels:itemModels];
+    }
+    return self;
+}
+- (NSMutableArray *)p_itemsWithItemModels:(NSArray *)itemModels
+{
+    NSMutableArray *tmpArray = [NSMutableArray array];
+    [itemModels enumerateObjectsUsingBlock:^(id model, NSUInteger idx, BOOL * _Nonnull stop) {
+        DWItemCellViewModel *cellViewModel = [[DWItemCellViewModel alloc] initWithModel:model];
+        [tmpArray addObject:cellViewModel];
+    }];
+    return tmpArray;
+    
 }
 - (void)pushVCWithItemType:(DWAddItemType)itemType
 {

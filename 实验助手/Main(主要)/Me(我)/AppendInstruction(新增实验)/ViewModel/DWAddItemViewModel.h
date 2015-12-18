@@ -27,4 +27,10 @@ typedef NS_ENUM(NSUInteger,DWAddItemType)
                         itemType:(DWAddItemType)itemType
                          service:(id<DWAddInstructionService>)service
                    instructionID:(NSString *)instructionID;
+
+- (instancetype)initWithItemName:(NSString *)itemName
+                        itemType:(DWAddItemType)itemType
+                         service:(id<DWAddInstructionService>)service
+                   instructionID:(NSString *)instructionID
+                           itemModels:(NSArray *)itemModels;
 @end

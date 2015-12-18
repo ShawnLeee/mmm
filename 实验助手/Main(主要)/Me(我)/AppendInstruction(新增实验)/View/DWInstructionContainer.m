@@ -26,6 +26,11 @@
 - (void)setInstructionViewModel:(DWAddExpInstruction *)instructionViewModel
 {
     _instructionViewModel = instructionViewModel;
+    self.categoryField.text = instructionViewModel.expCategoryName;
+    self.subCategoryField.text = instructionViewModel.expSubCategoryName;
+    self.instructionName.text = instructionViewModel.experimentName;
+    self.instructionDescView.text = instructionViewModel.experimentDesc;
+    self.instructionTheoryView.text = instructionViewModel.experimentTheory;
     [self bindingModel];
 }
 - (void)bindingModel
@@ -33,7 +38,8 @@
     RAC(_instructionViewModel,experimentName) = self.instructionName.rac_textSignal;
     RAC(_instructionViewModel,experimentDesc) = self.instructionDescView.rac_textSignal;
     RAC(_instructionViewModel,experimentTheory) = self.instructionTheoryView.rac_textSignal;
-    
+    RAC(_instructionViewModel,expCategoryName) = self.categoryField.rac_textSignal;
+    RAC(_instructionViewModel,expSubCategoryName) = self.subCategoryField.rac_textSignal;
 }
 - (BOOL)textFieldShouldBeginEditing:(UITextField *)textField
 {

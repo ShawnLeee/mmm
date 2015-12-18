@@ -88,6 +88,8 @@ typedef NS_ENUM(NSUInteger,ExperimentState) {
  *  获取同步说明书数据
  */
 - (DWInstructionUploadParam *)getInstructionUploadDataWithInstructionID:(NSString *)instructionID;
+- (NSArray *)localInstructions;
+- (void)loadDataWithDWaddInstructionViewModel:(DWAddInstructionViewModel *)instructionViewModel;
 @end
 
 

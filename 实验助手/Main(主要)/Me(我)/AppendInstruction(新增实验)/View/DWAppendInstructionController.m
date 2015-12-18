@@ -5,6 +5,7 @@
 //  Created by sxq on 15/12/9.
 //  Copyright © 2015年 SXQ. All rights reserved.
 //
+#import "NSString+UUID.h"
 #import "MBProgressHUD+MJ.h"
 #import "DWAddItemController.h"
 #import "DWAddExpInstruction.h"
@@ -16,7 +17,6 @@
 @interface DWAppendInstructionController ()<UIScrollViewDelegate>
 @property (nonatomic,weak) IBOutlet DWInstructionContainer *instructionContainer;
 @property (nonatomic,strong) id<DWAddInstructionService> addInstructionService;
-@property (nonatomic,strong) DWAddInstructionViewModel *addInstructionViewModel;
 @end
 
 @implementation DWAppendInstructionController
@@ -34,7 +34,11 @@
 }
 - (void)p_setInstructionContainer
 {
-    self.addInstructionViewModel = [DWAddInstructionViewModel instructionViewModel];
+    if (!self.createFromModel) {
+        self.addInstructionViewModel = [[DWAddInstructionViewModel alloc] init];
+        self.addInstructionViewModel.expInstruction = [[DWAddExpInstruction alloc] init];
+    }
+    self.addInstructionViewModel.expInstruction.expInstructionID = [NSString uuid];
     self.instructionContainer.instructionViewModel = self.addInstructionViewModel.expInstruction;
     self.instructionContainer.addInstructionService = self.addInstructionService;
 }
@@ -42,6 +46,7 @@
 {
     self.navigationItem.rightBarButtonItem = [UIBarButtonItem itemWithTitle:@"下一步" titleColor:LABBtnBgColor font:15 action:^{
         DWAddItemController *itemController = [DWAddItemController new];
+        itemController.createFromModel = self.createFromModel;
         itemController.addInstrucitonViewModel = self.addInstructionViewModel;
         if ([self messageCompleted]) {
             [self.navigationController pushViewController:itemController animated:YES];

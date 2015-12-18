@@ -5,6 +5,8 @@
 //  Created by sxq on 15/12/10.
 //  Copyright © 2015年 SXQ. All rights reserved.
 //
+#import "DWAddExpInstruction.h"
+#import "DWAddInstructionViewModel.h"
 #import "DWAddItemViewModel.h"
 #import "SXQExpCategory.h"
 #import "SXQExpSubCategory.h"
@@ -65,6 +67,18 @@
             [subscriber sendNext:@[]];
             [subscriber sendCompleted];
         }];
+        return nil;
+    }];
+}
+- (RACSignal *)itemViewModelSignalWithDWaddInstructionViewModel:(DWAddInstructionViewModel *)instructionViewModel
+{
+    NSString *instructionID = instructionViewModel.expInstruction.expInstructionID;
+    return [RACSignal createSignal:^RACDisposable *(id<RACSubscriber> subscriber) {
+        DWAddItemViewModel *itemViewModel0 = [[DWAddItemViewModel alloc] initWithItemName:@"添加试剂" itemType:DWAddItemTypeReagent service:self instructionID:instructionID itemModels:instructionViewModel.expReagent];
+        DWAddItemViewModel *itemViewModel1 = [[DWAddItemViewModel alloc] initWithItemName:@"添加耗材" itemType:DWAddItemTypeConsumable service:self instructionID:instructionID itemModels:instructionViewModel.expConsumable];
+        DWAddItemViewModel *itemViewModel2 = [[DWAddItemViewModel alloc] initWithItemName:@"添加设备" itemType:DWAddItemTypeEquipment service:self instructionID:instructionID itemModels:instructionViewModel.expEquipment];
+        [subscriber sendNext:@[itemViewModel0,itemViewModel1,itemViewModel2]];
+        [subscriber sendCompleted];
         return nil;
     }];
 }

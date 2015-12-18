@@ -113,6 +113,7 @@
 		B03F97BC1BA2A05E009FD1B4 /* SXQLoginField.xib in Resources */ = {isa = PBXBuildFile; fileRef = B03F97BB1BA2A05E009FD1B4 /* SXQLoginField.xib */; };
 		B03F97BF1BA2CAEE009FD1B4 /* SXQVenderLoginTool.m in Sources */ = {isa = PBXBuildFile; fileRef = B03F97BE1BA2CAEE009FD1B4 /* SXQVenderLoginTool.m */; };
 		B03F97C21BA2D51D009FD1B4 /* SXQTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = B03F97C11BA2D51D009FD1B4 /* SXQTabBarController.m */; };
+		B046A8971C23D80E00549298 /* DWInstructionModelController.m in Sources */ = {isa = PBXBuildFile; fileRef = B046A8961C23D80E00549298 /* DWInstructionModelController.m */; };
 		B0473B201C0FDAAD00C9AA1D /* SXQAdjacentResult.m in Sources */ = {isa = PBXBuildFile; fileRef = B0473B1F1C0FDAAD00C9AA1D /* SXQAdjacentResult.m */; };
 		B0473B231C0FDBBF00C9AA1D /* SXQAdjacentUserParam.m in Sources */ = {isa = PBXBuildFile; fileRef = B0473B221C0FDBBF00C9AA1D /* SXQAdjacentUserParam.m */; };
 		B0473B291C1004E600C9AA1D /* SXQReagentAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = B0473B281C1004E600C9AA1D /* SXQReagentAnnotation.m */; };
@@ -668,6 +669,8 @@
 		B03F97C61BA2D64C009FD1B4 /* SXQURL.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SXQURL.h; sourceTree = "<group>"; };
 		B03F97C91BA2D675009FD1B4 /* SXQColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SXQColor.h; sourceTree = "<group>"; };
 		B03F97CA1BA2D675009FD1B4 /* SXQFont.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SXQFont.h; sourceTree = "<group>"; };
+		B046A8951C23D80E00549298 /* DWInstructionModelController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DWInstructionModelController.h; sourceTree = "<group>"; };
+		B046A8961C23D80E00549298 /* DWInstructionModelController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DWInstructionModelController.m; sourceTree = "<group>"; };
 		B0473B1E1C0FDAAD00C9AA1D /* SXQAdjacentResult.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SXQAdjacentResult.h; sourceTree = "<group>"; };
 		B0473B1F1C0FDAAD00C9AA1D /* SXQAdjacentResult.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SXQAdjacentResult.m; sourceTree = "<group>"; };
 		B0473B211C0FDBBF00C9AA1D /* SXQAdjacentUserParam.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SXQAdjacentUserParam.h; sourceTree = "<group>"; };
@@ -2373,6 +2376,8 @@
 				B006ABDB1C058933008C6C76 /* DWMeInstructionsController.m */,
 				B006ABE21C05A071008C6C76 /* DWMeEditController.h */,
 				B006ABE31C05A071008C6C76 /* DWMeEditController.m */,
+				B046A8951C23D80E00549298 /* DWInstructionModelController.h */,
+				B046A8961C23D80E00549298 /* DWInstructionModelController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -3459,6 +3464,7 @@
 				B0F73B8E1BBB7B3F00B3D0A0 /* SXQHotInstruction.m in Sources */,
 				B0FC73071BCE2C2B00D99A26 /* NSString+Size.m in Sources */,
 				B01383141C02AD2300F37F76 /* DWEditStepController.m in Sources */,
+				B046A8971C23D80E00549298 /* DWInstructionModelController.m in Sources */,
 				B0F64C261BAFB407001CF997 /* SXQExperimentStepResult.m in Sources */,
 				B0F566341BA7FC0800BA1F7B /* SXQExperimentToolBar.m in Sources */,
 				B08E7C5E1BB2544B0023893B /* SXQInstructionStepCell.m in Sources */,

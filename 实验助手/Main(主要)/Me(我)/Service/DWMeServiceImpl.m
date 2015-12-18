@@ -178,5 +178,21 @@
         return nil;
     }] deliverOn:scheduler]; 
 }
-
+- (RACSignal *)localInstructions
+{
+    return [RACSignal createSignal:^RACDisposable *(id<RACSubscriber> subscriber) {
+        
+        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0), ^{
+            
+            NSArray *instructions = [[SXQDBManager sharedManager] localInstructions];
+            
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [subscriber sendNext:instructions];
+                [subscriber sendCompleted];
+            });
+            
+        });
+        return nil;
+    }];
+}
 @end

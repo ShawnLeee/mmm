@@ -158,7 +158,7 @@ static SXQDBManager *_dbManager = nil;
 - (NSArray *)setupMyInstruction
 {
     //实验说明书主表
-    NSString *instuctionMainSQL = @"create table if not exists t_expinstructionsMain(expinstructionid text primary key,experimentname text,experimentdesc text,experimenttheory text,provideuser text,supplierid text,suppliername text,productnum text,expcategoryid text,expsubcategoryid text,createdate numeric,expversion integer,allowdownload integer,filterstr text,reviewcount integer,downloadcount integer,uploadTime text,editTime text,localized integer,self_created integer default 0);";
+    NSString *instuctionMainSQL = @"create table if not exists t_expinstructionsMain(expinstructionid text primary key,experimentname text,experimentdesc text,experimenttheory text,provideuser text,supplierid text,suppliername text,productnum text,expcategoryid text,expsubcategoryid text,createdate numeric,expversion integer,allowdownload integer,filterstr text,reviewcount integer,downloadcount integer,uploadTime text,editTime text,localized integer,self_created integer default 0,expCategoryName text,expSubCategoryName text);";
     //实验试剂表
     NSString *expReagentSQL = @"create table if not exists t_expreaget (createMethod text,expInstructionID text,expReagentID text primary key,reagentCommonName text,reagentID text,reagentName text,reagentSpec text,useAmount integer,supplierID text,levelOneSortID text,levelTwoSortID text,supplierName text);";
     //实验流程表
@@ -364,26 +364,7 @@ static SXQDBManager *_dbManager = nil;
 }
 - (NSArray *)meAllInstructions
 {
-    return [self allInstructionsOfMine:NO];
-//    __block NSArray *resultArr = nil;
-//    [_queue inDatabase:^(FMDatabase *db) {
-//        NSMutableArray *tmpArr = [NSMutableArray array];
-//        FMResultSet *rs = [db executeQuery:@"select * from t_expinstructionsMain"];
-//        while (rs.next) {
-//            NSString *expinstructionid = [rs stringForColumn:@"expinstructionid"]? : @"";
-//            NSString *experimentname = [rs stringForColumn:@"experimentname"]? : @"";
-//            NSString *uploadTime = [rs stringForColumn:@"uploadTime"]? : @"";
-//            NSString *editTime = [rs stringForColumn:@"editTime"]? : @"";
-//            NSString *supplierName = [rs stringForColumn:@"supplierName"]? : @"";
-//            NSString *productnum = [rs stringForColumn:@"productnum"]? : @"";
-//            NSDictionary *instruction =  @{@"expInstructionID" : expinstructionid ,@"experimentName" : experimentname ,@"uploadTime" : uploadTime,@"editTime":editTime,@"supplierName" : supplierName ,@"productNum" : productnum};
-//            [tmpArr addObject:instruction];
-//        }
-//        resultArr = [tmpArr copy];
-//    }];
-//    [_queue close];
-//    
-//    return resultArr;
+    return [self allInstructionsOfMine:YES];
 }
 - (NSArray *)querySupplierWithReagetID:(NSString *)reagentID
 {
@@ -401,9 +382,6 @@ static SXQDBManager *_dbManager = nil;
     }];
     [_queue close];
     return [tempArr copy];
-//    NSString *supplierSQL = @"create table if not exists t_supplier (supplierID text primary key,supplierName text,supplierType integer,contacts text,telNo text,mobilePhone text,email text,address text)";
-    
-//    NSString *reagentMapSQL = @"create table if not exists t_reagentMap(reagentMapID text primary key,reagentID text,supplierID text,isSuggestion integer)";
 }
 - (SXQSupplier *)fetchSupplierWithSupplierID:(NSString *)supplierID db:(FMDatabase *)db
 {
@@ -533,7 +511,7 @@ static SXQDBManager *_dbManager = nil;
 - (BOOL)insertIntoInstructionMain:(SXQExpInstruction *)expInstruction db:(FMDatabase *)db
 {
     BOOL success = NO;
-    NSString *insertSql = [NSString stringWithFormat:@"insert into t_expinstructionsMain (expinstructionid ,experimentname ,experimentdesc ,experimenttheory ,provideuser ,supplierid ,suppliername ,productnum ,expcategoryid ,expsubcategoryid ,createdate ,expversion ,allowdownload ,filterstr ,reviewcount ,downloadcount,localized) values('%@','%@','%@','%@','%@','%@','%@','%@','%@','%@','%@','%d','%d','%@','%d','%d','%d')",expInstruction.expInstructionID,expInstruction.experimentName,expInstruction.experimentDesc,expInstruction.experimentTheory,expInstruction.provideUser,expInstruction.supplierID,expInstruction.supplierName,expInstruction.productNum,expInstruction.expCategoryID,expInstruction.expSubCategoryID,expInstruction.createDate,expInstruction.expVersion,expInstruction.allowDownload,expInstruction.filterStr,expInstruction.reviewCount,expInstruction.downloadCount,expInstruction.localized];
+    NSString *insertSql = [NSString stringWithFormat:@"insert into t_expinstructionsMain (expinstructionid ,experimentname ,experimentdesc ,experimenttheory ,provideuser ,supplierid ,suppliername ,productnum ,expcategoryid ,expsubcategoryid ,createdate ,expversion ,allowdownload ,filterstr ,reviewcount ,downloadcount,localized,expCategoryName,expSubCategoryName) values('%@','%@','%@','%@','%@','%@','%@','%@','%@','%@','%@','%d','%d','%@','%d','%d','%d','%@','%@')",expInstruction.expInstructionID,expInstruction.experimentName,expInstruction.experimentDesc,expInstruction.experimentTheory,expInstruction.provideUser,expInstruction.supplierID,expInstruction.supplierName,expInstruction.productNum,expInstruction.expCategoryID,expInstruction.expSubCategoryID,expInstruction.createDate,expInstruction.expVersion,expInstruction.allowDownload,expInstruction.filterStr,expInstruction.reviewCount,expInstruction.downloadCount,expInstruction.localized,expInstruction.expCategoryName,expInstruction.expSubCategoryName];
     success = [db executeUpdate:insertSql];
     return success;
 }
@@ -1356,7 +1334,7 @@ static SXQDBManager *_dbManager = nil;
 }
 - (BOOL)saveMainInstructionWithDWAddInstruction:(DWAddExpInstruction *)addExpInstruction db:(FMDatabase *)db
 {
-    NSString *insertSql = [NSString stringWithFormat:@"insert into t_expinstructionsMain (expinstructionid ,experimentname ,experimentdesc ,experimenttheory ,provideuser,expcategoryid ,expsubcategoryid ,createdate ,allowdownload, expversion,self_created) values('%@','%@','%@','%@','%@','%@','%@','%@','%d','%d','%d')",addExpInstruction.expInstructionID,addExpInstruction.experimentName,addExpInstruction.experimentDesc,addExpInstruction.experimentTheory,addExpInstruction.provideUser,addExpInstruction.expCategoryID,addExpInstruction.expSubCategoryID,addExpInstruction.createDate,addExpInstruction.allowDownload,addExpInstruction.expVersion,1];
+    NSString *insertSql = [NSString stringWithFormat:@"insert into t_expinstructionsMain (expinstructionid ,experimentname ,experimentdesc ,experimenttheory ,provideuser,expcategoryid ,expsubcategoryid ,createdate ,allowdownload, expversion,self_created,expCategoryName,expSubCategoryName) values('%@','%@','%@','%@','%@','%@','%@','%@','%d','%d','%d','%@','%@')",addExpInstruction.expInstructionID,addExpInstruction.experimentName,addExpInstruction.experimentDesc,addExpInstruction.experimentTheory,addExpInstruction.provideUser,addExpInstruction.expCategoryID,addExpInstruction.expSubCategoryID,addExpInstruction.createDate,addExpInstruction.allowDownload,addExpInstruction.expVersion,1,addExpInstruction.expCategoryName,addExpInstruction.expSubCategoryName];
     return [db executeUpdate:insertSql];
 }
 - (BOOL)saveInstructionSteps:(NSArray<DWAddExpStep *> *)instructionSteps db:(FMDatabase *)db
@@ -1546,6 +1524,8 @@ static SXQDBManager *_dbManager = nil;
         expInstruciton.expSubCategoryID = [rs stringForColumn:@"expsubcategoryid"];
         expInstruciton.createDate = [rs stringForColumn:@"createdate"];
         expInstruciton.expVersion = [rs intForColumn:@"expversion"];
+        expInstruciton.expCategoryName = [rs stringForColumn:@"expCategoryName"];
+        expInstruciton.expSubCategoryName = [rs stringForColumn:@"expSubCategoryName"];
     }
     return expInstruciton;
 }
@@ -1626,6 +1606,46 @@ static SXQDBManager *_dbManager = nil;
         [tmpArray addObject:equipment];
     }
     return [tmpArray copy];
+}
+//select * from t_expinstructionsMain where expinstructionid = '%@'
+- (NSArray *)localInstructions
+{
+    __block NSMutableArray *tmpArray = [NSMutableArray array];
+    [_queue inDatabase:^(FMDatabase *db) {
+        FMResultSet *rs = [db executeQuery:@"select * from t_expinstructionsMain"];
+        while (rs.next) {
+            DWAddExpInstruction *expInstruciton = [DWAddExpInstruction new];
+            expInstruciton.expInstructionID =[rs stringForColumn:@"expinstructionid"];
+            expInstruciton.experimentName = [rs stringForColumn:@"experimentname"];
+            expInstruciton.experimentDesc = [rs stringForColumn:@"experimentdesc"];
+            expInstruciton.experimentTheory = [rs stringForColumn:@"experimenttheory"];
+            expInstruciton.provideUser = [rs stringForColumn:@"provideuser"];
+            expInstruciton.supplierID = [rs stringForColumn:@"supplierid"];
+            expInstruciton.supplierName = [rs stringForColumn:@"suppliername"];
+            expInstruciton.productNun = [rs stringForColumn:@"productnum"];
+            expInstruciton.expCategoryID = [rs stringForColumn:@"expcategoryid"];
+            expInstruciton.expSubCategoryID = [rs stringForColumn:@"expsubcategoryid"];
+            expInstruciton.createDate = [rs stringForColumn:@"createdate"];
+            expInstruciton.expVersion = [rs intForColumn:@"expversion"];
+            expInstruciton.expCategoryName = [rs stringForColumn:@"expCategoryName"];
+            expInstruciton.expSubCategoryName = [rs stringForColumn:@"expSubCategoryName"];
+            [tmpArray addObject:expInstruciton];
+        }
+    }];
+    [_queue close];
+    return [tmpArray copy];
+}
+- (void)loadDataWithDWaddInstructionViewModel:(DWAddInstructionViewModel *)instructionViewModel
+{
+    __block DWAddInstructionViewModel *viewModel = instructionViewModel;
+    NSString *instructionID = instructionViewModel.expInstruction.expInstructionID;
+    [_queue inDatabase:^(FMDatabase *db) {
+        viewModel.expExpStep = [self getExpInstructionStepWithInstructionID:instructionID db:db];
+        viewModel.expConsumable = [self getExpConsumableWithInstructionID:instructionID db:db];
+        viewModel.expReagent = [self getExpReagentWithInstructionID:instructionID db:db];
+        viewModel.expEquipment = [self getExpEquipmentWithInstructionID:instructionID db:db];
+    }];
+    [_queue close];
 }
 @end
 

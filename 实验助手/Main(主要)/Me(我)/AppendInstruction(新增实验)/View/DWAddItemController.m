@@ -94,11 +94,22 @@
 - (void)p_setupViewModel
 {
     @weakify(self)
-    [[self.service itemViewModelSignalWithInstructionID:self.addInstrucitonViewModel.expInstruction.expInstructionID]
-    subscribeNext:^(NSArray *itemViewModels) {
-        @strongify(self)
-        self.itemViewModels = itemViewModels;
-        [self.tableView reloadData];
-    }];
+    if (_createFromModel) {
+        [[self.service itemViewModelSignalWithDWaddInstructionViewModel:self.addInstrucitonViewModel]
+        subscribeNext:^(NSArray *itemViewModels) {
+            @strongify(self)
+            self.itemViewModels = itemViewModels;
+            [self.tableView reloadData];
+        }];
+    }else
+    {
+        [[self.service itemViewModelSignalWithInstructionID:self.addInstrucitonViewModel.expInstruction.expInstructionID]
+        subscribeNext:^(NSArray *itemViewModels) {
+            @strongify(self)
+            self.itemViewModels = itemViewModels;
+            [self.tableView reloadData];
+        }];
+    }
+    
 }
 @end

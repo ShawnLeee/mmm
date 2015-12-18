@@ -14,5 +14,5 @@
 @property (nonatomic,strong) NSArray *expConsumable;
 @property (nonatomic,strong) NSArray *expEquipment;
 @property (nonatomic,strong) NSArray *expExpStep;
-+ (instancetype)instructionViewModel;
+- (void)loadInstructionData;
 @end

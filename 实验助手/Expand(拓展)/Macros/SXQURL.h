@@ -18,13 +18,13 @@ typedef NS_ENUM(NSUInteger,LABResponseType)
 ////////////////////////////////////////////实验部分////////////////////////////////////
 #define SetReagentURL @"http://172.18.1.55:8080/LabAssistant/map/setReagents"
 //获取实验或说明书下所有的实验步骤
-#define ExperimentStepURL @"http://172.18.1.55:8080/LabAssistant/lab/getAllProcessExceptComplete?userID=4028c681494b994701494b99aba50000"
+#define ExperimentStepURL @"http://172.18.1.55:8080/LabAssistant/lab/getAllProcessExceptComplete"
 //附近的试剂交换
 #define AdjacentReagentURL @"http://172.18.1.55:8080/LabAssistant/map/around"
 //正在进行的实验
-#define DoingExpURL @"http://172.18.1.55:8080/LabAssistant/lab/getDoing?userID=4028c681494b994701494b99aba50000"
+#define DoingExpURL @"http://172.18.1.55:8080/LabAssistant/lab/getDoing"
 //已完成的实验
-#define DoneExpURL @"http://172.18.1.55:8080/LabAssistant/lab/getComplete?userID=4028c681494b994701494b99aba50000"
+#define DoneExpURL @"http://172.18.1.55:8080/LabAssistant/lab/getComplete"
 // 获取实验所需的试剂
 #define ReagentListURL @"http://172.18.1.55:8080/LabAssistant/lab/allReagents"
 //获取实验试剂及对应的厂商

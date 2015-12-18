@@ -5,13 +5,13 @@
 //  Created by sxq on 15/9/16.
 //  Copyright (c) 2015年 SXQ. All rights reserved.
 //
+#import "SXQBaseParam.h"
 @class SXQExperimentModel,SXQExperimentStep,SXQExperimentResult,SXQExperimentStepResult,SXQSupplierData;
 #import <Foundation/Foundation.h>
 
 typedef void (^CompletionBlock)(NSArray *resultArray);
 
-@interface ExperimentParam : NSObject
-@property (nonatomic,copy) NSString *userID;
+@interface ExperimentParam : SXQBaseParam
 @property (nonatomic,copy) NSString *myExpID;
 @property (nonatomic,copy) NSString *expInstructionID;
 @property (nonatomic,assign) int expState;

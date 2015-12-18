@@ -44,7 +44,8 @@
 }
 + (void)fetchInstructionLishWithExpSubCategoryID:(NSString *)subID success:(void (^)(ExpInstructionsResult *))success failure:(void (^)(NSError *))failure
 {
-    NSDictionary *param = @{@"expSubCategoryID" : subID};
+    SXQBaseParam *baseParam = [SXQBaseParam new];
+    NSDictionary *param = @{@"expSubCategoryID" : subID,@"userID" : baseParam.userID};
     [SXQHttpTool getWithURL:InstructionListURL params:param success:^(id json) {
         if (success) {
             ExpInstructionsResult *result = [ExpInstructionsResult objectWithKeyValues:json];
@@ -61,7 +62,8 @@
 }
 + (void)downloadInstructionWithID:(NSString *)instructionID success:(void (^)(SXQInstructionDownloadResult *))success failure:(void (^)(NSError *))failure
 {
-    NSDictionary *params = @{@"expInstructionID" : instructionID};
+    SXQBaseParam *param = [SXQBaseParam new];
+    NSDictionary *params = @{@"expInstructionID" : instructionID,@"userID" : param.userID};
     [SXQHttpTool getWithURL:DownloadInstructionURL params:params success:^(id json) {
         if(success)
         {
