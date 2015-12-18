@@ -7,6 +7,7 @@
 //
 
 @import UIKit;
+#import "DWInstructionUploadParam.h"
 #import "NSString+UUID.h"
 #import "DWAddExpInstruction.h"
 #import "DWAddExpStep.h"
@@ -1511,6 +1512,119 @@ static SXQDBManager *_dbManager = nil;
 {
     NSString *inserSQL = [NSString stringWithFormat:@"insert into t_equipmentMap (equipmentMapID,equipmentID,supplierID) values ('%@','%@','%@')",[NSString uuid],addExpEquipment.equipmentID,addExpEquipment.supplierID];
     return [db executeUpdate:inserSQL];
+}
+#pragma mark - 获取上传说明书数据
+- (DWInstructionUploadParam *)getInstructionUploadDataWithInstructionID:(NSString *)instructionID
+{
+    __block DWInstructionUploadParam *uploadParam = [[DWInstructionUploadParam alloc] init];
+    [_queue inDatabase:^(FMDatabase *db) {
+        uploadParam.expInstruction = [self getExpInstructionWithInstructionID:instructionID db:db];
+        uploadParam.expStep = [self getExpInstructionStepWithInstructionID:instructionID db:db];
+        uploadParam.expReagent = [self getExpReagentWithInstructionID:instructionID db:db];
+        uploadParam.expConsumable = [self getExpConsumableWithInstructionID:instructionID db:db];
+        uploadParam.expEquipment = [self getExpEquipmentWithInstructionID:instructionID db:db];
+    }];
+    [_queue close];
+    return uploadParam;
+}
+- (DWAddExpInstruction *)getExpInstructionWithInstructionID:(NSString *)instructionID db:(FMDatabase *)db
+{
+    DWAddExpInstruction *expInstruciton = [[DWAddExpInstruction alloc] init];
+    NSString *queryStr = [NSString stringWithFormat:@"select * from t_expinstructionsMain where expinstructionid = '%@'",instructionID];
+    FMResultSet *rs = [db executeQuery:queryStr];
+    while (rs.next) {
+        expInstruciton.expInstructionID = instructionID;
+        expInstruciton.experimentName = [rs stringForColumn:@"experimentname"];
+        expInstruciton.experimentDesc = [rs stringForColumn:@"experimentdesc"];
+        expInstruciton.experimentTheory = [rs stringForColumn:@"experimenttheory"];
+        expInstruciton.provideUser = [rs stringForColumn:@"provideuser"];
+        expInstruciton.supplierID = [rs stringForColumn:@"supplierid"];
+        expInstruciton.supplierName = [rs stringForColumn:@"suppliername"];
+        expInstruciton.productNun = [rs stringForColumn:@"productnum"];
+        expInstruciton.expCategoryID = [rs stringForColumn:@"expcategoryid"];
+        expInstruciton.expSubCategoryID = [rs stringForColumn:@"expsubcategoryid"];
+        expInstruciton.createDate = [rs stringForColumn:@"createdate"];
+        expInstruciton.expVersion = [rs intForColumn:@"expversion"];
+    }
+    return expInstruciton;
+}
+- (NSArray<DWAddExpStep *> *)getExpInstructionStepWithInstructionID:(NSString *)instructionID db:(FMDatabase *)db
+{
+    NSMutableArray *tmpArray = [NSMutableArray array];
+    NSString *queryStr = [NSString stringWithFormat:@"select * from t_expProcess where expInstructionID = '%@'",instructionID];
+    FMResultSet *rs = [db executeQuery:queryStr];
+    while (rs.next) {
+        DWAddExpStep *expStep = [DWAddExpStep new];
+        expStep.expStepID = [rs stringForColumn:@"expStepID"];
+        expStep.expInstructionID = [rs stringForColumn:@"expInstructionID"];
+        expStep.stepNum = [rs intForColumn:@"stepNum"];
+        expStep.expStepDesc = [rs stringForColumn:@"expStepDesc"];
+        expStep.expStepTime = [rs intForColumn:@"expStepTime"];
+        [tmpArray addObject:expStep];
+    }
+    return [tmpArray copy];
+}
+- (NSArray<DWAddExpReagent *> *)getExpReagentWithInstructionID:(NSString *)instructionID db:(FMDatabase *)db
+{
+    NSMutableArray *tmpArray = [NSMutableArray array];
+    NSString *queryStr = [NSString stringWithFormat:@"select * from t_expreaget where expInstructionID = '%@'",instructionID];
+    FMResultSet *rs = [db executeQuery:queryStr];
+    while (rs.next) {
+        DWAddExpReagent *reagent = [DWAddExpReagent new];
+        reagent.expReagentID = [rs stringForColumn:@"expReagentID"];
+        reagent.expInstructionID = [rs stringForColumn:@"expInstructionID"];
+        reagent.reagentID = [rs stringForColumn:@"reagentID"];
+        reagent.reagentName = [rs stringForColumn:@"reagentName"];
+        reagent.reagentCommonName = [rs stringForColumn:@"reagentCommonName"];
+        reagent.createMethod = [rs stringForColumn:@"createMethod"];
+        reagent.reagentSpec = [rs stringForColumn:@"reagentSpec"];
+        reagent.useAmount = [rs intForColumn:@"useAmount"];
+        reagent.supplierID = [rs stringForColumn:@"supplierID"];
+        reagent.supplierName = [rs stringForColumn:@"supplierName"];
+        reagent.levelOneSortID = [rs stringForColumn:@"levelOneSortID"];
+        reagent.levelTwoSortID = [rs stringForColumn:@"levelTwoSortID"];
+        [tmpArray addObject:reagent];
+    }
+    return [tmpArray copy];
+}
+- (NSArray<DWAddExpConsumable *> *)getExpConsumableWithInstructionID:(NSString *)instructionID db:(FMDatabase *)db
+{
+    NSMutableArray *tmpArray = [NSMutableArray array];
+    NSString *queryStr = [NSString stringWithFormat:@"select * from t_expConsumable where expInstructionID = '%@'",instructionID];
+    FMResultSet *rs = [db executeQuery:queryStr];
+    while (rs.next) {
+        DWAddExpConsumable *consumable = [DWAddExpConsumable new];
+        consumable.expConsumableID = [rs stringForColumn:@"expConsumableID"];
+        consumable.expInstructionID = [rs stringForColumn:@"expInstructionID"];
+        consumable.consumableID = [rs stringForColumn:@"consumableID"];
+        consumable.consumableName = [rs stringForColumn:@"consumableName"];
+        consumable.consumableType = [rs stringForColumn:@"consumableType"];
+        consumable.consumableCount = [rs intForColumn:@"consumableCount"];
+        consumable.consumableFactory = [rs stringForColumn:@"consumableFactory"];
+        consumable.supplierID = [rs stringForColumn:@"supplierID"];
+        consumable.supplierName = [rs stringForColumn:@"supplierName"];
+        [tmpArray addObject:consumable];
+    }
+    return [tmpArray copy];
+}
+- (NSArray<DWAddExpEquipment *> *)getExpEquipmentWithInstructionID:(NSString *)instructionID db:(FMDatabase *)db
+{
+    NSMutableArray *tmpArray = [NSMutableArray array];
+    NSString *queryStr = [NSString stringWithFormat:@"select * from t_expEquipment where expInstructionID = '%@'",instructionID];
+    
+    FMResultSet *rs = [db executeQuery:queryStr];
+    while (rs.next) {
+        DWAddExpEquipment *equipment = [DWAddExpEquipment new];
+        equipment.expEquipmentID = [rs stringForColumn:@"expEquipmentID"];
+        equipment.expInstructionID = [rs stringForColumn:@"expInstructionID"];
+        equipment.equipmentID = [rs stringForColumn:@"equipmentID"];
+        equipment.equipmentName = [rs stringForColumn:@"equipmentName"];
+        equipment.equipmentFactory = [rs stringForColumn:@"equipmentFactory"];
+        equipment.supplierID = [rs stringForColumn:@"supplierID"];
+        equipment.supplierName = [rs stringForColumn:@"supplierName"];
+        [tmpArray addObject:equipment];
+    }
+    return [tmpArray copy];
 }
 @end
 

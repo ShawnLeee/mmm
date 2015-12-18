@@ -9,6 +9,7 @@
 #import <ReactiveCocoa/ReactiveCocoa.h>
 #import "DWMeServiceImpl.h"
 #import "DWMeInstructionsController.h"
+#import "SXQExpInstruction.h"
 
 @interface DWMeInstructionsController ()
 @property (nonatomic,strong) id<DWMeService> service;
@@ -63,5 +64,13 @@
     DWMeInstructionCell *cell =  [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([DWMeInstructionCell class]) forIndexPath:indexPath];
     cell.instruction = self.instructions[indexPath.row];
     return cell;
+}
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    SXQExpInstruction *instruction = self.instructions[indexPath.row];
+    [[self.service uploadInstructionWithInstrucitonID:instruction.expInstructionID allowDownload:0]
+    subscribeNext:^(id x) {
+        
+    }];
 }
 @end

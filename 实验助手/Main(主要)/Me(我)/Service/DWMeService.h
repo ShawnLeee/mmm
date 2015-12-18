@@ -14,4 +14,5 @@
 - (RACSignal *)userInfoSignal;
 - (RACSignal *)uploadUserProfile;
 - (void)signOut;
+- (RACSignal *)uploadInstructionWithInstrucitonID:(NSString *)instructionID allowDownload:(int)allowDownload;
 @end

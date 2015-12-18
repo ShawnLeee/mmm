@@ -17,6 +17,7 @@
 
 @property (nonatomic,copy) NSString *supplierID;
 @property (nonatomic,copy) NSString *supplierName;
-
+@property (nonatomic,copy) NSString *consumableType;
+@property (nonatomic,copy) NSString *consumableFactory;
 @property (nonatomic,strong) NSArray *suppliers;
 @end

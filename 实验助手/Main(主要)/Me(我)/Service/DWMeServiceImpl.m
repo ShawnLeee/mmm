@@ -5,6 +5,8 @@
 //  Created by sxq on 15/11/25.
 //  Copyright © 2015年 SXQ. All rights reserved.
 //
+#import "NSString+JSON.h"
+#import "DWSyncInstructionParam.h"
 #import "DWLoginViewController.h"
 #import "MBProgressHUD+MJ.h"
 #import "SXQBaseParam.h"
@@ -18,6 +20,7 @@
 #import "SXQDBManager.h"
 #import "SXQExpInstruction.h"
 #import "SXQHttpTool.h"
+#import "DWInstructionUploadParam.h"
 
 @interface DWEditParam : SXQBaseParam
 @property (nonatomic,copy) NSString *eMail;
@@ -146,4 +149,34 @@
         [MBProgressHUD showError:@"注销失败"];
     }
 }
+- (RACSignal *)uploadInstructionWithInstrucitonID:(NSString *)instructionID allowDownload:(int)allowDownload
+{
+    return [RACSignal createSignal:^RACDisposable *(id<RACSubscriber> subscriber) {
+        [[self uploadParamSignalWithInstrucitonID:instructionID allowDownload:allowDownload]
+        subscribeNext:^(DWSyncInstructionParam *param) {
+            [SXQHttpTool postWithURL:SyncInstructionURL params:param.mj_keyValues success:^(id json) {
+                [subscriber sendNext:@([json[@"code"] isEqualToString:@"1"])];
+                [subscriber sendCompleted];
+            } failure:^(NSError *error) {
+                
+            }];
+        }];
+        return nil;
+    }];
+}
+- (RACSignal *)uploadParamSignalWithInstrucitonID:(NSString *)instructionID allowDownload:(int)allowDownload
+{
+    RACScheduler *scheduler = [RACScheduler schedulerWithPriority:RACSchedulerPriorityBackground];
+    return [[RACSignal createSignal:^RACDisposable *(id<RACSubscriber> subscriber) {
+        DWInstructionUploadParam *uploadParam = [[SXQDBManager sharedManager] getInstructionUploadDataWithInstructionID:instructionID];
+        DWSyncInstructionParam *syncParam = [[DWSyncInstructionParam alloc] init];
+        syncParam.json= [NSString jsonStrWithDictionary:uploadParam.mj_keyValues];
+        syncParam.allowDownload = allowDownload;
+        
+        [subscriber sendNext:syncParam];
+        [subscriber sendCompleted];
+        return nil;
+    }] deliverOn:scheduler]; 
+}
+
 @end

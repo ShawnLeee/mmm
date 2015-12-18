@@ -108,4 +108,8 @@ typedef NS_ENUM(NSUInteger,LABResponseType)
 #define SearchItemURL @"http://hualang.wicp.net:8090/LabAssistant/create/search"
 #define FetchAddConsumabelsURL @"http://hualang.wicp.net:8090/LabAssistant/create/getConsumables"
 #define FetchAddEquipmentsURL @"http://hualang.wicp.net:8090/LabAssistant/create/getEquipments"
+/**
+ *  同步实验说明书
+ */
+#define SyncInstructionURL @"http://172.18.1.55:8080/LabAssistant/sync/pushExpInstruction"
 #endif

@@ -5,7 +5,7 @@
 //  Created by sxq on 15/9/25.
 //  Copyright © 2015年 SXQ. All rights reserved.
 //
-@class SXQExpInstruction,SXQInstructionData,SXQCurrentExperimentData,SXQExperimentModel,SXQInstructionDetail,DWAddInstructionViewModel;
+@class SXQExpInstruction,SXQInstructionData,SXQCurrentExperimentData,SXQExperimentModel,SXQInstructionDetail,DWAddInstructionViewModel,DWInstructionUploadParam;
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 typedef void  (^CompletionHandler)(BOOL success,NSDictionary *info);
@@ -84,6 +84,10 @@ typedef NS_ENUM(NSUInteger,ExperimentState) {
  *  查询本地实验
  */
 - (NSArray *)allInstructionsOfMine:(BOOL)isMine;
+/**
+ *  获取同步说明书数据
+ */
+- (DWInstructionUploadParam *)getInstructionUploadDataWithInstructionID:(NSString *)instructionID;
 @end
 
 

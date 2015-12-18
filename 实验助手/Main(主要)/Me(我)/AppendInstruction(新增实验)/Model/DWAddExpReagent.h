@@ -21,7 +21,14 @@
 @property (nonatomic,copy) NSString *reagentID;
 @property (nonatomic,copy) NSString *reagentName;
 
+@property (nonatomic,copy) NSString *reagentCommonName;
+@property (nonatomic,copy) NSString *createMethod;
+@property (nonatomic,copy) NSString *reagentSpec;
+@property (nonatomic,copy) NSString *supplierID;
+@property (nonatomic,copy) NSString *supplierName;
+
 @property (nonatomic,assign) int useAmount;
+
 @property (nonatomic,strong) SXQSupplier *supplier;
 @property (nonatomic,strong) NSArray *suppliers;
 @end

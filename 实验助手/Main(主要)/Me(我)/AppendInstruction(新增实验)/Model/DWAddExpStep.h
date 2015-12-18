@@ -14,5 +14,6 @@
 @property (nonatomic,assign) NSUInteger stepNum;
 @property (nonatomic,copy) NSString *expStepDesc;
 @property (nonatomic,assign) NSUInteger expStepTime;
+
 - (instancetype)initWithInstructionID:(NSString *)instructionID;
 @end

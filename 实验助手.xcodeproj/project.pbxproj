@@ -125,6 +125,9 @@
 		B04C735F1BF1B0590038B1A6 /* SXQReportHelperImpl.m in Sources */ = {isa = PBXBuildFile; fileRef = B04C735E1BF1B0590038B1A6 /* SXQReportHelperImpl.m */; };
 		B04C73631BF1B0930038B1A6 /* SXQReportServiceImpl.m in Sources */ = {isa = PBXBuildFile; fileRef = B04C73621BF1B0930038B1A6 /* SXQReportServiceImpl.m */; };
 		B04C73661BF1B3AD0038B1A6 /* SXQReportItem.m in Sources */ = {isa = PBXBuildFile; fileRef = B04C73651BF1B3AD0038B1A6 /* SXQReportItem.m */; };
+		B052AFF71C239A3300A00E5B /* DWInstructionUploadParam.m in Sources */ = {isa = PBXBuildFile; fileRef = B052AFF61C239A3300A00E5B /* DWInstructionUploadParam.m */; };
+		B052AFFA1C23B31900A00E5B /* DWSyncInstructionParam.m in Sources */ = {isa = PBXBuildFile; fileRef = B052AFF91C23B31900A00E5B /* DWSyncInstructionParam.m */; };
+		B052AFFD1C23B4C300A00E5B /* NSString+JSON.m in Sources */ = {isa = PBXBuildFile; fileRef = B052AFFC1C23B4C300A00E5B /* NSString+JSON.m */; };
 		B054C16C1BFC212F009662D6 /* DWInstructionMainHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = B054C16B1BFC212F009662D6 /* DWInstructionMainHeader.m */; };
 		B054C1701BFC253A009662D6 /* DWInstructionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B054C16E1BFC253A009662D6 /* DWInstructionCell.m */; };
 		B054C1711BFC253A009662D6 /* DWInstructionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B054C16F1BFC253A009662D6 /* DWInstructionCell.xib */; };
@@ -689,6 +692,12 @@
 		B04C73621BF1B0930038B1A6 /* SXQReportServiceImpl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SXQReportServiceImpl.m; sourceTree = "<group>"; };
 		B04C73641BF1B3AD0038B1A6 /* SXQReportItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SXQReportItem.h; sourceTree = "<group>"; };
 		B04C73651BF1B3AD0038B1A6 /* SXQReportItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SXQReportItem.m; sourceTree = "<group>"; };
+		B052AFF51C239A3300A00E5B /* DWInstructionUploadParam.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DWInstructionUploadParam.h; sourceTree = "<group>"; };
+		B052AFF61C239A3300A00E5B /* DWInstructionUploadParam.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DWInstructionUploadParam.m; sourceTree = "<group>"; };
+		B052AFF81C23B31900A00E5B /* DWSyncInstructionParam.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DWSyncInstructionParam.h; sourceTree = "<group>"; };
+		B052AFF91C23B31900A00E5B /* DWSyncInstructionParam.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DWSyncInstructionParam.m; sourceTree = "<group>"; };
+		B052AFFB1C23B4C300A00E5B /* NSString+JSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+JSON.h"; sourceTree = "<group>"; };
+		B052AFFC1C23B4C300A00E5B /* NSString+JSON.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+JSON.m"; sourceTree = "<group>"; };
 		B054C16A1BFC212F009662D6 /* DWInstructionMainHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DWInstructionMainHeader.h; sourceTree = "<group>"; };
 		B054C16B1BFC212F009662D6 /* DWInstructionMainHeader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DWInstructionMainHeader.m; sourceTree = "<group>"; };
 		B054C16D1BFC253A009662D6 /* DWInstructionCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DWInstructionCell.h; sourceTree = "<group>"; };
@@ -2379,6 +2388,10 @@
 				B006ABCE1C057704008C6C76 /* DWMeItem.m */,
 				B0648FF91C06E44B00B9C78E /* DWUserInfoViewModel.h */,
 				B0648FFA1C06E44B00B9C78E /* DWUserInfoViewModel.m */,
+				B052AFF51C239A3300A00E5B /* DWInstructionUploadParam.h */,
+				B052AFF61C239A3300A00E5B /* DWInstructionUploadParam.m */,
+				B052AFF81C23B31900A00E5B /* DWSyncInstructionParam.h */,
+				B052AFF91C23B31900A00E5B /* DWSyncInstructionParam.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -2888,6 +2901,8 @@
 				B062E2771BF969CE00A7C0FB /* UIButton+Action.m */,
 				B0E512911C1804E50071BCA5 /* NSString+UUID.h */,
 				B0E512921C1804E50071BCA5 /* NSString+UUID.m */,
+				B052AFFB1C23B4C300A00E5B /* NSString+JSON.h */,
+				B052AFFC1C23B4C300A00E5B /* NSString+JSON.m */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -3463,6 +3478,7 @@
 				B0026BEB1BCF898E00FB70A9 /* SXQSupplierData.m in Sources */,
 				B0F73B961BBB894500B3D0A0 /* SXQExpReagent.m in Sources */,
 				B0A270D01BD60E5900BA0C1B /* DWSignUpLogicController.m in Sources */,
+				B052AFFD1C23B4C300A00E5B /* NSString+JSON.m in Sources */,
 				B0FD56A01C0D608300E9E377 /* DWBBSModuleCell.m in Sources */,
 				B0DDFF2D1BA6A07000E4AB3C /* SXQReagentContoller.m in Sources */,
 				B0F566211BA7D51100BA1F7B /* SXQMyInstructionsController.m in Sources */,
@@ -3559,6 +3575,7 @@
 				B0F738B11BA9011600EA7E9E /* UIView+MJ.m in Sources */,
 				B0E325711C113C0F0048AD25 /* DWAddThemeParam.m in Sources */,
 				B04C735F1BF1B0590038B1A6 /* SXQReportHelperImpl.m in Sources */,
+				B052AFFA1C23B31900A00E5B /* DWSyncInstructionParam.m in Sources */,
 				B0F5B8A81BD87842005D6AE4 /* SXQLoginContainer.m in Sources */,
 				B0F64BDF1BAF99EB001CF997 /* SXQExperiment.m in Sources */,
 				B0221C501BFB17FB00DB4083 /* SXQInstructionStep.m in Sources */,
@@ -3727,6 +3744,7 @@
 				B0F308951BC6016E00AD9EAF /* MJPhotoView.m in Sources */,
 				B0E512841C1801630071BCA5 /* DWAddExpInstruction.m in Sources */,
 				B0E5128D1C1801B50071BCA5 /* DWAddExpEquipment.m in Sources */,
+				B052AFF71C239A3300A00E5B /* DWInstructionUploadParam.m in Sources */,
 				B0A270FB1BD73B5C00BA0C1B /* FSCalendarConstance.m in Sources */,
 				B027BCD21C1528F9002B74EA /* DWForgetPassController.m in Sources */,
 				B0F73B991BBB8D5C00B3D0A0 /* SXQReagentListController.m in Sources */,

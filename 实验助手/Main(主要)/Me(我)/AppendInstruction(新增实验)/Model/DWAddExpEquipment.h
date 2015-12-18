@@ -17,5 +17,7 @@
 @property (nonatomic,copy) NSString *supplierName;
 @property (nonatomic,copy) NSString *supplierID;
 
+@property (nonatomic,copy) NSString *equipmentFactory;
+
 @property (nonatomic,strong) NSArray *suppliers;
 @end
