@@ -10,31 +10,17 @@
 #import <MJExtension/MJExtension.h>
 #import "SXQSupplier.h"
 @implementation DWAddExpReagent
-- (instancetype)init
+- (NSString *)supplierName
 {
-    if (self = [super init]) {
-        _expReagentID = [NSString uuid];
+    if(!_supplierName)
+    {
+        _supplierName = [[_suppliers firstObject] supplierName];
+        _supplierID = [[_suppliers firstObject] supplierID];
     }
-    return self;
-}
-- (SXQSupplier *)supplier
-{
-    if (!_supplier) {
-        if (_suppliers.count) {
-            _supplier = [_suppliers firstObject];
-        }
-    }
-    return _supplier;
+    return _supplierName;
 }
 + (NSDictionary *)mj_objectClassInArray
 {
     return @{@"suppliers" : [SXQSupplier class]};
-}
-- (NSString *)expReagentID
-{
-    if (!_expReagentID) {
-        _expReagentID = [NSString uuid];
-    }
-    return _expReagentID;
 }
 @end

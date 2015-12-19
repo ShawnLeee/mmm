@@ -5,7 +5,6 @@
 //  Created by sxq on 15/12/9.
 //  Copyright © 2015年 SXQ. All rights reserved.
 //
-@class SXQSupplier;
 #import <Foundation/Foundation.h>
 
 @interface DWAddExpReagent : NSObject
@@ -29,6 +28,5 @@
 
 @property (nonatomic,assign) int useAmount;
 
-@property (nonatomic,strong) SXQSupplier *supplier;
 @property (nonatomic,strong) NSArray *suppliers;
 @end

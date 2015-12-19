@@ -15,11 +15,4 @@
 {
     return @{@"suppliers" : [SXQSupplier class]};
 }
-- (NSString *)expConsumableID
-{
-    if (!_expConsumableID) {
-        _expConsumableID = [NSString uuid];
-    }
-    return _expConsumableID;
-}
 @end

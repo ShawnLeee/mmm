@@ -42,6 +42,6 @@
 - (void)p_setupWithExpReagent:(DWAddExpReagent *)expReagent
 {
     _itemName = expReagent.reagentName;
-    _supplierName = expReagent.supplier.supplierName;
+    _supplierName = expReagent.supplierName;
 }
 @end

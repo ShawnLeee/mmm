@@ -14,7 +14,6 @@
     if(self = [super init])
     {
         self.expInstructionID = instructionID;
-        self.expStepID = [NSString uuid];
     }
     return self;
 }

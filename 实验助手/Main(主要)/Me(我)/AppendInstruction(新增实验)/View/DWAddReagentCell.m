@@ -58,7 +58,7 @@
     subscribeNext:^(NSString *supplierName) {
         @strongify(self)
         self.customSupplier.supplierName = supplierName;
-        self.reagentViewModel.expReagent.supplier = self.customSupplier;
+//        self.reagentViewModel.expReagent.supplier = self.customSupplier;
         self.supplier.text = self.customSupplier.supplierName ;
     }];
     RAC(self.firstField,text) = [RACObserve(self.reagentViewModel, firstClass) takeUntil:self.rac_prepareForReuseSignal];
@@ -128,7 +128,8 @@
     subscribeNext:^(id x) {
         @strongify(self)
         [self.addItemTool showSupplierWithOrigin:self.supplier itemType:DWAddItemTypeReagent itemID:self.reagentViewModel.expReagent.reagentID handler:^(SXQSupplier *supplier) {
-            self.reagentViewModel.expReagent.supplier = supplier;
+            self.reagentViewModel.supplierID = supplier.supplierID;
+            self.reagentViewModel.supplierName = supplier.supplierName;
             self.supplier.text = supplier.supplierName;
         }];
     }];

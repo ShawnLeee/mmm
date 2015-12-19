@@ -34,8 +34,8 @@
     
     _amount = expReagent.useAmount;
     
-    _supplierName = expReagent.supplier.supplierName;
-    _supplierID = expReagent.supplier.supplierID;
+    _supplierName = expReagent.supplierName;
+    _supplierID = expReagent.supplierID;
     
     [self bingModel];
 }
@@ -52,7 +52,7 @@
     
     RAC(self.expReagent,useAmount) = RACObserve(self, amount);
     
-    RAC(self.expReagent.supplier,supplierName) = RACObserve(self, supplierName);
-    RAC(self.expReagent.supplier,supplierID) = RACObserve(self, supplierID);
+    RAC(self.expReagent,supplierName) = RACObserve(self, supplierName);
+    RAC(self.expReagent,supplierID) = RACObserve(self, supplierID);
 }
 @end

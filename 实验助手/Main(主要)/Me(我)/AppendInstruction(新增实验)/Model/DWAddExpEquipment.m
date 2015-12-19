@@ -22,11 +22,4 @@
     }
     return _supplierName;
 }
-- (NSString *)expEquipmentID
-{
-    if (!_expEquipmentID) {
-        _expEquipmentID = [NSString uuid];
-    }
-    return _expEquipmentID;
-}
 @end

@@ -160,7 +160,7 @@ static SXQDBManager *_dbManager = nil;
     //实验说明书主表
     NSString *instuctionMainSQL = @"create table if not exists t_expinstructionsMain(expinstructionid text primary key,experimentname text,experimentdesc text,experimenttheory text,provideuser text,supplierid text,suppliername text,productnum text,expcategoryid text,expsubcategoryid text,createdate numeric,expversion integer,allowdownload integer,filterstr text,reviewcount integer,downloadcount integer,uploadTime text,editTime text,localized integer,self_created integer default 0,expCategoryName text,expSubCategoryName text);";
     //实验试剂表
-    NSString *expReagentSQL = @"create table if not exists t_expreaget (createMethod text,expInstructionID text,expReagentID text primary key,reagentCommonName text,reagentID text,reagentName text,reagentSpec text,useAmount integer,supplierID text,levelOneSortID text,levelTwoSortID text,supplierName text);";
+    NSString *expReagentSQL = @"create table if not exists t_expreaget (createMethod text,expInstructionID text,expReagentID text primary key,reagentCommonName text,reagentID text,reagentName text,reagentSpec text,useAmount integer,supplierID text,levelOneSortID text,levelTwoSortID text,supplierName text,levelOneSortName text,levelTwoSortName text);";
     //实验流程表
     NSString *expProcessSQL = @"create table if not exists t_expProcess (expInstructionID text,expStepDesc text,expStepID text primary key,expStepTime integer,stepNum integer);";
     //实验设备表
@@ -490,7 +490,7 @@ static SXQDBManager *_dbManager = nil;
 - (BOOL)insertIntoExpReagent:(SXQExpReagent *)expReagent dataBase:(FMDatabase *)db
 {
     BOOL success = NO;
-    NSString *insertSql = [NSString stringWithFormat:@"insert into t_expreaget (createMethod,expInstructionID ,expReagentID ,reagentCommonName,reagentID ,reagentName ,reagentSpec ,useAmount,supplierID,levelOneSortID ,levelTwoSortID,supplierName) values ('%@','%@','%@','%@','%@','%@','%@','%d','%@','%@','%@','%@')",expReagent.createMethod,expReagent.expInstructionID,expReagent.expReagentID,expReagent.reagentCommonName,expReagent.reagentID,expReagent.reagentName,expReagent.reagentSpec,expReagent.useAmount ,expReagent.supplierID,expReagent.levelOneSortID,expReagent.levelTwoSortID,expReagent.supplierName];
+    NSString *insertSql = [NSString stringWithFormat:@"insert into t_expreaget (createMethod,expInstructionID ,expReagentID ,reagentCommonName,reagentID ,reagentName ,reagentSpec ,useAmount,supplierID,levelOneSortID ,levelTwoSortID,supplierName,levelOneSortName,levelTwoSortName) values ('%@','%@','%@','%@','%@','%@','%@','%d','%@','%@','%@','%@','%@','%@')",expReagent.createMethod,expReagent.expInstructionID,expReagent.expReagentID,expReagent.reagentCommonName,expReagent.reagentID,expReagent.reagentName,expReagent.reagentSpec,expReagent.useAmount ,expReagent.supplierID,expReagent.levelOneSortID,expReagent.levelTwoSortID,expReagent.supplierName,expReagent.levelOneSortName,expReagent.levelTwoSortName];
             success = [db executeUpdate:insertSql];
     return success;
 }
@@ -1348,7 +1348,7 @@ static SXQDBManager *_dbManager = nil;
 }
 - (BOOL)insertIntoExpProcessWithAddExpStep:(DWAddExpStep *)dwAddExpStep db:(FMDatabase *)db
 {
-    NSString *insertSQL = [NSString stringWithFormat:@"insert into t_expProcess (expInstructionID ,expStepDesc ,expStepID ,expStepTime ,stepNum ) values ('%@','%@','%@','%lu','%lu')",dwAddExpStep.expInstructionID,dwAddExpStep.expStepDesc,dwAddExpStep.expStepID,(unsigned long)dwAddExpStep.expStepTime,(unsigned long)dwAddExpStep.stepNum];
+    NSString *insertSQL = [NSString stringWithFormat:@"insert into t_expProcess (expInstructionID ,expStepDesc ,expStepID ,expStepTime ,stepNum ) values ('%@','%@','%@','%lu','%lu')",dwAddExpStep.expInstructionID,dwAddExpStep.expStepDesc,[NSString uuid],(unsigned long)dwAddExpStep.expStepTime,(unsigned long)dwAddExpStep.stepNum];
     return [db executeUpdate:insertSQL];
 }
 - (BOOL)saveInstructionConsumables:(NSArray<DWAddExpConsumable *> *)consumables expInstrucitonID:(NSString *)instrucitonID db:(FMDatabase *)db
@@ -1362,7 +1362,7 @@ static SXQDBManager *_dbManager = nil;
 }
 - (BOOL)insertIntoExpConsumableWithAddExpConsumable:(DWAddExpConsumable *)consumble expInstrucitonID:(NSString *)instructionID db:(FMDatabase *)db
 {
-    NSString *insertSQL = [NSString stringWithFormat:@"insert into t_expConsumable (consumableID,expConsumableID,consumableName,supplierID,consumableCount,expInstructionID,supplierName) values ('%@','%@','%@','%@','%d','%@','%@')",consumble.consumableID,consumble.expConsumableID,consumble.consumableName,consumble.supplierID,consumble.consumableCount,instructionID,consumble.supplierName];
+    NSString *insertSQL = [NSString stringWithFormat:@"insert into t_expConsumable (consumableID,expConsumableID,consumableName,supplierID,consumableCount,expInstructionID,supplierName) values ('%@','%@','%@','%@','%d','%@','%@')",consumble.consumableID,[NSString uuid],consumble.consumableName,consumble.supplierID,consumble.consumableCount,instructionID,consumble.supplierName];
     BOOL supplierAppendFlag = [self appendSupplierWithSupplierName:consumble.supplierName supplierID:consumble.supplierID db:db];
     BOOL consumableAppendFlag = [self appendConsumabelWithAddConsumable:consumble db:db];
     return [db executeUpdate:insertSQL] && supplierAppendFlag && consumableAppendFlag;
@@ -1378,8 +1378,8 @@ static SXQDBManager *_dbManager = nil;
 }
 - (BOOL)insertIntoExpReagentWithAddExpReagent:(DWAddExpReagent *)expReagent instructionID:(NSString *)instructionID db:(FMDatabase *)db
 {
-    NSString *insertSQL = [NSString stringWithFormat:@"insert into t_expreaget (expInstructionID ,expReagentID ,reagentID ,reagentName ,useAmount,supplierID,levelOneSortID ,levelTwoSortID,supplierName) values ('%@','%@','%@','%@','%d','%@','%@','%@','%@')",instructionID,expReagent.expReagentID,expReagent.reagentID,expReagent.reagentName,expReagent.useAmount,expReagent.supplier.supplierID,expReagent.levelOneSortID,expReagent.levelTwoSortID,expReagent.supplier.supplierName];
-    BOOL supplierAppendFlag = [self appendSupplierWithSupplierName:expReagent.supplier.supplierName supplierID:expReagent.supplier.supplierID db:db];
+    NSString *insertSQL = [NSString stringWithFormat:@"insert into t_expreaget (expInstructionID ,expReagentID ,reagentID ,reagentName ,useAmount,supplierID,levelOneSortID ,levelTwoSortID,supplierName,levelOneSortName,levelTwoSortName) values ('%@','%@','%@','%@','%d','%@','%@','%@','%@','%@','%@')",instructionID,[NSString uuid],expReagent.reagentID,expReagent.reagentName,expReagent.useAmount,expReagent.supplierID,expReagent.levelOneSortID,expReagent.levelTwoSortID,expReagent.supplierName,expReagent.levelOneSortName,expReagent.levelTwoSortName];
+    BOOL supplierAppendFlag = [self appendSupplierWithSupplierName:expReagent.supplierName supplierID:expReagent.supplierID db:db];
     BOOL reagentAppendFlag = [self appendReagentWithAddExpReagent:expReagent db:db];
     return [db executeUpdate:insertSQL] && supplierAppendFlag && reagentAppendFlag;
 }
@@ -1394,7 +1394,7 @@ static SXQDBManager *_dbManager = nil;
 }
 - (BOOL)insertIntoExpEquipmentWithAddExpEquipment:(DWAddExpEquipment *)addExpEquipment instructionID:(NSString *)instrutionID db:(FMDatabase *)db
 {
-    NSString *insertSQL = [NSString stringWithFormat:@"insert into  t_expEquipment (equipmentID ,equipmentName ,expEquipmentID ,expInstructionID ,supplierID,supplierName) values ('%@','%@','%@','%@','%@','%@')",addExpEquipment.equipmentID,addExpEquipment.equipmentName,addExpEquipment.expEquipmentID,instrutionID,addExpEquipment.supplierID,addExpEquipment.supplierName];
+    NSString *insertSQL = [NSString stringWithFormat:@"insert into  t_expEquipment (equipmentID ,equipmentName ,expEquipmentID ,expInstructionID ,supplierID,supplierName) values ('%@','%@','%@','%@','%@','%@')",addExpEquipment.equipmentID,addExpEquipment.equipmentName,[NSString uuid],instrutionID,addExpEquipment.supplierID,addExpEquipment.supplierName];
     BOOL supplierFlag = [self appendSupplierWithSupplierName:addExpEquipment.supplierName supplierID:addExpEquipment.supplierID db:db];
     BOOL equipmentFlag = [self appendEquipmentWithAddExpEquipment:addExpEquipment db:db];
     return [db executeUpdate:insertSQL] && supplierFlag && equipmentFlag;
@@ -1479,7 +1479,7 @@ static SXQDBManager *_dbManager = nil;
 }
 - (BOOL)appendReagentMapWithAddExpReagent:(DWAddExpReagent *)addExpReagent db:(FMDatabase *)db
 {
-    NSString *inserSQL = [NSString stringWithFormat:@"insert into t_reagentMap (reagentMapID,reagentID,supplierID) values ('%@','%@','%@')",[NSString uuid],addExpReagent.reagentID,addExpReagent.supplier.supplierID];
+    NSString *inserSQL = [NSString stringWithFormat:@"insert into t_reagentMap (reagentMapID,reagentID,supplierID) values ('%@','%@','%@')",[NSString uuid],addExpReagent.reagentID,addExpReagent.supplierID];
     return [db executeUpdate:inserSQL];
 }
 - (BOOL)appendConsumableMapAddExpConsumable:(DWAddExpConsumable *)addConsumable db:(FMDatabase *)db
@@ -1552,6 +1552,8 @@ static SXQDBManager *_dbManager = nil;
     FMResultSet *rs = [db executeQuery:queryStr];
     while (rs.next) {
         DWAddExpReagent *reagent = [DWAddExpReagent new];
+        reagent.levelOneSortName = [rs stringForColumn:@"levelOneSortName"];
+        reagent.levelTwoSortName = [rs stringForColumn:@"levelTwoSortName"];
         reagent.expReagentID = [rs stringForColumn:@"expReagentID"];
         reagent.expInstructionID = [rs stringForColumn:@"expInstructionID"];
         reagent.reagentID = [rs stringForColumn:@"reagentID"];
