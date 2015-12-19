@@ -11,6 +11,7 @@
 @interface UIView (MJ)
 @property (assign, nonatomic) CGFloat x;
 @property (assign, nonatomic) CGFloat y;
+@property (nonatomic,assign) CGFloat maxX;
 @property (assign, nonatomic) CGFloat width;
 @property (assign, nonatomic) CGFloat height;
 @property (assign, nonatomic) CGSize size;

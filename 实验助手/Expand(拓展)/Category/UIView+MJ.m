@@ -9,6 +9,16 @@
 #import "UIView+MJ.h"
 
 @implementation UIView (MJ)
+- (CGFloat)maxX
+{
+    return CGRectGetMaxX(self.frame);
+}
+- (void)setMaxX:(CGFloat)maxX
+{
+    CGRect frame = self.frame;
+    frame.origin.x = maxX - frame.size.width;
+    self.frame = frame;
+}
 - (void)setX:(CGFloat)x
 {
     CGRect frame = self.frame;
