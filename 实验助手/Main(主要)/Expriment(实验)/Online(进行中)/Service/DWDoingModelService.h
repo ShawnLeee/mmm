@@ -17,4 +17,6 @@
 - (RACSignal *)commentViewModelSignal;
 - (RACSignal *)commentWithExpinstructionID:(NSString *)expInstructionID content:(NSString *)content viewModels:(NSArray *)viewModels;
 - (RACSignal *)commentViewModelSignalWithInstructioinID:(NSString *)instructionID;
+
+- (RACSignal *)pdfURLSignalWithMyExpID:(NSString *)myExpID;
 @end

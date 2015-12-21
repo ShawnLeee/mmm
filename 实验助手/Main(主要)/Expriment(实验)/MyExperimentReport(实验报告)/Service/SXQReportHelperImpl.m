@@ -34,6 +34,25 @@
         return nil;
     }];
 }
+- (RACSignal *)temporaryPdfPathSignalWithMyExpID:(NSString *)myExpID pdfName:(NSString *)pdfName
+{
+    NSDictionary *params = @{@"myExpID" : myExpID};
+    return [RACSignal createSignal:^RACDisposable *(id<RACSubscriber> subscriber) {
+        [SXQHttpTool getWithURL:ExperimentReportDownloadURL params:params success:^(id json) {
+            if ([json[@"code"] isEqualToString:@"1"]) {
+                NSString *pdfPath = json[@"data"][@"pdfPath"];
+                [self downloadPdfDataWithPath:pdfPath completion:^(NSData *pdfData) {
+                    [self savePdf:pdfData name:pdfName];
+                    [subscriber sendNext:[self getDBPathPDf:pdfName]];
+                    [subscriber sendCompleted];
+                }];
+            }
+        }failure:^(NSError *error) {
+        }];
+        return nil;
+    }];
+    return nil;
+}
 - (RACSignal *)downloadReportSignalWithReportItem:(SXQReportItem *)reportItem
 {
     return [RACSignal createSignal:^RACDisposable *(id<RACSubscriber> subscriber) {

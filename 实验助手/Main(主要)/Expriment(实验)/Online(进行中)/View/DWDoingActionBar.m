@@ -15,7 +15,6 @@
 @property (weak, nonatomic) IBOutlet DWButton *reportBtn;
 @property (weak, nonatomic) IBOutlet DWButton *commentBtn;
 @property (nonatomic,strong) NSLayoutConstraint *heightContraint;
-@property (weak, nonatomic) IBOutlet DWButton *viewBtn;
 @end
 
 @implementation DWDoingActionBar
@@ -74,6 +73,6 @@ static BOOL isLoaded = NO;
      }];
     self.reportBtn.rac_command = _viewModel.reportCommand;
     self.commentBtn.rac_command = _viewModel.commentCommand;
-    self.viewBtn.rac_command = _viewModel.viewCommand;
+//    self.viewBtn.rac_command = _viewModel.viewCommand;
 }
 @end

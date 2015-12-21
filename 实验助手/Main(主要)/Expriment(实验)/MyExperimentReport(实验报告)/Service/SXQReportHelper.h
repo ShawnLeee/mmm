@@ -13,4 +13,5 @@
 @protocol SXQReportHelper <NSObject>
 - (RACSignal *)reportListSignal;
 - (RACSignal *)downloadReportSignalWithReportItem:(SXQReportItem *)reportItem;
+- (RACSignal *)temporaryPdfPathSignalWithMyExpID:(NSString *)myExpID pdfName:(NSString *)pdfName;
 @end

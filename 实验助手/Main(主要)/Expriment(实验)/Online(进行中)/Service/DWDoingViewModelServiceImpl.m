@@ -157,4 +157,25 @@
         
     }];
 }
+- (RACSignal *)pdfURLSignalWithMyExpID:(NSString *)myExpID
+{
+    NSDictionary *params = @{@"myExpID" : myExpID};
+    return [RACSignal createSignal:^RACDisposable *(id<RACSubscriber> subscriber) {
+        [SXQHttpTool getWithURL:ExperimentReportDownloadURL params:params success:^(id json) {
+            if ([json[@"code"] isEqualToString:@"1"]) {
+                NSString *reportURLStr = json[@"data"][@"pdfPath"];
+                [subscriber sendNext:reportURLStr];
+                [subscriber sendCompleted];
+            }else{
+                [MBProgressHUD showError:@"暂时无法查看"];
+                [subscriber sendNext:nil];
+                [subscriber sendCompleted];
+            }
+        } failure:^(NSError *error) {
+        
+        }];
+        return nil;
+    }];
+    
+}
 @end

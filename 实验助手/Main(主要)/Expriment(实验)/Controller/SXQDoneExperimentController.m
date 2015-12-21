@@ -14,14 +14,25 @@
 #import "DWMyExperimentServicesImpl.h"
 #import "SXQDBManager.h"
 #import "ArrayDataSource+TableView.h"
-@interface SXQDoneExperimentController ()
+#import "SXQReportHelperImpl.h"
+@interface SXQDoneExperimentController ()<DWDoingCellDelegate,UIDocumentInteractionControllerDelegate>
 @property (nonatomic,strong) NSArray *experiments;
 @property (nonatomic,strong) id<DWDoingModelService> service;
 @property (nonatomic,strong) id<DWMyExperimentServices> experimentService;
 @property (nonatomic,strong) ArrayDataSource *arrayDataSource;
+@property (nonatomic,strong) UIDocumentInteractionController *documentController;
+@property (nonatomic,strong) id<SXQReportHelper> reportHelper;
 @end
 
+
 @implementation SXQDoneExperimentController
+- (id<SXQReportHelper>)reportHelper
+{
+    if (!_reportHelper) {
+        _reportHelper = [[SXQReportHelperImpl alloc] init];
+    }
+    return _reportHelper;
+}
 - (id<DWMyExperimentServices>)experimentService
 {
     if (!_experimentService) {
@@ -67,6 +78,7 @@
     [self.tableView registerNib:[UINib nibWithNibName:NSStringFromClass([DWDoingCell class]) bundle:nil] forCellReuseIdentifier:cellIdentifier];
     _arrayDataSource = [[ArrayDataSource alloc] initWithItems:self.experiments cellIdentifier:cellIdentifier cellConfigureBlock:^(DWDoingCell *cell,DWDoingViewModel *viewModel) {
         cell.viewModel = viewModel;
+        cell.delegate = self;
     }];
     self.tableView.dataSource = _arrayDataSource;
 }
@@ -82,5 +94,29 @@
         [tmpArray addObject:viewModel];
     }];
     return [tmpArray copy];
+}
+- (void)doingCell:(DWDoingCell *)cell clickedPreviewButton:(UIButton *)previewButton
+{
+    NSIndexPath *indexPath = [self.tableView indexPathForCell:cell];
+    if (indexPath) {
+        DWDoingViewModel *viewModel = self.experiments[indexPath.row];
+        [[self.reportHelper temporaryPdfPathSignalWithMyExpID:viewModel.myExpID pdfName:viewModel.experimentName]
+        subscribeNext:^(NSString *pdfPath) {
+            [self previewDocumentWithPath:pdfPath];
+        }];
+    }
+}
+- (void)previewDocumentWithPath:(NSString *)pdfPath
+{
+    NSURL *url = [NSURL fileURLWithPath:pdfPath];
+    if (url) {
+        self.documentController = [UIDocumentInteractionController interactionControllerWithURL:url];
+        [self.documentController setDelegate:self];
+        [self.documentController presentPreviewAnimated:YES];
+    }
+}
+- (UIViewController *)documentInteractionControllerViewControllerForPreview:(UIDocumentInteractionController *)controller
+{
+    return self;
 }
 @end
