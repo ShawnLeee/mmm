@@ -45,7 +45,7 @@
 - (void)p_loadData
 {
     @weakify(self)
-    [[self.service commentViewModelSignalWithExpId:self.viewModel.myExpID]
+    [[self.service commentViewModelSignalWithInstructioinID:self.viewModel.expInstructionID]
     subscribeNext:^(NSArray *viewModels) {
         @strongify(self)
         self.viewModels = viewModels;

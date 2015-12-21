@@ -18,7 +18,9 @@
     if (self = [super init]) {
         _commentGroup = commentGroup;
         self.groupName = commentGroup.expReviewOptName;
+        self.groupScore = 5;
         self.items = [self commentItemViewModelArrayWithItemArray:commentGroup.expReviewDetailOfOpts];
+        [self p_bindingViewModels];
         RAC(commentGroup,expReviewOptScore) = RACObserve(self, groupScore);
     }
     return self;
@@ -31,5 +33,30 @@
         [tmpArray addObject:viewModel];
     }];
     return [tmpArray copy];
+}
+- (void)p_bindingViewModels
+{
+    [self.items enumerateObjectsUsingBlock:^(DWCommentItemViewModel *viewModel, NSUInteger idx, BOOL * _Nonnull stop) {
+        [self bindingWithItemViewModel:viewModel];
+    }];
+}
+//有一个itemScore改变时更新GroupScore
+- (void)bindingWithItemViewModel:(DWCommentItemViewModel *)itemViewModel
+{
+    @weakify(self)
+    [RACObserve(itemViewModel, commentSocres)
+    subscribeNext:^(id x) {
+        //更新groupScores
+        @strongify(self)
+        [self p_updateGroupScore];
+    }];
+}
+- (void)p_updateGroupScore
+{
+    __block NSInteger totalScore = 0;
+    [self.items enumerateObjectsUsingBlock:^(DWCommentItemViewModel *itemViewModel, NSUInteger idx, BOOL * _Nonnull stop) {
+        totalScore += itemViewModel.commentSocres;
+    }];
+    self.groupScore = (NSInteger)totalScore/self.items.count;
 }
 @end

@@ -5,6 +5,7 @@
 //  Created by sxq on 15/11/13.
 //  Copyright © 2015年 SXQ. All rights reserved.
 //
+#import "DWCommentParam.h"
 #import "DWCommentHeaderViewModel.h"
 #import "MBProgressHUD+MJ.h"
 #import "DWReportViewController.h"
@@ -58,11 +59,11 @@
     SXQNavgationController *nav = [[SXQNavgationController alloc] initWithRootViewController:commentVc];
     [self.tableViewController presentViewController:nav animated:YES completion:nil];
 }
-- (RACSignal *)commentViewModelSignalWithExpId:(NSString *)myExpId
+- (RACSignal *)commentViewModelSignalWithInstructioinID:(NSString *)instructionID
 {
-    NSDictionary *param = @{@"myExpID" : myExpId? : @""};
+    DWCommentParam *commentParam = [DWCommentParam paramWithInstructionID:instructionID];
     return [RACSignal createSignal:^RACDisposable *(id<RACSubscriber> subscriber) {
-        [SXQHttpTool getWithURL:CommentListURL params:param success:^(id json) {
+        [SXQHttpTool getWithURL:CommentListURL params:commentParam.keyValues success:^(id json) {
             if ([json[@"code"] isEqualToString:@"1"]) {
                 NSArray *models = [DWCommentGroup objectArrayWithKeyValuesArray:json[@"data"]];
                 NSArray *viewModels = [self p_viewModelsWithModels:models];

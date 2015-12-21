@@ -6,12 +6,12 @@
 //  Copyright © 2015年 SXQ. All rights reserved.
 //
 
-#import "CheckButton.h"
 #import "DWCommentItemCell.h"
 #import "DWCommentItemViewModel.h"
 #import <ReactiveCocoa/ReactiveCocoa.h>
+#import "DWStarView.h"
 @interface DWCommentItemCell ()
-@property (nonatomic,weak) IBOutlet CheckButton *checkBtn;
+@property (weak, nonatomic) IBOutlet DWStarView *starView;
 @property (nonatomic,weak) IBOutlet UILabel *itemLabel;
 @end
 @implementation DWCommentItemCell
@@ -19,20 +19,13 @@
 {
     _viewModel = viewModel;
     self.itemLabel.text = viewModel.itemName;
-    self.checkBtn.rac_command = viewModel.checkCommand;
+    self.starView.scores = viewModel.commentSocres;
     
     @weakify(self)
-     [[RACObserve(viewModel, checked) takeUntil:self.rac_prepareForReuseSignal]
-      subscribeNext:^(NSNumber *checked) {
-          @strongify(self)
-          self.checkBtn.checked = [checked boolValue];
-          self.itemLabel.textColor = [checked boolValue]? [UIColor lightGrayColor]:[UIColor blackColor];
+    [RACObserve(self.starView,scores)
+    subscribeNext:^(NSNumber *scores) {
+        @strongify(self)
+        self.viewModel.commentSocres = [scores integerValue];
     }];
-    
 }
-- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event
-{
-    self.viewModel.checked = !self.viewModel.checked;
-}
-
 @end

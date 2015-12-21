@@ -461,6 +461,7 @@
 		B0FD56C31C0D825800E9E377 /* DWBBSCommentViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B0FD56C21C0D825800E9E377 /* DWBBSCommentViewModel.m */; };
 		B0FE89711BD9C71E00999DE2 /* DWExperimentCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B0FE896F1BD9C71E00999DE2 /* DWExperimentCell.m */; };
 		B0FE89721BD9C71E00999DE2 /* DWExperimentCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B0FE89701BD9C71E00999DE2 /* DWExperimentCell.xib */; };
+		B0FF420E1C279D93002C4098 /* DWCommentParam.m in Sources */ = {isa = PBXBuildFile; fileRef = B0FF420D1C279D93002C4098 /* DWCommentParam.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -1308,6 +1309,8 @@
 		B0FE896E1BD9C71E00999DE2 /* DWExperimentCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DWExperimentCell.h; sourceTree = "<group>"; };
 		B0FE896F1BD9C71E00999DE2 /* DWExperimentCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DWExperimentCell.m; sourceTree = "<group>"; };
 		B0FE89701BD9C71E00999DE2 /* DWExperimentCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DWExperimentCell.xib; sourceTree = "<group>"; };
+		B0FF420C1C279D93002C4098 /* DWCommentParam.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DWCommentParam.h; sourceTree = "<group>"; };
+		B0FF420D1C279D93002C4098 /* DWCommentParam.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DWCommentParam.m; sourceTree = "<group>"; };
 		BA10C25B56685BF3E3D3D5E3 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -1769,6 +1772,8 @@
 		B0665B861BF57B2D0021E752 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				B0FF420C1C279D93002C4098 /* DWCommentParam.h */,
+				B0FF420D1C279D93002C4098 /* DWCommentParam.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -3678,6 +3683,7 @@
 				B006ABCF1C057704008C6C76 /* DWMeItem.m in Sources */,
 				B0DC38AC1C195C150011134A /* DWAddReagentController.m in Sources */,
 				B0F845451BE0B79F00BC539A /* NSString+Base64.m in Sources */,
+				B0FF420E1C279D93002C4098 /* DWCommentParam.m in Sources */,
 				B0FD56C31C0D825800E9E377 /* DWBBSCommentViewModel.m in Sources */,
 				B0B544CF1BE708A1003CB14F /* SXQAddScheduleController.m in Sources */,
 				B0F308C61BC65C0300AD9EAF /* MBProgressHUD+MJ.m in Sources */,

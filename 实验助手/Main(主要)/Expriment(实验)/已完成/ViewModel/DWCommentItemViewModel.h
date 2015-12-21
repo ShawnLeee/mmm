@@ -12,8 +12,7 @@
 @property (nonatomic,strong) DWCommentItem *commentItem;
 
 @property (nonatomic,copy) NSString *itemName;
-@property (nonatomic,assign) BOOL checked;
-@property (nonatomic,strong) RACCommand *checkCommand;
+@property (nonatomic,assign) NSInteger commentSocres;
 
 - (instancetype)initWithCommentItem:(DWCommentItem *)commentItem;
 @end

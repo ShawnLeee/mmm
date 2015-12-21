@@ -5,13 +5,14 @@
 //  Created by sxq on 15/11/25.
 //  Copyright © 2015年 SXQ. All rights reserved.
 //
+#import "MBProgressHUD+MJ.h"
 #import "DWMeInstructionCell.h"
 #import <ReactiveCocoa/ReactiveCocoa.h>
 #import "DWMeServiceImpl.h"
 #import "DWMeInstructionsController.h"
 #import "SXQExpInstruction.h"
 
-@interface DWMeInstructionsController ()
+@interface DWMeInstructionsController ()<DWMeInstructionCellDelegate>
 @property (nonatomic,strong) id<DWMeService> service;
 @property (nonatomic,strong) NSArray *instructions;
 @end
@@ -62,15 +63,50 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     DWMeInstructionCell *cell =  [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([DWMeInstructionCell class]) forIndexPath:indexPath];
+    cell.delegate = self;
     cell.instruction = self.instructions[indexPath.row];
     return cell;
 }
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+//- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+//{
+//    SXQExpInstruction *instruction = self.instructions[indexPath.row];
+//    [[self.service uploadInstructionWithInstrucitonID:instruction.expInstructionID allowDownload:0]
+//    subscribeNext:^(NSNumber *success) {
+//        
+//    }];
+//}
+- (void)instrucitonCell:(DWMeInstructionCell *)cell didClickedUploadButton:(UIButton *)button
 {
-    SXQExpInstruction *instruction = self.instructions[indexPath.row];
-    [[self.service uploadInstructionWithInstrucitonID:instruction.expInstructionID allowDownload:0]
-    subscribeNext:^(NSNumber *success) {
-        
-    }];
+    [self p_uploadInstructionForCell:cell share:0];
+}
+- (void)instrucitonCell:(DWMeInstructionCell *)cell didClickedShareButton:(UIButton *)button
+{
+    [self p_uploadInstructionForCell:cell share:2];
+}
+- (void)p_uploadInstructionForCell:(DWMeInstructionCell *)cell share:(int)share
+{
+    NSIndexPath *indexPath = [self.tableView indexPathForCell:cell];
+    if (indexPath) {
+        SXQExpInstruction *instruction = self.instructions[indexPath.row];
+     [[self.service uploadInstructionWithInstrucitonID:instruction.expInstructionID allowDownload:share]
+      subscribeNext:^(NSNumber *success) {
+          NSString *preMsg = nil;
+          if (share == 0) {
+              preMsg = @"上传";
+          }else
+          {
+              preMsg = @"分享";
+          }
+          if ([success boolValue]) {
+              NSString *successMsg = [NSString stringWithFormat:@"%@成功",preMsg];
+            [MBProgressHUD showSuccess:successMsg];
+          }else
+          {
+              NSString *failMsg = [NSString stringWithFormat:@"%@失败",preMsg];
+              [MBProgressHUD showError:failMsg];
+          }
+          [cell close];
+      }];
+    }
 }
 @end

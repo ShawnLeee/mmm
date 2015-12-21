@@ -14,6 +14,14 @@
 - (RACSignal *)userInfoSignal;
 - (RACSignal *)uploadUserProfile;
 - (void)signOut;
+/**
+ *  同步说明书
+ *
+ *  @param instructionID 说明书ID
+ *  @param allowDownload 0-不允许下载，1-允许下载，2-share
+ *
+ *  @return RACSignal of success 
+ */
 - (RACSignal *)uploadInstructionWithInstrucitonID:(NSString *)instructionID allowDownload:(int)allowDownload;
 - (RACSignal *)addExpInstructionInstructionID:(NSString *)instructionID;
 /**

@@ -59,6 +59,12 @@
         }
     }
 }
+- (void)close
+{
+    [UIView animateWithDuration:0.3 animations:^{
+            self.myContentView.transform = CGAffineTransformIdentity;
+    }];
+}
 - (CGFloat)buttonMinX
 {
     return CGRectGetMinX(self.shareButton.frame);
@@ -74,5 +80,15 @@
 - (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldRecognizeSimultaneouslyWithGestureRecognizer:(UIGestureRecognizer *)otherGestureRecognizer
 {
     return YES;
+}
+- (IBAction)uploadButtonClicked:(UIButton *)sender {
+    if ([self.delegate respondsToSelector:@selector(instrucitonCell:didClickedUploadButton:)]) {
+        [self.delegate instrucitonCell:self didClickedUploadButton:sender];
+    }
+}
+- (IBAction)shareButtonClicked:(UIButton *)sender {
+    if ([self.delegate respondsToSelector:@selector(instrucitonCell:didClickedShareButton:)]) {
+        [self.delegate instrucitonCell:self didClickedShareButton:sender];
+    }
 }
 @end

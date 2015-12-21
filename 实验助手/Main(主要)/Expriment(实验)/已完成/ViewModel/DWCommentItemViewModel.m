@@ -14,23 +14,11 @@
 {
     if (self = [super init]) {
         _commentItem = commentItem;
-        _checked = NO;
-        _itemName = commentItem.itemName;
-        RAC(commentItem,itemScore) = RACObserve(self, checked);
-        [self p_setupCommmand];
+        self.itemName = commentItem.itemName;
+        self.commentSocres = 5;
+        RAC(commentItem,itemScore) = RACObserve(self, commentSocres);
     }
     return self;
 }
-- (void)p_setupCommmand
-{
-    @weakify(self)
-    _checkCommand = [[RACCommand alloc] initWithSignalBlock:^RACSignal *(id input) {
-        return [RACSignal createSignal:^RACDisposable *(id<RACSubscriber> subscriber) {
-            @strongify(self)
-            self.checked = !self.checked;
-            [subscriber sendCompleted];
-            return nil;
-        }];
-    }];
-}
+
 @end

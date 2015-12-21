@@ -8,5 +8,4 @@
 #import "DWCommentItem.h"
 
 @implementation DWCommentItem
-
 @end

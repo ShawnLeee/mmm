@@ -39,10 +39,9 @@
         self.foldBtn.imageView.transform = self.viewModel.opened? CGAffineTransformIdentity : CGAffineTransformMakeRotation(-M_PI_2);
     }];
     self.commentItemLabel.text = viewModel.groupName;
-    
-    [RACObserve(self.starView, scores)
-    subscribeNext:^(NSNumber *scores) {
-        viewModel.groupScore = [scores integerValue];
+    [[RACObserve(self.viewModel,groupScore) takeUntil:self.rac_prepareForReuseSignal]
+     subscribeNext:^(NSNumber *groupScore) {
+        self.starView.scores = [groupScore integerValue];
     }];
     
 }
